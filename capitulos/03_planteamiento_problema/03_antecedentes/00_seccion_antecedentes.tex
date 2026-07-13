@@ -1,0 +1,125 @@
+\section{Antecedentes}
+
+La revisión de antecedentes que se presenta a continuación se articula en torno a tres ejes de la literatura que fundamentan y delimitan el problema de investigación: el uso de inteligencia artificial en educación matemática, la integración específica de herramientas de IA en la enseñanza de la trigonometría, y las dificultades conceptuales que los estudiantes de educación media exhiben de forma persistente en este campo. La convergencia de estos tres ejes define el espacio específico que el presente estudio busca ocupar, tal como se ilustra en la Figura~\ref{fig:mapa_antecedentes}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  fuente/.style={draw=blue!60!black, fill=blue!8, rounded corners=6pt,
+                 text width=5.2cm, align=center, inner sep=9pt,
+                 font=\small\sffamily},
+  vacio/.style={draw=orange!70!black, fill=orange!12, rounded corners=6pt,
+                text width=4.8cm, align=center, inner sep=10pt,
+                font=\small\sffamily\bfseries},
+  etiq/.style={font=\footnotesize\itshape, text=gray!60!black},
+  >=Latex, thick
+]
+  % Nodos fuente (izquierda)
+  \node[fuente] (ia_edu) at (0, 3.8)
+    {IA en educación matemática\\[4pt]
+     personalización, involucramiento\\
+     y retroalimentación adaptativa};
+
+  \node[fuente] (ia_trig) at (0, 0)
+    {IA en enseñanza de la\\trigonometría\\[4pt]
+     visualización dinámica\\
+     y sistemas tutoriales};
+
+  \node[fuente] (dif_trig) at (0, -3.8)
+    {Dificultades persistentes\\en trigonometría\\[4pt]
+     obstáculos conceptuales\\
+     documentados en la literatura};
+
+  % Nodo central (derecha)
+  \node[vacio] (vacio) at (9, 0)
+    {Brecha identificada:\\[6pt]
+     diseño de tareas\\
+     con IA generativa\\
+     para el pensamiento\\
+     trigonométrico en\\
+     educación media\\
+     colombiana};
+
+  % Flechas curvas
+  \draw[->] (ia_edu.east)   .. controls (5.5,3.8) and (7,1.5) .. (vacio.north west);
+  \draw[->] (ia_trig.east)  -- (vacio.west);
+  \draw[->] (dif_trig.east) .. controls (5.5,-3.8) and (7,-1.5) .. (vacio.south west);
+
+  % Etiquetas sobre las flechas
+  \node[etiq] at (3.8, 2.9)  {potencial pedagógico};
+  \node[etiq] at (3.8, 0.4)  {vacío empírico};
+  \node[etiq] at (3.8, -2.8) {necesidad de intervención};
+\end{tikzpicture}
+\caption{Articulación de los tres ejes de la revisión de antecedentes y la brecha de investigación
+que justifica el presente estudio. Elaboración propia.}
+\label{fig:mapa_antecedentes}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Inteligencia artificial en educación matemática}
+% ─────────────────────────────────────────────────────────────
+
+El uso pedagógico de herramientas de inteligencia artificial en la educación matemática ha sido objeto de una creciente producción investigativa durante la última década. Los trabajos de síntesis disponibles identifican tres ámbitos en los que el potencial de estas herramientas ha sido documentado: la personalización del proceso de aprendizaje, el incremento del involucramiento del estudiante, y la ampliación del acceso a retroalimentación formativa de calidad \parencite{yildizTrendsInsightsAI2025}.
+
+En relación con la personalización, los sistemas tutoriales inteligentes (STI) posibilitan la adaptación dinámica de la secuencia de problemas y el tipo de retroalimentación a los errores y al ritmo individuales de cada estudiante. Investigaciones de síntesis sobre STI en educación secundaria señalan que esta adaptabilidad puede reducir brechas de desempeño entre estudiantes de contextos heterogéneos, logrando que grupos con distintos puntos de partida alcancen niveles comparables \parencite{vanlehnRelativeEffectivenessHuman2011}. Esta observación resulta relevante para el contexto colombiano, donde la heterogeneidad de trayectorias educativas dentro de un mismo salón de clase es una condición estructural.
+
+Respecto al involucramiento, investigaciones sobre herramientas de apoyo matemático en modalidad de tutoría estructurada reportan que los estudiantes muestran mayor persistencia ante problemas, evidenciada en la disposición a reexaminar procedimientos fallidos y reformular estrategias de solución \parencite{cromptonArtificialIntelligenceK122022}. Este efecto se asocia no con la obtención rápida de respuestas, sino con la disponibilidad de retroalimentación inmediata que orienta al estudiante sobre el origen del error.
+
+La literatura también documenta limitaciones de relevancia. Una fracción considerable de los docentes de matemáticas en educación media declara no sentirse preparada para integrar herramientas de IA en su práctica de manera pedagógicamente efectiva \parencite{alsharidahTeachersPerceptionsUsing2024}. Esta brecha no obedece necesariamente a resistencia tecnológica, sino a la ausencia de formación específica sobre cómo diseñar tareas que articulen el uso de la herramienta con objetivos de aprendizaje matemático precisos. \textcite{cromptonAffordancesChallengesArtificial2022} identifican que la IA puede operar en la experiencia educativa en tres modos: pedagógico (adaptar explicaciones al estudiante), administrativo (detectar patrones de error a escala) y disciplinar (apoyar la comprensión de un contenido específico). Cada modo implica decisiones de diseño distintas; ninguno opera automáticamente.
+
+Un límite adicional es de naturaleza contextual. La mayoría de los sistemas de IA han sido entrenados predominantemente con datos en inglés y para referentes culturales del hemisferio norte. Cuando se emplean en aulas hispanohablantes con particularidades locales propias, la pertinencia de los ejemplos y la adecuación de las explicaciones puede reducirse de modo significativo \parencite{pepinMathematicsEducationEra2025}. Esta limitación es especialmente pertinente en el contexto de una institución como el Colegio Villa de las Palmas, ubicada en Palmira, Colombia, donde el referente cultural y lingüístico de los estudiantes difiere del mundo anglosajón en el que fueron entrenados la mayor parte de los modelos de IA disponibles.
+
+% ─────────────────────────────────────────────────────────────
+\subsection{IA integrada en la enseñanza de la trigonometría}
+% ─────────────────────────────────────────────────────────────
+
+La integración de herramientas tecnológicas en la enseñanza de la trigonometría tiene una trayectoria investigativa previa a la irrupción de la IA generativa. Los estudios sobre el uso de software de geometría dinámica como GeoGebra en la enseñanza de funciones trigonométricas documentan de forma consistente que la posibilidad de manipular parámetros y observar en tiempo real sus efectos sobre la representación gráfica produce mejoras significativas en la comprensión conceptual, respecto de la instrucción basada exclusivamente en cálculo y memorización \parencite{zenginEffectDynamicMathematics2012}. Este efecto se explica teóricamente a partir de la noción de génesis instrumental \parencite{troucheManagingComplexityHuman2004}: la herramienta no mejora el aprendizaje por su mera disponibilidad, sino en la medida en que el estudiante la incorpora como instrumento activo de exploración con propósitos matemáticos definidos.
+
+La IA incorpora a esa visualización dinámica una dimensión cualitativamente diferente: la posibilidad de retroalimentación adaptativa e interactiva. Un sistema de apoyo calibrado para trigonometría puede identificar la confusión específica entre amplitud y valor máximo de la función trigonométrica y responder con preguntas dirigidas que obligan al estudiante a discriminar entre estos conceptos, en lugar de ofrecer la corrección directa. Los estudios disponibles sobre el uso de IA en contenidos trigonométricos de educación media reportan que este tipo de retroalimentación adaptativa incide positivamente en el desempeño y puede atenuar las brechas entre estudiantes con distintas condiciones de acceso previo a la instrucción de calidad \parencite{castillodelpezoUseArtificialIntelligence2024, alabiTransformingSocialStudies2025}.
+
+En el ámbito nacional, investigaciones recientes han explorado el uso de tecnologías interactivas en la enseñanza de la trigonometría en instituciones colombianas, con resultados prometedores en términos de motivación y comprensión conceptual \parencite{mendozaModeloPedagogicoPara2026}. En el contexto específico de la educación matemática colombiana, el trabajo de \textcite{fialloGutierrezCognitiveUnity2017} sobre el aprendizaje de la prueba en trigonometría en grado décimo documenta la complejidad de los procesos de razonamiento que los estudiantes de este nivel deben desarrollar, y la necesidad de diseñar secuencias didácticas que medien esa construcción. Esta investigación constituye un antecedente directo del presente estudio.
+
+El área específica en la que esta investigación se ubica permanece escasamente explorada en la literatura. Los estudios disponibles sobre ChatGPT en educación matemática son recientes y abordan principalmente su uso espontáneo por parte de los estudiantes o su papel como generador de contenido didáctico \parencite{wardatChatGPTRevolutionaryTool2023}. La integración deliberada de IA generativa en tareas de trigonometría diseñadas con marcos teóricos explícitos y con objetivos específicos de desarrollo del pensamiento trigonométrico no cuenta aún con una línea de investigación consolidada.
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Dificultades persistentes en trigonometría}
+% ─────────────────────────────────────────────────────────────
+
+La investigación en educación matemática ha documentado de forma extensa que ciertos obstáculos conceptuales en trigonometría se presentan de manera recurrente en estudiantes de educación media, con independencia del país, el docente o la metodología de enseñanza empleada. \textcite{arhinAnalysisHighSchool2021} identifican que los errores trigonométricos de los estudiantes no se distribuyen aleatoriamente, sino que se concentran en tres momentos específicos del proceso de resolución: la transformación de la representación del problema, el procesamiento lógico-algebraico y la codificación de la respuesta final. \textcite{owusuStudentsAcademicStruggles2025} documentan además que estas dificultades varían de forma significativa según el programa de estudios del estudiante, pero se mantienen como rasgo común a todos los grupos.
+
+Los obstáculos más documentados en la literatura son los siguientes.
+
+\textbf{Confusión entre razón trigonométrica y función trigonométrica.} Los estudiantes construyen inicialmente el concepto de seno y coseno como razones entre lados de un triángulo rectángulo. Esta concepción resulta funcional en ese contexto restringido, pero constituye un obstáculo epistemológico \parencite{brousseauTheoryDidacticalSituations2002} cuando se busca extenderla a ángulos no agudos o a la representación de la función como curva periódica en el plano cartesiano. La dificultad se manifiesta de forma característica cuando el estudiante, ante una expresión como $y = 3\cos(2x)$, intenta identificar los ``lados del triángulo'' que le permitirían aplicar su definición original de coseno, lo cual no es posible en ese contexto \parencite{montiel-espinosaDesarrolloPensamientoTrigonometrico2013}.
+
+\textbf{Dificultades con el concepto de periodicidad.} Numerosos estudiantes identifican visualmente que una función trigonométrica se repite, pero no logran precisar qué propiedad de la función es la que se repite ni qué implicaciones tiene esa característica para interpretar la situación que la función modela. Los términos amplitud, período y fase desplazada suelen aprenderse como vocabulario técnico sin que el estudiante llegue a asignarles significado contextual operativo.
+
+\textbf{Uso procedimental de los sistemas de medida angular.} Los estudiantes conocen la relación de conversión entre grados y radianes, pero la aplican de forma algorítmica sin comprender la naturaleza de cada sistema de medida ni los contextos en los que resulta apropiado cada uno. Esta comprensión superficial genera errores sistemáticos cuando las funciones trigonométricas se articulan con procedimientos del cálculo diferencial, donde el trabajo en radianes es una condición necesaria.
+
+\textbf{Debilidad en la coordinación entre registros de representación.} La tarea de producir la expresión algebraica de una función trigonométrica a partir de su gráfica, o la trayectoria inversa, exige la coordinación simultánea de registros gráfico, algebraico y contextual. Esta coordinación, denominada conversión entre registros de representación semiótica \parencite{duval2006}, resulta especialmente exigente para los estudiantes y está escasamente desarrollada en la instrucción tradicional \parencite{fialloGutierrezCognitiveUnity2017}.
+
+La causa estructural de la persistencia de estos obstáculos está bien identificada: las prácticas de enseñanza de la trigonometría en educación media se apoyan predominantemente en la memorización de fórmulas y en la resolución de ejercicios de aplicación directa, sin espacio para la argumentación, la exploración de múltiples caminos de solución ni la interpretación contextual de los resultados. Investigaciones comparativas entre aulas orientadas a tareas de alta exigencia cognitiva y aulas con instrucción procedimental muestran diferencias significativas en la profundidad del aprendizaje conceptual \parencite{leungDesigningMathematicsTasks2015, radmehrTheoreticalFrameworkTask2023, orozcoImpactProblemSolving2025}.
+
+% ─────────────────────────────────────────────────────────────
+\subsection{Posición de la presente investigación}
+% ─────────────────────────────────────────────────────────────
+
+De la revisión precedente se derivan cuatro conclusiones que justifican y delimitan el presente estudio.
+
+\textbf{Primera:} el diseño de las tareas matemáticas constituye una variable decisiva en el tipo de pensamiento que los estudiantes pueden desarrollar. Una tarea que exige coordinar múltiples representaciones, integrar contexto significativo y justificar decisiones produce un aprendizaje cualitativamente diferente al que genera un ejercicio de aplicación directa \parencite{leungDesigningMathematicsTasks2015, canogullariTaskDesignPrinciples2025}.
+
+\textbf{Segunda:} la literatura disponible sobre IA en educación matemática documenta potencial pedagógico real, pero también limitaciones estructurales asociadas al diseño de tareas, a la formación docente y a la adecuación contextual de las herramientas \parencite{cromptonAffordancesChallengesArtificial2022}. Las investigaciones que combinan específicamente el uso de IA generativa con tareas de trigonometría diseñadas con propósitos conceptuales explícitos son prácticamente inexistentes.
+
+\textbf{Tercera:} los obstáculos conceptuales que persisten en la enseñanza y el aprendizaje de la trigonometría no son atribuibles a déficits cognitivos de los estudiantes, sino a las condiciones que la instrucción tradicional ha creado o dejado de crear \parencite{arhinAnalysisHighSchool2021, fialloGutierrezCognitiveUnity2017}. Cambiar la naturaleza de las tareas que se proponen modifica las oportunidades de pensamiento disponibles.
+
+\textbf{Cuarta:} la IA generativa ofrece posibilidades genuinamente nuevas para intervenir sobre esas dificultades. Su efectividad pedagógica, sin embargo, depende de cómo se posiciona dentro del diseño de la tarea: una IA que resuelve problemas por el estudiante empobrece el aprendizaje; una IA que provoca pensamiento sin suplantarlo lo enriquece \parencite{pepinMathematicsEducationEra2025, wardatChatGPTRevolutionaryTool2023}.
+
+El presente estudio responde a estas conclusiones proponiendo una investigación donde:
+
+\begin{enumerate}
+\item Se diseñan tareas de trigonometría con alta exigencia cognitiva que integran contexto real, requieren articulación entre representaciones y exigen justificación de decisiones \parencite{radmehrTheoreticalFrameworkTask2023};
+\item Se integra la IA generativa de forma deliberada como agente de acompañamiento que expande el pensamiento del estudiante, sin sustituirlo;
+\item Se implementa mediante un experimento de enseñanza que documenta cómo el diseño de tareas con IA moldea los procesos de construcción del pensamiento trigonométrico en un grupo de estudiantes de grado décimo;
+\item Se realiza un análisis cualitativo riguroso orientado a capturar cómo los estudiantes razonan, dónde encuentran obstáculos y cómo construyen significado conceptual.
+\end{enumerate}
+
+En síntesis, esta investigación ocupa un espacio específico en la literatura educativa donde convergen tres necesidades insatisfechas: mayor comprensión sobre el diseño de tareas de alta exigencia en trigonometría, integración pedagógica genuina de IA generativa en educación media colombiana, y documentación sistemática de esos procesos desde el contexto del Colegio Villa de las Palmas en Palmira.

@@ -1,0 +1,383 @@
+\documentclass[11pt,spanish,letterpaper,openany]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{pdflscape}
+\usepackage[top=3cm,bottom=3cm,inner=3.5cm,outer=2.5cm,bindingoffset=0cm]{geometry}
+\usepackage[backend=biber,style=apa,maxcitenames=2,maxbibnames=99,giveninits=true,uniquename=false]{biblatex}
+\addbibresource{bibliografias/antecedentes.bib}
+\addbibresource{bibliografias/Planteamiento_del_problema.bib}
+\addbibresource{bibliografias/jusitificacion.bib}
+\addbibresource{bibliografias/antecedentes/antecedentes.bib}
+\addbibresource{bibliografias/antecedentes/ia-en-eduacion-matematica/ia-en-educacion-matematica.bib}
+\addbibresource{bibliografias/antecedentes/ia-en-enseñanza-de-la-trigonometria/ia-en-enseñanza-de-trigonometria.bib}
+\addbibresource{bibliografias/antecedentes/dificultades-percistentes-en-trigonometria-escolar/dificultades-persistentes-en-trigonometria-escolar.bib}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{1.25cm}
+\renewcommand{\baselinestretch}{1.5}
+\raggedbottom
+
+\titlespacing*{\chapter}{0pt}{0pt}{14pt}
+\titlespacing*{\section}{0pt}{1.8ex plus .4ex minus .2ex}{0.8ex}
+\titlespacing*{\subsection}{0pt}{1.4ex plus .3ex minus .2ex}{0.6ex}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+
+\renewcommand{\tablename}{Cuadro}
+\renewcommand{\figurename}{Figura}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\projecttitle}{Diseño de tareas matemáticas que integran inteligencia artificial generativa para el desarrollo del pensamiento trigonométrico en educación media}
+\newcommand{\studentname}{Dairo Janover Peña Cardenas}
+\newcommand{\institution}{Universidad Nacional de Colombia}
+\newcommand{\faculty}{Facultad de Ingeniería y Administración}
+\newcommand{\program}{Maestría en Enseñanza de las Ciencias Exactas y Naturales}
+\newcommand{\sede}{Sede Palmira, Colombia}
+
+\begin{document}
+
+\nocite{*}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{1cm}
+\includegraphics[width=4.2cm]{imagenes/00Figuras/00f00EscudoUN2016.jpg}
+
+\vspace{1.4cm}
+{\large\bfseries \projecttitle\par}
+
+\vspace{1.2cm}
+{\normalsize \studentname\par}
+
+\vspace{1.2cm}
+{\normalsize \institution\par}
+{\normalsize \faculty\par}
+{\normalsize \program\par}
+{\normalsize \sede\par}
+
+\vfill
+{\normalsize 2026\par}
+\end{center}
+\end{titlepage}
+
+\frontmatter
+\tableofcontents
+\listoftables
+
+\mainmatter
+
+\chapter{Descripción general}
+
+\section{Resumen}
+
+La propuesta se centra en una tensión que en educación media aparece con frecuencia, aunque no siempre se nombra con precisión: los estudiantes resuelven ejercicios de trigonometría, pero no siempre construyen un pensamiento trigonométrico consistente. Pueden aplicar fórmulas, reemplazar valores y obtener respuestas correctas en problemas cerrados; sin embargo, cuando deben interpretar variación, justificar procedimientos o relacionar expresiones algebraicas con gráficas, la comprensión se vuelve frágil (Díaz-Fernández, 2014; Rosa, 2023).
+
+Este proyecto toma esa fractura como punto de partida y propone algo concreto: diseñar tareas matemáticas mediadas por inteligencia artificial generativa sin perder de vista lo esencial, que es la actividad matemática del estudiante. La IA no entra aquí como adorno técnico ni como reemplazo del profesor; más bien, funciona como un apoyo para explorar, revisar y argumentar dentro de una secuencia didáctica pensada con cuidado (Castillo Del Pezo et al., 2024; Romero Alonso et al., 2024).
+
+En términos generales, la propuesta apunta a dejar una secuencia de tareas, un prototipo de apoyo, una guía breve de uso y una puesta en práctica en un contexto escolar real. No me interesa vender una eficacia abstracta de la tecnología; me interesa ver en qué condiciones pedagógicas la IA realmente ayuda a que los estudiantes pasen del cálculo rutinario a una comprensión más funcional y relacional de la trigonometría.
+
+\section{Descripción del problema u oportunidad a la cual responde el proyecto}
+
+\subsection{Contexto general al específico}
+
+En educación media, la trigonometría suele enseñarse como un conjunto de reglas que hay que recordar y aplicar. Así, el estudiante tiene poco margen para explorar, comparar o discutir. Varios trabajos coinciden en que esta forma de enseñanza empuja hacia la repetición de procedimientos, pero no siempre ayuda a comprender las razones trigonométricas como funciones ni a conectar las representaciones numérica, gráfica, algebraica y verbal (Delgado et al., 2023; Fiallo Leal, 2015; Torres-Corrales et al., 2021).
+
+El problema se vuelve más visible cuando el estudiante pasa de resolver triángulos rectángulos a interpretar una función trigonométrica. Allí aparecen confusiones persistentes: razón y función se tratan como si fueran lo mismo, la periodicidad se interpreta solo a medias, los radianes se asumen como una exigencia externa y la gráfica se lee sin relacionarla con el comportamiento de la función (Escalante Godoy, 2018; Iriarte et al., 2025; Zubieta, 2018).
+
+No se trata solo de una dificultad individual del estudiante. La revisión de antecedentes sugiere que parte del problema está en el tipo de tarea que se propone. Cuando las actividades son cerradas, directas y predecibles, la trigonometría termina reducida a un ejercicio de ejecución. Cuando la tarea obliga a explorar, justificar y tomar decisiones, la comprensión se mueve de otra manera. Ahí aparece la oportunidad pedagógica: rediseñar la tarea para que el estudiante piense, no solo responda (Benítez, 2022; Delgado et al., 2024; Zambrano-Choez et al., 2025).
+
+La inteligencia artificial generativa amplía esa oportunidad, pero no la resuelve por sí sola. Si se usa sin cuidado, solo acelera la repetición. Si se integra con intención didáctica, puede dar retroalimentación inmediata, sugerencias distintas según el caso y nuevas rutas de exploración. Eso es lo que interesa mirar aquí: cómo diseñar tareas que aprovechen la IA sin sacar del centro el razonamiento matemático del estudiante (Agudelo Carvajal \& Pérez Reyes, 2020; Calderón, 2024).
+
+\subsection{Pequeño estado de arte}
+
+La revisión de antecedentes se organiza en tres zonas: IA en educación matemática, IA en trigonometría escolar y dificultades persistentes en trigonometría. La primera muestra que la IA puede apoyar personalización y retroalimentación; la segunda indica que su integración en trigonometría todavía es incipiente; la tercera confirma que los problemas de comprensión siguen presentes en distintos niveles educativos y no se resuelven solo con más ejercicios.
+
+\begin{table}[H]
+\centering
+\caption{Síntesis del estado del arte y aporte a la propuesta.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.1cm}}
+\toprule
+Eje & Lectura de la literatura & Uso en la propuesta & Referencias \\
+\midrule
+IA en educación matemática & La IA puede personalizar trayectorias, registrar errores frecuentes y ofrecer retroalimentación inmediata, pero su valor depende de la tarea que la soporte. & La secuencia debe sostener la actividad matemática del estudiante y no sustituirla. & Castillo Del Pezo et al. (2024); Romero Alonso et al. (2024); Calderón (2024) \\
+IA en trigonometría escolar & Las herramientas digitales ayudan a visualizar y explorar, pero hay poca evidencia específica sobre diseños de IA orientados al pensamiento trigonométrico. & La propuesta se ubica en un vacío concreto entre tecnología y didáctica de la trigonometría. & Escalante Godoy (2018); Iriarte et al. (2025); Zubieta (2018) \\
+Dificultades persistentes & Persisten confusiones entre razón y función, lectura débil de la periodicidad y poca articulación entre registros de representación. & Las tareas deben provocar interpretación, comparación y justificación. & Delgado et al. (2023); Fiallo Leal (2015); Torres-Corrales et al. (2021) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Solución propuesta}
+
+La propuesta consiste en diseñar una secuencia de tareas matemáticas para educación media, apoyada por inteligencia artificial generativa, que permita trabajar la trigonometría desde situaciones que pidan interpretar, representar, comparar y justificar. No se trata de una lista de ejercicios sueltos; lo que busco es una actividad con continuidad, donde la IA ayude a orientar, preguntar, sugerir y devolver información útil al estudiante.
+
+El centro del proyecto está en el diseño de la tarea. Si la tarea es débil, la IA solo acelera un trabajo pobre. Si la tarea está bien formulada, puede hacer visible el pensamiento del estudiante, abrir desvíos productivos y sostener el trabajo cognitivo. Dicho de otro modo, el valor no está en la herramienta por sí sola, sino en cómo se articula con la tarea y con la intención didáctica.
+
+\subsection{Pregunta orientadora de la innovación}
+
+¿De qué manera el diseño e implementación de tareas matemáticas integradas con inteligencia artificial generativa puede contribuir al desarrollo del pensamiento trigonométrico en estudiantes de educación media?
+
+\subsection{Hipótesis de trabajo}
+
+Si se diseñan e implementan tareas matemáticas con alta demanda cognitiva, mediadas por inteligencia artificial generativa y articuladas con la interpretación de funciones trigonométricas, es probable que los estudiantes de educación media den un paso desde un desempeño centrado en el cálculo hacia una comprensión más rica del pensamiento trigonométrico, visible en la articulación entre representaciones, la argumentación y la resolución de problemas.
+
+\subsection{Supuesto de innovación}
+
+La innovación no está solo en llevar IA al aula. Está en armar un dispositivo didáctico en el que la tecnología ayude a sostener una experiencia de aprendizaje más exigente, más dialogada y más cercana a la forma en que el conocimiento matemático realmente se construye: probando, corrigiendo, comparando y volviendo sobre lo ya dicho.
+
+\subsection{Justificación y alcance de la propuesta de investigación}
+
+La propuesta se justifica porque responde a un problema muy reconocible del aula: se espera que los estudiantes comprendan la trigonometría como objeto funcional, pero con frecuencia el trabajo escolar queda atrapado en procedimientos y respuestas rápidas. Diseñar tareas con apoyo de IA generativa abre una alternativa concreta para mover la clase hacia la interpretación, la argumentación y la comparación de representaciones.
+
+El alcance es deliberadamente acotado. La propuesta se desarrollará en el Colegio Villa de las Palmas, en Palmira, Valle del Cauca, con estudiantes de grado décimo. No busca producir generalizaciones estadísticas ni demostrar efectos universales de la tecnología; busca construir, probar y documentar una secuencia de tareas viable, con ajustes realistas y alcance escolar localizado. Esa delimitación hace posible que la propuesta sea cumplible dentro del tiempo y los recursos previstos.
+
+\subsection{Metodología propuesta}
+
+La propuesta se desarrollará con un enfoque cualitativo, bajo la lógica de un estudio de caso y de diseño didáctico. La metodología será sencilla y ejecutable en el contexto escolar definido.
+
+\begin{enumerate}
+\item \textbf{Fase 1. Caracterización y diseño.} Revisión del material de la tesis, identificación de necesidades en el grado décimo, definición de la secuencia de tareas y bosquejo del prototipo de apoyo con IA generativa.
+\item \textbf{Fase 2. Implementación piloto.} Aplicación de la secuencia en el Colegio Villa de las Palmas con un grupo de grado décimo, acompañada de observación de aula y recolección de producciones de los estudiantes.
+\item \textbf{Fase 3. Análisis y ajuste.} Organización de las evidencias, lectura de patrones de uso, dificultades y avances, y ajustes a la secuencia y al prototipo para dejar una versión más clara y usable.
+\end{enumerate}
+
+Los principales instrumentos de trabajo serán la observación de clase, el análisis de producciones de los estudiantes y una conversación breve con el docente responsable del grupo. La propuesta no requiere validación experta externa ni un diseño experimental complejo; se centra en comprender el proceso y en producir una innovación didáctica de alcance local.
+
+\subsection{Objetivos}
+
+\begin{table}[H]
+\centering
+\caption{Objetivos de la propuesta de innovación.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}X}
+\toprule
+Nivel & Formulación \\
+\midrule
+Objetivo general & Diseñar, implementar y valorar una propuesta de tareas matemáticas mediada por inteligencia artificial generativa para promover el desarrollo del pensamiento trigonométrico en estudiantes de educación media. \\
+Objetivo específico 1 & Diseñar una secuencia de tareas matemáticas para educación media, sustentada en criterios didácticos y cognitivos orientados al desarrollo del pensamiento trigonométrico. \\
+Objetivo específico 2 & Construir un aplicativo o prototipo de apoyo que integre inteligencia artificial generativa para orientar la exploración, la retroalimentación y la argumentación matemática. \\
+Objetivo específico 3 & Implementar un pilotaje exploratorio en aula para observar el uso de la secuencia, las producciones de los estudiantes y las dificultades que aparecen durante la interacción con la propuesta. \\
+Objetivo específico 4 & Elaborar una guía de uso y socializar la propuesta con docentes mediante un espacio breve de apropiación pedagógica. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Resultados esperados}
+
+\begin{table}[H]
+\centering
+\caption{Resultados esperados asociados a los objetivos específicos.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{5.1cm} >{\raggedright\arraybackslash}X}
+\toprule
+Objetivo específico & Resultado esperado & Evidencia o verificable \\
+\midrule
+Diseñar una secuencia de tareas matemáticas. & Secuencia didáctica estructurada, con tareas graduadas y orientadas al pensamiento trigonométrico. & Documento de secuencia y revisión interna con el docente orientador. \\
+Construir un aplicativo o prototipo con IA generativa. & Prototipo funcional en versión piloto. & Capturas, flujo de uso y prueba básica de funcionamiento. \\
+Implementar un pilotaje exploratorio en aula. & Información para valorar el aporte de la propuesta en contexto real. & Registros de aula, protocolos, producciones y notas de observación. \\
+Elaborar una guía y socializar la propuesta. & Guía breve de uso y espacio de socialización con docentes. & Manual corto, memoria del taller y retroalimentación recibida. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Productos}
+
+\begin{table}[H]
+\centering
+\caption{Producto principal de desarrollo tecnológico e innovación.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{1.5cm}}
+\toprule
+Categoría & Producto & Descripción & TRL \\
+\midrule
+Producto o proceso tecnológico certificado o validado & Proceso de creación didáctica o pedagógica apoyado por IA generativa & Diseño y ajuste de una secuencia de tareas matemáticas con apoyo de una interfaz conversacional que ayude a orientar, explicar y retroalimentar el trabajo en trigonometría escolar. & 3 $\to$ 4 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+El desarrollo se concibe inicialmente en un TRL 3, porque la propuesta parte de una formulación conceptual y de un prototipo en construcción. Tras el pilotaje en aula y los ajustes que surjan de la experiencia, el proyecto debería alcanzar un TRL 4, en tanto la solución quede probada en un entorno educativo real, aunque acotado. La interfaz conversacional se entiende aquí como un apoyo funcional del proceso didáctico, no como el centro nominal del producto.
+
+\begin{table}[H]
+\centering
+\caption{Productos de divulgación y apropiación social del conocimiento.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.4cm} >{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}X}
+\toprule
+Línea de apropiación & Producto & Contenido esperado \\
+\midrule
+Apropiación social del conocimiento: diseño de procesos que constituyan una innovación social & Guía o manual del usuario & Orientaciones paso a paso para usar el chatbot, ejemplos de uso y recomendaciones didácticas. \\
+Apropiación social del conocimiento: mejoramiento de prácticas sociales, educativas y comunitarias & Implementación exploratoria en aula & Uso de la propuesta con un grupo de grado décimo para recoger evidencias de funcionamiento y comprensión. \\
+Apropiación social del conocimiento: mejoramiento de prácticas sociales, educativas y comunitarias & Encuentro breve con docentes & Socialización de la propuesta, diálogo pedagógico y recogida de observaciones para ajuste. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Productos mínimos exigidos por la convocatoria.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{5.2cm} >{\centering\arraybackslash}p{2.3cm}}
+\toprule
+Producto mínimo & Contenido & Momento de entrega \\
+\midrule
+Informe de avance & Estado técnico y financiero del proyecto, con evidencia de ejecución de la primera mitad del plan de trabajo. & Mes 6 \\
+Informe final técnico y presupuestal & Síntesis del cumplimiento de objetivos, actividades, productos y ejecución de recursos. & Mes 12 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Ámbito de aplicación}
+
+El ámbito de aplicación se concentra en el Colegio Villa de las Palmas, en Palmira, Valle del Cauca, con estudiantes de grado décimo. La propuesta se piensa para ese contexto específico, de modo que las tareas, el prototipo y la guía tengan sentido en una situación escolar real y no queden formulados de manera abstracta.
+
+\subsection{Aportes al desarrollo regional y/o nacional}
+
+A escala regional, la propuesta ofrece un recurso didáctico aplicable a instituciones de Palmira y del Valle del Cauca que enfrenten dificultades similares en trigonometría escolar. A escala nacional, aporta una experiencia documentada sobre el uso de IA generativa en tareas matemáticas, con énfasis en una temática escolar que suele presentar dificultades persistentes. El aporte no es solo tecnológico; también es pedagógico, porque deja una ruta concreta para pensar la innovación sin perder el sentido matemático de la clase.
+
+\chapter{Clasificación}
+
+\section{ODS}
+
+La propuesta se alinea principalmente con el ODS 4, Educación de calidad. También puede leerse en relación con el ODS 3, Salud y bienestar, porque una experiencia de aprendizaje mejor organizada suele bajar la frustración académica y mejorar la relación del estudiante con la matemática escolar.
+
+\begin{table}[H]
+\centering
+\caption{Clasificación del proyecto en Objetivos de Desarrollo Sostenible.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.4cm} >{\raggedright\arraybackslash}p{4.6cm} >{\raggedright\arraybackslash}X}
+\toprule
+Dimensión & ODS & Justificación \\
+\midrule
+Principal & ODS 4: Educación de calidad & La propuesta fortalece aprendizajes matemáticos en educación media y promueve oportunidades de comprensión más equitativas. \\
+Secundaria & ODS 3: Salud y bienestar & Una experiencia de aprendizaje mejor orientada reduce ansiedad académica y favorece una relación más sana con la matemática escolar. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Socioeconómico}
+
+El objetivo socioeconómico principal es educación. La razón es simple: el proyecto interviene directamente en la manera como se enseña y se aprende matemática en educación media. Su foco no es la producción industrial ni la automatización de procesos productivos, sino el fortalecimiento de capacidades formativas que inciden en trayectorias educativas posteriores.
+
+\section{OCDE}
+
+La clasificación en la OCDE se ubica en el área de ciencias naturales, matemáticas, con subárea en otras ingenierías.
+
+\begin{table}[H]
+\centering
+\caption{Clasificación del proyecto según áreas OCDE.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{4.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+Nivel & Área & Subárea \\
+\midrule
+Principal & Ciencias naturales & Matemáticas \\
+Secundaria & Ingeniería y tecnología & Otras ingenierías \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Plan Global de Desarrollo}
+
+La propuesta se articula con el Plan Global de Desarrollo 2025--2027: Acceso al Bien Común del Conocimiento y el Derecho. En particular, dialoga con el primer desafío, el nodo de integración académica y el eje trayectorias académicas diversas. La idea central es que una herramienta de apoyo bien diseñada puede ayudar a que más estudiantes entren y permanezcan en experiencias de aprendizaje matemático significativas, sin quedar atrapados en la simple repetición de técnicas.
+
+\section{Palabras clave}
+
+\begin{table}[H]
+\centering
+\caption{Palabras clave de la propuesta.}
+\begin{tabularx}{\textwidth}{X}
+\toprule
+Pensamiento trigonométrico; IA generativa; tareas matemáticas; trigonometría escolar; educación media; innovación pedagógica \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Equipo de trabajo}
+
+\begin{table}[H]
+\centering
+\caption{Equipo de trabajo y dedicación estimada.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{3.1cm} >{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}X}
+\toprule
+Nombre & Identificación & Rol & Dedicación estimada \\
+\midrule
+Dairo Janover Peña Cardenas & C.C 1026281459 & Estudiante investigador & 12 h/semana \\
+Dr. Luis Octavio González Salcedo & [Número de identificación por confirmar] & Supervisor académico & 6 h/semana \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\chapter{Información financiera}
+
+La propuesta se formula con un techo de 50.000.000 COP, dentro del límite de 50 millones indicado por la convocatoria. La distribución siguiente se organiza según los rubros financiables definidos en los términos de referencia: insumos y materiales, equipos y software, servicios técnicos y especializados, apoyo a la creación y validación, viáticos y gastos de viaje, y difusión o socialización de resultados.
+
+\begin{table}[H]
+\centering
+\caption{Presupuesto estimado ajustado al tope máximo permitido.}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.3cm} >{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{3cm}}
+\toprule
+Rubro de la convocatoria & Descripción & Valor estimado (COP) \\
+\midrule
+8.3 Servicios técnicos y especializados & Diseño de tareas, prototipo del aplicativo, ajustes funcionales y pruebas de usabilidad inicial. & 14.000.000 \\
+8.2 Equipos y bienes de uso & Herramientas digitales, servicios de alojamiento, procesamiento y licencias necesarias para el piloto. & 6.500.000 \\
+8.5 Viáticos y gastos de viaje & Visitas a la institución, sesiones de observación, logística del pilotaje y transporte local. & 7.800.000 \\
+8.1 Insumos, materiales y suministros & Guías, formatos de recolección, impresiones de apoyo y material pedagógico. & 3.200.000 \\
+8.4 Servicios de apoyo a la creación y validación & Digitación, transcripción, sistematización de datos y apoyo al análisis cualitativo. & 8.400.000 \\
+8.6 Difusión y socialización de resultados & Taller con docentes, memoria pedagógica, guía de uso y socialización en un espacio académico afín a la propuesta. & 6.900.000 \\
+8.3 Servicios técnicos y especializados & Desarrollo y ajuste de la interfaz conversacional, validación funcional y pruebas de usabilidad. & 3.200.000 \\
+\midrule
+\multicolumn{2}{r}{Total} & 50.000.000 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La lógica del presupuesto es prudente: concentra los recursos en el desarrollo de la propuesta didáctica, la validación en contexto y la apropiación social de los resultados. El ajuste a 50 millones incorpora el desarrollo de la interfaz conversacional sin volverla un producto sobredimensionado. No se trata de gastar más, sino de usar bien el margen disponible para que el pilotaje tenga sentido técnico y pedagógico.
+
+\chapter{Cronograma de actividades}
+
+El cronograma se organiza en fases sucesivas y cubre doce meses. La secuencia se formula de manera compacta para que pueda leerse en una sola hoja horizontal y ajustarse sin dificultad al calendario institucional.
+
+\begin{landscape}
+\begin{table}[p]
+\centering
+\footnotesize
+\caption{Cronograma tentativo de actividades.}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{p{3.3cm} p{7.0cm} *{12}{c} p{3.0cm}}
+\toprule
+Fase & Actividad principal & M1 & M2 & M3 & M4 & M5 & M6 & M7 & M8 & M9 & M10 & M11 & M12 & Producto asociado \\
+\midrule
+1 & Revisión del problema, ajuste del alcance y organización de la propuesta. & X & X &  &  &  &  &  &  &  &  &  &  & Documento base consolidado \\
+2 & Diseño de la secuencia de tareas y del prototipo de apoyo. &  &  & X & X & X &  &  &  &  &  &  &  & Secuencia y prototipo inicial \\
+3 & Implementación piloto en el Colegio Villa de las Palmas. &  &  &  &  &  & X & X & X &  &  &  &  & Registros, producciones y notas de observación \\
+4 & Análisis de la información y ajustes finales. &  &  &  &  &  &  &  &  & X & X &  &  & Informe de análisis y ajustes \\
+5 & Elaboración de la guía breve y socialización de resultados. &  &  &  &  &  &  &  &  &  &  & X & X & Informe final y espacio de socialización \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+\end{landscape}
+
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+\end{document}

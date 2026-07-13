@@ -1,0 +1,878 @@
+Diseño de tareas matemáticas que integran
+inteligencia artiﬁcial generativa para el desarrollo del
+pensamiento trigonométrico en educación media
+
+Dairo Janover Peña Cardenas
+
+Universidad Nacional de Colombia
+Facultad de Ingeniería y Administración
+Maestría en Enseñanza de las Ciencias Exactas y Naturales
+Sede Palmira, Colombia
+2025
+
+Diseño de tareas matemáticas que integran
+inteligencia artiﬁcial generativa para el desarrollo del
+pensamiento trigonométrico en educación media
+
+Propuesta de Trabajo de Grado
+
+Dairo Janover Peña Cardenas
+
+Director de la Tesis:
+
+Dr. Luís Octavo Salcedo
+
+Universidad Nacional de Colombia
+Facultad de Ingeniería y Administración
+Maestría en Enseñanza de las Ciencias Exactas y Naturales
+Sede Palmira, Colombia
+2025
+
+5
+
+CONTENIDO
+
+Contenido
+
+I
+
+Lista de ﬁguras
+
+III
+
+Lista de tablas
+
+IV
+
+1 Planteamiento del Problema
+
+1
+
+1.1 Declaración de la pregunta problema . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+1.2 Antecedentes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+
+1.2.1 IA en educación matemática . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+1.2.2 IA y enseñanza de trigonometría . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+1.2.3 Diﬁcultades persistentes en trigonometría escolar . . . . . . . . . . . .
+
+5
+
+1.2.4 Aportes de los antecedentes al trabajo . . . . . . . . . . . . . . . . . . .
+
+6
+
+1.3 Justiﬁcación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+7
+
+1.4 Objetivos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+1.4.1 Objetivo general . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+1.4.2 Objetivos especíﬁcos . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+2 Marco teórico
+2.1 Marco conceptual
+
+9
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+2.1.1 Diseño de tareas matemáticas: fundamentos teóricos . . . . . . . . . .
+
+9
+
+2.1.2 Pensamiento trigonométrico: construcción conceptual y didáctica . . . . 10
+2.1.3 Desarrollo matemático del objeto escolar: funciones trigonométricas . . 12
+2.1.4 Errores, obstáculos y diﬁcultades en trigonometría . . . . . . . . . . . . 12
+2.1.5 Tecnología y herramientas digitales en educación matemática . . . . . 13
+I
+
+2.1.6 Inteligencia artiﬁcial en educación: posibilidades y desafíos . . . . . . . 14
+2.1.7 Síntesis: hacia un diseño de tareas en trigonometría mediado por IA . . 14
+2.2 Marco referencial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.3 Marco contextual . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3 Marco metodológico
+
+17
+
+3.1 Caracterización de la investigación . . . . . . . . . . . . . . . . . . . . . . . . . 17
+3.2 Fuentes de información y métodos de recolección . . . . . . . . . . . . . . . . 18
+3.2.1 Registros de observación . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.2.2 Entrevistas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.2.3 Protocolos y producciones de los estudiantes . . . . . . . . . . . . . . . 19
+3.2.4 Cuestionarios . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.3 Procedimiento de análisis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+3.3.1 Organización inicial de la información . . . . . . . . . . . . . . . . . . . 20
+3.3.2 Identiﬁcación de patrones y construcción de categorías . . . . . . . . . 21
+3.3.3 Análisis de las producciones . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.3.4 Triangulación de fuentes . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.4 Ubicación del proyecto o caso de estudio . . . . . . . . . . . . . . . . . . . . . 22
+3.5 Métodos y materiales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.6 Cronograma de actividades . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+3.7 Presupuesto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+Referencias Bibliográﬁcas
+
+23
+
+II
+
+LISTA DE FIGURAS
+
+III
+
+LISTA DE TABLAS
+
+2-1 Características del pensamiento trigonométrico consideradas en esta investigación. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+11
+
+2-2 Características del pensamiento trigonométrico consideradas en esta investigación. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+IV
+
+11
+
+CAPÍTULO 1
+
+PLANTEAMIENTO DEL PROBLEMA
+
+En educación media pasa algo extraño con trigonometría. El currículo dice que los
+estudiantes deben razonar sobre variación, periodicidad, registros múltiples. Pero lo que se
+ve en aula es completamente diferente: fórmulas, aplicación de procedimientos, ejercicios
+cerrados (Díaz-Fernández, 2014; Rosa, 2023).
+
+Muchos estudiantes resuelven bien un triángulo rectángulo. Luego los pones a interpretar una gráﬁca trigonométrica y se cierran. No es que no sepan. Es que no reconocen
+qué es lo que están viendo. Hay desconexión completa entre lo que hicieron con razones y
+lo que deberían ver en funciones.
+
+Esto tiene raíces. La clase casi siempre se queda en lo mismo: razones del triángulo, cálculo mecánico, poco espacio para preguntar por qué (Delgado et al., 2023; Fiallo
+Leal, 2015). Seno, coseno, tangente como funciones en los reales requieren otro tipo de
+tarea completamente, otra forma de hablar sobre ellas, otra manera de evaluar si realmente
+comprenden (Escalante Godoy, 2018; Torres-Corrales et al., 2021).
+
+Los errores se repiten. Igualan razón trigonométrica con función. No entienden qué
+es la periodicidad. Los radianes les parecen un capricho. No logran ver la conexión entre
+gráﬁca, fórmula y número (Iriarte et al., 2025; Rueda, 2012; Zubieta, 2018). En Colombia
+lo sabemos porque los reportes de evaluación lo documentan: esas brechas persisten año
+tras año (Ifces, 2024; Ministerio de Educación Nacional MEN, 2019).
+
+1
+
+2
+Ahora bien, no es culpa del estudiante. No exactamente. Lo que importa es qué tipo
+de tareas estamos ofreciendo. Cuando las tareas cambian — cuando piden explorar, comparar, justiﬁcar — la comprensión avanza. En cambio, cuando todo es repetición estructurada,
+los estudiantes quedan atrapados en procedimientos (Benítez, 2022; Delgado et al., 2024;
+Zambrano-Choez et al., 2025).
+
+Entonces entra la tecnología. GeoGebra permite que vean cómo cambia la gráﬁca
+cuando manipulan parámetros en tiempo real — eso ayuda a conectar qué ocurre
+parencitecalderonTecnologiasDigitalesPara2024,agudelocarvajalFortalecimientoProcesoEnsenanza2020.
+La IA puede hacer algo más: retroalimentación rápida, rutas de exploración personalizadas.
+Pero solo si la tarea de fondo sigue siendo exigente matemáticamente. Porque si el estudiante solo sigue indicaciones, aunque sea con máquinas inteligentes, no se desarrolla
+nada (Castillo Del Pezo et al., 2024; Romero Alonso et al., 2024).
+
+De ahí surge la pregunta que orienta todo: £qué pasa si diseñamos tareas trigonométricas mediadas por IA pensando especíﬁcamente en que los estudiantes de media
+desarrollen pensamiento trigonométrico real, no solo habilidad para calcular?
+
+1.1 Declaración de la pregunta problema
+
+El panorama descrito evidencia una problemática estructural en la enseñanza de la
+trigonometría en educación media colombiana. Por una parte, persisten prácticas centradas en memorización y resolución rutinaria que limitan la comprensión funcional de seno,
+coseno y tangente (Delgado et al., 2023; Fiallo Leal, 2015). Por otra, los estudiantes enfrentan obstáculos conceptuales recurrentes para interpretar la variación periódica, coordinar
+diferentes representaciones y argumentar matemáticamente sus decisiones (Rueda, 2012;
+Zubieta, 2018).
+
+Esta situación genera una brecha entre las metas curriculares de educación media y
+lo que efectivamente ocurre en el aula. Aunque los lineamientos nacionales enfatizan pensa-
+
+3
+miento variacional, modelación y comprensión de funciones, en la práctica muchos procesos
+de enseñanza no logran sostener ese tránsito desde la razón trigonométrica hacia el pensamiento trigonométrico (Ministerio de Educación Nacional, 1998, 2006, 2016).
+
+En este contexto, integrar inteligencia artiﬁcial no se asume como un ﬁn en sí mismo
+ni como sustituto de la actividad matemática escolar. El reto está en diseñar e implementar tareas donde la IA apoye procesos de exploración, argumentación y retroalimentación,
+y donde el foco siga siendo el desarrollo del pensamiento trigonométrico en estudiantes de
+educación media (Castillo Del Pezo et al., 2024; Parra Sanchez et al., 2023). En consecuencia, la presente investigación plantea la siguiente pregunta problema:
+
+£Cómo el diseño e implementación de tareas matemáticas que integran inteligencia
+artiﬁcial puede contribuir al desarrollo del pensamiento trigonométrico en
+estudiantes de educación media?
+
+Esta pregunta central se desagrega en las siguientes interrogantes especíﬁcas que orientarán el desarrollo investigativo:
+
+1. £Qué criterios didácticos y cognitivos debe cumplir una secuencia de tareas
+matemáticas que integra IA para promover el desarrollo del pensamiento trigonométrico en educación media?
+2. £Cómo se integra la IA en el diseño y en la implementación de las tareas sin
+desplazar el trabajo matemático del estudiante?
+3. £Qué evidencias de desarrollo del pensamiento trigonométrico emergen en los
+estudiantes durante la resolución de tareas mediadas por IA?
+4. £Qué diﬁcultades y oportunidades aparecen en el aula al implementar estas tareas en un contexto real de educación media?
+
+4
+Justiﬁcación de la pregunta problema
+
+La pregunta problema se justiﬁca porque responde a una tensión concreta del aula
+de matemáticas en educación media: se espera que los estudiantes desarrollen pensamiento trigonométrico, pero en la práctica predominan actividades centradas en procedimientos
+y respuestas rápidas (Delgado et al., 2023; Fiallo Leal, 2015). En ese escenario, la IA puede abrir nuevas posibilidades, pero solo si se integra dentro de tareas bien diseñadas que
+mantengan el foco en la actividad cognitiva del estudiante y no en la automatización de
+resultados (Castillo Del Pezo et al., 2024; Parra Sanchez et al., 2023).
+
+Además, la pregunta delimita con claridad el alcance del estudio: educación media,
+trigonometría escolar y desarrollo del pensamiento trigonométrico. Esta delimitación permite
+analizar con detalle evidencias de aprendizaje, diﬁcultades y decisiones didácticas en un
+contexto real de implementación, en lugar de hacer aﬁrmaciones generales sobre tecnología
+educativa.
+
+En consecuencia, la investigación no busca demostrar que la IA, por sí sola, mejora
+el aprendizaje. Busca comprender bajo qué condiciones de diseño e implementación una
+secuencia de tareas matemáticas mediadas por IA puede aportar al desarrollo del pensamiento trigonométrico.
+
+1.2 Antecedentes
+
+Esta revisión recorre tres espacios: IA en educación matemática, IA en la enseñanza
+de trigonometría, y las diﬁcultades reales que persisten en aula. El orden no es casual: primero el potencial de la tecnología, luego su aplicación especíﬁca, y ﬁnalmente los problemas
+sin resolver.
+
+5
+1.2.1 IA en educación matemática
+
+En matemáticas, la IA ya está en aulas. Los estudios reportan mejoras en personalización, retroalimentación oportuna y detección de errores recurrentes (Calderón Maldonado
+et al., 2025; Panqueban & Huincahue, 2024).
+
+Pero la IA no trabaja sola. Su impacto depende de la tarea que propones, del maestro
+que la gestiona y de la institución donde se usa (Muirragui Irrazabal et al., 2025; Suarez,
+2023). En este trabajo, la IA es apoyo a decisiones didácticas, no reemplazo del pensamiento
+del estudiante.
+
+1.2.2 IA y enseñanza de trigonometría
+
+En trigonometría, las experiencias con tecnología muestran resultados concretos.
+Cuando los estudiantes pueden manipular parámetros en tiempo real y ver cómo cambia
+la gráﬁca, mejora la motivación y la comprensión (González Posada Acosta et al., 2017;
+Herrera Castañeda, 2013).
+
+La IA añade algo nuevo: puede crear trayectorias de trabajo adaptadas al proceso de
+cada estudiante, con retroalimentación ajustada (Kuo et al., 2026; Mireles, 2025). El problema es que la mayoría de estos estudios reportan resultados generales. Falta investigación
+sobre cómo diseñar tareas que realmente hagan pensar trigonométricamente, no solo seguir
+pasos.
+
+1.2.3 Diﬁcultades persistentes en trigonometría escolar
+
+Hay patrones que se repiten en cualquier aula de trigonometría: confunden razón con
+función, no entienden la periodicidad, los radianes se sienten ajenos, y no logran conectar
+
+6
+álgebra, gráﬁcas y números en un solo lugar (Chacón et al., 2007; Delgado et al., 2023;
+Iriarte et al., 2025; Zubieta, 2018).
+
+Estos problemas no son solo del estudiante. Tienen que ver con cómo se enseña:
+repetición de fórmulas, ejercicios mecánicos, poco espacio para argumentar o modelar situaciones reales (Fiallo Leal, 2015; Rosa, 2023). Por eso aquí el enfoque es distinto: diseñar
+tareas que hagan visibles esos obstáculos y los conviertan en objeto de análisis, no en
+fracasos para esconder.
+
+1.2.4 Aportes de los antecedentes al trabajo
+
+De esta revisión salieron tres ideas clave para esta investigación.
+
+El diseño de tareas es una decisión pedagógica central
+
+La forma en que se diseña una tarea determina lo que el estudiante puede pensar
+y argumentar. Las tareas con demanda cognitiva alta, que articulan múltiples representaciones e integran la intención didáctica, promueven aprendizaje más profundo que los ejercicios
+routine (García, 2019; Hsu & Yao, 2023; Radmehr, 2023). Además, la gestión de esa tarea
+en el aula cómo se dialoga alrededor de errores, cómo se justiﬁcan decisiones importa
+tanto como el diseño mismo (Henríquez-Rivas & Verdugo-Hernández, 2023).
+
+Hay un vacío concreto
+
+Existen estudios sobre IA en matemática y estudios sobre trigonometría. Pero hay
+pocos sobre cómo diseñar e implementar tareas mediadas por IA especíﬁcamente para
+desarrollar pensamiento trigonométrico en educación media. Ahí está la oportunidad de
+esta investigación.
+
+7
+Las limitaciones están claras desde el inicio
+
+Este es un estudio cualitativo de caso. No busca generalizar estadísticas, sino comprender las interacciones reales entre estudiantes, tareas y herramientas. La literatura también advierte que la efectividad depende de cómo se diseña, cómo el docente lo gesiona y
+qué condiciones has la institución. Todos esos factores aparecerán en el análisis.
+
+1.3 Justiﬁcación
+
+Aquí hay una paradoja. El currículo oﬁcial (Lineamientos, Estándares, DBA) es bastante claro: trigonometría debe ligarse a pensamiento variacional, a modelación, a interpretar
+fenómenos (Ministerio de Educación Nacional, 1998, 2006, 2016). No alcanza con calcular
+bien. Se espera interpretación, argumentación, conexión entre formas de representar. Eso
+debería tejerse desde álgebra en noveno y consolidarse en décimo y undécimo.
+
+Entonces, £por qué las evaluaciones nacionales siguen mostrando las mismas brechas? (Ifces, 2024; Ministerio de Educación Nacional MEN, 2019) Porque lo que el currículo
+pide y lo que ocurre en aula son cosas muy distintas.
+
+Los estudios didácticos encontraron por qué. Cuando predominan ejercicios cerrados
+— esos donde la solución es directa, predecible — no hay espacio para la duda, la conjetura,
+el argumento. Los estudiantes avanzan poco en pensamiento genuino (Delgado et al., 2023;
+Fiallo Leal, 2015; Zubieta, 2018). Cambiar eso requiere repensar las tareas completamente:
+que exijan exploración real, que obliguen a comparar decisiones posibles, que hagan visible
+el error y lo conviertan en objeto de aprendizaje.
+
+Aquí entra la IA. No como magia. Como apoyo concreto al diseño. Puede dar retroalimentación rápida, abrir caminos distintos según lo que el estudiante necesita. Puede hacer
+ese diálogo más ﬂexible. Pero solo si detrás hay una tarea matemáticamente exigente. Si
+
+8
+la IA solo automatiza lo que ya se hace (repetición disfrazada), no cambia nada (Castillo
+Del Pezo et al., 2024; Parra Sanchez et al., 2023; Romero Alonso et al., 2024).
+
+Por eso este trabajo tiene propósito. Busca entender qué pasa cuando diseñas tareas
+de trigonometría de verdad —con demanda cognitiva, con IA de apoyo— en una escuela
+real, con estudiantes reales. Qué funciona. Dónde se atascan. Cómo la IA puede ayudar sin
+convertirse en el centro de la experiencia.
+
+1.4 Objetivos
+
+1.4.1 Objetivo general
+
+Diseñar, implementar y analizar una secuencia de tareas matemáticas que integra
+inteligencia artiﬁcial para promover el desarrollo del pensamiento trigonométrico en estudiantes de educación media.
+
+1.4.2 Objetivos especíﬁcos
+
+1. Diseñar una secuencia de tareas matemáticas para educación media, sustentada en
+criterios didácticos y cognitivos orientados al desarrollo del pensamiento trigonométrico.
+2. Integrar una herramienta de inteligencia artiﬁcial en el diseño e implementación de la
+secuencia, de manera que apoye la exploración, la retroalimentación y la argumentación matemática de los estudiantes.
+3. Analizar las evidencias de desarrollo del pensamiento trigonométrico que emergen
+durante la implementación, considerando estrategias de resolución, diﬁcultades conceptuales y articulación entre representaciones.
+
+CAPÍTULO 2
+
+MARCO TEÓRICO
+
+2.1 Marco conceptual
+
+Este no es un repositorio de autores. Es una construcción de decisiones: qué tipo de
+tareas vale la pena diseñar si no quieres que los estudiantes solo repitan procedimientos,
+sino que desarrollen pensamiento trigonométrico real.
+
+2.1.1 Diseño de tareas matemáticas: fundamentos teóricos
+
+Una tarea no es un ejercicio.
+
+Mucha gente confunde las dos cosas. Ejercicio: resuelve esto según lo que aprendiste. Tarea: aquí hay un problema que no se resuelve con procedimiento directo. Explora.
+Prueba caminos distintos. Justiﬁca por qué uno parece mejor.
+
+Cuando diseñas una tarea, estás decidiendo simultáneamente tres cosas: qué cuenta como matemáticamente válido, en qué formas de representación van a pensar, cómo van
+a dialogar sobre ello (Leung & Bolite-Frant, 2015). Esas decisiones no son neutrales.
+
+Una tarea bien hecha invita a la conjetura, a preguntar alternativas. Una mal hecha
+empuja al estudiante a buscar la verdad en la fórmula, en lo que anotó el profesor, en la
+respuesta del libro. Y eso lo cierra completamente (Hsu & Yao, 2023; Radmehr, 2023).
+
+9
+
+10
+Lo interesante de la investigación de diseño es que las tareas no son productos
+ﬁnales. Se construyen, se prueban, se ajustan mirando qué pasa en el salón. No son teoría
+pura. Es acción iterativa (González et al., 2011). En Colombia, esto dialoga bien con la idea
+de claridad entre lo que quieres entender (marco conceptual) y cómo lo vas a entender
+(metodología) (Camargo, 10).
+
+2.1.2 Pensamiento trigonométrico: construcción conceptual y didáctica
+
+Enseñar fórmulas de trigonometría es fácil. Los estudiantes las memorizan y resuelven ejercicios mecánicos. Eso no es pensamiento trigonométrico. Montiel lo documentó hace años: cuando la enseñanza es solamente razones en triángulo rectángulo + algoritmos,
+los estudiantes pueden resolver sin comprender nada de lo que hacen (Montiel-Espinosa,
+2013).
+
+Entonces, £qué es pensamiento trigonométrico?
+
+No es elegir entre lo geométrico (ángulos, triángulos) o lo funcional (gráﬁcas, ecuaciones). Es aprender a pasar ﬂuidamente entre ambos. Ver un ángulo y saber leerlo en la
+gráﬁca. Ver una gráﬁca y poder nombrar qué cambia. Pero ese tránsito no ocurre de repente.
+Necesita tareas especíﬁcas que lo hagan visible y lo practiquen (Montiel, 2006; MontielEspinosa & Cantoral, 2005).
+
+Para este trabajo, identiﬁco cinco características. No son abstractas (tabla abajo).
+Son cosas que ves en aula cuando el estudiante realmente está pensando trigonométricamente, no solo recordando pasos.
+
+11
+
+Tabla 2-1: Características del pensamiento trigonométrico consideradas en esta investigación
+
+Característica
+
+Descripción operativa en el aula
+
+Interpretación funcional
+
+El estudiante explica seno, coseno y tangente como funciones de una variable y no solo como razones de triángulo
+rectángulo.
+
+Articulación de representa- Coordina y traduce entre representaciones gráﬁca, algebraiciones
+
+ca, numérica y verbal para argumentar resultados.
+
+Razonamiento sobre varia- Analiza cambios en amplitud, periodo y fase, e interpreta su
+ción y periodicidad
+
+efecto en el comportamiento de la función.
+
+Uso de unidades y magni- Diferencia grados y radianes y usa cada sistema de medida
+tudes angulares
+
+de manera pertinente según la tarea.
+
+Argumentación matemáti- Justiﬁca decisiones y procedimientos al resolver situaciones
+ca en contexto
+
+problemáticas con sentido para el estudiante.
+
+Tabla 2-2: Características del pensamiento trigonométrico consideradas en esta investigación
+
+Característica
+
+Descripción operativa en el aula
+
+Interpretación funcional
+
+El estudiante explica seno, coseno y tangente como funciones de una variable y no solo como razones de triángulo
+rectángulo.
+
+Articulación de representa- Coordina y traduce entre representaciones gráﬁca, algebraiciones
+
+ca, numérica y verbal para argumentar resultados.
+
+Razonamiento sobre varia- Analiza cambios en amplitud, periodo y fase, e interpreta su
+ción y periodicidad
+
+efecto en el comportamiento de la función.
+
+Uso de unidades y magni- Diferencia grados y radianes y usa cada sistema de medida
+tudes angulares
+
+de manera pertinente según la tarea.
+
+Argumentación matemáti- Justiﬁca decisiones y procedimientos al resolver situaciones
+ca en contexto
+
+problemáticas con sentido para el estudiante.
+
+12
+2.1.3 Desarrollo matemático del objeto escolar: funciones trigonométricas
+
+Para esta investigación, las funciones trigonométricas no se abordan como una lista
+de identidades para recordar, sino como objetos funcionales que permiten describir variación
+periódica. Esto implica trabajar tres ideas matemáticas de forma articulada en educación
+media:
+
+Primero, la relación entre ángulo y razón trigonométrica en triángulo rectángulo se
+toma como punto de partida, no como punto de llegada. El objetivo es que el estudiante
+pueda extender esa lectura hacia el círculo unitario y, desde allí, comprender seno y coseno
+como funciones con dominio real.
+
+Segundo, se enfatiza la interpretación de parámetros y transformaciones de la función trigonométrica. La variación en amplitud, periodo y fase no se trata solo como manipulación algebraica, sino como cambio en el comportamiento de una gráﬁca y en su interpretación contextual.
+
+Tercero, se promueve el tránsito entre registros: expresiones simbólicas, representaciones gráﬁcas, tablas de valores y explicaciones verbales. Esta articulación es condición
+para argumentar matemáticamente y no depender de procedimientos aislados (Chacón et
+al., 2007; Montiel-Espinosa, 2013).
+
+Este desarrollo matemático escolar orienta directamente el diseño de tareas: cada
+actividad debe exigir interpretar funciones, justiﬁcar decisiones y conectar representaciones
+en lugar de limitarse a cálculo mecánico.
+
+2.1.4 Errores, obstáculos y diﬁcultades en trigonometría
+
+Hay errores que ves en cualquier clase de trigonometría. Siempre los mismos.
+
+13
+Estudiantes que confunden razón trigonométrica con función. Que no entienden periodicidad (o la memorizan sin vivirla). Que usan radianes como un castigo, no como un
+sistema. Que ven una gráﬁca trigonométrica y no saben qué signiﬁca (Chacón et al., 2007;
+Delgado et al., 2023; Rueda, 2012; Zubieta, 2018).
+
+Lo importante es que no son errores raros ni excepcionales. Son patrones. Los mismos errores aparecen en contextos distintos, con docentes distintos, con generaciones distintas.
+
+£Qué hacer con eso? Aquí está lo clave: si estos obstáculos son estructurales —
+si tienen que ver con cómo el estudiante está interpretando lo que se le muestra — no
+tiene sentido esconder el error o pretender que no existe. Al contrario. Hay que hacerlo
+visible. Ponerlo en la tarea. Que el estudiante lo vea, lo compare con las decisiones de otros
+compañeros, lo discuta. Cuando eso ocurre, la comprensión es más estable que si solo
+repiten procedimientos (Herrera Castañeda, 2013; Salazar Méndez, 2020).
+
+2.1.5 Tecnología y herramientas digitales en educación matemática
+
+La tecnología ya cambió lo que signiﬁca “saber” matemática.
+
+Antes los docentes pensaban que la máquina era una calculadora rápida. Hora entienden que herramientas como GeoGebra cambian fundamentalmente cómo se representa
+el objeto matemático y cómo se discute (Leung & Bolite-Frant, 2015). Usar una herramienta
+modiﬁca prácticas completas, no solo pasos operativos.
+
+Pero aquí va lo incómodo: una herramienta potente en una tarea mala es un desperdicio.
+
+GeoGebra, por ejemplo. Si lo usas para que el estudiante “graﬁque la función”, sigue
+siendo mecánico. Si lo usas para que explore qué pasa cuando cambias parámetros y luego
+
+14
+explique por qué la gráﬁca se comporta así — ahora tienes algo distinto (Rodríguez Gallegos
+et al., 2016).
+
+2.1.6 Inteligencia artiﬁcial en educación: posibilidades y desafíos
+
+La IA promete mucho en educación. A veces cumple. Frecuentemente no.
+
+En trigonometría: £es buena o mala la IA? Mala pregunta. Lo que importa es qué hace posible. Puede dar retroalimentación al instante. Puede generar variaciones de ejemplos
+sin que el docente escriba treinta ejercicios distintos. Puede ofrecer caminos de exploración
+personalizados según lo que el estudiante está haciendo mal.
+
+Pero también puede hacer que el estudiante conteste preguntas sin pensar. Porque
+si la pregunta no exige justiﬁcación, la IA simplemente sirve respuestas — aunque sea adaptadas — sin que nadie aprenda (Castillo Del Pezo et al., 2024; Leung & Bolite-Frant, 2015).
+
+Por eso aquí: la IA no es el personaje principal. Es apoyo al diseño. Lo que importa
+sigue siendo la matemática: que el estudiante interprete de verdad, que argumente, que
+compare formas de ver el problema, que revise sus propios errores.
+
+2.1.7 Síntesis: hacia un diseño de tareas en trigonometría mediado por IA
+
+Reducido: diseñar tareas con IA que funcionen requiere mantener tres cosas simultáneamente.
+
+Primero, rigor matemático: que lo que se está pidiendo sea genuinamente matemático, no una ilusión de aprendizaje. Segundo, demanda cognitiva real: que el estudiante tenga
+que pensar, no solo seguir pasos. Tercero, mediación didáctica clara: que el docente sepa
+qué está propiciando y por qué.
+
+15
+Si uno de esos tres falla, la IA baja del lugar donde debería estar y sube al protagonismo. Y cuando la IA es el protagonista, el pensamiento trigonométrico desaparece.
+
+En consecuencia, el marco conceptual de esta investigación no es “agregamos IA
+a lo que ya hacemos”. Es “reorganicemos la experiencia de aula para que el pensamiento
+matemático sea el protagonista, y la IA un apoyo inteligente para ello”.
+
+2.2 Marco referencial
+
+En este apartado se presentan los referentes normativos y didácticos que delimitan
+la investigación en el contexto colombiano de educación media.
+
+Los Lineamientos Curriculares de Matemáticas ubican la trigonometría en relación
+con pensamiento variacional, modelación y análisis de fenómenos de cambio (Ministerio de
+Educación Nacional, 1998). En continuidad con ello, los Estándares Básicos de Competencias plantean que en grados décimo y undécimo los estudiantes deben interpretar el comportamiento de funciones, relacionar parámetros algebraicos con representaciones gráﬁcas
+y modelar situaciones periódicas (Ministerio de Educación Nacional, 2006).
+
+Los Derechos Básicos de Aprendizaje para educación media refuerzan esta exigencia al insistir en comprensión funcional y uso de representaciones, no solo en ejecución
+de procedimientos (Ministerio de Educación Nacional, 2016). Este marco curricular sustenta la decisión de centrar el estudio en pensamiento trigonométrico y en diseño de tareas
+matemáticas con integración de IA.
+
+Desde el punto de vista didáctico, el marco referencial también incorpora estudios
+que documentan diﬁcultades recurrentes en trigonometría escolar, especialmente en el tránsito de razón trigonométrica a función, en la lectura de periodicidad y en la articulación de
+registros semióticos (Chacón et al., 2007; Delgado et al., 2023; Zubieta, 2018). Estos hallazgos funcionan como criterio para seleccionar y diseñar las tareas que se implementarán en
+
+16
+la investigación.
+
+2.3 Marco contextual
+
+La investigación se desarrolla en un contexto de educación media colombiana, con
+estudiantes de grado décimo y undécimo en una institución educativa de carácter oﬁcial. El
+interés del estudio se centra en escenarios de aula reales, con condiciones habituales de
+tiempo, infraestructura y heterogeneidad académica.
+
+En este contexto, la enseñanza de la trigonometría suele concentrarse en unidades
+curriculares de corta duración y con presión por cobertura de contenidos, lo que frecuentemente reduce el espacio para argumentación y análisis de errores. Esta condición contextual
+refuerza la necesidad de diseñar tareas que, aun en tiempos limitados, sostengan demanda
+cognitiva y discusión matemática.
+
+También se reconoce una incorporación creciente de recursos digitales en la escuela,
+aunque con diferencias en acceso, conectividad y familiaridad tecnológica entre estudiantes.
+Por ello, la integración de IA en esta investigación se plantea de forma gradual, con actividades guiadas y criterios didácticos explícitos, evitando depender de condiciones tecnológicas
+excepcionales.
+
+El contexto institucional, curricular y tecnológico descrito no se considera un telón de
+fondo secundario, sino una variable que incide directamente en la viabilidad del diseño de
+tareas y en la interpretación de los resultados del estudio.
+
+CAPÍTULO 3
+
+MARCO METODOLÓGICO
+
+3.1 Caracterización de la investigación
+
+El trabajo que aquí se presenta se inscribe en el paradigma interpretativo, dado que
+existe un interés profundo por comprender, interpretar y describir cómo un grupo de estudiantes de educación media construye signiﬁcados matemáticos al interactuar con tareas
+que integran inteligencia artiﬁcial en el contexto de las funciones trigonométricas. Este posicionamiento se apoya en la necesidad de acercarse a las prácticas de aula desde una
+mirada cualitativa que permita capturar las dinámicas, los razonamientos y las decisiones
+que emergen durante el proceso de aprendizaje.
+
+La decisión de adoptar un estudio de caso como diseño metodológico responde a
+la posibilidad de abordar en detalle un fenómeno educativo particular. A diferencia de las
+investigaciones que buscan generalización mediante muestras amplias y tratamientos estadísticos, en este trabajo interesa documentar y analizar los procesos que ocurren en un
+contexto especíﬁco, reconociendo que la riqueza del análisis radica en la descripción densa de las interacciones, las producciones y los modos de razonamiento que se maniﬁestan
+cuando los estudiantes trabajan con tareas diseñadas intencionalmente.
+
+El caso se constituye por un grupo de estudiantes de grado décimo u undécimo de
+una institución educativa de educación media. De este grupo se seleccionarán entre tres y
+cinco estudiantes para realizar un seguimiento más detallado mediante entrevistas, observación de sesiones de trabajo y análisis de los protocolos que produzcan durante el desarrollo
+17
+
+18
+de las tareas. Esta selección se hará considerando la diversidad de desempeños previos en
+matemáticas, de modo que sea posible identiﬁcar diferentes trayectorias de construcción de
+conocimiento.
+
+3.2 Fuentes de información y métodos de recolección
+
+El estudio se apoya en diversas fuentes de información que permitirán reconstruir los
+procesos de aprendizaje desde múltiples ángulos. La recolección de datos contempla tanto
+las producciones de los estudiantes como sus discursos y las interacciones que se generen
+durante las sesiones de trabajo. A continuación se describen las fuentes consideradas:
+
+3.2.1 Registros de observación
+
+Durante las sesiones donde los estudiantes trabajen con las tareas diseñadas, se
+llevarán registros sistemáticos mediante notas de campo, fotografías de las producciones y,
+en la medida que sea posible y con el consentimiento informado de los participantes, grabaciones en audio o video. Estos registros buscan capturar las interacciones entre estudiantes,
+las estrategias que emplean al resolver los problemas, el uso que hacen de la herramienta
+de inteligencia artiﬁcial y las manifestaciones de razonamiento trigonométrico que surjan en
+el desarrollo de las actividades.
+
+Los registros de observación no se limitan a describir eventos, sino que buscan documentar el ﬂujo de las sesiones, identiﬁcar momentos donde se evidencien avances o diﬁcultades y registrar los intercambios verbales que puedan ser relevantes para comprender
+cómo los estudiantes construyen sus interpretaciones sobre los conceptos trabajados.
+
+19
+3.2.2 Entrevistas
+
+Las entrevistas se plantean como conversaciones orientadas que permitan indagar
+en aspectos que no siempre son visibles durante las sesiones de clase. Se realizarán entrevistas individuales o en parejas con los estudiantes seleccionados para el seguimiento
+detallado. Las conversaciones girarán en torno a las estrategias de pensamiento que pusieron en juego durante la resolución de las tareas, las percepciones que tienen sobre el
+uso de la herramienta de inteligencia artiﬁcial, las diﬁcultades conceptuales que encontraron
+y la manera como las enfrentaron, así como la comprensión que desarrollaron sobre las
+funciones trigonométricas.
+
+El carácter semiestructurado de las entrevistas permitirá mantener un foco de indagación deﬁnido sin perder la ﬂexibilidad para profundizar en aspectos que emerjan durante
+la conversación. Esto resulta coherente con el paradigma interpretativo adoptado, pues se
+busca que los estudiantes expresen sus propias construcciones sin forzarlos a ajustarse a
+categorías preestablecidas.
+
+3.2.3 Protocolos y producciones de los estudiantes
+
+Las producciones escritas que realicen los estudiantes durante el desarrollo de las
+tareas constituyen otra fuente de información relevante. Estas incluyen los registros de sus
+interacciones con la herramienta de inteligencia artiﬁcial, las soluciones que proponen a los
+problemas planteados, los gráﬁcos y tablas que elaboren, las representaciones algebraicas
+que utilicen y las reﬂexiones que escriban sobre su propio proceso de aprendizaje.
+
+El análisis de estas producciones permitirá identiﬁcar las estrategias de resolución,
+los errores conceptuales o procedimentales, las manifestaciones de comprensión matemática y el uso que hacen de diferentes tipos de representaciones. Los protocolos son ventanas
+al pensamiento de los estudiantes que, analizados junto con las observaciones y las entre-
+
+20
+vistas, permiten construir una interpretación más completa de sus procesos de aprendizaje.
+
+3.2.4 Cuestionarios
+
+Al inicio y al ﬁnal de la implementación se aplicarán cuestionarios breves con tres propósitos: caracterizar el conocimiento previo de los estudiantes sobre funciones trigonométricas, evaluar la percepción que tienen sobre su propio aprendizaje y recoger impresiones
+sobre el uso de la herramienta de inteligencia artiﬁcial. Estos cuestionarios no buscan medir
+rendimiento de manera cuantitativa, sino ofrecer información complementaria que permita
+contextualizar los hallazgos del análisis cualitativo.
+
+3.3 Procedimiento de análisis
+
+El análisis de la información recolectada se llevará a cabo mediante técnicas que
+respondan a la naturaleza cualitativa del estudio. No se busca aplicar esquemas rígidos de
+categorización previa, sino construir una interpretación fundamentada en los datos, coherente con los objetivos de investigación y sensible a los matices de los procesos de aprendizaje
+observados.
+
+3.3.1 Organización inicial de la información
+
+Una vez recolectados los datos, se procederá a organizarlos de manera sistemática.
+Las grabaciones serán transcritas, las fotografías clasiﬁcadas, los protocolos digitalizados y
+las notas de campo revisadas y complementadas. Esta organización inicial es un momento
+crucial, pues permite familiarizarse con el corpus de datos y comenzar a identiﬁcar elementos que podrían resultar relevantes para el análisis posterior.
+
+21
+3.3.2 Identiﬁcación de patrones y construcción de categorías
+
+El análisis propiamente dicho se realizará en dos momentos. En un primer momento,
+se procederá a una codiﬁcación abierta donde se identiﬁcarán códigos preliminares que
+emerjan directamente de los datos, sin forzar categorías predeterminadas. Esta codiﬁcación
+buscará reconocer patrones en las estrategias de resolución, en los tipos de errores, en las
+formas de interactuar con la herramienta de inteligencia artiﬁcial y en las manifestaciones
+de comprensión conceptual.
+
+En un segundo momento, estos códigos preliminares se agruparán en categorías
+más amplias que permitan dar respuesta a los objetivos de investigación. Este proceso,
+conocido como codiﬁcación axial, implica establecer relaciones entre códigos, identiﬁcar
+categorías centrales y subordinadas, y construir una estructura interpretativa que dé cuenta
+de la complejidad de los fenómenos observados.
+
+3.3.3 Análisis de las producciones
+
+Los protocolos escritos y las producciones que elaboren los estudiantes serán examinados con atención particular. Se analizarán las estrategias de resolución que emplean, los
+errores conceptuales o procedimentales que cometen, las manifestaciones de comprensión
+matemática que se evidencien y el uso que hacen de diferentes formas de representación
+algebraica, gráﬁca, numérica o verbal. Este análisis se nutrirá de los marcos teóricos sobre
+registros de representación semiótica y construcción de signiﬁcado matemático que fundamentan la investigación.
+
+22
+3.3.4 Triangulación de fuentes
+
+Los hallazgos que se desprendan de las observaciones, las entrevistas y los protocolos serán contrastados entre sí para validar interpretaciones y construir una comprensión
+más robusta del fenómeno estudiado. Esta triangulación no busca solamente corroborar información, sino identiﬁcar convergencias que refuercen las interpretaciones, divergencias
+que demanden revisiones y complementariedades que enriquezcan el análisis. La triangulación es coherente con el paradigma interpretativo, pues reconoce que la comprensión de un
+fenómeno educativo se construye desde múltiples ángulos y que los datos deben ser leídos
+en relación, no de forma aislada.
+
+3.4 Ubicación del proyecto o caso de estudio
+
+3.5 Métodos y materiales
+
+3.6 Cronograma de actividades
+
+3.7 Presupuesto
+
+REFERENCIAS BIBLIOGRÁFICAS
+
+Benítez, Y. E. P. (2022, julio). Aprendizaje De La Trigonometría Mediante Una Estrategia
+Didáctica Apoyada En Una Herramienta Digital Para Estudiantes Del Grado Décimo
+De La I.e.t.i Villa María De Soledad. Consultado el 24 de noviembre de 2025, desde
+https://repository.unab.edu.co/bitstream/handle/20.500.12749/17603/2022_Tesis_
+Yasmin_Elena_Pe%c3%b1a_Benitez.pdf?sequence=1&isAllowed=y
+Calderón Maldonado, O. D., Florencia Ponce, M. F., Vera Zambrano, M. M., & Zamora Valle, R. C. (2025). Inteligencia Artiﬁcial y Aprendizaje Adaptativo: Una Estrategia Innovadora Para Optimizar La Formación de Estudiantes En La Educación Superior.
+Reincisol., 4(8), 3553-3579. https://doi.org/10.59282/reincisol.V4(8)3553-3579
+Camargo, L. (10). Conferencia Interamericana de Educación Matemática. Consultado el 10
+de diciembre de 2025, desde https://conferencia.ciaem- redumate.org/index.php/
+xvciaem/xv/paper/viewFile/1061/568
+Castillo Del Pezo, E. A., Tapia Yagual, N. K., Placencia Ibadango, S. M., & Pavón Brito, C. A.
+(2024). Use of Artiﬁcial Intelligence in High School Mathematics Teaching. Revista
+Iberoamericana de la Educación, 8(3). https://doi.org/10.31876/ie.v8i3.273
+Chacón, A. M. A., Sánchez, A. M., & Quirós, C. M. (2007). Comprensión de las razones trigonométricas: niveles de comprensión, indicadores y tareas para su análisis / Comprehension of trigonometric reasons: comprehension levels, indicators and tasks for
+its analysis. Actualidades Investigativas en Educación, 7 (2). https://doi.org/10.15517/
+aie.v7i2.9274
+Delgado, D. L. M., Jiménez, A. M. S., & Leal, P. R. (2023). Estrategia Didáctica Para la
+Comprensión y Aplicación de las Razones Trigonométricas. Mundo FESC, 13(25),
+207-223. https://doi.org/10.61799/2216-0388.1514
+
+23
+
+24
+Delgado, J. R., Arpi, L. C., Vivanco, C. I., & Rojas, L. (2024). Aula Invertida y el rendimiento
+académico en Trigonometría. Revista Espacios, 45(02). https://doi.org/10.48082/
+espacios-a24v45n02p04
+Díaz-Fernández, M. T. (2014, 5 de junio). Enseñanza de trigonometría en 4ž de la ESO
+con GeoGebra [Tesis de maestría]. Consultado el 26 de noviembre de 2025, desde
+https://reunir.unir.net/handle/123456789/2426
+Accepted: 2014-12-02T15:31:48Z.
+Escalante Godoy, D. O. (2018). El uso comprensivo de las razones trigonométricas en el
+planteamiento y resolución de problemas. The comprehensive use of trigonometric
+reasoning in the approach and resolution of problems. Consultado el 25 de noviembre
+de 2025, desde https://repositorio.unal.edu.co/items/49ed979d- 037a- 4e23- 8a2b0e0aba80416c
+Fiallo Leal, J. E. (2015). Acerca de la investigación en educación matemática desde las
+tecnologías de la información y la comunicación. Actualidades Pedagógicas, (66),
+69-83. https://doi.org/10.19052/ap.3436
+García, F. J. (2019). Introducción a Diseño de tareas en educación matemática: Una diversidad de marcos teóricos. Avances de Investigación en Educación Matemática, 15,
+1-4. https://doi.org/10.35763/aiem.v0i15.264
+González, M. M., Martínez, E. C., González, J. L. M., & Martínez, E. C. (2011). Un acercamiento a la investigación de diseño a través de los experimentos de enseñanza.
+Enseñanza de las Ciencias. Revista de investigación y experiencias didácticas, 29(1),
+75-87. https://doi.org/10.5565/rev/ec/v29n1.435
+González Posada Acosta, M., Matilla Arias, J., & Rosales Sáez, F. (2017). Potencialidades
+del software Geogebra en la enseñanza de la matemática: estudio de caso de su
+aplicación en la trigonometría. Roca: Revista Cientíﬁco - Educaciones de la provincia
+de Granma, 13, 401-415. Consultado el 11 de diciembre de 2025, desde https : / /
+dialnet.unirioja.es/servlet/articulo?codigo=6759725
+Henríquez-Rivas, C., & Verdugo-Hernández, P. (2023). Diseño de tareas en la formación
+inicial docente de matemáticas que involucran las representaciones de una función.
+Educación matemática, 35(3), 178-208. https://doi.org/10.24844/EM3503.06
+
+25
+Herrera Castañeda, H. H. (2013). Enseñanza de los conceptos básicos de la trigonometría
+mediante el uso de tecnología informática. Consultado el 10 de diciembre de 2025,
+desde https://repositorio.unal.edu.co/handle/unal/21149
+Hsu, H.-Y., & Yao, C.-Y. (2023). A Review of the Mathematical Tasks Framework and Levels
+of Cognitive Demand. En J. Cai, G. J. Stylianides & P. A. Kenney (Eds.), Research
+Studies on Learning and Teaching of Mathematics: Dedicated to Edward A. Silver
+(pp. 219-252). Springer International Publishing. https://doi.org/10.1007/978-3-03135459-5_10
+Ifces. (2024). Programa Para La Evaluación Internacional de Alumnos (PISA). Instituto Colombiano para la Evaluación de la Educación (ICFES). bogotá, colombia. Consultado
+el 24 de noviembre de 2025, desde https://www.mineducacion.gov.co/1780/articles421217_recurso_03.pdf
+Iriarte, R. A. G., Guzman, I., & Morales, F. G. (2025). Diﬁcultades en el aprendizaje de
+ecuaciones trigonométricas en estudiantes de primer año de ingeniería: Un estudio
+en la Universidad de Atacama, Chile. Revista Chilena de Educación Matemática,
+17 (2), 40-51. https://doi.org/10.46219/rechiem.v17i2.176
+Kuo, B.-C., Bai, Z.-E., & Lin, C.-H. (2026). Developing an AI Learning Companion for Mathematics Problem Solving in Elementary Schools. Computers & Education, 240, 105463.
+https://doi.org/10.1016/j.compedu.2025.105463
+Leung, A., & Bolite-Frant, J. (2015). Designing Mathematics Tasks: The Role of Tools. En A.
+Watson & M. Ohtani (Eds.), Task Design In Mathematics Education: An ICMI study
+22 (pp. 191-225). Springer International Publishing. https://doi.org/10.1007/978- 3319-09629-2_6
+Ministerio de Educación Nacional. (1998). Lineamientos Curriculares de Matemáticas. MEN.
+Ministerio de Educación Nacional. (2006). Estándares Básicos de Competencias en Matemáticas. MEN.
+Ministerio de Educación Nacional. (2016). Derechos Básicos de Aprendizaje - Matemáticas.
+MEN.
+Ministerio de Educación Nacional MEN. (2019, diciembre). Informe Nacional Saber Pro 2016
+- 2018. Instituto Colombiano para la Evaluación de la Educación (ICFES). bogotá,
+colombia. Consultado el 24 de noviembre de 2025, desde https://www.icfes.gov.co/
+
+26
+wp - content / uploads / 2024 / 12 / Informe - nacional - de - resultados - Saber - Pro - 2016 2018.pdf
+Mireles, M. Á. R. (2025). Aplicación de la inteligencia artiﬁcial en la evaluación formativa
+un enfoque para la retroalimentación inmediata y mejora del rendimiento académico.
+Innovarium International Journal, 3(1), 1-13. Consultado el 27 de noviembre de 2025,
+desde https://revinde.org/index.php/innovarium/article/view/31
+Montiel, G. (2006). Construcción social de la función trigonométrica (G. Martínez, Ed.). Comite Latinoamericano de Matemática Educativa. Consultado el 11 de diciembre de
+2025, desde https://funes.uniandes.edu.co/funes-documentos/construccion-socialde-la-funcion-trigonometrica/
+Montiel-Espinosa, G. (2013, 1 de enero). Desarrollo Del Pensamiento Trigonométrico. Consultado el 10 de diciembre de 2025, desde https://www.researchgate.net/publication/
+261510660_Desarrollo_del_Pensamiento_Trigonometrico
+Montiel-Espinosa, G., & Cantoral, R. (2005, 1 de diciembre). Estudio Socioepistemológico
+de La Función Trigonométrica.
+Muirragui Irrazabal, V. L., Garzón Balcázar, J. M., Moreira Cañizares, A. C., & Martínez
+Benítez, E. J. (2025). Impacto Del Uso de La Inteligencia Artiﬁcial En La Educación
+Universitaria. Revisión Sistemática. RECIMUNDO, 9(2), 349-360. https://doi.org/10.
+26820/recimundo/9.(2).abril.2025.349-360
+Panqueban, D., & Huincahue, J. (2024). Inteligencia Artiﬁcial en educación matemática: Una
+revisión sistemática. Uniciencia, 38(1), 1-17. https://doi.org/10.15359/ru.38-1.20
+Parra Sanchez, J. S., Torres Pardo, I. D., & Martinez De Merino, C. Y. (2023). Personalización
+de Recursos Para La Enseñanza de Matemáticas Universitarias Usando Inteligencia Artiﬁcial. Revista Interamericana de Investigación Educación y Pedagogía RIIEP,
+16(1), 319-340. https://doi.org/10.15332/25005421.7904
+Radmehr, F. (2023). Toward a theoretical framework for task design in mathematics education. Journal on Mathematics Education, 14(2), 189-204. https://doi.org/10.22342/
+jme.v14i2.pp189-204
+Rodríguez Gallegos, R., Quiroz Rivera, S., Rodríguez Gallegos, R., & Quiroz Rivera, S.
+(2016). El papel de la tecnología en el proceso de modelación matemática para la
+
+27
+enseñanza de las ecuaciones diferenciales. Revista latinoamericana de investigación
+en matemática educativa, 19(1), 99-124. https://doi.org/10.12802/relime.13.1914
+Romero Alonso, R., Araya Carvajal, K., & Reyes Acevedo, N. (2024). Rol de La Inteligencia
+Artiﬁcial En La Personalización de La Educación a Distancia: Una Revisión Sistemática. RIED-Revista Iberoamericana de Educación a Distancia, 28(1). https://doi.org/
+10.5944/ried.28.1.41538
+Rosa, F. T. V. D. L. (2023). Enseñanza y aprendizaje de la trigonometría: Un abordaje desde
+las investigaciones doctorales en educación matemática. GACETA DE PEDAGOGÍA,
+(45), 228-253. https://doi.org/10.56219/rgp.vi45.1900
+Rueda, G. A. (2012). Aproximación a la enseñanza de las razones trigonométricas a través del trabajo experimental en matemáticas en el grado décimo. Consultado el 26
+de noviembre de 2025, desde https://funes.uniandes.edu.co/funes- documentos/
+aproximacion-a-la-ensenanza-de-las-razones-trigonometricas-a-traves-del-trabajoexperimental-en-matematicas-en-el-grado-decimo/
+Salazar Méndez, F. (2020). Situaciones didácticas para el aprendizaje de las identidades trigonométricas fundamentales a partir de un enfoque geométrico. Consultado el 11 de
+diciembre de 2025, desde https://bibliotecadigital.univalle.edu.co/entities/publication/
+80a3c3fe-3700-4ad7-98c8-f42b3965964f
+Suarez, I. J. S. (2023). Desarrollo de las habilidades con el uso de la inteligencia artiﬁcial.
+Torres-Corrales, D. d. C., Montiel-Espinosa, G., Torres-Corrales, D. d. C., & Montiel-Espinosa,
+G. (2021). Resigniﬁcación de la razón trigonométrica en estudiantes de primer año
+de Ingeniería. Educación matemática, 33(3), 202-232. https : / / doi . org / 10 . 24844 /
+em3303.08
+Zambrano-Choez, A. d. J., Barcia-Murillo, M. Á., Auquilla-Rivas, C. E., & Barahona-Montalván,
+B. I. (2025). Estrategias para la Enseñanza Efectiva de la Trigonometría en el Nivel Secundario. Revista Cientíﬁca INGENIAR: Ingeniería, Tecnología e Investigación.
+ISSN: 2737-6249., 8(15), 641-663. Consultado el 26 de noviembre de 2025, desde
+https://journalingeniar.org/index.php/ingeniar/article/view/314
+Zubieta, J. K. (2018). Tipiﬁcación de errores y diﬁcultades en el desarrollo de las funciones
+trigonométricas de estudiantes de grado décimo. Consultado el 26 de noviembre
+de 2025, desde https : / / funes . uniandes . edu . co / funes - documentos / tipiﬁcacion -
+
+28
+de- errores- y- diﬁcultades- en- el- desarrollo- de- las- funciones- trigonometricas- deestudiantes-de-grado-decimo/
+
+

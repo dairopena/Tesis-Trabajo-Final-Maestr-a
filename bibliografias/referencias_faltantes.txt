@@ -1,0 +1,44 @@
+# REFERENCIAS BIBLIOGRÁFICAS PENDIENTES PARA AGREGAR
+
+## Documentos oficiales del Ministerio de Educación Nacional
+
+Estas referencias deben ser agregadas al archivo .bib correspondiente:
+
+1. Lineamientos Curriculares de Matemáticas (1998)
+   - Autor: Ministerio de Educación Nacional (MEN)
+   - Año: 1998
+   - Título: Lineamientos Curriculares de Matemáticas
+   - Editorial: MEN
+   - Ciudad: Bogotá
+
+2. Estándares Básicos de Competencias en Matemáticas (2006)
+   - Autor: Ministerio de Educación Nacional (MEN)
+   - Año: 2006
+   - Título: Estándares Básicos de Competencias en Matemáticas
+   - Editorial: MEN
+   - Ciudad: Bogotá
+
+3. Derechos Básicos de Aprendizaje - Matemáticas (2016)
+   - Autor: Ministerio de Educación Nacional (MEN)
+   - Año: 2016
+   - Título: Derechos Básicos de Aprendizaje - Matemáticas
+   - Editorial: MEN
+   - Ciudad: Bogotá
+
+## Instrucciones para agregar:
+
+Debes buscar estos documentos y agregar las entradas bibliográficas completas
+en formato BibTeX al archivo: bibliografias/jusitificacion.bib
+
+Ejemplo de formato BibTeX para documentos gubernamentales:
+
+@book{ministeriodeeducacionnacionalmenLineamientosCurricularesMatematicas1998,
+  author = {{Ministerio de Educación Nacional}},
+  title = {Lineamientos Curriculares de Matemáticas},
+  year = {1998},
+  publisher = {MEN},
+  address = {Bogotá, Colombia}
+}
+
+NOTA: Es muy importante agregar estas referencias para que el documento compile sin 
+advertencias y cumpla con los requisitos de citación de documentos oficiales.

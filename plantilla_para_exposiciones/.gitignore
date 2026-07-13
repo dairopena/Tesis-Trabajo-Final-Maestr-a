@@ -1,0 +1,36 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+
+# Carpeta de compilación (si prefieres no versionar)
+# build/
+
+# Archivos de backup
+*~
+*.bak
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos PDF (descomenta si no quieres versionar los PDFs)
+# *.pdf
+
+# Archivos temporales de editores
+*.kate-swp
+.vscode/
+.idea/

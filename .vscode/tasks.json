@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar Tesis",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/compilar.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true,
+        "focus": false
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Compilar Presentación",
+      "type": "shell",
+      "command": "pdflatex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-output-directory=build",
+        "presentacion_avance_tesis.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/plantilla_para_exposiciones"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true,
+        "focus": false
+      },
+      "group": "build"
+    }
+  ]
+}

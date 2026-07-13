@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREÁMBULO - PLANTILLA BEAMER UNAL
+%% Universidad Nacional de Colombia
+%% Maestría en Enseñanza de las Ciencias Exactas y Naturales
+%%
+%% Este archivo contiene todos los paquetes y configuraciones
+%% necesarios para las presentaciones Beamer.
+%% Incluir en tu documento principal con: \input{preambulo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ========== CODIFICACIÓN Y LENGUAJE ==========
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% ========== OPCIONES DE FUENTES ==========
+% Descomenta UNA de estas opciones para cambiar la fuente principal:
+
+% OPCIÓN 1: Fuentes serif modernas
+% \usepackage{libertine}           % Linux Libertine (elegante, académica)
+% \usepackage{mathpazo}            % Palatino (clásica, muy legible)
+% \usepackage{lmodern}             % Latin Modern (mejora de Computer Modern)
+
+% OPCIÓN 2: Fuentes sans-serif (recomendadas para presentaciones)
+% \usepackage{helvet}              % Helvetica (limpia, profesional)
+% \renewcommand{\familydefault}{\sfdefault}
+% \usepackage{arev}                % Arev Sans (moderna, matemáticas sans)
+% \usepackage{cmbright}            % Computer Modern Bright (clara, matemáticas)
+
+% OPCIÓN 3: Fuentes modernas con XeLaTeX/LuaLaTeX (requiere compilar con XeLaTeX)
+% \usepackage{fontspec}
+% \setsansfont{Fira Sans}          % Fira Sans (Mozilla, muy moderna)
+% \setmainfont{Libertinus Serif}   % Libertinus (fork de Linux Libertine)
+
+% OPCIÓN 4: Fuentes para matemáticas avanzadas
+% \usepackage{newtxtext,newtxmath} % Times con matemáticas mejoradas
+% \usepackage{fourier}             % Utopia con matemáticas (elegante)
+
+% Por defecto, Beamer usa sans-serif. Para matemáticas:
+\usefonttheme{professionalfonts}  % Matemáticas de alta calidad
+
+% ========== GRÁFICAS Y VISUALIZACIÓN ==========
+% TikZ con bibliotecas avanzadas
+\usepackage{tikz}
+\usetikzlibrary{
+    shapes.misc,          % Formas misceláneas
+    shapes.geometric,     % Formas geométricas
+    arrows.meta,          % Flechas modernas y personalizables
+    positioning,          % Posicionamiento relativo
+    calc,                 % Cálculos de coordenadas
+    decorations.pathreplacing, % Decoraciones (llaves, etc.)
+    decorations.markings, % Marcas en paths
+    shadows,              % Sombras
+    patterns,             % Patrones de relleno
+    backgrounds,          % Capas de fondo
+    fit,                  % Ajustar nodos a contenido
+    matrix,               % Matrices de nodos
+    trees,                % Árboles
+    graphs,               % Grafos
+    mindmap,              % Mapas mentales
+    3d                    % Gráficos 3D básicos
+}
+
+% PGFPlots: Gráficas profesionales de funciones y datos
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}  % Versión más reciente
+\usepgfplotslibrary{
+    fillbetween,          % Rellenar entre curvas
+    groupplots,           % Múltiples gráficas
+    statistics,           % Boxplots, histogramas
+    polar,                % Coordenadas polares
+    smithchart,           % Diagramas de Smith
+    ternary,              % Gráficas ternarias
+    colormaps             % Mapas de color
+}
+
+% ========== ANIMACIONES Y TRANSICIONES ==========
+\usepackage{animate}              % Animaciones frame-by-frame
+\usepackage[absolute,overlay]{textpos} % Posicionamiento absoluto
+
+% ========== GRÁFICOS Y ELEMENTOS VISUALES ==========
+\usepackage{graphicx}
+\graphicspath{{imagenes/}}        % Ruta para las imágenes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}   % Cajas avanzadas
+\usepackage{pifont}               % Símbolos decorativos
+\usepackage{smartdiagram}         % Diagramas inteligentes
+\usepackage{bchart}               % Gráficas de barras simples
+
+% ========== DIAGRAMAS ESPECIALIZADOS ==========
+% Para diagramas de bloques y circuitos
+% \usepackage{circuitikz}         % Circuitos eléctricos
+% \usepackage{tikz-cd}            % Diagramas conmutativos (matemáticas)
+% \usepackage{forest}             % Árboles lingüísticos y sintácticos
+% \usepackage{tikz-3dplot}        % Gráficos 3D avanzados
+% \usepackage{pgf-umlcd}          % Diagramas UML (clases)
+% \usepackage{pgf-umlsd}          % Diagramas UML (secuencia)
+
+% ========== LISTAS Y ENUMERACIONES ==========
+\usepackage{enumitem}
+
+% ========== COLORES Y TABLAS ==========
+\usepackage{xcolor,colortbl}
+
+% ========== UTILIDADES ==========
+\usepackage{hyperref}             % Enlaces
+\usepackage{pdfpages}             % Incluir PDFs
+\usepackage{rotating}             % Rotar elementos
+\usepackage{booktabs}             % Tablas profesionales
+\usepackage{multirow}             % Celdas multi-fila en tablas
+
+% ========== CONFIGURACIÓN DE COLORES ==========
+% Colores institucionales UNAL
+\definecolor{VerdeUNAL}{RGB}{107,165,57}
+
+% Colores adicionales (puedes agregar más según necesites)
+% \definecolor{AzulUNAL}{RGB}{0,56,101}
+% \definecolor{AmarilloUNAL}{RGB}{255,209,0}
+
+% ========== CONFIGURACIÓN DE BEAMER ==========
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% ========== COMANDOS PERSONALIZADOS ==========
+% Comando para destacados con colores tenues
+\newcommand{\highlight}[2]{\colorbox{#1!12}{#2}}
+\newcommand{\highlightbold}[2]{\textbf{\colorbox{#1!15}{#2}}}
+
+% ========== PLANTILLA DE FONDO ==========
+% Franja superior UNAL + escudo central como marca de agua
+\setbeamertemplate{background}{
+    \begin{tikzpicture}[remember picture,overlay]
+        % Franja del encabezado UNAL en la parte superior
+        \node[opacity=0.18] at (current page.north) [anchor=north] {
+            \includegraphics[width=\paperwidth,keepaspectratio]{encabezado.png}
+        };
+        % Escudo UNAL como marca de agua central (tenue pero identificable)
+        \node[opacity=0.055] at (current page.center) {
+            \includegraphics[height=0.72\paperheight]{../imagenes/00Figuras/00f00EscudoUN2016.jpg}
+        };
+    \end{tikzpicture}
+}
+
+% ========== FIN DEL PREÁMBULO ==========

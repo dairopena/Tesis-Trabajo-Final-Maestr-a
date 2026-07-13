@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash compilar.sh)",
+      "Bash(cp \"Promedio del puntaje en matematicas pisa 2006 2022.png\" \"pisa_promedio_puntaje_2006_2022.png\")",
+      "Bash(cp \"Porcentaje de estudiantes en los niveles de desmeplo de la prieba de matematicas en pisa 2006 2022.png\" \"pisa_niveles_desempeno_2006_2022.png\")"
+    ]
+  }
+}

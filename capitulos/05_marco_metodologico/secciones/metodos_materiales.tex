@@ -1,0 +1,244 @@
+\section{Métodos y materiales}
+\label{sec:metodos_materiales}
+
+\subsection{Participantes y criterios de selección}
+
+\subsubsection{Grupo de trabajo}
+
+El estudio involucra el grupo completo de grado décimo del Colegio Villa de las Palmas: 25 estudiantes, con edades entre 15 y 17 años. La institución cuenta con 230 estudiantes en total al año 2026.
+
+Los criterios de inclusión son:
+
+\begin{itemize}
+\item Estar matriculado en grado décimo en el colegio durante el período de implementación.
+\item Contar con presencia durante las sesiones de trabajo (8-10 semanas).
+\item Consentimiento informado del estudiante y del acudiente.
+\end{itemize}
+
+\subsubsection{Muestra intensiva}
+
+Dentro del grupo, se seleccionan 4 a 6 estudiantes para un seguimiento más profundo. Esta muestra intensiva se elige para representar la diversidad de desempeños presente en el grupo:
+
+\begin{itemize}
+\item Al menos 1-2 estudiantes con desempeño alto en matemáticas (calificaciones consistentemente altas en años previos).
+\item Al menos 1-2 estudiantes con desempeño medio (calificaciones variables o moderadas).
+\item Al menos 1-2 estudiantes con dificultades persistentes en matemáticas.
+\item Representación de ambos géneros en la medida de lo posible.
+\end{itemize}
+
+Estos 4-6 estudiantes reciben observación especialmente detallada, son entrevistados, y sus producciones se analizan con mayor profundidad. El resto del grupo también es observado, pero con menor intensidad.
+
+El tamaño de la muestra intensiva no responde a criterios estadísticos de representatividad, sino a criterios de riqueza informativa propios de la investigación cualitativa \parencite{creswell2014research}. En coherencia con la lógica del experimento de enseñanza, la suficiencia de la muestra se determina por saturación teórica: el seguimiento continúa hasta que los patrones de razonamiento emergentes dejen de generar categorías analíticas nuevas \parencite{cobb2003design}. La selección de 4 a 6 estudiantes que representen la diversidad de desempeños del grupo garantiza que los patrones identificados reflejen la heterogeneidad real del aula.
+
+\subsection{Diseño de las tareas de trigonometría}
+
+\subsubsection{Propósito y estructura general}
+
+Las tareas son el corazón del experimento de enseñanza. No son ejercicios rutinarios de aplicación de fórmulas. Son problemas diseñados para exigir razonamiento conceptual, toma de decisiones sobre estrategia de solución, y uso flexible de múltiples representaciones \parencite{leungDesigningMathematicsTasks2015, radmehrTheoreticalFrameworkTask2023}.
+
+Se diseñan dos tareas. Cada una:
+
+\begin{enumerate}
+\item \textbf{Presenta un problema en contexto:} La tarea no es abstracta. Está incrustada en una situación real que requiere modelación o interpretación:
+
+\begin{itemize}
+\item \textbf{Tarea 1 — La rueda de la fortuna:} Una rueda de radio 15 m, con centro a 18 m del suelo, gira completamente cada 40 segundos. Una cabina parte desde el punto más bajo en $t=0$. El estudiante debe construir la función $h(t)$ que describe la altura de la cabina en función del tiempo, justificando cada parámetro.
+
+\item \textbf{Tarea 2 — El movimiento de las mareas:} A partir de datos reales de nivel del mar registrados por una estación costera, el estudiante debe identificar el modelo trigonométrico que describe el fenómeno, determinar período y amplitud en contexto, y usar la función para hacer predicciones verificables.
+\end{itemize}
+
+\item \textbf{Requiere movilizar conceptos trigonométricos profundamente \parencite{montiel-espinosaDesarrolloPensamientoTrigonometrico2013}:} La tarea no puede resolverse con una fórmula memorizada. Exige que el estudiante:
+
+\begin{itemize}
+\item Interprete qué representa una función trigonométrica en la situación específica.
+\item Distinga entre ángulos en grados y radianes.
+\item Use y contraste múltiples representaciones: algebraica, gráfica, numérica, verbal \parencite{duval2006}.
+\item Razone sobre parámetros —amplitud, período, desplazamiento de fase— y su significado en contexto.
+\item Evalúe la validez de su respuesta contrastándola con la situación original.
+\end{itemize}
+
+\item \textbf{Admite múltiples caminos de razonamiento:} No existe una única ruta de solución. Un estudiante puede comenzar con una tabla de datos y construir la gráfica; otro puede comenzar algebraicamente y parametrizar; otro puede combinar enfoques. Esto es deliberado: se busca observar la diversidad de estrategias, no forzar conformidad metodológica.
+
+\item \textbf{Está diseñada para revelar dificultades conceptuales:} Cada tarea incorpora obstáculos conceptuales conocidos en la enseñanza de la trigonometría:
+
+\begin{itemize}
+\item Confusión entre el valor del ángulo y la medida del lado en un triángulo rectángulo.
+\item Interpretación incorrecta de la amplitud en una función periódica.
+\item Errores en el cálculo del período o del desplazamiento de fase.
+\item Dificultades con radianes frente a grados.
+\end{itemize}
+
+Documentar cómo cada estudiante confronta estos obstáculos es uno de los objetivos centrales del análisis.
+\end{enumerate}
+
+\subsubsection{Estructura de cada tarea}
+
+Cada tarea se organiza en cinco momentos didácticos articulados, cuyo orden responde a una lógica de construcción progresiva:
+
+\begin{description}
+\item[Momento 1 — Exploración inicial (sin IA):] El estudiante observa la función trigonométrica base en GeoGebra y registra sus características. No usa ChatGPT todavía. Lo que construye aquí es la referencia con la que después contrastará lo que la IA le diga.
+
+\item[Momento 2 — Variación de parámetros (sin IA):] El estudiante grafica variaciones de la función ($A\mathrm{sen}(Bx)$, $\mathrm{sen}(x+C)$, etc.) y completa una tabla de comparación. Formula una conjetura sobre qué hace cada parámetro.
+
+\item[Momento 3 — Interrogación a ChatGPT (con IA):] El estudiante consulta a ChatGPT sobre los parámetros que acaba de explorar. Evalúa críticamente lo que la IA responde: ¿coincide con lo que observó? ¿lo contradice? ¿la explicación es completa o parcial?
+
+\item[Momento 4 — Modelación (con o sin IA):] El estudiante construye la función que modela la situación real de la tarea. Usa ChatGPT si lo necesita para explorar o verificar, pero la decisión de qué función construir y por qué es suya.
+
+\item[Momento 5 — Síntesis y validación:] El estudiante justifica por escrito cada parámetro de la función en términos de la situación física. Verifica que la función tenga sentido: $h(0)$ debe coincidir con la condición inicial, el período debe corresponder al dato del problema, etc.
+\end{description}
+
+\subsection{La herramienta de inteligencia artificial}
+
+\subsubsection{Herramienta seleccionada}
+
+Se utiliza ChatGPT como herramienta de inteligencia artificial durante la implementación. ChatGPT permite conversación natural en español, tiene conocimiento de trigonometría de nivel secundario, y es accesible en línea desde los computadores del colegio.
+
+\subsubsection{Configuración y rol}
+
+La herramienta se configura mediante instrucciones explícitas al sistema (\emph{system prompt}) que definen el rol pedagógico de la IA durante las tareas. Estas instrucciones son parte integral del diseño del experimento y se aplican antes de cada sesión de trabajo. A continuación se presenta el texto exacto de las instrucciones al sistema:
+
+\bigskip
+\begin{quote}
+\itshape
+Eres un tutor de trigonometría para estudiantes colombianos de grado décimo, con edades entre 15 y 17 años. Tu rol es acompañar el pensamiento matemático del estudiante, no resolverle los problemas.
+
+\textbf{PUEDES:}
+\begin{itemize}
+\item Responder preguntas conceptuales sobre seno, coseno, tangente, amplitud, período, fase y círculo unitario.
+\item Dar retroalimentación sobre los intentos de solución que el estudiante comparte contigo.
+\item Formular preguntas que lleven al estudiante a reflexionar sobre lo que hizo y por qué.
+\item Sugerir representaciones alternativas: gráfica, tabla de valores, diagrama, lenguaje verbal.
+\item Señalar si un razonamiento contiene un error, sin dar la corrección directa.
+\item Explicar conceptos de varias maneras cuando el estudiante no comprende la primera explicación.
+\end{itemize}
+
+\textbf{NO PUEDES:}
+\begin{itemize}
+\item Resolver directamente los problemas de las tareas propuestas.
+\item Dar la expresión algebraica final de la función que se solicita en la tarea.
+\item Realizar todos los cálculos en lugar del estudiante.
+\item Confirmar si una respuesta es correcta sin preguntar antes por el razonamiento que la sustenta.
+\item Dar la respuesta aunque el estudiante insista en pedirla directamente.
+\end{itemize}
+
+Cuando el estudiante pida la respuesta directa, responde con una pregunta que lo dirija a encontrarla por sí mismo. Por ejemplo: ``¿Qué significa el período de una función? ¿Cómo lo calcularías a partir de la gráfica que tienes?''
+
+Usa un lenguaje claro, accesible y respetuoso. Nunca hagas sentir al estudiante que su pregunta es equivocada o trivial.
+\end{itemize}
+\end{quote}
+\bigskip
+
+Este criterio es fundamental. La IA funciona como agente de acompañamiento, no como solucionador. Los estudiantes reciben una instrucción breve sobre cómo usarla: cómo formular preguntas claras, cómo interpretar las respuestas, y en qué momentos tiene sentido consultarla. Se enfatiza que es un recurso disponible, no una obligación.
+
+\subsubsection{Registro de interacciones}
+
+Se registra cada interacción entre estudiante y ChatGPT:
+
+\begin{itemize}
+\item La pregunta exacta que formula el estudiante.
+\item La respuesta que proporciona la IA.
+\item El momento dentro de la tarea en que ocurre la consulta.
+\item Las decisiones del estudiante después de la consulta: ¿integró la sugerencia en su trabajo? ¿la ignoró? ¿pidió aclaración?
+\end{itemize}
+
+Este registro es fuente de datos central para el análisis. Permite documentar no solo qué sugirió la IA, sino cómo el estudiante procesó esa información.
+
+\subsection{Materiales de trabajo}
+
+Los estudiantes trabajan con los siguientes recursos durante las sesiones:
+
+\begin{itemize}
+\item GeoGebra (versión en línea, gratuita) para graficación y exploración dinámica.
+\item ChatGPT como agente de acompañamiento matemático en los momentos definidos de cada tarea.
+\item Cuaderno o papel para cálculos, borradores y representaciones a mano.
+\item Guías impresas de cada tarea (situación, consignas por momento, espacio para registros).
+\item Acceso al docente-investigador para preguntas, con la misma restricción que rige para ChatGPT: disponible para orientar, no para resolver.
+\end{itemize}
+
+\subsection{Instrumentos de recolección de datos}
+
+\subsubsection{Observación sistemática}
+
+\textbf{Notas de campo.} Durante cada sesión se toman notas detalladas sobre lo que ocurre con cada estudiante de la muestra intensiva, y observaciones generales del grupo:
+
+\begin{itemize}
+\item Estrategia inicial que intenta.
+\item Representaciones que usa espontáneamente (algebraica, gráfica, tabla, dibujo).
+\item Momentos específicos donde se queda bloqueado.
+\item Preguntas que formula (al docente o a ChatGPT).
+\item Cómo responde a retroalimentación o sugerencias.
+\item Cuándo decide consultar la IA, qué tipo de pregunta formula, y qué hace con la respuesta.
+\item Cambios de estrategia durante la resolución.
+\item Manifestaciones de comprensión o confusión.
+\end{itemize}
+
+Las notas se escriben en tiempo real o inmediatamente después de la sesión, mientras los detalles están frescos.
+
+\textbf{Grabación de audio/video.} Cuando sea posible y con consentimiento informado, se graban las sesiones. Esto permite revisar conversaciones con precisión posterior, captar detalles de razonamiento verbal que las notas pueden perder, y disponer de evidencia confiable para los reportes.
+
+\subsubsection{Entrevistas semiestructuradas}
+
+Se realizan entrevistas con la muestra intensiva (4-6 estudiantes) después de completar cada tarea o conjunto de tareas.
+
+\textbf{Duración:} 15 a 20 minutos.
+
+\textbf{Preguntas orientadoras:}
+
+\begin{itemize}
+\item ``Cuando empezaste [tarea], ¿cuál fue tu primer paso? ¿Por qué empezaste así?''
+\item ``¿En qué momento te sentiste confundido o bloqueado? ¿Qué hiciste entonces?''
+\item ``¿Cuál concepto de trigonometría te pareció más difícil en esta tarea?''
+\item ``¿Cuándo decidiste consultar ChatGPT? ¿Qué te hizo pensar que lo necesitabas?''
+\item ``¿La respuesta que recibiste de la IA fue útil? ¿Por qué? ¿Hiciste algo diferente a lo que sugirió?''
+\item ``¿Hay momentos donde ChatGPT te confundió o te llevó por mal camino?''
+\item ``¿Hay algo que ahora entiendes sobre trigonometría que no entendías antes de esta tarea?''
+\end{itemize}
+
+El investigador escucha activamente, hace preguntas de seguimiento basadas en lo que el estudiante dice, y evita sugerir respuestas.
+
+\subsubsection{Producciones de los estudiantes}
+
+Se recolectan y preservan todas las producciones escritas y visuales generadas durante las sesiones:
+
+\begin{itemize}
+\item Hojas de trabajo con cálculos, gráficos dibujados a mano, tablas de datos.
+\item Borradores y trabajo sucio —no solo las respuestas finales. Los borradores muestran el proceso de pensamiento que la respuesta limpia borra.
+\item Correcciones: cómo y dónde el estudiante modificó su trabajo.
+\item Explicaciones escritas del razonamiento.
+\item Capturas de pantalla o transcripciones de las interacciones con ChatGPT.
+\end{itemize}
+
+El análisis de estas producciones permite ver las estrategias reales usadas (no lo que el estudiante dice que hizo), los errores específicos cometidos y sus patrones, las preferencias de representación, y la evolución del trabajo de la Tarea 1 a la Tarea 2.
+
+\subsubsection{Cuestionarios de contexto}
+
+\textbf{Pre-test (inicio de la implementación):} Un cuestionario breve (máximo 15 minutos) que mide:
+
+\begin{itemize}
+\item Conocimiento previo de trigonometría: razones trigonométricas, funciones trigonométricas, período, amplitud, radianes.
+\item Autopercepción matemática: ``¿Cuánta confianza tienes en tu capacidad de resolver problemas de trigonometría?'' (escala 1-10).
+\item Experiencia previa con herramientas de IA: ``¿Has usado inteligencia artificial antes? ¿Para qué?''
+\end{itemize}
+
+\textbf{Post-test (al finalizar la implementación):} Un cuestionario de extensión similar que mide:
+
+\begin{itemize}
+\item Conocimiento posterior: preguntas análogas al pre-test sobre los conceptos tratados en las tareas.
+\item Cambio en autopercepción: ``¿Cómo cambió tu confianza en trigonometría durante este proceso?''
+\item Reflexión sobre la herramienta de IA: ``¿Qué tan útil encontraste ChatGPT? ¿En qué momentos fue más valioso? ¿En qué momentos fue confuso o no te ayudó?''
+\item Reflexión sobre las tareas: ``¿Cuál fue el momento más difícil de resolver? ¿Qué recursos usaste?''
+\end{itemize}
+
+Los cuestionarios no buscan cuantificar aprendizaje. Proporcionan contexto para interpretar lo que se observó.
+
+\subsection{Procedimientos de implementación}
+
+\textbf{Fase 0 (Semana previa):} Preparación logística. Coordinación con el colegio, obtención de consentimientos informados, verificación de acceso a GeoGebra y ChatGPT desde los computadores del aula, y ajuste final del diseño de las tareas.
+
+\textbf{Fase 1 (Semana 1):} Introducción y línea base. Aplicación del pre-test. Sesión introductoria donde se explica el proyecto a los estudiantes. Familiarización breve con GeoGebra y con el uso de ChatGPT como agente de acompañamiento matemático. Primeras observaciones.
+
+\textbf{Fase 2 (Semanas 2-6):} Implementación principal. Aplicación de las dos tareas en sesiones de 40 a 60 minutos. Observación sistemática del grupo completo, con seguimiento más detallado de la muestra intensiva. Recolección continua de producciones y registro de interacciones con la IA.
+
+\textbf{Fase 3 (Semana 7-8):} Entrevistas con la muestra intensiva. Post-test. Recolección de materiales pendientes.
+
+\textbf{Fase 4 (Semana 9-10):} Organización del corpus de datos. Transcripción de grabaciones. Digitalización de producciones. Preparación del material para el análisis sistemático.

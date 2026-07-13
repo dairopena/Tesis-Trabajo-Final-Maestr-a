@@ -1,0 +1,140 @@
+\chapter{Marco metodológico}
+\label{chap:marco_metodologico}
+
+\section{Posicionamiento metodológico: el experimento de enseñanza}
+
+Esta investigación adopta el experimento de enseñanza como diseño metodológico. La elección responde a la pregunta que la orienta: ¿cómo diseñar e implementar tareas de trigonometría con inteligencia artificial de manera que contribuyan al desarrollo del pensamiento trigonométrico en estudiantes de grado décimo?
+
+Esa pregunta no se responde midiendo resultados de aprendizaje en dos grupos paralelos. Se responde observando con detenimiento cómo piensan los estudiantes cuando resuelven esas tareas; qué errores cometen y qué revelan sobre su comprensión; cómo interactúan con la IA y qué papel juega esa interacción en su razonamiento; y de qué manera el diseño de las tareas facilita —o no— el tránsito entre representaciones gráficas, algebraicas y contextuales de las funciones trigonométricas.
+
+El experimento de enseñanza ofrece algo que los diseños comparativos no pueden: acceso al pensamiento matemático \emph{mientras se construye} \parencite{steffe2000teaching}. El investigador no observa desde afuera el resultado de un proceso educativo ya terminado. Participa activamente en él: diseña tareas, las implementa con los estudiantes, registra lo que ocurre, y vuelve al diseño con ese conocimiento acumulado. Esa iteratividad no es una característica secundaria del método. Es su lógica central.
+
+\textcite{gonzalezAcercamientoInvestigacionDiseno2011} precisan que en los experimentos de enseñanza el objeto de estudio no es el estudiante en abstracto sino los procesos de aprendizaje matemático en un contexto específico de interacción: con el docente, con las tareas, con las herramientas disponibles. En esta investigación, esa herramienta es la inteligencia artificial generativa. Documentar cómo media el pensamiento trigonométrico —cuándo abre el pensamiento, cuándo lo reemplaza, en qué condiciones resulta andamiaje genuino— es el núcleo del trabajo.
+
+\textcite{cobb2003design} sitúan los experimentos de enseñanza dentro de una familia más amplia de diseños que comparten un rasgo: el objeto de estudio no es independiente del proceso de investigación, sino que se construye a través de él. Las tareas no se diseñan antes de la investigación y se aplican mecánicamente. Se diseñan, se implementan, se analizan, y se rediseñan. Eso es lo que aquí ocurrirá.
+
+\subsection{Por qué no un diseño comparativo}
+
+Una aproximación razonable sería comparar dos grupos: uno con acceso a IA, otro sin acceso. Esa elección tiene valor propio y responde preguntas del tipo: ¿qué diferencias en desempeño o en estrategias emergen cuando se tiene o no se tiene IA disponible?
+
+Pero eso no es lo que aquí interesa. Lo que interesa es comprender \emph{cómo} —bajo qué condiciones de diseño, con qué tipo de consignas, en qué momentos específicos de la secuencia— la IA puede funcionar como agente de acompañamiento matemático que provoca pensamiento en lugar de reemplazarlo. Esa pregunta exige diseño iterativo, observación sostenida, y análisis que capture la particularidad de los procesos. No exige comparación estadística.
+
+\section{Paradigma de investigación}
+
+Esta investigación se posiciona en el paradigma pospositivista \parencite{phillipsBurbules2000, creswell2014research}. El pospositivismo reconoce que existe una realidad —en este caso, el pensamiento trigonométrico de los estudiantes y los procesos de aprendizaje que ocurren en el aula— pero acepta que esa realidad solo puede conocerse de forma aproximada e imperfecta. A diferencia del positivismo clásico, que asume objetividad plena y medición exacta, el pospositivismo reconoce que el investigador influye sobre lo que estudia y que el conocimiento siempre es provisional. A diferencia del paradigma interpretativo, no renuncia a la búsqueda de patrones sistemáticos ni al rigor metodológico como criterio de validez.
+
+Para esta investigación, ese posicionamiento tiene implicaciones concretas. El pensamiento trigonométrico de los estudiantes existe como objeto real —no es construido arbitrariamente por el investigador—, pero solo puede aproximarse a través de múltiples fuentes de datos (observaciones, entrevistas, producciones escritas, registros de interacción con la IA) analizadas con rigor y trianguladas. Ninguna fuente individual ofrece acceso completo a lo que realmente ocurre en la mente del estudiante cuando resuelve una tarea. Las fuentes combinadas permiten aproximaciones más confiables.
+
+\textcite{creswell2014research} señala que el pospositivista trabaja con métodos cualitativos cuando la naturaleza del fenómeno así lo exige: cuando lo que importa comprender es el proceso y no solo el resultado, cuando los participantes son pocos y el contexto es específico, cuando el análisis estadístico no puede capturar lo que se busca. Todas esas condiciones se cumplen aquí.
+
+\textcite{camargoConferenciaInteramericanaEducacion10} precisa que en educación matemática las estrategias de diseño —como el experimento de enseñanza— no buscan neutralidad del investigador sino rigor en la documentación de sus decisiones y sus efectos. El investigador-docente no se borra del proceso. Lo registra sistemáticamente y lo convierte en parte del análisis.
+
+\section{Fundamentación teórica de las decisiones metodológicas}
+
+Tres marcos teóricos orientan las decisiones de diseño, implementación y análisis de este experimento de enseñanza.
+
+\textbf{Pensamiento trigonométrico.} \textcite{montiel-espinosaDesarrolloPensamientoTrigonometrico2013} desarrolla el concepto de pensamiento trigonométrico como la capacidad de transitar entre la representación geométrica del ángulo, la representación funcional de las razones trigonométricas, y la modelación de fenómenos periódicos reales, sin que ninguno de estos registros sea suficiente por sí solo. Ese tránsito es lo que las tareas de esta investigación buscan provocar y lo que el análisis documentará. La pregunta no es si el estudiante sabe la fórmula de la función seno. Es si puede moverse con soltura entre la situación física, la gráfica y la expresión algebraica, y si puede justificar por qué cada parámetro tiene el valor que tiene.
+
+\textbf{Registros de representación semiótica.} \textcite{duval2006} muestra que la comprensión matemática no reside en dominar un registro aislado —la ecuación algebraica, la gráfica, la tabla numérica— sino en coordinar activamente entre ellos. Los errores más persistentes en trigonometría escolar emergen precisamente cuando los estudiantes no logran articular lo que la gráfica dice con lo que la ecuación representa. Las tareas de esta investigación están diseñadas para hacer visible esa articulación —o su ausencia—, y las observaciones registrarán específicamente cuándo y cómo los estudiantes alternan o fallan en alternar entre registros.
+
+\textbf{Diseño de tareas matemáticas.} \textcite{leungDesigningMathematicsTasks2015} identifican criterios para tareas que exigen pensamiento matemático profundo: deben admitir múltiples caminos de solución, conectar con fenómenos reales, y crear las condiciones para que errores conceptuales emerjan y sean examinados. \textcite{radmehrTheoreticalFrameworkTask2023} y \textcite{canogullariTaskDesignPrinciples2025} añaden que una tarea de alta exigencia cognitiva no puede resolverse aplicando directamente una fórmula memorizada: exige explorar, comparar estrategias y justificar decisiones. Ese criterio rige el diseño de las dos tareas de esta investigación.
+
+La inteligencia artificial entra en este marco no como tema de estudio sino como herramienta de mediación. Su rol no es entregar respuestas correctas. Es funcionar como agente de acompañamiento que el estudiante interroga, evalúa y contrasta con sus propias construcciones. Este criterio —que la IA nunca resuelva directamente sino que provoque pensamiento— es la apuesta pedagógica central del diseño, y documentar cuándo se cumple y cuándo no es uno de los objetivos del análisis.
+
+\section{Diseño del experimento de enseñanza}
+
+\subsection{El docente-investigador}
+
+En el experimento de enseñanza, el investigador no es un observador externo. Es, al mismo tiempo, quien diseña las tareas, las implementa con los estudiantes, registra lo que ocurre, y utiliza ese conocimiento para refinar el diseño. \textcite{steffe2000teaching} denominan a esta figura el \emph{teacher-researcher}: alguien que actúa pedagógicamente y analiza simultáneamente.
+
+Eso tiene implicaciones concretas aquí. Las dos tareas que se describen en este capítulo son la versión actual del diseño. No son definitivas. Si durante la implementación emerge un obstáculo conceptual no anticipado, o si la IA genera un tipo de interacción que modifica el rumbo de la sesión, el diseño se ajustará. Eso no es falta de rigor. Es exactamente lo que el método exige.
+
+\subsection{Contexto e institución}
+
+El experimento se implementa en el Colegio Villa de las Palmas, institución de educación media privada ubicada en Palmira, Valle del Cauca. El municipio cuenta con aproximadamente 300.000 habitantes y se encuentra a 30 km al norte de Cali, en una zona urbana con infraestructura educativa desarrollada.
+
+La institución cuenta con aulas equipadas con computadores e internet, lo que hace técnicamente posible el uso simultáneo de GeoGebra y ChatGPT durante las sesiones de trabajo. Al año 2026, el Colegio Villa de las Palmas tiene una matrícula de 230 estudiantes. La selección de este contexto responde a un criterio práctico y epistemológico a la vez: es la institución donde el investigador ejerce como docente, lo que garantiza acceso sostenido al grupo durante el período de implementación y una familiaridad con el contexto que ningún observador externo podría reemplazar.
+
+\subsection{Participantes}
+
+\textbf{Grupo de trabajo.} Se trabaja con el grupo completo de grado décimo, conformado por 25 estudiantes, cuyas edades oscilan entre 15 y 17 años. Todos los estudiantes del grupo participan en las sesiones de trabajo con las tareas.
+
+\textbf{Muestra intensiva.} Para el análisis más detallado —entrevistas semiestructuradas, análisis de producciones, seguimiento de trayectorias individuales— se seleccionan 4 a 6 estudiantes que representen la diversidad de desempeños del grupo:
+
+\begin{itemize}
+  \item Al menos 1-2 estudiantes con desempeño alto en matemáticas.
+  \item Al menos 1-2 estudiantes con desempeño medio o variable.
+  \item Al menos 1-2 estudiantes con dificultades persistentes en matemáticas.
+  \item Representación de ambos géneros en la medida de lo posible.
+\end{itemize}
+
+Esta muestra intensiva no es una muestra estadística. Es un mecanismo para documentar en profundidad trayectorias de aprendizaje particulares que ilustren patrones más amplios del grupo.
+
+\subsection{La secuencia de tareas}
+
+Las tareas son el corazón del experimento. Se diseñan dos tareas para la versión inicial de implementación:
+
+\begin{itemize}
+  \item \textbf{Tarea 1}: Las transformaciones de la función seno: la rueda de la fortuna.
+  \item \textbf{Tarea 2}: Modelar con coseno: el movimiento de las mareas.
+\end{itemize}
+
+Ambas tareas responden a cinco criterios didácticos que rigen el diseño \parencite{leungDesigningMathematicsTasks2015, radmehrTheoreticalFrameworkTask2023, canogullariTaskDesignPrinciples2025}:
+
+\begin{enumerate}
+  \item \textbf{Exigencia matemática alta}: la tarea no puede resolverse aplicando directamente una fórmula. Exige explorar, comparar estrategias y justificar decisiones.
+  \item \textbf{Articulación de representaciones}: cada actividad exige trabajar con al menos dos tipos de representación —gráfica, algebraica, numérica o verbal— y transitar entre ellas \parencite{duval2006}.
+  \item \textbf{Rol explícito de la IA}: se define con precisión cuándo y cómo usa el estudiante ChatGPT: para interrogar, contrastar o solicitar retroalimentación; nunca para obtener la respuesta directa de la tarea.
+  \item \textbf{Espacio para el error}: las consignas admiten respuestas parciales o erróneas como punto de partida legítimo para la discusión, no como faltas a corregir.
+  \item \textbf{Contextualización}: las situaciones conectan con fenómenos periódicos reales —el movimiento de una rueda de la fortuna, las mareas costeras— y tienen sentido fuera del aula de matemáticas.
+\end{enumerate}
+
+Cada tarea está organizada en cinco momentos didácticos articulados, cuya secuencia responde a una lógica de construcción progresiva en la que cada momento prepara el siguiente. La Tarea 1 activa el tránsito de la razón trigonométrica a la función seno como objeto matemático propio; la Tarea 2 exige movilizar ese conocimiento para modelar un fenómeno diferente con coseno. El diseño completo de cada tarea, con sus momentos didácticos, errores esperados y criterios de evaluación, se presenta en la sección de métodos y materiales.
+
+\subsection{Ciclos del experimento}
+
+El experimento se organiza en tres ciclos iterativos \parencite{cobb2003design}:
+
+\begin{description}
+  \item[Ciclo 1 — Diseño:] Elaboración de las tareas con base en criterios teóricos, revisión de la literatura sobre obstáculos conceptuales en trigonometría, y diseño de instrumentos de recolección de datos (guías de observación, protocolo de entrevistas, rúbrica analítica).
+  \item[Ciclo 2 — Implementación y registro:] Aplicación de las tareas con el grupo durante 8 a 10 semanas. Observación sistemática, recolección de producciones escritas, grabaciones de audio o video con consentimiento, y entrevistas con la muestra intensiva.
+  \item[Ciclo 3 — Análisis y rediseño:] Análisis del material recolectado, identificación de patrones de razonamiento y obstáculos persistentes, y, si el tiempo y las condiciones lo permiten, rediseño de las tareas con base en los hallazgos para un ciclo posterior.
+\end{description}
+
+\section{Recolección de datos}
+
+La recolección se organiza alrededor de documentar cómo los estudiantes abordan las tareas: qué estrategias despliegan, en qué puntos se quedan atrapados, cómo interactúan con la IA, y cómo evoluciona su pensamiento a lo largo de la secuencia.
+
+\textbf{Observación de sesiones.} Durante cada sesión se registra mediante notas de campo lo que ocurre: estrategias que cada estudiante intenta, momentos específicos de bloqueo, preguntas que formula (al docente-investigador o a la IA), representaciones que usa espontáneamente, y manifestaciones de comprensión o confusión. Se documentan especialmente los momentos de consulta a la IA: qué pregunta exacta formula el estudiante, cómo interpreta la respuesta, si cambia de estrategia después. Las sesiones se graban en audio o video cuando sea posible y con consentimiento informado.
+
+\textbf{Entrevistas semiestructuradas.} Con la muestra intensiva (4-6 estudiantes), se realizan entrevistas de 15 a 20 minutos después de que completan conjuntos de tareas. Las conversaciones buscan acceder directamente al pensamiento del estudiante: ¿cuál fue tu primer paso? ¿dónde te atascaste? ¿qué hiciste entonces? ¿cuándo decidiste consultar la IA y por qué? ¿la respuesta que recibiste te resultó útil o te confundió? No se trata de cuestionarios rígidos. El investigador escucha, hace preguntas de seguimiento basadas en lo que el estudiante dice, y evita sugerir respuestas.
+
+\textbf{Producciones de los estudiantes.} Se recolecta y preserva todo lo que escriben y dibujan durante las sesiones: cálculos, gráficos dibujados a mano, tablas de datos, diagramas, borradores con correcciones. Especialmente los borradores: muestran el proceso de pensamiento que la respuesta final borra. También se registran las capturas de las interacciones con ChatGPT. Este material es central para el análisis.
+
+\textbf{Cuestionarios de contexto.} Al inicio se aplica un cuestionario breve (15 minutos) que mide conocimiento previo de trigonometría, autopercepción matemática, y experiencia previa con herramientas de IA. Al final, otro cuestionario de similar extensión mide autopercepción posterior y reflexión sobre la experiencia con la herramienta. Estos cuestionarios no buscan cuantificar aprendizaje. Buscan contexto para interpretar lo que se observó.
+
+\section{Procedimiento de análisis}
+
+El análisis no busca producir números ni verificar hipótesis previas. Busca describir con detalle y rigor cómo piensan realmente estos estudiantes.
+
+\textbf{Fase 1 — Preparación e inmersión.} Se transcribe cada grabación palabra por palabra, se digitalizan fotografías de producciones, y se revisan y amplían las notas de campo. Este acto de organizar ya es análisis: al transcribir emergen patrones; al ampliar notas, se recuperan contextos que los datos brutos no capturan.
+
+\textbf{Fase 2 — Codificación abierta.} Se lee el material sin categorías preconcebidas. La pregunta guía es: ¿qué está ocurriendo realmente aquí? Se marcan episodios relevantes: momentos donde el estudiante muestra comprensión nueva; errores específicos y cómo los intenta corregir; cambios de estrategia; consultas a la IA —qué pregunta exacta, cómo interpreta la respuesta, qué hace después. Las categorías no se fuerzan. Emergen del material.
+
+\textbf{Fase 3 — Codificación axial.} Se agrupan códigos abiertos en categorías mayores. Códigos sobre ``dibuja la situación'', ``construye tabla de valores'' se agrupan bajo ``modos de representación visual''. Se buscan relaciones: ¿existe conexión entre el tipo de error y la estrategia inicial? ¿La IA modificó esa relación?
+
+\textbf{Fase 4 — Análisis de patrones.} Se examinan los patrones emergentes a lo largo de la secuencia completa: ¿cómo evoluciona el pensamiento del Momento 1 al Momento 5? ¿Los obstáculos conceptuales documentados en la literatura —confusión entre amplitud y período, dificultad con el desfase— aparecen con la misma forma que se describe, o se manifiestan de manera diferente en este grupo específico? ¿Cuándo usa el estudiante la IA de forma que expande su razonamiento y cuándo la usa para eludir el pensamiento?
+
+\textbf{Fase 5 — Triangulación.} Se aplican dos tipos de triangulación para fortalecer la credibilidad de los hallazgos \parencite{creswell2014research}:
+
+\textbf{(a) Triangulación de fuentes:} los patrones identificados en las notas de observación se contrastan con las producciones escritas de los estudiantes y con los registros de las entrevistas. Un hallazgo que aparece en las tres fuentes gana credibilidad; una discrepancia entre fuentes —el estudiante afirma que entendió, pero sus cálculos muestran confusión— se examina como dato en sí mismo. Ahí suele estar la comprensión más real.
+
+\textbf{(b) Triangulación de investigador:} los hallazgos preliminares se revisan con los directores de tesis en sesiones de análisis conjunto, reduciendo el riesgo de sesgos interpretativos del investigador-docente. Esta revisión es especialmente necesaria dado que el investigador es también quien implementó las tareas y conoce personalmente a los estudiantes.
+
+\textbf{Fase 6 — Narrativas analíticas.} El producto final no es un listado de códigos ni una tabla de frecuencias. Son narrativas que explican cómo piensan realmente los estudiantes. Con estructura. Con ejemplos específicos tomados del material. Con reconocimiento explícito de lo que no puede concluirse. Ese es el tipo de conocimiento que esta investigación busca producir.
+
+\input{capitulos/05_marco_metodologico/secciones/ubicacion_proyecto}
+\input{capitulos/05_marco_metodologico/secciones/metodos_materiales}
+\input{capitulos/05_marco_metodologico/secciones/cronograma}
+\input{capitulos/05_marco_metodologico/secciones/presupuesto}
+\input{capitulos/05_marco_metodologico/secciones/consideraciones_eticas}

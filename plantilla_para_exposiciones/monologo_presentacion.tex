@@ -1,0 +1,399 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MONÓLOGO — GUIÓN DE EXPOSICIÓN PARA DIRECTORES
+%% Dairo Janover Peña Cárdenas
+%% Sesión de seguimiento · 11 de marzo de 2026
+%% Directores: Luis Octavio Salcedo · Marisol Santacruz
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.8cm]{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+% ---- Colores ----
+\definecolor{VerdeUNAL}{RGB}{107,165,57}
+\definecolor{RojoAlerta}{RGB}{192,57,43}
+\definecolor{AzulInfo}{RGB}{41,128,185}
+\definecolor{NaranjaPend}{RGB}{211,84,0}
+\definecolor{GrisAnotacion}{RGB}{130,140,150}
+\definecolor{GrisFondo}{RGB}{236,240,241}
+\definecolor{GrisClaro}{RGB}{180,188,194}
+
+% ---- Secciones ----
+\titleformat{\section}[block]
+  {\large\bfseries\color{VerdeUNAL}}
+  {}{0em}{}[\color{VerdeUNAL}\titlerule]
+\titlespacing{\section}{0pt}{18pt}{8pt}
+
+\titleformat{\subsection}[block]
+  {\normalsize\bfseries\color{AzulInfo}}
+  {}{0em}{\faChevronRight\quad}
+\titlespacing{\subsection}{0pt}{12pt}{4pt}
+
+% ---- Entorno: anotación de dirección escénica ----
+\newenvironment{accion}{%
+  \par\smallskip
+  \color{GrisAnotacion}\small\itshape\faHandPointRight\enspace
+}{%
+  \par\smallskip\normalcolor\normalsize\normalfont
+}
+
+% ---- Entorno: cuadro de decisión pendiente ----
+\tcbuselibrary{skins}
+\newtcolorbox{decision}[1]{
+  colback=NaranjaPend!8, colframe=NaranjaPend!60,
+  arc=2mm, boxrule=0.8pt,
+  title={\small\bfseries\faQuestionCircle\quad Decisión a tomar: #1},
+  fonttitle=\small\bfseries\color{NaranjaPend!80!black}
+}
+
+% ---- Entorno: cuadro de punto clave ----
+\newtcolorbox{clave}{
+  colback=VerdeUNAL!6, colframe=VerdeUNAL!55,
+  arc=2mm, boxrule=0.8pt, left=6pt, right=6pt
+}
+
+% ---- Metadatos ----
+\title{
+  \vspace{-1cm}
+  {\color{VerdeUNAL}\rule{\linewidth}{1.5pt}}\\[0.4cm]
+  {\LARGE\bfseries Guión de exposición — sesión de seguimiento}\\[0.2cm]
+  {\large Propuesta de tesis de maestría}\\[0.1cm]
+  {\normalsize\color{GrisAnotacion}%
+    Dairo Janover Peña Cárdenas \textbf{·}
+    Universidad Nacional de Colombia — Sede Palmira \textbf{·}
+    11 de marzo de 2026}\\[0.3cm]
+  {\color{VerdeUNAL}\rule{\linewidth}{0.6pt}}
+}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+  \small\textbf{Cómo leer este documento.}
+  El texto en negro es lo que se dice en voz alta.
+  {\color{GrisAnotacion}\itshape Las anotaciones en gris claro son instrucciones
+  de acción} (señalar la pantalla, hacer pausa, esperar respuesta).
+  Los recuadros verdes y naranja marcan los puntos más importantes.
+  La duración estimada total es \textbf{15--18 minutos}.
+\end{tcolorbox}
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Portada \hfill {\normalfont\small\color{GrisAnotacion}$\sim$1 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar a la siguiente diapositiva solo cuando el proyector esté
+  funcionando. Esperar a que ambos profesores estén atentos.
+\end{accion}
+
+Buenos días, profesores. Gracias por estar aquí.
+
+Antes de empezar quiero decir algo que me parece importante: esta presentación no es para defender lo que está escrito. El documento tiene problemas, algunos de fondo, y yo los sé. Lo que busco en esta sesión es que ustedes me ayuden a entender qué tengo que hacer, en qué orden hacerlo, y que tomemos juntos las decisiones que yo solo no puedo tomar.
+
+Recibí los 33 comentarios de la doctora Santacruz el 4 de marzo. Los leí varias veces. Algunos los entendí desde el principio. Otros me tomaron un par de lecturas. Y unos pocos, los más conceptuales, todavía me generan preguntas que espero que resolvamos hoy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Agenda \hfill {\normalfont\small\color{GrisAnotacion}$\sim$1 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Señalar cada punto del índice mientras se nombra.
+\end{accion}
+
+Les voy a mostrar cinco cosas. Primero, qué es lo que estoy investigando en pocas palabras. Segundo, cómo está organizado el documento. Tercero, en qué estado está cada capítulo. Cuarto, qué correcciones recibí y cómo las entiendo. Y quinto, qué tareas quedan y en qué orden las voy a hacer.
+
+Al final quisiera que salgamos con claridad sobre cinco decisiones concretas.
+Sin esas decisiones no puedo avanzar bien.
+
+\begin{decision}{cinco preguntas que necesitan respuesta hoy}
+  ¿Se incluyen las funciones hiperbólicas? ·
+  ¿Qué tipo de IA y cómo la nombro? ·
+  ¿Hablo de \textit{pensamiento} o de \textit{comprensión} trigonométrica? ·
+  ¿Va la modelación en el marco teórico? ·
+  ¿Cuándo es la próxima entrega?
+\end{decision}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{01 — Mi proyecto en pocas palabras \hfill {\normalfont\small\color{GrisAnotacion}$\sim$2 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar al divisor ``01'', luego al slide ``¿Cuál es la idea central?''.
+\end{accion}
+
+Mi investigación busca entender qué pasa cuando se diseñan tareas ma\-te\-má\-ti\-cas con inteligencia artificial para que los estudiantes de educación media desarrollen pensamiento trigonométrico.
+
+El problema de fondo es este: los estudiantes llegan a grado once sin entender qué es una función trigonométrica ni para qué sirve. El currículo los lleva a calcular razones y a memorizar identidades, pero nunca los enfrenta a la pregunta más básica: ¿por qué el seno y el coseno son funciones y no solo razones en un triángulo? Esa pregunta no está en el libro de texto.
+
+\begin{accion}
+  Señalar la caja central con el título de la investigación.
+\end{accion}
+
+Mi propuesta es que si diseñamos tareas que usen IA para personalizar el aprendizaje y que conecten la trigonometría con fenómenos reales, los estudiantes pueden construir ese significado. Lo que quiero evidenciar es cómo ocurre ese proceso: qué estrategias usan, qué errores cometen, cómo los superan.
+
+Ahora, la pregunta que está en el documento ahora mismo tiene un problema que la doctora Santacruz señaló con razón: mezcla demasiadas cosas. Habla de ``pensamiento trigonométrico'' y ``comprensión de funciones trigonométricas'' y funciones ``hiperbólicas''. Eso son mínimo tres objetos distintos en una sola pregunta. Tenemos que revisarla hoy.
+
+\begin{clave}
+  \faExclamationTriangle\enspace La pregunta actual es la raíz del problema más
+  grande. Si no la definimos bien, todo lo que se desprende de ella —objetivos,
+  marco teórico, metodología— queda mal alineado.
+\end{clave}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{02 — Estructura del documento \hfill {\normalfont\small\color{GrisAnotacion}$\sim$1.5 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar al divisor ``02'', luego al mapa del documento.
+  Señalar cada capítulo mientras se nombra.
+\end{accion}
+
+El documento tiene tres capítulos. El primero es el planteamiento del problema: pregunta, antecedentes, justificación y objetivos. El segundo es el marco teórico, que tiene tres marcos: conceptual, referencial y contextual. El tercero es la metodología.
+
+Lo que se ve en este mapa es que el Capítulo 2 tiene dos secciones prácticamente vacías: el marco referencial y el marco contextual. El Capítulo 3 no tiene cronograma ni presupuesto. Esas cuatro secciones hay que escribirlas desde cero.
+
+El gráfico también muestra algo importante: hay bloques marcados en gris. Eso es lo que no existe todavía. No es que esté incompleto; es que no está escrito.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{03 — Estado de avance por capítulo \hfill {\normalfont\small\color{GrisAnotacion}$\sim$4 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar al divisor ``03'', luego a las diapositivas de capítulos en orden.
+\end{accion}
+
+\subsection{Capítulo 1 — Planteamiento del Problema}
+
+\begin{accion}
+  Señalar las barras de avance al mencionar cada sección.
+\end{accion}
+
+El Capítulo 1 es el más trabajado del documento. Tiene cuarenta páginas. La justificación está escrita, los antecedentes están, los objetivos están. En ese sentido la base es sólida.
+
+Pero tiene un problema estructural: la pregunta-problema no está bien enfocada, y eso arrastra todo lo demás. Los objetivos van a tener que reescribirse después de que arreglemos la pregunta. La justificación probablemente también necesite ajustes cuando se clarifique el foco.
+
+Hay otro problema puntual que la doctora Santacruz señaló: existen dos justificaciones separadas en el documento. Yo mismo lo sabía cuando lo escribí, pero no había sabido cómo resolverlo. La instrucción es clara: hay que fusionarlas en un solo bloque coherente.
+
+Sobre los antecedentes: la observación del comentario C14 fue directa, que algunos párrafos parecen escritos por IA. Tiene razón. Hay párrafos que fluyen muy bien pero no tienen voz propia, no reflejan mi lectura personal de las fuentes. Voy a reescribirlos.
+
+\subsection{Capítulo 2 — Marco Teórico}
+
+\begin{accion}
+  Señalar el indicador de avance del 30\%.
+\end{accion}
+
+El Capítulo 2 es el que más trabajo me va a dar. Y a la vez es el más importante, porque es donde se sostiene la investigación conceptualmente.
+
+El marco conceptual tiene base: están Montiel sobre pensamiento trigonométrico, está Leung sobre diseño de tareas, están los referentes de IA en educación. Eso existe y está bien elegido.
+
+Pero le falta algo fundamental: el desarrollo matemático del objeto escolar. Es decir, qué es la trigonometría como objeto matemático, cuáles son las funciones, qué propiedades tienen, de dónde vienen. Eso no está escrito. Y el comentario C25 lo pide directamente.
+
+También falta la dimensión cognitiva: los errores que cometen los estudiantes al aprender trigonometría, los obstáculos que han documentado los investigadores, las dificultades recurrentes. Eso es lo que el comentario C24 señala, y es central para una investigación en didáctica de las matemáticas.
+
+\begin{accion}
+  Señalar el espacio del marco referencial y contextual en el mapa.
+\end{accion}
+
+Los marcos referencial y contextual están vacíos. Hay que escribirlos desde cero.
+
+Hay también un punto de vocabulario que voy a corregir en todo el documento: la palabra ``mediación''. La doctora Santacruz pidió que use ``apoye'' o ``promueva'' en su lugar. Eso es un cambio sistemático que puedo hacer con búsqueda y reemplazo.
+
+\begin{decision}{¿se incluye la modelación matemática?}
+  La doctora Santacruz fue directa: el marco teórico ya es muy extenso, y meter
+  modelación lo haría más grande sin claridad de por qué está. Quiero escuchar
+  la opinión del profesor Salcedo.
+  Mi posición provisional es que no la incluya, porque el foco central es el
+  diseño de tareas y el pensamiento trigonométrico, no la modelación.
+\end{decision}
+
+\subsection{Capítulo 3 — Marco Metodológico}
+
+El Capítulo 3 es el que está en mejor estado proporcional a lo que tiene que tener. El paradigma interpretativo está justificado, el diseño de estudio de caso está explicado, la codificación está definida.
+
+Lo que falta son cuatro secciones concretas: la ubicación del caso de estudio, los métodos y materiales específicos, el cronograma de actividades y el presupuesto. Ninguna está escrita todavía. Cronograma y presupuesto los tengo que definir con ustedes.
+
+\begin{accion}
+  Avanzar al gráfico de barras de avance.
+\end{accion}
+
+Si lo veo con números: el Capítulo 1 va en un 53\%, el Capítulo 2 en un 30\%, el Capítulo 3 en un 40\%. El avance global es aproximadamente el 39\%.
+
+No sé si ese número es exacto —es una estimación— pero sí captura algo real: el documento tiene una base, pero le falta más de la mitad para estar listo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{04 — Las 33 correcciones \hfill {\normalfont\small\color{GrisAnotacion}$\sim$5 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar al divisor ``04'', luego al mapa general de correcciones.
+\end{accion}
+
+Las 33 correcciones se agrupan en seis áreas. Las dos más grandes son el Marco Teórico con 13 comentarios y la Pregunta y Enfoque con 8. Entre las dos suman el 63\% de las correcciones. Eso dice dónde está el problema real.
+
+No todas tienen el mismo peso. Algunas son de forma y las puedo resolver solo en una tarde. Otras son conceptuales y requieren decisiones que no puedo tomar unilateralmente.
+
+\subsection{Correcciones sobre la pregunta y el enfoque}
+
+\begin{accion}
+  Avanzar a la diapositiva ``Correcciones — Pregunta y Enfoque''.
+  Señalar los badges con los comentarios al ir nombrándolos.
+\end{accion}
+
+Los 8 comentarios sobre la pregunta tienen un hilo: la pregunta actual intenta abarcar demasiado y no define qué tipo de IA está estudiando.
+
+La versión que tengo dice: \textit{``¿Cómo contribuye el diseño de tareas con IA al desarrollo del pensamiento trigonométrico y la comprensión de funciones trigonométricas e hiperbólicas en educación media?''}
+
+La doctora Santacruz propone reformularla como: \textit{``¿Cómo la integración de IA en el diseño de tareas matemáticas promueve el aprendizaje de funciones trigonométricas en educación media?''} Esa versión es más limpia y está mejor enfocada.
+
+Pero tiene una implicación directa: ya no menciona las funciones hiperbólicas. Y eso me lleva a la primera decisión del día.
+
+\begin{decision}{¿se incluyen las funciones hiperbólicas?}
+  Mi posición: creo que las hiperbólicas complican la investigación sin agregar
+  evidencia suficiente de por qué deben estar. En el currículo de educación media
+  no están contempladas. Si el foco es el pensamiento trigonométrico en
+  secundaria, pueden quedar por fuera.\\[4pt]
+  Dicho esto, estoy dispuesto a cambiar de opinión si el profesor Salcedo tiene
+  razones para mantenerlas.
+\end{decision}
+
+Los otros comentarios sobre la pregunta son igualmente importantes: el C6 pide que defina qué tipo de IA estoy usando, el C8 señala que pensamiento trigonométrico y comprensión son cosas distintas en la literatura, y el C9 propone orientar la pregunta hacia cómo la IA \textit{promueve el aprendizaje}.
+
+\begin{decision}{¿pensamiento trigonométrico o comprensión?}
+  Son conceptos distintos en la investigación matemática. El pensamiento
+  trigonométrico implica procesos cognitivos más amplios. La comprensión es más
+  acotada. Necesito definir cuál es el objeto central de mi investigación.
+\end{decision}
+
+\subsection{Correcciones sobre la justificación y el Capítulo 1}
+
+\begin{accion}
+  Avanzar a la diapositiva correspondiente.
+\end{accion}
+
+Cuatro comentarios sobre la justificación. La instrucción central es clara: hay dos justificaciones separadas y hay que unirlas en un solo bloque. El comentario C17 también señala que no explico por qué incluyo las hiperbólicas, que es coherente con la decisión que acabamos de discutir.
+
+Sobre los antecedentes: el comentario C15 dice que la doctora Santacruz va a enviar un ejemplo de cómo organizar los antecedentes. Eso me será muy útil para reescribirlos con la estructura correcta.
+
+\subsection{Correcciones sobre el Marco Teórico}
+
+\begin{accion}
+  Avanzar a la diapositiva de correcciones del Marco Teórico.
+  Señalar cada badge al nombrarlo.
+\end{accion}
+
+Trece comentarios. Los más importantes son tres.
+
+Primero: el comentario C25 pide el desarrollo matemático del objeto escolar. Tengo que explicar qué es la trigonometría como objeto matemático —no como tema curricular— cuáles son las funciones, sus propiedades, su historia. Eso no está, y tiene que estar.
+
+Segundo: el comentario C24 pide la dimensión cognitiva. Los errores que cometen los estudiantes, los obstáculos documentados en la literatura, las dificultades específicas con las funciones trigonométricas. Eso tampoco está.
+
+Tercero: el comentario C28 pide una tabla explícita de las características del pensamiento trigonométrico, con los autores correspondientes. Ya tengo identificados varios: Montiel, Chacón, Delgado, Iriarte. La tabla es posible construirla. La muestro en la siguiente diapositiva como borrador.
+
+\begin{clave}
+  Esos tres elementos —desarrollo matemático, dimensión cognitiva y tabla de
+  pensamiento trigonométrico— son el núcleo de lo que le falta al Capítulo 2.
+  Sin ellos, el marco teórico no sostiene la investigación.
+\end{clave}
+
+\subsection{Correcciones sobre referencias y forma}
+
+\begin{accion}
+  Avanzar a la diapositiva de referencias y tabla.
+\end{accion}
+
+Hay tres referencias faltantes: en el planteamiento, en una afirmación clave y en la metodología. Las voy a localizar y agregar.
+
+Las correcciones de forma son las más sencillas. Algunos objetivos quedaron incompletos y hay que terminarlos. Hay dos palabras que hay que cambiar en todo el documento: donde dice algo incorrecto en lugar de ``enseñanza'' o ``didácticos''. Son cambios menores que resuelvo en una sola sesión de trabajo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{05 — Lo que falta y el plan de acción \hfill {\normalfont\small\color{GrisAnotacion}$\sim$2.5 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar al divisor ``05'', luego al semáforo del documento.
+\end{accion}
+
+Si lo veo de manera honesta: hay 7 elementos que están sólidos, 6 que necesitan ajuste y 7 que hay que escribir desde cero.
+
+Lo que está sólido es real. El paradigma interpretativo, el estudio de caso, las bases del marco conceptual, la revisión de literatura. Eso no está en cuestión y no voy a tocarlo más allá de lo necesario.
+
+Lo que hay que escribir desde cero es bastante. El desarrollo matemático de la trigonometría, la dimensión cognitiva, la tabla, la justificación fusionada, los marcos referencial y contextual, el cronograma y el presupuesto. Son siete bloques distintos.
+
+\begin{accion}
+  Avanzar a la diapositiva de tareas pendientes por capítulo.
+  Señalar cada columna al nombrarla.
+\end{accion}
+
+Las tareas críticas, organizadas por capítulo:
+
+Para el Capítulo 1: reformular la pregunta-problema, fusionar las dos justificaciones, aclarar el rol de las hiperbólicas, reescribir los antecedentes con voz propia y actualizar los objetivos. Todo eso depende de las decisiones que tomemos hoy.
+
+Para el Capítulo 2: escribir el desarrollo matemático, la dimensión cognitiva y la tabla de pensamiento trigonométrico. Desarrollar los marcos referencial y contextual. Y resolver lo de la modelación.
+
+Para el Capítulo 3: ubicar el caso de estudio, definir los métodos y materiales, construir el cronograma y el presupuesto. Las dos últimas las tengo que hacer con ustedes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cierre \hfill {\normalfont\small\color{GrisAnotacion}$\sim$1.5 min}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{accion}
+  Avanzar a la diapositiva de síntesis.
+\end{accion}
+
+Quiero terminar siendo directo.
+
+El documento tiene base. Hay un problema educativo real identificado, hay una revisión de literatura que es amplia y reciente, hay una metodología caracterizada. Eso no lo descarto y no lo voy a tirar.
+
+Pero sé perfectamente que tiene problemas de fondo: la pregunta no está clara, el marco teórico está incompleto en los elementos más importantes, y hay secciones que hay que escribir desde cero. No voy a subestimar eso.
+
+No estoy aquí para defender lo que está. Estoy aquí para entender qué tengo que hacer y para que ustedes me digan cómo hacerlo bien. Estoy dispuesto a hacer todos los cambios que sean necesarios. Tengo claro que hay trabajo serio por delante y tengo la disposición para hacerlo.
+
+\begin{clave}
+  Las cinco decisiones que necesito que tomemos ahora:
+  \begin{enumerate}[noitemsep]
+    \item ¿Se incluyen las funciones hiperbólicas?
+    \item ¿Qué tipo de IA? ¿Cómo la nombro en el documento?
+    \item ¿Pensamiento trigonométrico o comprensión trigonométrica?
+    \item ¿Va la modelación matemática en el marco teórico?
+    \item ¿Cuándo es la próxima entrega y qué debe tener?
+  \end{enumerate}
+\end{clave}
+
+Quedé con la impresión, después de leer los 33 comentarios, de que la propuesta tiene dirección. Lo que le falta no es un cambio de rumbo. Es construir lo que falta y afinar lo que ya está.
+
+Gracias. Quedo atento a sus orientaciones.
+
+\bigskip
+\begin{center}
+  {\color{VerdeUNAL}\rule{0.5\linewidth}{0.8pt}}
+\end{center}
+
+\vfill
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+  \small
+  \textbf{Datos de contacto} \\
+  Dairo Janover Peña Cárdenas \textbf{·}
+  \texttt{djpenac@unal.edu.co} \textbf{·}
+  Maestría en Enseñanza de las Ciencias Exactas y Naturales \textbf{·}
+  Universidad Nacional de Colombia, Sede Palmira \textbf{·}
+  Marzo 2026
+\end{tcolorbox}
+
+\end{document}

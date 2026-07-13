@@ -1,0 +1,630 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PRESENTACIÓN: SEGUNDO AVANCE DE TESIS
+%% Dairo Janover Peña Cárdenas
+%% Maestría en Enseñanza de las Ciencias Exactas y Naturales
+%% Universidad Nacional de Colombia
+%% Sesión: Abril 8 de 2026
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, aspectratio=169, spanish]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{config/preambulo}
+\usepackage{fontawesome5}
+
+% ============================================================
+%  COLORES ADICIONALES
+% ============================================================
+\definecolor{RojoAlerta}{RGB}{192,57,43}
+\definecolor{AzulInfo}{RGB}{41,128,185}
+\definecolor{NaranjaPend}{RGB}{211,84,0}
+\definecolor{GrisClaro}{RGB}{180,188,194}
+\definecolor{GrisFondo}{RGB}{236,240,241}
+\definecolor{VerdeOk}{RGB}{39,174,96}
+\definecolor{MoradoMarco}{RGB}{142,68,173}
+\definecolor{AmarilloAv}{RGB}{243,156,18}
+
+% ============================================================
+%  ESTILOS TIKZ
+% ============================================================
+\tikzset{
+  capboxC1/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=AzulInfo!70, fill=AzulInfo!12},
+  capboxC2/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=MoradoMarco!70, fill=MoradoMarco!12},
+  capboxC3/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=VerdeUNAL!70, fill=VerdeUNAL!12},
+  capboxRef/.style={rectangle, rounded corners=2mm, minimum width=2.3cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=NaranjaPend!70, fill=NaranjaPend!12},
+  secboxC1/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=AzulInfo!50, fill=AzulInfo!8},
+  secboxC2/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=MoradoMarco!50, fill=MoradoMarco!8},
+  secboxC3/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=VerdeUNAL!50, fill=VerdeUNAL!8},
+  secboxVacio/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=GrisClaro!70, fill=GrisFondo},
+  nodoCap/.style args={#1}{rectangle, rounded corners=1mm, align=center,
+    font=\scriptsize, minimum width=2.9cm, minimum height=0.38cm,
+    draw=#1!60, fill=#1!12},
+  miniCap/.style args={#1}{rectangle, align=center,
+    font=\tiny, minimum width=2.6cm, minimum height=0.3cm,
+    draw=#1!40, fill=#1!6},
+}
+
+% ============================================================
+%  MACROS
+% ============================================================
+
+% Barra de progreso
+\newcommand{\barra}[2]{%
+  \begin{tikzpicture}[baseline=-0.5ex]%
+    \fill[GrisClaro!40] (0,0) rectangle (5,0.22);%
+    \fill[#2!80] (0,0) rectangle ({#1*0.05},0.22);%
+    \node[anchor=west, inner sep=1pt] at (5.05,0.11)
+      {\footnotesize\textbf{\textcolor{#2!80!black}{#1\%}}};%
+  \end{tikzpicture}%
+}
+
+% Círculo de avance
+\newcommand{\circulo}[2]{%
+  \begin{tikzpicture}%
+    \draw[GrisClaro!50, line width=6pt] (0,0) circle (1cm);%
+    \draw[#2, line width=6pt, line cap=round]%
+      (90:1cm) arc (90:{90-#1*3.6}:1cm);%
+    \node[font=\normalsize\bfseries, text=#2] at (0,0) {#1\%};%
+  \end{tikzpicture}%
+}
+
+% Indicadores semáforo
+\newcommand{\semOK}{\textcolor{VerdeOk}{\faCheckCircle}}
+\newcommand{\semWA}{\textcolor{AmarilloAv}{\faExclamationCircle}}
+\newcommand{\semNO}{\textcolor{RojoAlerta}{\faTimesCircle}}
+
+% Keywords coloreadas
+\newcommand{\kwT}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{AzulInfo!18}{#1}}}
+\newcommand{\kwM}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{VerdeUNAL!18}{#1}}}
+\newcommand{\kwI}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{MoradoMarco!18}{#1}}}
+\newcommand{\kwE}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{AmarilloAv!24}{#1}}}
+
+\begin{document}
+
+% ============================================================
+%  PORTADA
+% ============================================================
+{
+\setbeamertemplate{background}{}
+\begin{frame}[plain, shrink=5]
+\vspace{0.04cm}
+\begin{columns}[T]
+
+% --- IZQUIERDA ---
+\column{0.62\textwidth}
+\begin{center}
+{\scriptsize\textbf{\textcolor{VerdeUNAL}{Maestría en Enseñanza de las Ciencias Exactas y Naturales}}}\\[0.04cm]
+{\tiny\textcolor{VerdeUNAL}{Sesión de seguimiento · Abril 8 de 2026}}
+\end{center}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=VerdeUNAL!5, colframe=VerdeUNAL!80, boxrule=1.2pt, arc=3mm]
+\begin{center}
+{\large\textbf{\kwT{Diseño de tareas matemáticas que se integran con}}}\\[0.04cm]
+{\large\textbf{\kwI{inteligencia artificial generativa}}}\\[0.04cm]
+{\small\textbf{para el desarrollo del \kwM{pensamiento trigonométrico}}}\\[0.02cm]
+{\small\textbf{en \kwE{educación media}}}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!65, arc=2mm, boxrule=0.8pt]
+\centering{\small\faCheckCircle\quad\textbf{Segundo Avance}}\\[0.05cm]
+{\footnotesize Expansión de antecedentes y re-escritura más concisa}
+\end{tcolorbox}
+
+\vspace{0.1cm}
+\begin{alertblock}{}
+\centering{\footnotesize\faFileAlt\quad\textbf{Antecedentes: 1450+ palabras · 30+ referencias}}
+\end{alertblock}
+
+% --- DERECHA ---
+\column{0.36\textwidth}
+\vspace{0.2cm}
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!90, boxrule=1.2pt, arc=3mm,
+  title={\centering\footnotesize\textbf{\faUsers\quad Información académica}}]
+{\footnotesize
+\textbf{Directores:}\\[-0.02cm]
+{\scriptsize\faUser\; Luis Octavio Gonzalez Salcedo }\\
+{\scriptsize\faUser\; Marisol Santacruz Rodríguez}}
+
+\vspace{0.15cm}
+{\footnotesize\textbf{Estudiante:}\\[-0.02cm]
+{\scriptsize\faUserGraduate\; Dairo Janover Peña Cárdenas}}
+
+\vspace{0.12cm}
+\textcolor{VerdeUNAL}{\rule{\linewidth}{0.6pt}}
+\vspace{0.08cm}
+\centering
+{\scriptsize\textbf{Universidad Nacional de Colombia}\\
+Sede Palmira 2026}
+\vspace{0.1cm}
+
+\begin{center}
+\circulo{75}{VerdeOk}\\
+{\tiny Crecimiento de sección 1.2}
+\end{center}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+}
+
+% ============================================================
+%  AGENDA
+% ============================================================
+\begin{frame}[plain]
+\frametitle{\faClipboardList\quad \textquestiondown{}Qué cambió en este avance?}
+\vspace{0.1cm}
+
+\begin{columns}[T]
+\column{0.56\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!70, arc=2mm,
+  title={\footnotesize\textbf{En esta sesión veremos}}]
+\footnotesize
+\begin{enumerate}[leftmargin=*, label=\textcolor{VerdeUNAL}{\textbf{\arabic*.}}, itemsep=3pt]
+  \item \faCompressAlt\quad Comparativa: Primer vs Segundo Avance
+  \item \faPencilAlt\quad Re-escritura más concisa (Sección 1.2.1)
+  \item \faPlus\quad Expansión de 1.2.2 y creación de 1.2.3
+  \item \faTable\quad Síntesis visual de dificultades
+  \item \faBook\quad Integración de 30+ referencias
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.18cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+{\footnotesize\textbf{Resultado esperado:}\\[0.05cm]
+\semOK\; {\small Antecedentes expandidos y humanizados}\\
+\semOK\; {\small Nueva tabla de síntesis}\\
+\semOK\; {\small Base sólida para continuar}}
+\end{tcolorbox}
+
+\column{0.41\textwidth}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm,
+  title={\footnotesize\textbf{\faChartPie\quad Datos del segundo avance}}]
+\vspace{0.1cm}
+\begin{center}
+\begin{tabular}{lc}
+\scriptsize Sección 1.2 (palabras) & \scriptsize 1450+ \\[4pt]
+\scriptsize Referencias nuevas & \scriptsize 10 \\[4pt]
+\scriptsize Subsecciones & \scriptsize 3 expandidas \\[4pt]
+\scriptsize Tablas sintéticas & \scriptsize 1 (5 filas) \\[4pt]
+\scriptsize\textbf{Crecimiento} & \scriptsize\textbf{\textcolor{VerdeOk}{+220\%}} \\
+\end{tabular}
+
+\vspace{0.2cm}
+\circulo{75}{VerdeOk}\\[0.05cm]
+{\tiny\textcolor{GrisClaro!80!black}{expansión lograda}}
+\end{center}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 1 — COMPARATIVA
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{01}}}\\[-0.1cm]
+{\Large\textbf{Comparativa}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{primer vs segundo avance}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=20]
+\frametitle{\faCompressAlt\quad Estado general}
+\vspace{0.05cm}
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=RojoAlerta!7, colframe=RojoAlerta!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faFileAlt\quad Primer Avance (Marzo)}}]
+{\scriptsize
+\textbf{Sección 1.2 --- Antecedentes}\\[0.04cm]
+\barra{25}{RojoAlerta}\\[0.06cm]
+\semNO\; 450 palabras\\
+\semNO\; Pocas referencias (8)\\
+\semNO\; Tono formal/automatizado\\
+\semNO\; Síntesis visual ausente\\[0.1cm]
+
+\textit{\small ``Conciso pero incompleto''}
+}
+\end{tcolorbox}
+
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faCheckCircle\quad Segundo Avance (Abril)}}]
+{\scriptsize
+\textbf{Sección 1.2 --- Antecedentes}\\[0.04cm]
+\barra{100}{VerdeOk}\\[0.06cm]
+\semOK\; 1450+ palabras\\
+\semOK\; 30+ referencias integradas\\
+\semOK\; Voz reflexiva visible\\
+\semOK\; Tabla de 5 categorías\\[0.1cm]
+
+\textit{\small ``Expandido, humanizado, sintético''}
+}
+\end{tcolorbox}
+
+\end{columns}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=AzulInfo!5, colframe=AzulInfo!60, arc=2mm, boxrule=0.8pt]
+\centering{\small\textbf{Métrica de crecimiento:}}\quad
+\textcolor{VerdeOk}{\textbf{+220\%}} en palabras \quad
+\textcolor{VerdeOk}{\textbf{+280\%}} en referencias
+\end{tcolorbox}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 2 — ESTADO DETALLADO
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{02}}}\\[-0.1cm]
+{\Large\textbf{Sección 1.2.1}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{IA en educación matemática}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=18]
+\frametitle{\faPencilAlt\quad Re-escritura más concisa}
+\vspace{0.05cm}
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=RojoAlerta!7, colframe=RojoAlerta!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faTimesCircle\quad Primer Avance}}]
+{\tiny
+Parrafo único. Breve mención de IA en matemáticas.\\[0.06cm]
+
+\textit{``Las investigaciones muestran que la IA está presente. Existen beneficios documentados.''}\\[0.06cm]
+
+Problemas:
+\begin{itemize}[itemsep=1pt, leftmargin=10pt]
+\item Voz pasiva/impersonal
+\item Sin reflexión visible
+\item Pocas citas
+\item Tono automatizado
+\end{itemize}
+}
+\end{tcolorbox}
+
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faCheckCircle\quad Segundo Avance}}]
+{\tiny
+\textbf{7 párrafos} con desarrollo temático claro.\\[0.06cm]
+
+\begin{enumerate}[label=P\arabic*., itemsep=0pt, leftmargin=12pt, font=\scriptsize\bfseries]
+\item Era de ChatGPT (Pepin)
+\item Geografía de investigación (Nguyen)
+\item Funcionalidades con datos (82\% --- Hetmanenko)
+\item Brecha docente (Alsharidah)
+\item Limitaciones técnicas (Opesemowo)
+\item Perspectiva sistémica (Irrazabal)
+\item Síntesis integradora (Suárez)
+\end{enumerate}
+
+\vspace{0.05cm}
+Logros: 7 referencias, datos específicos, voz reflexiva
+}
+\end{tcolorbox}
+
+\end{columns}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=AmarilloAv!7, colframe=AmarilloAv!50, arc=2mm, boxrule=0.8pt]
+\centering{\scriptsize\faExclamationCircle\quad\textbf{Estrategias de humanización:}\\
+Incertidumbre visible (\textit{``No hay respuesta clara aún''}) · Datos específicos (82\%) · Preguntas retóricas · Voz autoral}
+\end{tcolorbox}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 3 — EXPANSIONES
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{03}}}\\[-0.1cm]
+{\Large\textbf{Secciones 1.2.2 y 1.2.3}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{nueva profundidad}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=18]
+\frametitle{\faPlus\quad Expansiones temáticas}
+\vspace{0.05cm}
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faExclamationCircle\quad 1.2.2 Trigonometría}}]
+{\scriptsize
+\textbf{Del primer avance:}\\
+Pocas líneas genéricas sobre herramientas.\\[0.08cm]
+
+\textbf{Nuevo contenido:}
+\begin{itemize}[itemsep=1.5pt, leftmargin=10pt, font=\tiny]
+\item Herramientas visuales (GeoGebra)
+\item Sistemas tutoriales inteligentes (Alabi)
+\item Realidad aumentada colombiana (Mendoza)
+\item Brecha docente (Thomas)
+\end{itemize}
+
+\vspace{0.06cm}
+\barra{85}{AzulInfo}\\[0.04cm]
+\textit{\small Expansión: 4 referencias nuevas}
+}
+\end{tcolorbox}
+
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!7, colframe=MoradoMarco!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faPlus\quad 1.2.3 Dificultades}}]
+{\scriptsize
+\textbf{Del primer avance:}\\
+Sección inexistente.\\[0.08cm]
+
+\textbf{Creado de cero:}
+\begin{itemize}[itemsep=1.5pt, leftmargin=10pt, font=\tiny]
+\item Patrones de error observados (Arhin)
+\item Género como factor (Arhin, Owusu)
+\item Origen instruccional (Orozco)
+\item Factor emocional (Owusu)
+\end{itemize}
+
+\vspace{0.06cm}
+\barra{100}{MoradoMarco}\\[0.04cm]
+\textit{\small Nueva sección: 6 párrafos + 4 referencias}
+}
+\end{tcolorbox}
+
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 4 — TABLA
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{04}}}\\[-0.1cm]
+{\Large\textbf{Tabla de síntesis}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{cinco categorías de dificultades}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=18]
+\frametitle{\faTable\quad Síntesis visual}
+\vspace{0.05cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+{\tiny
+\centering
+\begin{tabular}{|l|p{2.2cm}|p{2.8cm}|}
+\hline
+\textbf{\small Tipo} & \textbf{\small Manifestación} & \textbf{\small Origen} \\
+\hline
+\textbf{Conceptual} & Confusión razón-función; periodicidad & Articulación insuficiente \\
+\hline
+\textbf{Procesal} & Errores en transformación, cálculo & Falta de práctica deliberada \\
+\hline
+\textbf{Género} & Mujeres reportan mayor dificultad & Diferencias de confianza \\
+\hline
+\textbf{Emocional} & Ansiedad, rechazo, evitación & Enseñanza punitiva \\
+\hline
+\textbf{Sistémica} & Persistencia año tras año & Combinación de factores \\
+\hline
+\end{tabular}
+}
+\end{tcolorbox}
+
+\vspace{0.12cm}
+
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{tcolorbox}[colback=AzulInfo!5, colframe=AzulInfo!60, arc=2mm, boxrule=0.8pt]
+{\scriptsize
+\faSquare\, \textbf{5 categorías identificadas}\\
+\faSquare\, Articuladas con antecedentes\\
+\faSquare\, Base para diseño de tareas
+}
+\end{tcolorbox}
+
+\column{0.5\textwidth}
+\begin{tcolorbox}[colback=VerdeOk!5, colframe=VerdeOk!60, arc=2mm, boxrule=0.8pt]
+{\scriptsize
+\faSquare\, Propicio para análisis posterior\\
+\faSquare\, Visible alineación con IA\\
+\faSquare\, Marco para alternativas pedagógicas
+}
+\end{tcolorbox}
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 5 — BIBLIOGRAFÍA
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{05}}}\\[-0.1cm]
+{\Large\textbf{Bibliografías integradas}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{30+ referencias coherentes}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=20]
+\frametitle{\faBook\quad Fuentes nuevas}
+\vspace{0.05cm}
+
+\begin{columns}[T]
+\column{0.33\textwidth}
+
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm,
+  title={\centering\scriptsize\textbf{1.2.1 Educación}}]
+{\tiny
+\textbf{Pepin:} Educación matemática en era ChatGPT\\
+\textbf{Nguyen:} Geografía de investigación\\
+\textbf{Hetmanenko:} 82\% mejora en aprendizaje\\
+\textbf{Alsharidah:} Percepciones docentes\\
+\textbf{Opesemowo:} Fragilidades técnicas\\
+\textbf{Irrazabal:} Revisión sistemática
+}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!7, colframe=MoradoMarco!50, arc=2mm,
+  title={\centering\scriptsize\textbf{1.2.2 Trigonometría}}]
+{\tiny
+\textbf{González-Posada:} GeoGebra y visualización\\
+\textbf{Míreles-Kuo:} IA adaptativa\\
+\textbf{Alabi:} Sistemas tutoriales (ITS)\\
+\textbf{Mendoza:} Realidad aumentada (contexto CO)\\
+\textbf{Thomas:} Preparación docente
+}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!7, colframe=VerdeUNAL!50, arc=2mm,
+  title={\centering\scriptsize\textbf{1.2.3 Dificultades}}]
+{\tiny
+\textbf{Arhin:} Errores por género\\
+\textbf{Orozco:} Resolución y construcción\\
+\textbf{Owusu:} Factor emocional\\
+\textbf{Alabi (ext):} Efectos secundarios ITS\\
+\textbf{+ Master Bib:} 26+ adicionales
+}
+\end{tcolorbox}
+
+\end{columns}
+
+\vspace{0.12cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm, boxrule=0.8pt]
+{\scriptsize
+Total: 30+ referencias coherentemente integradas · 4 subcarpetas `.bib` sincronizadas · Cero conflictos de citekeys
+}
+\end{tcolorbox}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 6 — LOGROS
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{06}}}\\[-0.1cm]
+{\Large\textbf{Logros y métricas}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{síntesis del avance}}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain, shrink=18]
+\frametitle{\faCheckCircle\quad Síntesis final}
+\vspace{0.08cm}
+
+\begin{columns}[T]
+\column{0.52\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!70, arc=2mm,
+  title={\footnotesize\textbf{\faChartBar\quad Comparativa cuantitativa}}]
+\footnotesize
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Métrica} & \textbf{Antes} & \textbf{Después} & \textbf{Cambio} \\
+\hline
+Palabras (1.2) & 450 & 1450+ & +220\% \\
+\hline
+Referencias & 8 & 30+ & +280\% \\
+\hline
+Párrafos & 3 & 20 & +560\% \\
+\hline
+Subsecciones & 2 & 3 & +50\% \\
+\hline
+Tablas & 0 & 1 & Nuevo \\
+\hline
+\end{tabular}
+\end{tcolorbox}
+
+\column{0.44\textwidth}
+
+\begin{tcolorbox}[colback=VerdeOk!8, colframe=VerdeOk!70, arc=2mm,
+  title={\footnotesize\textbf{\faCheckCircle\quad Conseguido}}]
+{\scriptsize
+\semOK\; Sección 1.2 completamente expandida\\[0.08cm]
+\semOK\; Re-escritura de conceptos\\[0.08cm]
+\semOK\; Síntesis visual clara (tabla)\\[0.08cm]
+\semOK\; Integración coherente de referencias\\[0.08cm]
+\semOK\; Base sólida para Cap. 2\\[0.08cm]
+\semOK\; PDF compilado sin errores
+}
+\end{tcolorbox}
+
+\end{columns}
+
+\vspace{0.12cm}
+
+\begin{tcolorbox}[colback=AzulInfo!5, colframe=AzulInfo!60, arc=2mm, boxrule=0.8pt]
+\centering{\small\faArrowRight\quad\textbf{Próximos pasos:} Capítulo 2 (Marco Teórico) · Capítulo 3 (Marco Metodológico) · Validación conjunta}
+\end{tcolorbox}
+
+\end{frame}
+
+% ============================================================
+%  CIERRE
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.5cm}
+\begin{center}
+{\Large\textbf{\textcolor{VerdeUNAL}{Gracias por acompañar}}}\\[0.2cm]
+{\normalsize\textcolor{GrisClaro!80!black}{el desarrollo de esta investigación}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=VerdeOk!5, colframe=VerdeOk!60, arc=2mm]
+\centering{\textbf{\faCommentDots\quad Preguntas y sugerencias para el siguiente avance}}
+\end{tcolorbox}
+\end{frame}
+
+\end{document}

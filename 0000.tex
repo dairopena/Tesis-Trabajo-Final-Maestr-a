@@ -1,0 +1,411 @@
+% Esta es la Plantilla UNAL en LaTeX
+\documentclass[11pt,spanish,fleqn,openany,twoside,letterpaper]{book}
+
+%Muestra los márgenes del documento para evitar Warnings
+%Para activar la siguiente línea quite el simbolo % 
+%\usepackage[showframe]{geometry}
+
+%Formato de fuentes bibliográficas
+%Use el estilo bibliográfico que sea pertinente según el área de estudio APA, IEEE, etc
+
+%Usando el paquete BibLaTeX
+%Cita normal con \cite[página]{} y cita con paréntesis \parencite[página]{}
+
+% Configuración de BibLaTeX (se usa una sola vez más abajo)
+
+% Cambiar el idioma de las referencias bibliográficas a español
+%\DefineBibliographyStrings{spanish}{%
+%  andothers = {et\addabbrvspace al\adddot},
+%  andmore = {et\addabbrvspace al\adddot},
+%}
+
+% Personalizar el formato de las citas y la bibliografía
+%\DeclareNameAlias{sortname}{family-given}
+%\DeclareDelimFormat{multinamedelim}{\addcomma\space}
+%\DeclareDelimFormat{finalnamedelim}{\addcomma\space\&\space}
+%\DeclareFieldFormat{titlecase}{\MakeSentenceCase*{#1}}
+%\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\titlecase{#1}}
+%\DeclareFieldFormat{journaltitlecase}{\titlecase{#1}}
+%\DeclareFieldFormat{pages}{#1}
+%\DeclareFieldFormat{volume}{\mkbibbold{#1}}
+%\renewbibmacro{in:}{}
+%\AtEveryBibitem{\clearfield{month}}
+
+% Bibliografía: usar biblatex + biber (más moderno) OR mantener natbib/bibtex
+% Si quieres usar biber, activa las siguientes líneas. Si prefieres bibtex/natbib,
+% mantén las líneas comentadas y usa `bibtex` en lugar de `biber`.
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{iftex}
+
+
+%Idioma del documento
+%Use main para el idioma principal del documento
+\usepackage[main=spanish,english,german,french,portuguese]{babel}
+\usepackage{textgreek}
+% Carácteres especiales
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+
+% Evita ligadura li & fl
+% Nota: DisableLigatures no funciona con XeLaTeX, solo con pdfLaTeX
+\usepackage{microtype}
+%\DisableLigatures{encoding = *, family = *}
+
+% Otros paquetes de tablas y colores avanzados
+\usepackage{amsmath,graphicx,rotating,float,multirow}
+\usepackage{longtable}
+\setlength{\LTcapwidth}{6in}
+\usepackage{epsfig,epic,eepic,threeparttable,amscd,here,lscape,tabularx,subfigure}
+\usepackage{tabu,array}
+\usepackage[rgb]{xcolor}
+\usepackage{colortbl}
+
+% Permite ver y configurar los parámetros de la página
+\usepackage{layout}
+%Hyperref permite ver las secciones del texto
+\usepackage[hidelinks,pdfpagelayout=SinglePage]{hyperref}
+
+%Permite incluir código de cualquier lenguaje dentro del texto del documento
+\usepackage{minted}
+\usepackage{fancyvrb}
+\newenvironment{myverbatim}{\Verbatim}{\endVerbatim}
+
+%Genera los comandos de la página de autoría
+\newcommand{\studentname}{}
+\newcommand{\submissiondate}{}
+\newcommand{\academictitle}{}
+\newcommand{\resgroupone}{}
+\newcommand{\resgrouptwo}{}
+\newcommand{\researchtopic}{}
+\newcommand{\thesisname}{}
+\newcommand{\thesisnameeng}{}
+\newcommand{\thesisnamelang}{} %Usar solo si se requiere
+\newcommand{\director}{}
+\newcommand{\directortitle}{}
+\newcommand{\codirector}{} %Usar solo si se requiere
+\newcommand{\codirectortitle}{} %Usar solo si se requiere
+\newcommand{\issuedate}{}
+\newcommand{\palabrasclave}{}
+\newcommand{\keywords}{}
+\newcommand{\schlusselworter}{}
+\newcommand{\palavraschave}{}
+\newcommand{\sede}{}
+\newcommand{\department}{}
+\newcommand{\departmenttwo}{} %Usar solo si se requiere
+\newcommand{\faculty}{}
+\newcommand{\university}{Universidad Nacional de Colombia}
+%Información de la tesis
+%Diligenciar aquí los datos para su carga automática donde se requiera en el documento
+%En el caso de tesis o trabajos finales, verificar que el título coincida con el aprobado por la Facultad
+\renewcommand{\thesisname}{Diseño de tareas matemáticas con IA generativa para el desarrollo del pensamiento trigonométrico en educación media}
+\renewcommand{\issuedate}{2025}
+\renewcommand{\directortitle}{Profesor Asociado}
+\renewcommand{\codirector}{Dra.~Marisol Santacruz Rodríguez \\
+Dr. Luis Octavio Gonzalez Salcedo}}
+%\renewcommand{\codirectortitle}{Indicar si es Profesor Titular/Asociado}
+%\renewcommand{\academictitle}{Magíster (M, MSc) o Doctor (PhD) - Modalidad }
+\renewcommand{\resgroupone}{Grupo A (Sigla Grupo Investigación 01) }
+\renewcommand{\resgrouptwo}{Grupo B (Sigla Grupo Investigación 02) }
+\renewcommand{\researchtopic}{Línea}
+\renewcommand{\sede}{Sede Palmira} 
+\renewcommand{\department}{}
+\renewcommand{\departmenttwo}{Departamento 2} %Usar solo si es necesario
+\renewcommand{\faculty}{Facultad de Ingeniería y Administración}
+
+%Palabras clave del documento - Tener presente los Theasurus https://www.thesaurus.com/
+%Disponible en 3 idiomas aunque se puede extender a francés o otro idioma
+\renewcommand{\palabrasclave}{inteligencia artificial generativa; pensamiento trigonométrico; tareas matemáticas; software educativo; educación media}
+\renewcommand{\keywords}{generative artificial intelligence; trigonometric thinking; mathematical tasks; educational software; secondary education}
+%\renewcommand{\schlusselworter}{}
+%\renewcommand{\palavraschave}{}
+
+% Estilo de los encabezados y pies de página
+\usepackage{fancyhdr}
+\fancyhf{}%
+\pagestyle{fancyplain}
+% Márgenes estilo UNAL Word: Superior 3cm, Inferior 3cm, Izq 4cm, Der 2cm
+% Con twoside: inner (encuadernación) 4cm, outer 2cm, bindingoffset adicional
+\usepackage[top=3cm, bottom=3cm, inner=4cm, outer=2cm, bindingoffset=0cm]{geometry}
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{fancy}
+\fancyhf{}%
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{titlesec}
+% Permite personalizar los títulos de sección y de capítulos
+% hang lo deja en el mismo renglón, display lo despliega
+% Elimina el "Capitulo" y deja solo el número
+% Formato de títulos estilo Word UNAL
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}{\Large CAPÍTULO \thechapter}{10pt}{\Large\MakeUppercase}
+\titleformat{\section}
+  {\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries}{}{}{}
+
+% Espaciado antes y después de títulos
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+%Coloca anexo o apéndice en la Tabla de contenido
+\usepackage[toc,page]{appendix}
+
+% Configuración de las páginas estilo Word
+% Espaciado entre párrafos
+\setlength{\parskip}{6pt}
+% Sangría de primera línea
+\setlength{\parindent}{1.25cm}
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\renewcommand{\thefigure}{\textbf{\thechapter-\arabic{figure}}}
+\renewcommand{\thetable}{\textbf{\thechapter-\arabic{table}}}
+
+%Ajusta el espacio entre la etiqueta de figuras y tablas y su título en la lista de figuras y en la de tablas 
+\usepackage{titletoc} 
+\titlecontents{figure}[0em]{}{\thecontentslabel\hspace{1em}}{}{\titlerule*[1pc]{.}\contentspage}
+\titlecontents{table}[0em]{}{\thecontentslabel\hspace{1em}}{}{\titlerule*[1pc]{.}\contentspage}
+
+%Define la distancia de la primera linea de un parrafo a la margen
+% (configurado arriba con \parindent)
+
+%Espacio entre lineas - 1.5 como en Word
+\renewcommand{\baselinestretch}{1.5}
+
+%Permite personalizar el ajuste vertical mediante cajas
+\usepackage{adjustbox}
+
+%Para rotar texto, objetos, tablas y páginas.
+\usepackage{rotating}
+
+%Permite incluir mecanismos y reacciones químicas
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{chemformula}
+\usepackage{chemfig}
+
+\usetikzlibrary{calc,arrows.meta,angles,quotes}% per right to e left to
+\tikzset{
+myedge/.style={->, -{Latex[#1]}}
+}
+
+%Fuente de la presentación Ancizar Sans UNAL
+%Para usar este compilado en Overleaf se debe usar el compilador XeLaTeX o LuaLaTeX!!
+%Menu -> Compiler -> XeLaTeX o LuaLaTeX
+%La siguiente línea debe comentarse si desea compilar con pdfLaTeX
+%\RequireXeTeX
+
+% Definición de la fuente Ancizar Sans
+\newif\ifxetexorluatex
+\ifXeTeX
+  \xetexorluatextrue
+\fi
+\ifLuaTeX
+  \xetexorluatextrue
+\fi
+
+\ifxetexorluatex
+  % Usar Arial si existe; en caso contrario, usar Liberation Sans.
+  \IfFontExistsTF{Arial}
+    {\setmainfont{Arial}[Ligatures=TeX,Scale=1.0]}
+    {\setmainfont{Liberation Sans}[Ligatures=TeX,Scale=1.0]}
+  \setsansfont{Liberation Sans}
+\else
+  % Si se compila con pdfLaTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+% Metadatos del documento
+\AtBeginDocument{%
+	\hypersetup{
+		pdfborder={0 0 0},
+		pdfauthor={\studentname},
+		pdfsubject={\thesisname}, 
+		pdfcreator={\studentname},
+		pdfproducer={\studentname},
+	}
+}
+
+%Carga el simbolo de grado y el de Angstrom
+\newcommand{\angstrom}{\textup{\AA}}
+\newcommand{\grad}{\(^{\circ}\)}
+
+%bibliografia
+
+\usepackage[backend=biber,style=apa,maxcitenames=2,maxbibnames=99,giveninits=true,uniquename=false]{biblatex}
+\addbibresource{bibliografias/antecedentes.bib}
+\addbibresource{bibliografias/antecedentes/antecedentes.bib}
+\addbibresource{bibliografias/antecedentes/ia-en-eduacion-matematica/ia-en-educacion-matematica.bib}
+\addbibresource{bibliografias/antecedentes/ia-en-enseñanza-de-la-trigonometria/ia-en-enseñanza-de-trigonometria.bib}
+\addbibresource{bibliografias/antecedentes/dificultades-percistentes-en-trigonometria-escolar/dificultades-persistentes-en-trigonometria-escolar.bib}
+\addbibresource{bibliografias/Planteamiento_del_problema.bib}
+\addbibresource{bibliografias/justificacion/jusitificacion.bib}
+\addbibresource{bibliografias/justificacion/justificacion_pedagogica_didactica/justificacion_pedagogica_didactica.bib}
+\addbibresource{bibliografias/justificacion/justificacion_social_tecnologica/justificacion_social_tecnologica.bib}
+\addbibresource{bibliografias/marcos_teorico/marco_conceptual/marco_conceptual.bib}
+\addbibresource{bibliografias/marcos_teorico/identificacion_del_marco_teorico/identificacion_del_marco_teorico.bib}
+\addbibresource{bibliografias/antecedentes/Nivel_1.bib}
+\addbibresource{bibliografias/antecedentes/Nivel_2.bib}
+\addbibresource{bibliografias/antecedentes/Nivel_3.bib}
+
+
+%Inicio del documento, no olvide la etiqueta de cierre al final \end{document}
+\begin{document}
+
+%Nombres y formatos de títulos, tablas y figuras
+\renewcommand{\listfigurename}{Lista de figuras}
+\renewcommand{\listtablename}{Lista de tablas}
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\chaptername}{Capítulo}
+\renewcommand{\tablename}{\scriptsize \centering \textbf{Tabla}}
+\renewcommand{\figurename}{\scriptsize \centering \textbf{Figura}}
+\renewcommand{\appendixname}{Anexo}
+
+%Cambia el nombre de la sección de referencias
+\renewcommand{\bibname}{Referencias Bibliográficas}
+
+%Páginas de Presentación del documento - Portada estilo UNAL
+{\newpage
+\thispagestyle{empty}
+\begin{center}
+
+\vspace*{1cm}
+
+\begin{figure}[h]
+\centering
+\epsfig{file=imagenes/00Figuras/00f00EscudoUN2016,scale=0.7}%
+\end{figure}
+
+\vspace{1.5cm}
+
+\textbf{\LARGE \thesisname}
+
+\vspace{0.5cm}
+
+\textbf{\Large \studentname}
+
+\vspace{0.5cm}
+
+Directores de tesis:
+
+\vspace{0.5cm}
+
+{\director}\\[0.3cm]
+{\codirector}
+
+\vspace{\fill}
+
+{\Large \university}\\[0.3cm]
+{\large \faculty}\\[0.2cm]
+{\normalsize Maestría en Enseñanza de las Ciencias Exactas y Naturales}\\[0.3cm]
+{\normalsize \sede, Colombia}\\[0.2cm]
+{\normalsize \issuedate}
+
+\end{center}
+
+% Dedicatorias - COMENTADA (descomentar si se desea usar)
+%\newpage
+%\thispagestyle{empty}
+%\begin{flushright}
+%\begin{minipage}{12.5cm}
+%\noindent
+%\vspace{10em}
+%
+%%Modificar la cita que se quiere agregar
+%%{\Large Cita 01.}
+%
+%%\vspace{3em}
+%
+%%Autor
+%
+%%\textit{Fuente}
+%
+%\vspace{10em}
+%
+%%Para anular la adición de una segunda cita anule las siguientes lineas desde acá mediante comentario (%)
+%%{\Large \textit{Wenn du es nicht einfach erkl\"{a}ren kannst, hast du es nicht genug verstanden} --- Si no eres capaz de explicar algo claramente, es que aún no lo has entendido lo suficiente.}
+%
+%%\vspace{3em}
+%
+%%Albert Einstein
+%%Hasta acá!
+%\end{minipage}
+%\end{flushright} 
+
+% Declaracíon de originalidad del texto y del contenido
+% No modificar, se hace automáticamente con los comandos ya definidos
+%\newpage
+%\chapter*{Declaración}
+%\par Me permito afirmar que he realizado ésta tesis de manera autónoma y con la única ayuda de los medios permitidos y no diferentes a los mencionados el presente texto. Todos los pasajes que se han tomado de manera textual o figurativa de textos publicados y no publicados, los he reconocido en el presente trabajo. Ninguna parte del presente trabajo se ha empleado en ningún otro tipo de tesis. 
+
+%\vspace{1em}
+
+%{\sede}, {\submissiondate}
+
+%\vspace{6em}
+
+%\rule{6cm}{0.5pt}\\
+%{\studentname}
+%}
+
+%Páginas preámbulo, listado de figuras, tablas y tabla de contenido
+{\pagestyle{plain} \pagenumbering{roman}
+\setlength{\parskip}{1mm}
+%\input{capitulos/01_preambulo/agradecimientos/00Agradecimientos}
+% Comentar las dos lineas de abajo con % en caso que no se requieran abreviaturas y resumen en el trabajo
+%\input{capitulos/01_preambulo/abreviaturas_simbolos/00Abreviaturas}
+%\input{capitulos/01_preambulo/resumen/00ResumenAbstract}
+% Dejar esta parte así para que genere correctamente la página de la tabla de contenido
+\input{capitulos/01_preambulo/listas/figuras_y_tablas}
+
+}
+
+{\pagenumbering{arabic}
+\setlength{\parskip}{\baselineskip}
+%Incluir secciones del documento de aqui en adelante
+%Use \include para incluir desde una página nueva e \input para incluir sin salto de página
+%\input{capitulos/02_introduccion/introduccion} % Anular esta linea con comentario de ser necesario
+\input{capitulos/03_planteamiento_problema/planteamiento/00HipotesisPlanteamiento}
+\input{capitulos/03_planteamiento_problema/antecedentes/antecedentes}
+\input{capitulos/03_planteamiento_problema/justificacion/justificacion}
+\input{capitulos/03_planteamiento_problema/objetivos/00Objetivos}
+
+\input{capitulos/04_marco_teorico/marco_teorico/marco_teorico.tex}
+\input{capitulos/04_marco_teorico/marco_conceptual/marco_conceptual.tex}
+\input{capitulos/04_marco_teorico/marco_referencial/marco_referencial.tex}
+\input{capitulos/04_marco_teorico/marco_contextual/marco_contextual.tex}
+
+\input{capitulos/05_marco_metodologico/marco_metodologico.tex}
+%\input{capitulos/06_conclusiones/conclusiones_y_recomendaciones}
+
+%Nota: Las conclusiones se agregarán cuando se complete la investigación
+
+%Inicio del apéndice o anexos
+%\begin{appendix}
+%\include{08Apendice01}%
+%\end{appendix}
+
+%\nocite{*}
+% Imprimir bibliografía con biblatex/biber e incluir en TOC
+\printbibliography[heading=bibintoc,title={Referencias Bibliográficas}]
+
+\clearpage
+}
+\end{document}

@@ -1,0 +1,1067 @@
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PRESENTACIÓN: AVANCE DE PROPUESTA DE TESIS
+%% Dairo Janover Peña Cárdenas
+%% Maestría en Enseñanza de las Ciencias Exactas y Naturales
+%% Universidad Nacional de Colombia
+%% Revisión: Correcciones Dra. Marisol Santacruz — Marzo 2026
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, aspectratio=169, spanish]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{config/preambulo}
+\usepackage{fontawesome5}
+
+% ============================================================
+%  COLORES ADICIONALES
+% ============================================================
+\definecolor{RojoAlerta}{RGB}{192,57,43}
+\definecolor{AzulInfo}{RGB}{41,128,185}
+\definecolor{NaranjaPend}{RGB}{211,84,0}
+\definecolor{GrisClaro}{RGB}{180,188,194}
+\definecolor{GrisFondo}{RGB}{236,240,241}
+\definecolor{VerdeOk}{RGB}{39,174,96}
+\definecolor{MoradoMarco}{RGB}{142,68,173}
+\definecolor{AmarilloAv}{RGB}{243,156,18}
+
+% ============================================================
+%  ESTILOS TIKZ — en preámbulo para evitar conflicto con Beamer
+% ============================================================
+\tikzset{
+  capboxC1/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=AzulInfo!70, fill=AzulInfo!12},
+  capboxC2/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=MoradoMarco!70, fill=MoradoMarco!12},
+  capboxC3/.style={rectangle, rounded corners=2mm, minimum width=2.6cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=VerdeUNAL!70, fill=VerdeUNAL!12},
+  capboxRef/.style={rectangle, rounded corners=2mm, minimum width=2.3cm,
+    minimum height=0.65cm, align=center, font=\small\bfseries,
+    draw=NaranjaPend!70, fill=NaranjaPend!12},
+  secboxC1/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=AzulInfo!50, fill=AzulInfo!8},
+  secboxC2/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=MoradoMarco!50, fill=MoradoMarco!8},
+  secboxC3/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=VerdeUNAL!50, fill=VerdeUNAL!8},
+  secboxVacio/.style={rectangle, rounded corners=1mm, minimum width=2.4cm,
+    minimum height=0.45cm, align=center, font=\scriptsize,
+    draw=GrisClaro!70, fill=GrisFondo},
+  nodoCap/.style args={#1}{rectangle, rounded corners=1mm, align=center,
+    font=\scriptsize, minimum width=2.9cm, minimum height=0.38cm,
+    draw=#1!60, fill=#1!12},
+  miniCap/.style args={#1}{rectangle, align=center,
+    font=\tiny, minimum width=2.6cm, minimum height=0.3cm,
+    draw=#1!40, fill=#1!6},
+}
+
+% ============================================================
+%  MACROS
+% ============================================================
+
+% Barra de progreso inline (ancho fijo = 5cm)
+\newcommand{\barra}[2]{%
+  \begin{tikzpicture}[baseline=-0.5ex]%
+    \fill[GrisClaro!40] (0,0) rectangle (5,0.22);%
+    \fill[#2!80] (0,0) rectangle ({#1*0.05},0.22);%
+    \node[anchor=west, inner sep=1pt] at (5.05,0.11)
+      {\footnotesize\textbf{\textcolor{#2!80!black}{#1\%}}};%
+  \end{tikzpicture}%
+}
+
+% Círculo de avance
+\newcommand{\circulo}[2]{%
+  \begin{tikzpicture}%
+    \draw[GrisClaro!50, line width=6pt] (0,0) circle (1cm);%
+    \draw[#2, line width=6pt, line cap=round]%
+      (90:1cm) arc (90:{90-#1*3.6}:1cm);%
+    \node[font=\normalsize\bfseries, text=#2] at (0,0) {#1\%};%
+  \end{tikzpicture}%
+}
+
+% Ítem de corrección con badge rojo
+\newcommand{\corr}[2]{%
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{#1}}}}\;%
+        {\small #2}%
+}
+
+% Indicadores semáforo
+\newcommand{\semOK}{\textcolor{VerdeOk}{\faCheckCircle}}
+\newcommand{\semWA}{\textcolor{AmarilloAv}{\faExclamationCircle}}
+\newcommand{\semNO}{\textcolor{RojoAlerta}{\faTimesCircle}}
+
+% Palabras clave — resaltado suave por categoría conceptual
+\newcommand{\kwT}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{AzulInfo!18}{#1}}}        % Tareas / Diseño
+\newcommand{\kwM}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{VerdeUNAL!18}{#1}}}       % Matemática / Trigonometría
+\newcommand{\kwI}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{MoradoMarco!18}{#1}}}     % Inteligencia Artificial
+\newcommand{\kwE}[1]{{\setlength{\fboxsep}{1.8pt}\colorbox{AmarilloAv!24}{#1}}}      % Educación / Aprendizaje
+
+\begin{document}
+
+% ============================================================
+%  PORTADA
+% ============================================================
+{
+\setbeamertemplate{background}{}
+\begin{frame}[plain, shrink=5]
+\vspace{0.04cm}
+\begin{columns}[T]
+
+% --- IZQUIERDA ---
+\column{0.62\textwidth}
+\begin{center}
+{\scriptsize\textbf{\textcolor{VerdeUNAL}{Maestría en Enseñanza de las Ciencias Exactas y Naturales}}}\\[0.04cm]
+{\tiny\textcolor{VerdeUNAL}{Sesión de seguimiento · Marzo 11 de 2026}}
+\end{center}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=VerdeUNAL!5, colframe=VerdeUNAL!80, boxrule=1.2pt, arc=3mm]
+\begin{center}
+{\large\textbf{\kwT{Diseño de tareas matemáticas}}}\\[0.04cm]
+{\large\textbf{mediadas por \kwI{Inteligencia Artificial}}}\\[0.04cm]
+{\small\textbf{para la enseñanza de \kwM{funciones trigonométricas}}}\\[0.02cm]
+{\small\textbf{en \kwE{educación media}}}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.15cm}
+
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm, boxrule=0.8pt]
+\centering{\small\faCalendarCheck\quad\textbf{Objetivo de hoy}}\\[0.05cm]
+{\footnotesize Presentar el estado real de la propuesta, las correcciones recibidas\\
+y acordar los próximos pasos con los directores.}
+\end{tcolorbox}
+
+\vspace{0.1cm}
+\begin{alertblock}{}
+\centering{\footnotesize\faCommentDots\quad\textbf{33 comentarios — Dra. Marisol Santacruz · 4 marzo 2026}}
+\end{alertblock}
+
+% --- DERECHA ---
+\column{0.36\textwidth}
+\vspace{0.2cm}
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!90, boxrule=1.2pt, arc=3mm,
+  title={\centering\footnotesize\textbf{\faUsers\quad Información académica}}]
+{\footnotesize
+\textbf{Directores:}\\[-0.02cm]
+{\scriptsize\faUser\; Luis Octavio Gonzalez Salcedo }\\
+{\scriptsize\faUser\; Marisol Santacruz Rodríguez}}
+
+\vspace{0.15cm}
+{\footnotesize\textbf{Estudiante:}\\[-0.02cm]
+{\scriptsize\faUserGraduate\; Dairo Janover Peña Cárdenas}}
+
+\vspace{0.12cm}
+\textcolor{VerdeUNAL}{\rule{\linewidth}{0.6pt}}
+\vspace{0.08cm}
+\centering
+{\scriptsize\textbf{Universidad Nacional de Colombia}\\
+Sede Palmira 2026}
+\vspace{0.1cm}
+
+\begin{center}
+\circulo{39}{VerdeUNAL}\\
+{\tiny Avance global estimado}
+\end{center}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+}
+
+% ============================================================
+%  AGENDA
+% ============================================================
+\begin{frame}[plain]
+\frametitle{\faClipboardList\quad \textquestiondown{}De qué vamos a hablar?}
+\vspace{0.1cm}
+
+\begin{columns}[T]
+\column{0.56\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!70, arc=2mm,
+  title={\footnotesize\textbf{Recorrido de la sesión}}]
+\footnotesize
+\begin{enumerate}[leftmargin=*, label=\textcolor{VerdeUNAL}{\textbf{\arabic*.}}, itemsep=3pt]
+  \item \faProjectDiagram\quad Mi proyecto en pocas palabras
+  \item \faMap\quad Cómo está organizado el documento
+  \item \faChartBar\quad Estado de avance por capítulo
+  \item \faCommentDots\quad Las 33 correcciones recibidas
+  \item \faTasks\quad Lo que falta y el plan de acción
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.18cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+{\footnotesize\textbf{Al final de esta sesión los directores sabrán:}\\[0.05cm]
+\semOK\; {\small Qué tiene el documento actualmente}\\
+\semWA\; {\small Qué debe corregirse}\\
+\semNO\; {\small Qué falta todavía por escribir}}
+\end{tcolorbox}
+
+\column{0.41\textwidth}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm,
+  title={\footnotesize\textbf{\faChartPie\quad Resumen en cifras}}]
+\vspace{0.1cm}
+\begin{center}
+\begin{tabular}{lc}
+\scriptsize Total de páginas & \scriptsize 40 pág. + refs \\[4pt]
+\scriptsize Capítulos & \scriptsize 3 capítulos \\[4pt]
+\scriptsize Correcciones rec. & \scriptsize 33 comentarios \\[4pt]
+\scriptsize Secciones vacías & \scriptsize 5 secciones \\[4pt]
+\scriptsize\textbf{Avance global} & \scriptsize\textbf{\textcolor{VerdeUNAL}{$\approx$ 39\%}} \\
+\end{tabular}
+
+\vspace{0.2cm}
+\circulo{39}{VerdeUNAL}\\[0.05cm]
+{\tiny\textcolor{GrisClaro!80!black}{del documento completo}}
+\end{center}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 1 — EL PROYECTO
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{01}}}\\[-0.1cm]
+{\Large\textbf{Mi proyecto de tesis}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{en pocas palabras}}
+\end{center}
+\end{frame}
+
+% --- Slide: Problema, propuesta, aporte ---
+\begin{frame}[plain, shrink=22]
+\frametitle{\faProjectDiagram\quad \textquestiondown{}Cuál es la idea central?}
+\vspace{0pt}
+
+\begin{tcolorbox}[colback=VerdeUNAL!5, colframe=VerdeUNAL!70, arc=2mm, boxrule=1pt]
+\centering{\small\textbf{\kwT{Diseño, implementación y análisis de tareas matemáticas} que integran \kwI{IA}\\
+para el desarrollo del \kwM{pensamiento trigonométrico} en \kwE{educación media}}}
+\end{tcolorbox}
+
+\begin{columns}[T]
+\column{0.32\textwidth}
+\begin{tcolorbox}[colback=RojoAlerta!7, colframe=RojoAlerta!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faExclamationTriangle\quad El problema}}]
+{\scriptsize Los estudiantes tienen dificultades persistentes con \kwM{funciones trigonométricas}. El currículo es algorítmico, sin conexión con fenómenos reales ni con el \kwM{pensamiento matemático}.}
+\end{tcolorbox}
+
+\column{0.32\textwidth}
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faLightbulb\quad La propuesta}}]
+{\scriptsize \kwT{Diseñar tareas matemáticas} con \kwI{IA} para personalizar el \kwE{aprendizaje}, estimular el \kwM{pensamiento trigonométrico} y conectar la teoría con aplicaciones reales.}
+\end{tcolorbox}
+
+\column{0.32\textwidth}
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!50, arc=2mm,
+  title={\centering\footnotesize\textbf{\faStar\quad El aporte}}]
+{\scriptsize Evidencia sobre cómo los estudiantes construyen \kwM{significado matemático} al interactuar con \kwT{tareas diseñadas intencionalmente} con apoyo de \kwI{IA}.}
+\end{tcolorbox}
+\end{columns}
+
+\vspace{0.06cm}
+
+\begin{tcolorbox}[colback=NaranjaPend!7, colframe=NaranjaPend!60, arc=2mm]
+{\footnotesize\faQuestionCircle\quad\textbf{Pregunta orientadora (versión en revisión):}\\[0.04cm]
+\textit{''\textquestiondown{}Cómo contribuye el \kwT{diseño de tareas matemáticas} apoyadas con \kwI{IA} al desarrollo del \kwM{pensamiento trigonométrico} y la comprensión de \kwM{funciones trigonométricas} e hiperbólicas en \kwE{educación media}?''}}
+\end{tcolorbox}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 2 — ESTRUCTURA DEL DOCUMENTO
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{02}}}\\[-0.1cm]
+{\Large\textbf{Estructura del documento}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{cómo está organizado}}
+\end{center}
+\end{frame}
+
+% --- Slide: Mapa del documento ---
+\begin{frame}[plain]
+\frametitle{\faMap\quad Mapa del documento}
+\vspace{0.05cm}
+
+\begin{center}
+\begin{tikzpicture}[node distance=0.45cm and 0.5cm]
+
+% Capítulo 1
+\node[capboxC1] (c1) at (0,0) {Cap. 1\\Planteamiento};
+\node[secboxC1, below=0.12cm of c1] (s11) {Pregunta-problema};
+\node[secboxC1, below=0.04cm of s11] (s12) {Antecedentes};
+\node[secboxC1, below=0.04cm of s12] (s13) {Justificación};
+\node[secboxC1, below=0.04cm of s13] (s14) {Objetivos};
+\node[below=0.1cm of s14, font=\scriptsize\bfseries, text=AzulInfo] {\faChartLine\; 53\%};
+
+% Capítulo 2
+\node[capboxC2] (c2) at (4.2,0) {Cap. 2\\Marco Teórico};
+\node[secboxC2, below=0.12cm of c2] (s21) {Marco conceptual};
+\node[secboxC2, below=0.04cm of s21] (s22) {Marco referencial};
+\node[secboxC2, below=0.04cm of s22] (s23) {Marco contextual};
+\node[below=0.1cm of s23, font=\scriptsize\bfseries, text=MoradoMarco] {\faChartLine\; 30\%};
+
+% Capítulo 3
+\node[capboxC3] (c3) at (8.4,0) {Cap. 3\\Marco Metod.};
+\node[secboxC3, below=0.12cm of c3] (s31) {Caracterización};
+\node[secboxC3, below=0.04cm of s31] (s32) {Fuentes y métodos};
+\node[secboxC3, below=0.04cm of s32] (s33) {Proc.\ de análisis};
+\node[secboxVacio, below=0.04cm of s33] (s34) {Cronograma};
+\node[secboxVacio, below=0.04cm of s34] (s35) {Presupuesto};
+\node[below=0.1cm of s35, font=\scriptsize\bfseries, text=VerdeUNAL] {\faChartLine\; 40\%};
+
+% Referencias
+\node[capboxRef] (ref) at (12.2,0) {Referencias\\Bibliogr.};
+
+% Flechas
+\draw[-stealth, thick, color=AzulInfo!70] (c1.east) -- (c2.west);
+\draw[-stealth, thick, color=MoradoMarco!70] (c2.east) -- (c3.west);
+\draw[-stealth, thick, color=NaranjaPend!70] (c3.east) -- (ref.west);
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.05cm}
+\begin{center}
+{\scriptsize
+\textcolor{GrisFondo!20!black}{\rule{0.3cm}{0.3cm}}\;\textcolor{GrisClaro!80!black}{Sección sin contenido}\qquad
+\textcolor{AzulInfo}{\faSquare}\; Cap.~1: 40 pág.\qquad
+\textcolor{MoradoMarco}{\faSquare}\; Cap.~2: extenso, 2 secciones vacías\qquad
+\textcolor{VerdeUNAL}{\faSquare}\; Cap.~3: base sólida, 2 secciones vacías}
+\end{center}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 3 — ESTADO DE AVANCE
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{03}}}\\[-0.1cm]
+{\Large\textbf{Estado de avance}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{capítulo por capítulo}}
+\end{center}
+\end{frame}
+
+% --- Slide: Cap 1 ---
+\begin{frame}[plain]
+\frametitle{\faBook\quad Capítulo 1 — Planteamiento del Problema}
+\vspace{0.08cm}
+
+\begin{columns}[T]
+\column{0.53\textwidth}
+
+\begin{tcolorbox}[colback=AzulInfo!5, colframe=AzulInfo!55, arc=2mm, boxrule=0.8pt]
+\footnotesize
+\textbf{Pregunta-problema}\\[-0.02cm]
+\barra{50}{AzulInfo}\\[0.06cm]
+{\scriptsize \semWA\; Enfoque y tipo de IA sin definir \quad \semWA\; Debe reformularse}
+
+\vspace{0.12cm}
+\textbf{Antecedentes}\\[-0.02cm]
+\barra{60}{AzulInfo}\\[0.06cm]
+{\scriptsize \semWA\; Organización mejorable \quad \semNO\; Párrafos sin voz propia}
+
+\vspace{0.12cm}
+\textbf{Justificación}\\[-0.02cm]
+\barra{55}{AzulInfo}\\[0.06cm]
+{\scriptsize \semNO\; Dos justificaciones separadas (fusionar) \quad \semWA\; Sin motivo para hiperbólicas}
+
+\vspace{0.12cm}
+\textbf{Objetivos}\\[-0.02cm]
+\barra{45}{AzulInfo}\\[0.06cm]
+{\scriptsize \semWA\; Deben alinearse con pregunta revisada}
+\end{tcolorbox}
+
+\column{0.44\textwidth}
+
+\begin{tcolorbox}[colback=AzulInfo!8, colframe=AzulInfo!65, arc=2mm,
+  title={\footnotesize\textbf{\faChartPie\quad Avance Cap. 1}}]
+\centering
+\circulo{53}{AzulInfo}
+\end{tcolorbox}
+
+\vspace{0.14cm}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!55, arc=2mm,
+  title={\footnotesize\textbf{\faCheckDouble\quad Puntos sólidos}}]
+{\scriptsize
+\semOK\; Literatura reciente revisada\\
+\semOK\; Problema educativo bien identificado\\
+\semOK\; Justificación curricular y pedagógica\\
+\semOK\; Brechas de aprendizaje señaladas}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Cap 2 ---
+\begin{frame}[plain, shrink=5]
+\frametitle{\faBookOpen\quad Capítulo 2 — Marco Teórico}
+\vspace{0.04cm}
+
+\begin{columns}[T]
+\column{0.53\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!5, colframe=MoradoMarco!55, arc=2mm, boxrule=0.8pt]
+\footnotesize
+\textbf{Marco conceptual}\\[-0.02cm]
+\barra{55}{MoradoMarco}\\[0.06cm]
+{\scriptsize
+\semNO\; Falta tabla de pensamiento trigonométrico\\
+\semNO\; Falta dimensión cognitiva (errores/obstáculos)\\
+\semNO\; Falta desarrollo matemático del objeto escolar}
+
+\vspace{0.12cm}
+\textbf{Marco referencial}\\[-0.02cm]
+\barra{10}{MoradoMarco}\\[0.06cm]
+{\scriptsize \semNO\; Prácticamente vacío — por escribir}
+
+\vspace{0.12cm}
+\textbf{Marco contextual}\\[-0.02cm]
+\barra{10}{MoradoMarco}\\[0.06cm]
+{\scriptsize \semNO\; Prácticamente vacío — por escribir}
+
+\vspace{0.12cm}
+\begin{tcolorbox}[colback=NaranjaPend!8, colframe=NaranjaPend!50, arc=1.5mm,
+  left=2pt, right=2pt, top=2pt, bottom=2pt]
+{\scriptsize\faExclamationTriangle\; Se señala revisar si la\\
+\textbf{modelación matemática} es pertinente\\
+o si agranda el volumen innecesariamente.}
+\end{tcolorbox}
+\end{tcolorbox}
+
+\column{0.44\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!8, colframe=MoradoMarco!65, arc=2mm,
+  title={\footnotesize\textbf{\faChartPie\quad Avance Cap. 2}}]
+\centering
+\circulo{30}{MoradoMarco}
+\end{tcolorbox}
+
+\vspace{0.14cm}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!55, arc=2mm,
+  title={\footnotesize\textbf{\faCheckDouble\quad Bases existentes}}]
+{\scriptsize
+\semOK\; Diseño de tareas matemáticas (Leung)\\
+\semOK\; Pensamiento trigonométrico (Montiel)\\
+\semOK\; Tecnología en educación matemática\\
+\semOK\; IA en educación (bases)}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Cap 3 ---
+\begin{frame}[plain]
+\frametitle{\faCogs\quad Capítulo 3 — Marco Metodológico}
+\vspace{0.08cm}
+
+\begin{columns}[T]
+\column{0.53\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!5, colframe=VerdeUNAL!55, arc=2mm, boxrule=0.8pt]
+\footnotesize
+\textbf{Caracterización de la investigación}\\[-0.02cm]
+\barra{70}{VerdeUNAL}\\[0.06cm]
+{\scriptsize \semOK\; Paradigma interpretativo \quad \semOK\; Estudio de caso justificado}
+
+\vspace{0.12cm}
+\textbf{Fuentes y métodos de recolección}\\[-0.02cm]
+\barra{65}{VerdeUNAL}\\[0.06cm]
+{\scriptsize \semOK\; Obs., entrevistas, protocolos \quad \semWA\; Faltan referencias}
+
+\vspace{0.12cm}
+\textbf{Procedimiento de análisis}\\[-0.02cm]
+\barra{65}{VerdeUNAL}\\[0.06cm]
+{\scriptsize \semOK\; Codificación abierta y axial definidas}
+
+\vspace{0.12cm}
+\textbf{Ubicación, cronograma y presupuesto}\\[-0.02cm]
+\barra{5}{RojoAlerta}\\[0.06cm]
+{\scriptsize \semNO\; Secciones completamente vacías}
+\end{tcolorbox}
+
+\column{0.44\textwidth}
+
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!65, arc=2mm,
+  title={\footnotesize\textbf{\faChartPie\quad Avance Cap. 3}}]
+\centering
+\circulo{40}{VerdeUNAL}
+\end{tcolorbox}
+
+\vspace{0.14cm}
+
+\begin{tcolorbox}[colback=RojoAlerta!7, colframe=RojoAlerta!50, arc=2mm,
+  title={\footnotesize\textbf{\faExclamationTriangle\quad Pendiente crítico}}]
+{\scriptsize
+\semNO\; Ubicación del caso de estudio\\
+\semNO\; Métodos y materiales\\
+\semNO\; Cronograma de actividades\\
+\semNO\; Presupuesto estimado}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Gráfico resumen de avance ---
+\begin{frame}[plain]
+\frametitle{\faChartBar\quad \textquestiondown{}En dónde estamos exactamente?}
+\vspace{0.12cm}
+
+\begin{center}
+\begin{tikzpicture}
+
+% Fondos
+\fill[GrisFondo] (0,0)  rectangle (12,0.55);
+\fill[GrisFondo] (0,-1) rectangle (12,-0.45);
+\fill[GrisFondo] (0,-2) rectangle (12,-1.45);
+
+% Barras de avance
+\fill[AzulInfo!75]    (0,0)  rectangle ({12*0.53},0.55);
+\fill[MoradoMarco!75] (0,-1) rectangle ({12*0.30},-0.45);
+\fill[VerdeUNAL!75]   (0,-2) rectangle ({12*0.40},-1.45);
+
+% Etiquetas izquierda
+\node[left, font=\small\bfseries, text=AzulInfo]    at (-0.15,0.275)  {Cap. 1};
+\node[left, font=\small\bfseries, text=MoradoMarco] at (-0.15,-0.725) {Cap. 2};
+\node[left, font=\small\bfseries, text=VerdeUNAL]   at (-0.15,-1.725) {Cap. 3};
+
+% Porcentajes
+\node[right, font=\small\bfseries, text=AzulInfo]    at ({12*0.53+0.1},0.275)  {53\%};
+\node[right, font=\small\bfseries, text=MoradoMarco] at ({12*0.30+0.1},-0.725) {30\%};
+\node[right, font=\small\bfseries, text=VerdeUNAL]   at ({12*0.40+0.1},-1.725) {40\%};
+
+% Sub-etiquetas
+\node[right, font=\tiny, text=GrisClaro!70!black] at ({12*0.53+0.9},0.1)  {pregunta por reformular};
+\node[right, font=\tiny, text=GrisClaro!70!black] at ({12*0.30+0.9},-1.1) {2 secciones sin escribir};
+\node[right, font=\tiny, text=GrisClaro!70!black] at ({12*0.40+0.9},-2.1) {cronograma/presupuesto vacíos};
+
+% Líneas verticales
+\draw[GrisClaro, dashed, thin] (0,-2.6)  -- (0,0.6);
+\draw[GrisClaro, dashed, thin] (3,-2.6)  -- (3,0.6);
+\draw[GrisClaro, dashed, thin] (6,-2.6)  -- (6,0.6);
+\draw[GrisClaro, dashed, thin] (9,-2.6)  -- (9,0.6);
+\draw[GrisClaro, dashed, thin] (12,-2.6) -- (12,0.6);
+\node[below, font=\tiny, text=GrisClaro!80!black] at (0,-2.6)  {0\%};
+\node[below, font=\tiny, text=GrisClaro!80!black] at (3,-2.6)  {25\%};
+\node[below, font=\tiny, text=GrisClaro!80!black] at (6,-2.6)  {50\%};
+\node[below, font=\tiny, text=GrisClaro!80!black] at (9,-2.6)  {75\%};
+\node[below, font=\tiny, text=GrisClaro!80!black] at (12,-2.6) {100\%};
+\draw[RojoAlerta, thick] (12,-2.6) -- (12,0.6);
+\node[above, font=\tiny\bfseries, text=RojoAlerta] at (12,0.6) {Meta};
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.1cm}
+\begin{center}
+\begin{tcolorbox}[colback=VerdeUNAL!7, colframe=VerdeUNAL!65, arc=2mm, width=0.72\textwidth]
+\centering
+{\small\textbf{\faInfoCircle\quad Avance global estimado: 39\%}}\\[0.04cm]
+{\scriptsize La \kwM{base conceptual} está construida. Lo que falta: \textbf{profundizar} el \kwM{marco teórico} — \textbf{corregir} el enfoque — \textbf{completar} secciones vacías.}
+\end{tcolorbox}
+\end{center}
+
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 4 — CORRECCIONES
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{04}}}\\[-0.1cm]
+{\Large\textbf{Las 33 correcciones}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{de la Dra. Marisol Santacruz}}
+\end{center}
+\end{frame}
+
+% --- Slide: Panorama de correcciones ---
+\begin{frame}[plain]
+\frametitle{\faCommentDots\quad 33 comentarios — mapa general}
+\vspace{0.08cm}
+
+\begin{columns}[T]
+\column{0.46\textwidth}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm,
+  title={\footnotesize\textbf{\faTable\quad Por categoría}}]
+\footnotesize
+\begin{tabular}{lcc}
+\textbf{Área} & \textbf{N°} & \textbf{Tipo} \\[2pt]
+\hline\\[-6pt]
+\textcolor{RojoAlerta}{\faFire\; Pregunta y enfoque}  & 8  & Conceptual \\[3pt]
+\textcolor{MoradoMarco}{\faBook\; Marco Teórico}         & 13 & Contenido  \\[3pt]
+\textcolor{NaranjaPend}{\faLayerGroup\; Justificación}   & 4  & Estructura \\[3pt]
+\textcolor{AzulInfo}{\faPen\; Redacción y forma}      & 4  & Forma      \\[3pt]
+\textcolor{VerdeUNAL}{\faCogs\; Metodología}             & 2  & Referencias \\[3pt]
+\textcolor{VerdeOk}{\faFlag\; Objetivos}                 & 2  & Alineación \\[3pt]
+\hline\\[-6pt]
+\textbf{Total} & \textbf{33} & \\
+\end{tabular}
+\end{tcolorbox}
+
+\column{0.51\textwidth}
+
+\begin{tcolorbox}[colback=RojoAlerta!6, colframe=RojoAlerta!50, arc=2mm,
+  title={\footnotesize\textbf{\faExclamationTriangle\quad Las dos áreas críticas (63\%)}}]
+{\footnotesize\textbf{Marco Teórico} — 13 comentarios · 39\%:\\[0.03cm]
+{\scriptsize faltan secciones completas y contenido conceptual fundamental}}
+
+\vspace{0.1cm}
+{\footnotesize\textbf{Pregunta y enfoque} — 8 comentarios · 24\%:\\[0.03cm]
+{\scriptsize tipo de IA, concepto-eje y alcance están indefinidos}}
+\end{tcolorbox}
+
+\vspace{0.12cm}
+
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm]
+{\footnotesize\faLightbulb\quad\textbf{Tipos de correcciones:}\\[0.06cm]
+\semNO\; {\small Conceptuales / de fondo — requieren decisión}\\
+\semWA\; {\small De claridad o especificidad}\\
+\semOK\; {\small Agregar contenido faltante}}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Correcciones Pregunta y Enfoque ---
+\begin{frame}[plain]
+\frametitle{\faFire\quad Correcciones — Pregunta y Enfoque}
+\vspace{0pt}
+
+\begin{columns}[T]
+\column{0.52\textwidth}
+
+\begin{tcolorbox}[colback=RojoAlerta!5, colframe=RojoAlerta!55, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{Comentarios de la Dra. Santacruz}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C1}}}}\; Enfocarse en \textbf{educación media}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C2}}}}\; \textquestiondown{}Comprensión de \textbf{qué} específicamente?
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C6}}}}\; \textquestiondown{}\textbf{Qué tipo de IA}? — definir
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C7}}}}\; Alcance \textbf{muy amplio} — conversar
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C8}}}}\; \textquestiondown{}Pensamiento o comprensión trig.? Son distintos
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C9}}}}\; \textit{``\textquestiondown{}Cómo la IA \textbf{promueve el aprendizaje}...?''}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C13}}}}\; \textquestiondown{}Comprensión = pensamiento trig.?
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C0}}}}\; Usar colores en el título para categorías
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.45\textwidth}
+
+\begin{tcolorbox}[colback=NaranjaPend!7, colframe=NaranjaPend!55, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faRedo\quad Versión actual}}]
+{\scriptsize\textit{``\textquestiondown{}Cómo contribuye el \kwT{diseño de tareas} con \kwI{IA} al desarrollo del \kwM{pensamiento trig.}\ y la comprensión de \kwM{funciones trig.}\ \textbf{e hiperbólicas} en \kwE{educación media}?''}}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!55, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faArrowRight\quad Propuesta revisada (Santacruz)}}]
+{\scriptsize\textit{``\textquestiondown{}Cómo la integración de \kwI{IA} en el \kwT{diseño de tareas matemáticas} \textbf{promueve el \kwE{aprendizaje}} de \kwM{funciones trig.}\ en \kwE{educación media}?''}}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=1.5mm, nobeforeafter, top=2pt, bottom=2pt]
+{\scriptsize\faTasks\;\textbf{Decisiones pendientes hoy:}\\
+\semNO\; \textquestiondown{}Se incluyen hiperbólicas?\\
+\semNO\; \textquestiondown{}Qué tipo de IA? (LLM / adaptativa)\\
+\semNO\; \textquestiondown{}Pensamiento o comprensión trig.?}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Correcciones Justificación ---
+\begin{frame}[plain]
+\frametitle{\faLayerGroup\quad Correcciones — Justificación y Cap. 1}
+\vspace{0.06cm}
+
+\begin{columns}[T]
+\column{0.50\textwidth}
+
+\begin{tcolorbox}[colback=NaranjaPend!6, colframe=NaranjaPend!55, arc=2mm,
+  title={\footnotesize\textbf{\faExclamationCircle\quad Sobre la Justificación}}]
+{\footnotesize
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C12}}}}\; Formato de la justificación se siente \textbf{extraño}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C16}}}}\; Hay \textbf{dos justificaciones} separadas
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C17}}}}\; Sin explicar \textbf{por qué hiperbólicas}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C18}}}}\; \textbf{Fusionar} todo en \textbf{un solo bloque}
+\end{itemize}}
+\end{tcolorbox}
+
+\vspace{0.14cm}
+
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!50, arc=2mm,
+  title={\footnotesize\textbf{\faPen\quad Sobre los Antecedentes}}]
+{\footnotesize
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C14}}}}\; Párrafos \textbf{parecen escritos por IA}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C15}}}}\; La Dra.\ enviará \textbf{ejemplo} de organización
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.47\textwidth}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm,
+  title={\footnotesize\textbf{\faSitemap\quad Estructura actual del Cap. 1}}]
+\vspace{0.04cm}
+\begin{tikzpicture}
+\node[nodoCap=AzulInfo] (q) at (0,0) {Pregunta-problema};
+\node[miniCap=AzulInfo, below=0.08cm of q] {Justif.\ de la pregunta};
+\node[nodoCap=AzulInfo, below=0.52cm of q] (ant) {Antecedentes};
+\node[nodoCap=NaranjaPend, below=0.38cm of ant] (j1) {Justificación};
+\node[miniCap=NaranjaPend, right=0.1cm of j1, text=RojoAlerta, font=\tiny\bfseries]
+  {\semNO\;2 justic.};
+\node[nodoCap=VerdeUNAL, below=0.38cm of j1] (obj) {Objetivos};
+\draw[-stealth, gray, thin] (q) -- (ant);
+\draw[-stealth, gray, thin] (ant) -- (j1);
+\draw[-stealth, gray, thin] (j1) -- (obj);
+\end{tikzpicture}
+\end{tcolorbox}
+
+\vspace{0.12cm}
+
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!50, arc=2mm,
+  title={\footnotesize\textbf{\faArrowRight\quad Ajuste sugerido}}]
+{\scriptsize Eliminar ``justif.\ de la pregunta'' como sección separada. Consolidar en \textbf{un bloque} después de antecedentes.}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Correcciones Marco Teórico ---
+\begin{frame}[plain]
+\frametitle{\faBook\quad Correcciones — Marco Teórico: lo que falta}
+\vspace{0.08cm}
+
+\begin{columns}[T]
+\column{0.49\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!5, colframe=MoradoMarco!55, arc=2mm,
+  title={\footnotesize\textbf{\faPlusSquare\quad Contenido ausente — crítico}}]
+{\footnotesize
+\begin{itemize}[leftmargin=*, itemsep=3pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C25}}}}\; \textbf{Desarrollo matemático:} \textquestiondown{}qué es la trigonometría? \textquestiondown{}cuáles son las funciones?
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C24}}}}\; \textbf{Dimensión cognitiva:} errores, obstáculos y dificultades
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C28}}}}\; \textbf{Tabla} de características del pensamiento trig.
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C5}}}}\; \textbf{Ejemplo concreto} de IA en enseñanza de trigonometría
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.48\textwidth}
+
+\begin{tcolorbox}[colback=MoradoMarco!5, colframe=MoradoMarco!55, arc=2mm,
+  title={\footnotesize\textbf{\faSlidersH\quad Ajustes de enfoque}}]
+{\footnotesize
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C22}}}}\; Evitar ``mediación'' — usar \textbf{``apoye'', ``promueva''}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C23}}}}\; \textbf{Centrar la IA} en diseño de tareas
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C26}}}}\; Marco \textbf{muy extenso} — revisar
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C30}}}}\; Modelación \textbf{agranda demasiado}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C29}}}}\; Una sección debe \textbf{moverse}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C31}}}}\; \textquestiondown{}Lo curricular va aquí?
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C11}}}}\; \textbf{Definir} pensamiento trigonométrico
+\end{itemize}}
+\end{tcolorbox}
+
+\vspace{0.1cm}
+
+\begin{tcolorbox}[colback=NaranjaPend!7, colframe=NaranjaPend!60, arc=2mm,
+  left=3pt, right=3pt, top=3pt, bottom=3pt]
+{\scriptsize\faQuoteLeft\; \textit{``siento que el trabajo tiene mucho marco teórico... meterle modelación lo hace más y más grande.''} — Dra. Santacruz}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% --- Slide: Refs y forma ---
+\begin{frame}[plain]
+\frametitle{\faSearch\quad Correcciones — Referencias y Tabla requerida}
+\vspace{0pt}
+
+\begin{columns}[T]
+\column{0.47\textwidth}
+
+\begin{tcolorbox}[colback=AzulInfo!6, colframe=AzulInfo!55, arc=2mm,
+  top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faBookmark\quad Referencias faltantes}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C3}}}}\; Falta referencia en el planteamiento
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C4}}}}\; Faltan refs para sustentar afirmación clave
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C32}}}}\; Faltan referencias en la metodología
+\end{itemize}}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=VerdeUNAL!6, colframe=VerdeUNAL!55, arc=2mm,
+  top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faPen\quad Correcciones de forma}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C10}}}}\; Debe decir \textbf{``enseñanza''}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C27}}}}\; Debe decir \textbf{``didácticos''}
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C19}}}}\; Completar: ``analizar el diseño...''
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C20}}}}\; Completar: ``fundamentar el diseño...''
+  \item \colorbox{RojoAlerta!15}{\textcolor{RojoAlerta}{\scalebox{0.75}{\textbf{C21}}}}\; \textquestiondown{}De qué tipo es el desarrollo mencionado?
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.50\textwidth}
+
+\begin{tcolorbox}[colback=RojoAlerta!5, colframe=RojoAlerta!50, arc=2mm,
+  title={\footnotesize\textbf{\faTable\quad Tabla requerida — C28}}]
+{\scriptsize La directora pide una tabla de las características del pensamiento trigonométrico:}
+
+{\tiny
+\begin{tabular}{p{2.7cm}p{1.8cm}}
+\toprule
+\textbf{Característica} & \textbf{Autor(es)} \\
+\midrule
+Comprensión funcional de las razones & Montiel (2013) \\[1pt]
+Transición geométrico-analítica & Montiel (2006) \\[1pt]
+Uso de medida en radianes & Chacón et al. (2007) \\[1pt]
+Comprensión de la periodicidad & Delgado et al. (2023) \\[1pt]
+Conexión entre representaciones & Iriarte et al. (2025) \\
+\bottomrule
+\end{tabular}}
+
+{\tiny\textcolor{NaranjaPend}{\faArrowRight\; Va en la sección de pensamiento trigonométrico del Marco Teórico.}}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% ============================================================
+%  SECCIÓN 5 — PLAN DE ACCIÓN
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.0cm}
+\begin{center}
+{\fontsize{40}{48}\selectfont\textcolor{VerdeUNAL!40}{\textbf{05}}}\\[-0.1cm]
+{\Large\textbf{Lo que falta}}\\[0.05cm]
+{\normalsize\textcolor{GrisClaro!80!black}{y el plan de acción}}
+\end{center}
+\end{frame}
+
+% --- Slide: Semáforo global ---
+\begin{frame}[plain, shrink=22]
+\frametitle{\faTrafficLight\quad Semáforo del documento}
+\vspace{0pt}
+
+\begin{columns}[T]
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=VerdeOk!8, colframe=VerdeOk!55, arc=2mm,
+  title={\footnotesize\textbf{\semOK\; Listo / sólido}}]
+{\scriptsize
+\semOK\; Paradigma investigativo\\[2pt]
+\semOK\; Estudio de caso definido\\[2pt]
+\semOK\; Bases del marco conceptual\\[2pt]
+\semOK\; Literatura de trigonometría\\[2pt]
+\semOK\; Codificación axial y abierta\\[2pt]
+\semOK\; Justificación curricular (base)\\[2pt]
+\semOK\; Objetivos generales definidos}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=AmarilloAv!8, colframe=AmarilloAv!55, arc=2mm,
+  title={\footnotesize\textbf{\semWA\; Revisar / ajustar}}]
+{\scriptsize
+\semWA\; Pregunta-problema (enfoque/tipo IA)\\[2pt]
+\semWA\; Antecedentes (voz propia)\\[2pt]
+\semWA\; Objetivos (alineación)\\[2pt]
+\semWA\; Marco conceptual (incompleto)\\[2pt]
+\semWA\; Referencias en metodología\\[2pt]
+\semWA\; Vocabulario (mediación → apoye)}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=RojoAlerta!7, colframe=RojoAlerta!50, arc=2mm,
+  title={\footnotesize\textbf{\semNO\; Por escribir}}]
+{\scriptsize
+\semNO\; Desarrollo matemático de trig.\\[2pt]
+\semNO\; Dimensión cognitiva\\[2pt]
+\semNO\; Tabla pensamiento trig.\\[2pt]
+\semNO\; Justificación fusionada\\[2pt]
+\semNO\; Marco referencial\\[2pt]
+\semNO\; Marco contextual\\[2pt]
+\semNO\; Cronograma y presupuesto}
+\end{tcolorbox}
+\end{columns}
+
+\vspace{0.06cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+{\footnotesize\centering
+\semOK\; \textbf{7 elementos sólidos} \quad
+\semWA\; \textbf{6 por ajustar} \quad
+\semNO\; \textbf{7 por escribir desde cero}\quad
+— Avance global estimado: \textbf{\textcolor{VerdeUNAL}{39\%}}}
+\end{tcolorbox}
+\end{frame}
+
+% --- Slide: Tareas pendientes ---
+\begin{frame}[plain, shrink=22]
+\frametitle{\faTasks\quad Tareas pendientes por capítulo}
+\vspace{0pt}
+
+\begin{columns}[T]
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=AzulInfo!7, colframe=AzulInfo!65, arc=2mm,
+  title={\footnotesize\textbf{\faExclamationCircle\; Cap. 1 — Alta prioridad}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=2.5pt]
+  \item[\semNO] Reformular pregunta-problema
+  \item[\semNO] Fusionar las dos justificaciones
+  \item[\semNO] Aclarar rol de hiperbólicas
+  \item[\semWA] Reescribir antecedentes (voz propia)
+  \item[\semWA] Actualizar objetivos
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=MoradoMarco!7, colframe=MoradoMarco!65, arc=2mm,
+  title={\footnotesize\textbf{\faExclamationCircle\; Cap. 2 — Alta prioridad}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=2.5pt]
+  \item[\semNO] Escribir desarrollo matemático
+  \item[\semNO] Añadir dimensión cognitiva
+  \item[\semNO] Crear tabla pensamiento trig.
+  \item[\semWA] Desarrollar marco referencial
+  \item[\semWA] Desarrollar marco contextual
+  \item[\semWA] Revisar si modelación es necesaria
+\end{itemize}}
+\end{tcolorbox}
+
+\column{0.33\textwidth}
+\begin{tcolorbox}[colback=VerdeUNAL!7, colframe=VerdeUNAL!65, arc=2mm,
+  title={\footnotesize\textbf{\faClock\; Cap. 3 — Prioridad media}}]
+{\scriptsize
+\begin{itemize}[leftmargin=*, itemsep=2.5pt]
+  \item[\semNO] Ubicación del caso de estudio
+  \item[\semNO] Métodos y materiales
+  \item[\semNO] Cronograma de actividades
+  \item[\semNO] Presupuesto estimado
+  \item[\semWA] Añadir refs a metodología (C32)
+\end{itemize}}
+\end{tcolorbox}
+\end{columns}
+
+\vspace{0.04cm}
+
+\begin{tcolorbox}[colback=GrisFondo, colframe=GrisClaro, arc=2mm]
+{\scriptsize
+\begin{tabular}{p{3.5cm}cp{6.5cm}}
+\textbf{Tarea} & \textbf{Estado} & \textbf{Próxima acción} \\[2pt]
+\hline\\[-6pt]
+Pregunta-problema     & \textcolor{RojoAlerta}{\textbf{Revisar}}    & Definir tipo de IA y concepto eje en esta reunión \\[2pt]
+Marco Teórico         & \textcolor{NaranjaPend}{\textbf{Pendiente}} & Desar. matemático + tabla + dimensión cognitiva \\[2pt]
+Marc.\ Ref.\ / Cont.\ & \textcolor{NaranjaPend}{\textbf{Pendiente}} & Desarrollar desde cero \\[2pt]
+Cronograma/Presupuesto & \textcolor{NaranjaPend}{\textbf{Pendiente}} & Definir en reunión con directores \\
+\end{tabular}}
+\end{tcolorbox}
+\end{frame}
+
+% ============================================================
+%  SLIDE CIERRE
+% ============================================================
+\begin{frame}[plain]
+\frametitle{\faStar\quad Síntesis: lo que hay y lo que viene}
+\vspace{0pt}
+
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{tcolorbox}[colback=VerdeOk!7, colframe=VerdeOk!55, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faCheckDouble\quad Fortalezas del documento}}]
+{\scriptsize
+\semOK\; Planteamiento del problema estructurado\\
+\semOK\; Revisión amplia de literatura reciente\\
+\semOK\; Justificación curricular y pedagógica\\
+\semOK\; Bases del Marco Conceptual (Montiel, Leung)\\
+\semOK\; Metodología caracterizada y fuentes definidas}
+\end{tcolorbox}
+
+\vspace{0.05cm}
+
+\begin{tcolorbox}[colback=AzulInfo!6, colframe=AzulInfo!50, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faHandshake\quad Decisiones a tomar hoy}}]
+{\scriptsize
+\semNO\; \textquestiondown{}Incluir funciones hiperbólicas?\\
+\semNO\; \textquestiondown{}Qué tipo de IA? \textquestiondown{}Cómo nombrarla?\\
+\semNO\; \textquestiondown{}Pensamiento o comprensión trigonométrica?\\
+\semNO\; \textquestiondown{}Va la modelación en el Marco Teórico?\\
+\semNO\; Cronograma de entregas}
+\end{tcolorbox}
+
+\column{0.48\textwidth}
+\begin{tcolorbox}[colback=RojoAlerta!6, colframe=RojoAlerta!45, arc=2mm,
+  nobeforeafter, top=2pt, bottom=2pt,
+  title={\footnotesize\textbf{\faArrowRight\quad Prioridades de corrección}}]
+{\scriptsize
+\textcolor{RojoAlerta}{\faArrowRight}\; Reformular la pregunta-problema\\
+\textcolor{RojoAlerta}{\faArrowRight}\; Desarrollar el objeto matemático escolar\\
+\textcolor{RojoAlerta}{\faArrowRight}\; Crear tabla de pensamiento trig.\\
+\textcolor{RojoAlerta}{\faArrowRight}\; Fusionar las dos justificaciones\\
+\textcolor{RojoAlerta}{\faArrowRight}\; Desarrollar marcos referencial y contextual}
+\end{tcolorbox}
+
+\vspace{0.05cm}
+
+\begin{tcolorbox}[colback=VerdeUNAL!8, colframe=VerdeUNAL!60, arc=2mm, nobeforeafter, top=3pt, bottom=3pt]
+\centering
+{\normalsize\textcolor{VerdeUNAL}{\textbf{El proyecto tiene base sólida.}}}\\[0.06cm]
+{\small Lo que sigue es afinar el foco\\
+y construir sobre lo que existe.}
+\end{tcolorbox}
+
+\end{columns}
+\end{frame}
+
+% ============================================================
+%  ÚLTIMO SLIDE
+% ============================================================
+\begin{frame}[plain]
+\vspace*{1.4cm}
+\begin{center}
+{\Huge\textcolor{VerdeUNAL}{\textbf{Gracias}}}
+
+\vspace{0.5cm}
+{\large Preguntas, comentarios y orientaciones}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=VerdeUNAL!6, colframe=VerdeUNAL!50, arc=3mm,
+  width=0.60\textwidth, halign=center]
+{\small\textbf{Dairo Janover Peña Cárdenas}\\[0.05cm]
+\footnotesize Maestría en Enseñanza de las Ciencias Exactas y Naturales\\
+Universidad Nacional de Colombia — Sede palmira\\[0.1cm]
+\textcolor{VerdeUNAL}{\faEnvelope\; dapenaca@unal.edu.co}}
+\end{tcolorbox}
+
+\vspace{0.4cm}
+{\large\textcolor{VerdeUNAL}{\faSeedling\quad\faSeedling\quad\faSeedling}}
+\end{center}
+\end{frame}
+
+\end{document}

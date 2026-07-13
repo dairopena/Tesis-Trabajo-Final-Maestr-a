@@ -1,0 +1,178 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PLANTILLA BEAMER - PÁGINA EN BLANCO
+%% Universidad Nacional de Colombia
+%% Maestría en Enseñanza de las Ciencias Exactas y Naturales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, aspectratio=169, spanish]{beamer}
+
+% ========== CARGAR PREÁMBULO ==========
+% Todos los paquetes y configuraciones están en config/preambulo.tex
+\input{config/preambulo}
+
+\begin{document}
+
+% ========== PORTADA (sin marca de agua) ==========
+{
+\setbeamertemplate{background}{} % Desactivar marca de agua para la portada
+\begin{frame}[plain]
+\vspace*{0.15cm}
+
+\begin{columns}[T]
+
+% ======= COLUMNA IZQUIERDA =======
+\column{0.58\textwidth}
+
+\begin{center}
+{\normalsize\textbf{\textcolor{VerdeUNAL}{[Materia o Asignatura]}}}\\
+{\normalsize\textbf{\textcolor{VerdeUNAL}{[Subtítulo]}}}\\
+{\footnotesize\textcolor{VerdeUNAL}{[Especificación]}}
+\end{center}
+
+\vspace{0.15cm}
+
+% Título principal
+\begin{tcolorbox}[colback=VerdeUNAL!5,colframe=VerdeUNAL!80,boxrule=1pt,arc=2mm]
+\begin{center}
+{\large\textbf{[Título de la}} \\[0.1cm]
+{\large\textbf{Presentación]}}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+% Trabajo y sesión
+\begin{block}{[Tipo de Trabajo]}
+\begin{center}
+{\small \textbf{[Sesión o Tema]:}}\\[0.1cm]
+{\small [Descripción]}
+\end{center}
+\end{block}
+
+\vspace{0.15cm}
+
+%\begin{alertblock}{[Nota adicional]}
+%\centering
+%{\footnotesize [Información complementaria]}
+%\end{alertblock}
+
+
+% ======= COLUMNA DERECHA =======
+\column{0.4\textwidth}
+
+\vspace{0.2cm}
+
+% Información académica
+\begin{tcolorbox}[colback=VerdeUNAL!10,colframe=VerdeUNAL!90,boxrule=1.5pt,arc=3mm,title={\centering\footnotesize\textbf{Información Académica}}]
+
+{\footnotesize \textbf{Docentes:}\\[0.03cm]
+{\scriptsize [Nombre del Docente 1]}\\
+{\scriptsize [Nombre del Docente 2]}}
+
+\vspace{0.2cm}
+
+{\footnotesize \textbf{Expositor:}\\[0.03cm]
+{\scriptsize [Nombre del Estudiante]}}
+
+\vspace{0.2cm}
+
+\textcolor{VerdeUNAL}{\rule{\textwidth}{1pt}}
+
+\vspace{0.12cm}
+
+\centering
+{\tiny \textbf{[Programa Académico]}}
+
+\vspace{0.12cm}
+
+{\scriptsize \textbf{Universidad Nacional\\de Colombia}}
+
+\vspace{0.08cm}
+
+{\tiny Sede [Ciudad]}
+
+\vspace{0.08cm}
+
+{\tiny [Ciudad], [Departamento], Colombia}
+
+\vspace{0.15cm}
+
+{\normalsize \textcolor{VerdeUNAL}{\textbf{[Año]}}}
+\end{tcolorbox}
+
+\vspace{0.15cm}
+
+\begin{center}
+\textcolor{VerdeUNAL}{\large \ding{43} \ding{72} \ding{43}}
+\end{center}
+
+\end{columns}
+
+\end{frame}
+}
+
+% ========== Páginas con marca de agua ==========
+
+% ========== SLIDE DE SECCIÓN ==========
+\begin{frame}[plain]
+\vspace*{1cm}
+\begin{center}
+{\Huge\textcolor{VerdeUNAL}{\textbf{[Título de Sección]}}}\\[0.3cm]
+{\large [Subtítulo]}
+\end{center}
+\end{frame}
+
+% ========== SLIDE CON CONTENIDO EN DOS COLUMNAS ==========
+\begin{frame}[plain]
+\frametitle{[Título del Slide]}
+
+\vspace{0.1cm}
+
+\begin{columns}[t]
+\column{0.48\textwidth}
+
+% Contenido de la columna izquierda
+
+\column{0.50\textwidth}
+
+% Contenido de la columna derecha
+
+\end{columns}
+\end{frame}
+
+% ========== SLIDE CON CONTENIDO SIMPLE ==========
+\begin{frame}[plain]
+\frametitle{[Título del Slide]}
+
+\vspace{0.3cm}
+
+% Contenido del slide
+
+\end{frame}
+
+% ========== SLIDE EN BLANCO (SIN TÍTULO) ==========
+\begin{frame}[plain]
+
+\vspace*{1cm}
+
+% Contenido centrado o personalizado
+
+\end{frame}
+
+% SLIDE FINAL
+\begin{frame}[plain]
+\vspace*{1.5cm}
+\begin{center}
+{\Huge\textcolor{VerdeUNAL}{\textbf{Gracias}}}
+
+\vspace{0.8cm}
+
+{\large Preguntas y comentarios}
+
+\vspace{1cm}
+
+\textcolor{VerdeUNAL}{\large \ding{43} \ding{72} \ding{43}}
+\end{center}
+\end{frame}
+
+\end{document}
