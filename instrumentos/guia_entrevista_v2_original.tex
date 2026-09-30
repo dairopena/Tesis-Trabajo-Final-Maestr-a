@@ -1,0 +1,723 @@
+% =====================================================================
+%  GUÍA DE ENTREVISTA SEMIESTRUCTURADA BASADA EN TAREAS (versión 2)
+%  Compilar con: pdflatex guia_entrevista_mejorada.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=unalverde,urlcolor=unalverde,citecolor=unalverde}
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+\definecolor{ambar}{RGB}{255,248,225}
+
+\DeclareMathOperator{\seno}{sen}
+\newcommand{\limsen}{\displaystyle\lim_{x\to 0}\frac{\seno x}{x}}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=2pt,topsep=4pt}
+\setstretch{1.12}
+
+% ---------- Cajas ----------
+\newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+\newtcolorbox{tarea}[1]{colback=ambar,colframe=orange!70!black,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+\newtcolorbox{guion}{colback=white,colframe=unalverde!60,leftrule=4pt,boxrule=0.6pt,arc=0pt,breakable,fontupper=\itshape}
+
+% ---------- Preguntas con sondeos ----------
+\newcounter{preg}
+\newenvironment{pregunta}[1]
+  {\refstepcounter{preg}\par\smallskip\noindent\textbf{P\thepreg.}~#1\par}
+  {\par\smallskip}
+\newcommand{\subpreg}[2]{\par\noindent\hangindent=3.4em\hangafter=0%
+  \llap{{\color{unalverde}$\rightarrow$}\ }{\small\textit{#1:} #2}\par}
+\newcommand{\sondeo}[1]{\subpreg{Sondeo}{#1}}
+\newcommand{\evid}[1]{\subpreg{Evidencia que se busca}{#1}}
+
+% ---------- Encabezado ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Guía de entrevista semiestructurada basada en tareas}
+\fancyhead[R]{\small UNAL -- Sede Palmira}
+\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% =====================================================================
+\begin{titlepage}
+\centering
+{\large Universidad Nacional de Colombia -- Sede Palmira\par}
+{\normalsize Maestría en Enseñanza de las Ciencias Exactas y Naturales\par}
+{\normalsize Asignatura: Evaluación Formativa y por Competencias\par}
+\vspace{2.2cm}
+{\color{unalverde}\rule{\linewidth}{1pt}\par}
+\vspace{0.4cm}
+{\LARGE\bfseries Guía de entrevista semiestructurada\\[4pt] basada en tareas\par}
+\vspace{0.4cm}
+{\large Instrumento de indagación cualitativa y de evaluación formativa por competencias para tareas mediadas con IA generativa orientadas al pensamiento trigonométrico en cálculo diferencial\par}
+\vspace{0.4cm}
+{\color{unalverde}\rule{\linewidth}{1pt}\par}
+\vspace{1.5cm}
+
+\begin{caja}{Ficha técnica del instrumento}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{3.9cm}L@{}}
+Población & Estudiantes de \emph{primera matrícula} de Cálculo Diferencial de la Universidad Nacional de Colombia, sede Palmira, vinculados al programa de tutorías personalizadas.\\
+Modalidad & Entrevista semiestructurada individual, del tipo \emph{entrevista basada en tareas} (Goldin, 2000; Maher y Sigley, 2014), con protocolo de pensamiento en voz alta y recuerdo estimulado.\\
+Duración & 50--70 minutos, en una sesión (opción de una segunda sesión breve de devolución).\\
+Registro & Audio (obligatorio), video de la hoja de trabajo (opcional, previa autorización), captura del historial de interacción con la IA, hoja de trabajo del estudiante y notas de campo.\\
+Doble función & (a) Instrumento de investigación cualitativa; (b) técnica de evaluación formativa oral y compartida (Hamodi et al., 2015), con rúbrica de evidencias (sección~\ref{sec:rubrica}).\\
+Requisito previo & Consentimiento informado firmado (documento anexo).\\
+Versión & 2.0 --- revisada con aportes de Vandebrouck, Hanke y Martínez-Planell (2021).
+\end{tabularx}
+\end{caja}
+\vfill
+{\small Palmira, \the\year\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{Presentación y propósito}
+
+¿Cómo se sabe que un estudiante está pensando trigonométricamente y no solo repitiendo un procedimiento que memorizó? Esa pregunta orienta este instrumento.
+
+Este documento no es un cuestionario cerrado. Es el guion de una entrevista semiestructurada basada en tareas, pensada para el trabajo de grado sobre tareas mediadas con inteligencia artificial (IA) generativa orientadas al pensamiento trigonométrico y matemático, con estudiantes de primera matrícula de Cálculo Diferencial de la Universidad Nacional de Colombia, sede Palmira.
+
+El instrumento cumple dos funciones a la vez. Es una técnica de indagación cualitativa y es también una técnica de evaluación formativa: cada bloque apunta a una evidencia de desempeño que puede leerse en clave de competencias y devolverse al estudiante como retroalimentación, no como calificación.
+
+\subsection*{Objetivos de la entrevista}
+\begin{enumerate}[label=\textbf{O\arabic*.}]
+  \item Caracterizar cómo piensan trigonométricamente los estudiantes antes, durante y después de resolver una tarea de cálculo mediada por IA generativa.
+  \item Identificar las concepciones (imagen conceptual) que movilizan sobre el límite, el ángulo y la función seno en el tránsito colegio--universidad.
+  \item Describir los esquemas de uso que el estudiante construye con la IA: qué le pregunta, cuándo le cree y cuándo la verifica.
+  \item Explorar la relación que el estudiante establece entre la tutoría, las tareas con IA y su permanencia en la universidad.
+  \item Producir evidencia formativa útil para retroalimentar al estudiante y al tutor.
+\end{enumerate}
+
+\subsection*{Qué cambia en esta versión}
+\begin{itemize}
+  \item Se añade una \textbf{matriz de alineación} entre objetivos, constructos y preguntas (Castillo-Montoya, 2016).
+  \item Cada pregunta principal trae \textbf{sondeos} (preguntas de profundización) y la evidencia que se busca (Kvale, 2011; Patton, 2015).
+  \item Las tareas se acompañan de un \textbf{análisis a priori} de estrategias y errores esperados, siguiendo la tradición de diseño de tareas en cálculo recogida por INDRUM (Vandebrouck et al., 2021).
+  \item Las \textbf{tareas se toman de investigaciones reportadas en el capítulo de INDRUM} (Vandebrouck et al., 2021): la ecuación $\cos x = x$ (Ghedamsi, 2016), razonamientos de estudiantes sobre límites (Vandebrouck y Leidwanger, 2016), la pregunta sobre la recta tangente (Páez Murillo et al., 2016) y una conjetura sobre límites (Lecorre, 2016).
+  \item Las preguntas se reformularon con \textbf{criterios explícitos de neutralidad}: sin presuposiciones, sin opciones de respuesta y sin nombrar métodos o conceptos antes que el estudiante (sección~\ref{sec:neutralidad}).
+  \item Se define una \textbf{escala graduada de ayudas} del entrevistador, que convierte cada intervención en dato formativo (Goldin, 2000).
+  \item Se incluyen \textbf{rúbrica analítica}, \textbf{hoja de notas de campo} y un plan de \textbf{pilotaje y validación}.
+\end{itemize}
+
+% =====================================================================
+\section{Fundamentación teórica y metodológica}
+
+\subsection{La entrevista semiestructurada en investigación educativa}
+Kvale (2011) y Brinkmann y Kvale (2018) insisten en que una entrevista no se improvisa: exige preparación, preguntas formuladas con oficio y un análisis reflexivo de cómo se condujo la conversación, no solo de lo que dijo el entrevistado. Ibarra-Sáiz, González-Elorza y Rodríguez Gómez (2023) muestran que su confiabilidad no depende de la neutralidad del entrevistador, que es casi imposible, sino de contar con un sistema explícito para revisar después la calidad de lo recogido. Sandín Esteban (2000) lo resume: la validez cualitativa se mueve de la objetividad a la solidaridad. No se trata de desaparecer como entrevistador, sino de dejar rastro de las decisiones tomadas.
+
+Para construir el guion se siguieron dos marcos metodológicos complementarios. Kallio, Pietilä, Johnson y Kangasniemi (2016), en una revisión sistemática, proponen cinco fases para elaborar una guía semiestructurada: (1) verificar que la entrevista es la técnica adecuada; (2) recuperar el conocimiento previo; (3) formular la guía preliminar; (4) probarla, y (5) presentar la guía completa. Castillo-Montoya (2016), por su parte, propone el marco de refinamiento del protocolo (IPR), que exige alinear cada pregunta con las preguntas de investigación, construir una conversación basada en la indagación, obtener retroalimentación sobre el protocolo y pilotarlo. Ambos marcos se hacen visibles en las secciones \ref{sec:matriz} y \ref{sec:pilotaje}.
+
+\subsection{La entrevista basada en tareas}
+Un estudio sobre pensamiento trigonométrico no se resuelve con preguntas de opinión: hay que ver al estudiante pensar. Maher y Sigley (2014) definen la entrevista basada en tareas como aquella en la que el estudiante piensa en voz alta mientras resuelve una tarea diseñada para la entrevista, interactuando con quien pregunta y con un ``ambiente de tarea'' construido con esa intención (Goldin, 2000). La técnica desciende de la entrevista clínica piagetiana (Piaget, 1965/1975; Ginsburg, 1997): el conocimiento no se declara, se manifiesta en la acción.
+
+Goldin (2000) propone principios para que este tipo de entrevista sea científicamente defendible. Aquí se retoman cinco: (a) tareas accesibles pero con varios caminos de solución; (b) libre resolución antes de cualquier intervención; (c) criterios explícitos, fijados de antemano, para las ayudas heurísticas; (d) registro completo de lo que ocurre, y (e) análisis a priori que anticipe conductas observables. El protocolo de pensamiento en voz alta se basa en Ericsson y Simon (1993): se pide verbalizar lo que se piensa, no justificarlo en todo momento, para no alterar el proceso.
+
+\subsection{Diseño de tareas en cálculo: aportes de la investigación INDRUM}
+El capítulo de Vandebrouck, Hanke y Martínez-Planell (2021) sobre diseño de tareas en cálculo y análisis ofrece varias ideas que este instrumento adopta directamente:
+
+\begin{itemize}
+  \item \textbf{Perspectivas puntual, local y global.} Vandebrouck y Leidwanger (2016) documentan un error característico: afirmar que $\limsen = 0$ porque $\seno 0 = 0$ en el numerador (mirada \emph{puntual}) mientras el denominador ``solo tiende'' a cero (mirada \emph{local}). La tarea 2 presenta ese mismo razonamiento, junto con otros dos del mismo estudio, para que el estudiante lo evalúe.
+  \item \textbf{Concepciones dinámicas y estáticas del límite.} Robert (1982), Williams (1991) y Lecorre (2016) distinguen entre la concepción cinemática (``$x$ se mueve y $f(x)$ se acerca'') y la estática, ligada a la aproximación controlada. La entrevista pregunta explícitamente cómo imagina el estudiante el ``acercarse''.
+  \item \textbf{Ángulos, seno y coseno en la transición.} Winsløw (2016) muestra que en la secundaria conviven tres contextos desconectados para el seno: el triángulo, el círculo y la función periódica. Propone la \emph{longitud de arco} como vínculo entre ellos. La tarea 1 obliga a tratar el coseno como función de una variable real, y ahí se hace visible si el estudiante lo piensa como razón de un triángulo o como función, y si usa radianes o grados.
+  \item \textbf{Aproximación de números reales.} Ghedamsi (2016) diseña situaciones para introducir el límite mediante la aproximación de números reales por sucesiones. Una de ellas es la solución de $\cos x = x$, que da acceso a un número real sin expresión cerrada y obliga a pensar en la aproximación y el error. Es la tarea 1 de esta entrevista.
+  \item \textbf{Concepciones espontáneas de la tangente.} Páez Murillo, Montoya Delgadillo y Vivier (2016) preguntan a estudiantes de primer año ``¿qué es para ti una recta tangente?'' y proponen cinco tipos de concepción. Esa pregunta abre el bloque de tareas.
+  \item \textbf{Imagen conceptual y definición conceptual.} Tall y Vinner (1981) permiten leer las respuestas como huellas de una imagen conceptual que puede no coincidir con la definición formal. Hamza y O'Shea (2016) usan en sus entrevistas la consigna ``¿cómo se lo explicarías a un amigo?'', que se retoma aquí.
+  \item \textbf{Conflicto cognitivo provocado.} Feudel (2018) señala que el entrevistador puede reaccionar a las respuestas y provocar conflictos cognitivos que hacen emerger el razonamiento. La tarea 2 lo hace presentando razonamientos de estudiantes documentados en la investigación, unos correctos y otros no.
+  \item \textbf{Razonamiento imitativo y razonamiento creativo.} Lithner (2004) describe el razonamiento por \emph{identificación de similitudes}: reconocer el tipo de ejercicio y aplicar una técnica conocida sin argumento teórico. Distinguirlo del razonamiento propio es clave cuando la IA puede entregar la técnica lista.
+  \item \textbf{Registros de representación.} Duval (2006) y buena parte de los trabajos de INDRUM muestran que la conversión entre registros (algebraico, gráfico, numérico, verbal) es donde se concentran las dificultades. El análisis de la entrevista registra cada conversión que el estudiante hace o evita.
+  \item \textbf{Mediación del docente.} Varios diseños (Bridoux, 2016; Sghaier y Vandebrouck, 2018) muestran que la tarea sola no basta: el discurso del docente, pensado como ``proximidades'' dentro de la zona de desarrollo próximo, es parte del diseño. La escala de ayudas de la sección~\ref{sec:ayudas} sigue esa idea.
+\end{itemize}
+
+\subsection{La entrevista como evidencia de evaluación formativa}
+Hamodi, López Pastor y López Pastor (2015) distinguen tres niveles: los medios de evaluación (lo que el estudiante dice, hace o escribe), las técnicas (cómo se recoge) y los instrumentos (cómo se sistematiza). En ese esquema la entrevista es una técnica de evaluación oral y compartida. Poblete Ruiz, Fernández Nogueira, Campo Carrasco y Nöel López (2016) proponen cinco niveles de evidencia (conceptualización, reflexión, toma de postura, actuación e integración), que aquí se adaptan. La competencia de referencia es el \emph{pensamiento variacional} de los Estándares Básicos de Competencias en Matemáticas (MEN, 2006). La entrevista no debe ser el único instrumento evaluativo: se triangula con el trabajo escrito, el registro de interacción con la IA y la observación del tutor (Poblete Ruiz et al., 2016).
+
+\subsection{De ejercicio a tarea, y de artefacto a instrumento}
+Un ejercicio consolida destreza: el estudiante sabe qué fórmula aplicar antes de empezar. Una tarea exige explorar, decidir una estrategia y justificarla (Leung y Bolite-Frant, 2015; Radmehr, 2023; Canogullari y Radmehr, 2025). La tradición francesa lo expresa como la diferencia entre tareas técnicas y tareas que exigen \emph{adaptaciones} del conocimiento (Vandebrouck et al., 2021). Del mismo modo, Trouche (2004) distingue entre el \emph{artefacto} (la IA tal como existe) y el \emph{instrumento} (la IA incorporada a la actividad de un sujeto mediante esquemas de uso). La entrevista pregunta cómo el estudiante construye, o no construye, un uso propio de la herramienta.
+
+\subsection{El pensamiento trigonométrico en el tránsito hacia el cálculo}
+Montiel-Espinosa (2013) describe el pensamiento trigonométrico en cinco rasgos: interpretar las funciones trigonométricas como objetos funcionales; articular representaciones (Duval, 2006); razonar sobre variación y periodicidad con significado; diferenciar con criterio grados y radianes, y argumentar matemáticamente. La confusión entre razón y función trigonométrica, un obstáculo epistemológico en el sentido de Brousseau (2002), persiste en la universidad: Torres-Corrales y Montiel-Espinosa (2021) la documentan en primer año de ingeniería; Iriarte, Guzmán y Morales (2025), con ecuaciones trigonométricas; Chacón, Sánchez y Quirós (2007) ofrecen niveles de comprensión de la razón trigonométrica útiles para ubicar a cada estudiante.
+
+\subsection{Tareas mediadas con IA generativa}
+Parra Sánchez, Torres Pardo y Martínez De Merino (2023) muestran que el valor pedagógico de la IA en matemáticas universitarias está en cómo se integra a la tarea. Pepin, Buchholtz y Salinas-Hernández (2025) advierten que una IA que resuelve por el estudiante empobrece el aprendizaje, y una que provoca pensamiento sin suplantarlo lo enriquece. Wardat, Tashtoush, AlAli y Jarrah (2023) encuentran el mismo patrón. En esta entrevista la IA no es el objeto de estudio: es una ventana que deja ver decisiones que de otro modo serían invisibles.
+
+\subsection{Tutoría y permanencia en primera matrícula}
+El primer semestre concentra buena parte de la deserción universitaria, y Cálculo Diferencial suele ser una de las asignaturas con mayor pérdida. La tutoría solo funciona si el estudiante siente que responde a su dificultad real. Por eso el guion cierra preguntando, sin rodeos, si el estudiante conecta las tareas con IA y la tutoría con su decisión de seguir en la universidad.
+
+% =====================================================================
+\section{Criterios de diseño del guion}\label{sec:criterios}
+
+\subsection{Tipos de pregunta}
+Siguiendo a Kvale (2011) y Patton (2015), el guion combina deliberadamente varios tipos de pregunta. El entrevistador debe reconocerlos para usarlos con intención.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{3.2cm}Lp{4.6cm}@{}}
+\toprule
+\textbf{Tipo} & \textbf{Función} & \textbf{Ejemplo en este guion}\\
+\midrule
+Introductoria & Abrir un tema desde la experiencia & ``Cuéntame de ti\ldots''\\
+De seguimiento & Retomar las palabras del estudiante & ``Dijiste `se acerca', ¿qué se acerca a qué?''\\
+De sondeo & Profundizar sin sugerir & ``¿Cómo llegaste a eso?''\\
+Especificadora & Pedir un caso concreto & ``¿Recuerdas una vez en la que\ldots?''\\
+Estructuradora & Cambiar de bloque con transparencia & ``Ahora pasemos a la tarea\ldots''\\
+Silencio & Dar tiempo para pensar & Esperar 5--10 s antes de intervenir\\
+Interpretativa & Verificar lo que se entendió & ``¿Quieres decir que\ldots?''\\
+Hipotética & Explorar la flexibilidad del razonamiento & ``¿Qué pasaría si la ecuación fuera $\operatorname{sen} x = x$?''\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Reglas de formulación}
+\begin{itemize}
+  \item Una sola idea por pregunta; nada de preguntas dobles.
+  \item Preguntas abiertas (``¿cómo?'', ``¿qué?'', ``cuéntame'') antes que cerradas; se evita el ``¿por qué?'' en tono de reproche y se prefiere ``¿qué te hizo pensar en eso?''.
+  \item No usar vocabulario técnico antes de que lo use el estudiante (por ejemplo, no decir ``radián'' ni ``círculo unitario'' en los bloques 0 y 1).
+  \item No evaluar en voz alta (``bien'', ``correcto'', ``no''); usar acuses neutros (``entiendo'', ``sigue'').
+  \item Tratar al estudiante de \emph{tú}, en lenguaje cercano, salvo que prefiera otro trato.
+\end{itemize}
+
+\subsection{Criterios de neutralidad}\label{sec:neutralidad}
+Una pregunta es neutral cuando no le indica al estudiante qué respuesta se espera (Kvale, 2011; Patton, 2015). En este guion se aplicaron cinco criterios:
+\begin{enumerate}
+  \item \textbf{Sin presuposiciones}: no se da por hecho que algo le resultó difícil, fácil, útil o preocupante.
+  \item \textbf{Sin opciones}: no se ofrecen alternativas (``¿un triángulo, un círculo o una gráfica?''), porque el estudiante tiende a elegir entre ellas en vez de decir lo propio.
+  \item \textbf{Sin vocabulario anticipado}: no se nombran métodos o conceptos (radián, círculo unitario, Newton, teorema del valor intermedio) antes de que los use el estudiante.
+  \item \textbf{Sin adjetivos valorativos}: se evitan palabras como ``difícil'', ``dependes'', ``te ayudó''.
+  \item \textbf{Formato descriptivo}: se prefieren ``¿cómo describirías\ldots?'', ``¿qué piensas de\ldots?'' y ``cuéntame\ldots'' a las preguntas de sí o no.
+\end{enumerate}
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}LL@{}}
+\toprule
+\textbf{Formulación anterior (sesgada)} & \textbf{Formulación neutral}\\
+\midrule
+¿Qué es lo que más se te dificulta de la trigonometría en cálculo? & ¿Cómo ha sido tu experiencia cuando aparecen funciones trigonométricas en el curso?\\
+Cuando piensas en ``seno'', ¿qué se te viene a la mente: una fórmula, un triángulo, el círculo unitario, una gráfica? & ¿Qué significa para ti ``seno''?\\
+¿Qué tanto sientes que dependes de la IA? ¿Eso te preocupa? & ¿Cómo describirías tu forma de usar la IA cuando estudias?\\
+¿Sientes que las tareas con IA te han ayudado a comprender mejor? & ¿Cómo describirías el papel que ha tenido la IA en tu aprendizaje del cálculo?\\
+¿Has pensado en cancelar la materia o retirarte? & ¿Qué aspectos influyen en tu decisión de continuar en la universidad?\\
+¿Qué pasa si reemplazas $x$ por 0? & ¿Qué harías primero?\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Sondeos neutros de uso general}: ``Cuéntame más'', ``¿Qué quieres decir con\ldots?'', ``¿Cómo llegaste a eso?'', ``¿Podrías darme un ejemplo?'', ``¿Qué te lleva a pensar eso?'' y el silencio.
+
+% =====================================================================
+\section{Matriz de alineación}\label{sec:matriz}
+
+La matriz conecta cada bloque con los objetivos, los constructos teóricos y el nivel de evidencia en el sentido de Poblete Ruiz et al. (2016). Sirve para verificar que ninguna pregunta sobra y que ningún objetivo queda sin cubrir (Castillo-Montoya, 2016).
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{2.6cm}p{1.3cm}Lp{2.4cm}p{1.6cm}@{}}
+\toprule
+\textbf{Bloque} & \textbf{Obj.} & \textbf{Constructos que se observan} & \textbf{Nivel de evidencia} & \textbf{Preguntas}\\
+\midrule
+0. Apertura & O4 & Trayectoria, expectativas, sentido de la tutoría & Conceptualización & P1--P3\\
+1. Trayectoria trigonometría--cálculo & O2 & Imagen conceptual del seno y del ángulo (Winsløw, 2016); concepciones de tangente (Páez Murillo et al., 2016); límite dinámico/estático & Reflexión & P4--P9\\
+2. Tarea 1: $\cos x = x$ & O1, O3 & Coseno como función; registros; aproximación y error; número real sin expresión cerrada (Ghedamsi, 2016); esquemas de uso de la IA & Actuación & P10--P17\\
+3. Tarea 2: razonamientos sobre límites & O1, O2 & Perspectivas puntual/local/global (Vandebrouck y Leidwanger, 2016); criterios de validación (Lithner, 2004) & Toma de postura & P18--P21\\
+4. Recuerdo estimulado & O3 & Metacognición sobre el uso de la IA (Lyle, 2003) & Reflexión & P22--P24\\
+5. Percepciones sobre la IA & O3 & Formas de uso, confianza, autonomía & Toma de postura & P25--P28\\
+6. Tutoría y permanencia & O4 & Integración de tutoría e IA al proyecto académico & Integración & P29--P31\\
+7. Cierre & O5 & Síntesis, devolución, preguntas del estudiante & Transversal & P32--P34\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La tabla no es una escala acumulativa estricta. Un estudiante puede mostrar buena actuación en la tarea 1 y dudar en la toma de postura de la tarea 2. Eso no es una contradicción: es justamente la clase de evidencia que una entrevista capta y un examen escrito no.
+
+% =====================================================================
+\section{Protocolo de aplicación}
+
+\subsection{Antes de la entrevista}
+\begin{enumerate}
+  \item Verificar que el consentimiento informado esté firmado y que el estudiante haya recibido su copia. Si el estudiante es menor de 18 años, verificar además el consentimiento del representante legal y el asentimiento del estudiante.
+  \item Reservar un espacio tranquilo, sin interrupciones, y fuera de horario de evaluación sumativa.
+  \item Probar la grabadora (y la cámara cenital sobre la hoja, si se autorizó). Llevar batería de respaldo.
+  \item Preparar una cuenta institucional o de investigación en la herramienta de IA (no la cuenta personal del estudiante), con el historial vacío y la memoria desactivada.
+  \item Imprimir: hoja con la pregunta sobre la recta tangente, hoja de trabajo de la tarea 1, tarjeta con los tres razonamientos (tarea 2), ficha de la tarea de reserva, hoja de notas de campo (anexo) y este guion.
+  \item Asignar el código del participante (por ejemplo, \texttt{E07}) y usarlo en todos los archivos.
+\end{enumerate}
+
+\subsection{Guion de apertura (leer con naturalidad)}
+\begin{guion}
+Gracias por aceptar esta conversación. Voy a grabar el audio, como acordamos en el consentimiento; puedes pedirme que pare la grabación cuando quieras.
+
+Quiero dejarte algo claro desde el comienzo: esto no es un examen y no afecta tus notas ni tu lugar en la tutoría. Me interesa entender cómo piensas, no si llegas a la respuesta ``correcta''. De hecho, los caminos que no funcionan me dicen tanto como los que sí.
+
+Vamos a conversar un rato y luego te voy a pedir que resuelvas un par de situaciones de cálculo. Mientras trabajas, intenta decir en voz alta lo que vas pensando, como si hablaras solo. Puedes usar la IA cuando quieras, pero cuéntame antes qué le vas a preguntar y después qué haces con lo que te responde.
+
+Si alguna pregunta no te gusta, puedes no responderla. ¿Tienes alguna duda antes de empezar?
+\end{guion}
+
+\subsection{Ensayo de pensamiento en voz alta}
+Antes de la tarea se hace un ensayo breve (1--2 minutos) con un problema neutro, por ejemplo: ``Dime en voz alta cómo calculas mentalmente $24\times 15$''. Si el estudiante se queda en silencio más de 10 segundos durante la tarea, se usa solo el recordatorio neutro: ``¿Qué estás pensando ahora?'' (Ericsson y Simon, 1993).
+
+\subsection{Escala graduada de ayudas del entrevistador}\label{sec:ayudas}
+Siguiendo el principio de Goldin (2000) de fijar de antemano los criterios de intervención, el entrevistador solo sube de nivel cuando el estudiante lleva al menos dos minutos bloqueado o lo pide explícitamente. \textbf{El nivel de ayuda alcanzado se registra: es dato de investigación y evidencia formativa}, pues indica qué tan cerca está el estudiante de actuar de manera autónoma (la idea de ``proximidades'' de Sghaier y Vandebrouck, 2018).
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{1.3cm}p{3.3cm}L@{}}
+\toprule
+\textbf{Nivel} & \textbf{Tipo de ayuda} & \textbf{Formulación sugerida}\\
+\midrule
+A0 & Silencio y espera & (esperar 10 s) \\
+A1 & Explicitación & ``¿Qué has intentado hasta ahora? ¿Dónde te quedaste?''\\
+A2 & Reformulación de la tarea & ``Lo que se pide es\ldots\ ¿Cómo lo dirías con tus palabras?''\\
+A3 & Heurística general & ``¿Te ayudaría una gráfica, una tabla o un dibujo?''\\
+A4 & Heurística específica & ``¿Cómo se verían los dos lados de la ecuación en una gráfica?''\\
+A5 & Ayuda de contenido & Se da el paso y se pide al estudiante que lo explique.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Durante la entrevista}
+\begin{itemize}
+  \item Aplicar los bloques en el orden propuesto, pero permitir que un tema emergente se aborde cuando surja; marcar en la hoja de notas las preguntas ya cubiertas.
+  \item Usar sondeos libres para profundizar sin inducir: ``cuéntame más'', ``¿cómo llegaste a eso?'', ``¿qué quieres decir con\ldots?''.
+  \item Durante las tareas, no corregir ni sugerir el procedimiento fuera de la escala de ayudas.
+  \item Retomar textualmente las palabras del estudiante (``dijiste que se `acerca'\ldots'') en vez de reemplazarlas por términos técnicos.
+  \item Observar señales de cansancio o incomodidad; ofrecer una pausa si aparecen.
+\end{itemize}
+
+\subsection{Después de la entrevista}
+\begin{enumerate}
+  \item Completar la hoja de notas de campo en los 30 minutos siguientes (anexo~\ref{sec:notas}).
+  \item Exportar y anonimizar el historial de la IA; borrar la conversación de la cuenta.
+  \item Transcribir en un máximo de 72 horas, reemplazando nombres por códigos. No subir audios ni transcripciones con datos identificables a herramientas de IA externas.
+  \item Diligenciar la rúbrica (sección~\ref{sec:rubrica}) y preparar una devolución formativa breve para el estudiante.
+  \item Escribir un memo reflexivo sobre la conducción de la entrevista: qué preguntas funcionaron, dónde se indujo sin querer, qué ajustar (Brinkmann y Kvale, 2018).
+  \item Ofrecer al estudiante la verificación de la transcripción o de la síntesis (\emph{member checking}; Lincoln y Guba, 1985).
+\end{enumerate}
+
+% =====================================================================
+\section{Guía de preguntas}\label{sec:preguntas}
+
+Las preguntas son orientativas y están formuladas de manera \textbf{neutral}: no presuponen una respuesta, no ofrecen opciones y no nombran métodos ni conceptos que el estudiante no haya mencionado (sección~\ref{sec:neutralidad}). Las marcadas con $\star$ son \emph{imprescindibles}. Los sondeos se usan solo si la respuesta inicial es breve o ambigua, y en lo posible retoman las palabras exactas del estudiante.
+
+% -------------------------------------------------
+\subsection*{Bloque 0 --- Apertura y encuadre \hfill{\small\normalfont(5 min)}}
+
+\begin{pregunta}{$\star$ Para empezar, ¿cómo describirías tu experiencia en este primer semestre en la universidad?}
+  \sondeo{Cuéntame más sobre eso.}
+  \evid{contexto y encuadre de la trayectoria.}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo fue tu llegada a las tutorías?}
+  \sondeo{¿Qué esperabas de ellas?}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo describirías tu experiencia con Cálculo Diferencial hasta ahora?}
+  \sondeo{¿Qué quieres decir con ``\ldots''? (retomar la palabra del estudiante)}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 1 --- Trayectoria con la trigonometría y el cálculo \hfill{\small\normalfont(12 min)}}
+
+\begin{pregunta}{¿Qué recuerdas de la trigonometría que estudiaste en el colegio?}
+  \sondeo{¿Cómo la trabajaban en clase?}
+\end{pregunta}
+
+\begin{pregunta}{$\star$ ¿Qué significa para ti ``seno''?}
+  \sondeo{¿Podrías representarlo en la hoja?}
+  \sondeo{¿En qué otras situaciones te lo has encontrado?}
+  \evid{imagen conceptual del seno; contextos que el estudiante articula por iniciativa propia (Winsløw, 2016; Tall y Vinner, 1981).}
+\end{pregunta}
+
+\begin{pregunta}{¿Qué es para ti un ángulo?}
+  \sondeo{¿Cómo se mide?}
+  \evid{concepción del ángulo; unidades que menciona sin que se le sugieran.}
+\end{pregunta}
+
+\begin{pregunta}{$\star$ ¿Cómo ha sido tu experiencia cuando aparecen funciones trigonométricas en el curso de cálculo?}
+  \sondeo{¿Podrías contarme una situación concreta?}
+\end{pregunta}
+
+\begin{pregunta}{\textbf{Tarea breve de entrada} (Páez Murillo, Montoya Delgadillo y Vivier, 2016). Se entrega una hoja con la pregunta escrita: \emph{``Para ti, ¿qué es una recta tangente?''}. El estudiante responde por escrito y luego se le pide que lo comente.}
+  \sondeo{¿Podrías dibujarlo?}
+  \sondeo{Cuéntame más sobre lo que escribiste.}
+  \evid{tipo de concepción de tangente: punto único de intersección, perpendicular al radio, pendiente, proceso de derivación, tangente horizontal (Páez Murillo et al., 2016).}
+\end{pregunta}
+
+\begin{pregunta}{Cuando en clase se dice que ``$x$ tiende a 0'', ¿qué entiendes?}
+  \sondeo{Cuéntame más.}
+  \evid{concepción dinámica o estática del límite (Robert, 1982; Williams, 1991).}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 2 --- Tarea 1 mediada con IA generativa: la ecuación $\cos x = x$ \hfill{\small\normalfont(20 min)}}
+
+Se entrega la hoja de la tarea 1 (sección~\ref{sec:tareas}). El estudiante trabaja en voz alta. El entrevistador interviene solo en los momentos indicados, sin cortar el hilo del pensamiento.
+
+\medskip\noindent\textbf{Momento 1: antes de usar la IA}
+
+\begin{pregunta}{$\star$ ¿Cómo entiendes lo que pide la tarea?}
+  \sondeo{¿Qué harías primero?}
+  \evid{interpretación de la ecuación; registro en que se ubica espontáneamente.}
+\end{pregunta}
+
+\begin{pregunta}{Antes de consultar cualquier recurso, ¿qué piensas sobre si la ecuación tiene solución?}
+  \sondeo{¿Qué te lleva a pensar eso?}
+  \sondeo{De 1 a 5, ¿qué tan seguro te sientes?}
+  \evid{conjetura inicial, registrada para contrastarla después de la consulta.}
+\end{pregunta}
+
+\medskip\noindent\textbf{Momento 2: durante la interacción con la IA}
+
+\begin{pregunta}{¿Qué le vas a escribir a la IA?}
+  \sondeo{¿Qué esperas obtener?}
+  \evid{finalidad de la consulta.}
+\end{pregunta}
+
+\begin{pregunta}{$\star$ ¿Qué piensas de la respuesta que te dio?}
+  \sondeo{¿Cómo la relacionas con lo que habías hecho?}
+  \sondeo{¿Qué vas a hacer con ella?}
+  \evid{esquemas de validación (Trouche, 2004).}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo describirías lo que entiendes de esa respuesta?}
+  \sondeo{Muéstrame en la respuesta a qué te refieres.}
+\end{pregunta}
+
+\medskip\noindent\textbf{Momento 3: aproximación y naturaleza de la solución}
+
+\begin{pregunta}{$\star$ ¿Cómo sabes si tu aproximación es buena?}
+  \sondeo{¿Qué significa para ti ``buena'' en este caso?}
+  \evid{noción de error y de aproximación (Ghedamsi, 2016).}
+\end{pregunta}
+
+\begin{pregunta}{¿Qué puedes decir del número que es solución?}
+  \sondeo{¿Cómo lo escribirías?}
+  \evid{concepción del número real como objeto que existe aunque no tenga una expresión cerrada (Ghedamsi, 2016).}
+\end{pregunta}
+
+\begin{pregunta}{$\star$ Si le contaras a un compañero cómo resolviste esta tarea, ¿qué le dirías?}
+  \sondeo{¿Cómo se repartió el trabajo entre tú y la IA?}
+  \evid{apropiación del razonamiento; distinción entre lo propio y lo delegado (Hamza y O'Shea, 2016).}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 3 --- Tarea 2: razonamientos sobre límites \hfill{\small\normalfont(10 min)}}
+
+Se entrega la tarjeta de la tarea 2 (sección~\ref{sec:tareas}). Se dice al estudiante: ``Estos son razonamientos que escribieron estudiantes de primer año en otra investigación''. Al terminar el bloque se explica cuáles son correctos y por qué.
+
+\begin{pregunta}{$\star$ ¿Qué opinas del razonamiento 1?}
+  \sondeo{¿En qué te basas para decir eso?}
+  \evid{detección, o no, de la mezcla de perspectivas puntual y local (Vandebrouck y Leidwanger, 2016).}
+\end{pregunta}
+
+\begin{pregunta}{¿Y de los razonamientos 2 y 3?}
+  \sondeo{¿En qué se parecen o se diferencian del primero?}
+  \evid{uso de argumentos de ``dominancia'' y sus límites.}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo decidiste si cada razonamiento era válido?}
+  \evid{criterio de validación: argumento propio, autoridad, cálculo, gráfica.}
+\end{pregunta}
+
+\begin{pregunta}{Si quisieras comprobar tus respuestas, ¿qué harías?}
+  \evid{estrategias de verificación, con o sin IA.}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 4 --- Recuerdo estimulado sobre la interacción \hfill{\small\normalfont(5 min)}}
+
+Se revisa con el estudiante el historial de la conversación con la IA de la tarea 1 (Lyle, 2003).
+
+\begin{pregunta}{Revisemos juntos tu conversación con la IA. ¿Qué me puedes contar de ella?}
+\end{pregunta}
+
+\begin{pregunta}{Si volvieras a empezar la tarea, ¿qué harías igual y qué harías diferente?}
+\end{pregunta}
+
+\begin{pregunta}{¿Qué te llevas de esta tarea?}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 5 --- Percepciones sobre el uso de IA generativa \hfill{\small\normalfont(5 min)}}
+
+\begin{pregunta}{$\star$ ¿Cómo describirías el papel que ha tenido la IA en tu aprendizaje del cálculo?}
+  \sondeo{¿Podrías darme un ejemplo?}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo comparas trabajar solo, trabajar con tu tutor y trabajar con la IA?}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo describirías tu forma de usar la IA cuando estudias?}
+  \sondeo{¿Qué piensas de esa forma de usarla?}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo te gustaría que fueran las tareas con IA?}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 6 --- Tutoría y permanencia \hfill{\small\normalfont(5 min)}}
+
+\begin{pregunta}{¿Qué lugar tienen las tareas con IA en tus sesiones de tutoría?}
+\end{pregunta}
+
+\begin{pregunta}{$\star$ ¿Qué aspectos influyen en tu decisión de continuar en la universidad?}
+  \sondeo{¿Qué papel tiene la tutoría en eso?}
+\end{pregunta}
+
+\begin{pregunta}{¿Qué le dirías a alguien que va a empezar la universidad el próximo semestre?}
+\end{pregunta}
+
+% -------------------------------------------------
+\subsection*{Bloque 7 --- Cierre \hfill{\small\normalfont(3 min)}}
+
+\begin{pregunta}{¿Hay algo más que quieras contarme sobre lo que hablamos?}
+\end{pregunta}
+
+\begin{pregunta}{¿Cómo te sentiste durante la conversación?}
+\end{pregunta}
+
+\begin{pregunta}{¿Qué preguntas tienes sobre el estudio o sobre lo que haremos con esta información?}
+\end{pregunta}
+
+\begin{guion}
+Muchas gracias por tu tiempo. Te recuerdo que tu nombre no aparecerá en ningún documento. En unos días te compartiré una síntesis de lo que conversamos para que me digas si refleja lo que quisiste decir, y una retroalimentación sobre lo que observé en la tarea, por si te sirve para el curso.
+\end{guion}
+
+% =====================================================================
+\section{Fichas de las tareas y análisis a priori}\label{sec:tareas}
+
+Las tareas se toman de investigaciones reportadas en el capítulo de Vandebrouck, Hanke y Martínez-Planell (2021), y se adaptan para la entrevista con IA generativa. Siguiendo la ingeniería didáctica, cada ficha incluye su análisis a priori: estrategias, errores y variables didácticas previstas, para poder leer después lo que ocurrió.
+
+\begin{tarea}{Tarea 1 --- ``La ecuación $\cos x = x$'' (adaptada de Ghedamsi, 2016)}
+Considera la ecuación
+\[
+\cos x = x .
+\]
+\begin{enumerate}[label=\alph*)]
+  \item ¿La ecuación tiene solución? Si la tiene, ¿cuántas? Justifica tu respuesta.
+  \item Encuentra un valor aproximado de la solución. Explica cómo sabes que tu aproximación es buena.
+  \item ¿Qué puedes decir del número que es solución de la ecuación?
+\end{enumerate}
+Puedes consultar la IA en cualquier momento. Antes de cada consulta di en voz alta qué le vas a preguntar, y después, qué haces con la respuesta.
+\end{tarea}
+
+\noindent\textbf{Origen.} Ghedamsi (2016) diseñó dos situaciones para introducir el límite mediante la aproximación de números reales por sucesiones: la aproximación de $\sqrt{2}$ por el método de Euclides y la solución de $\cos x = x$ mediante el algoritmo de Newton. Según el capítulo de INDRUM, la segunda situación permite ir más lejos, porque da acceso a un número real que no puede expresarse con funciones elementales ni con símbolos como $\sqrt{2}$, y obliga a usar procedimientos formales para tratarlo (Vandebrouck et al., 2021). Aquí se conserva la ecuación y se deja abierto el método: la IA puede proponer Newton, bisección o iteración, y lo que interesa es cómo el estudiante decide y valida.
+
+\noindent\textbf{Datos de referencia (para el entrevistador).} La solución es única: $f(x) = \cos x - x$ es continua, $f(0) = 1 > 0$, $f(1) = \cos 1 - 1 < 0$ y $f'(x) = -\operatorname{sen} x - 1 \le 0$. Su valor es $x^\ast \approx 0{,}739085$ (en radianes). Si la calculadora está en grados, la ecuación $\cos(x^\circ) = x$ da $x \approx 0{,}99985$.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{4cm}Lp{3.1cm}@{}}
+\toprule
+\multicolumn{3}{@{}l}{\textbf{Análisis a priori de la tarea 1}}\\
+\midrule
+\textbf{Conducta posible} & \textbf{Interpretación} & \textbf{Referente}\\
+\midrule
+Intenta despejar $x$ algebraicamente y se bloquea & Expectativa de solución exacta; ecuación vista solo en el registro algebraico & Duval (2006)\\
+Grafica $y=\cos x$ y $y=x$ y observa el corte & Conversión algebraico--gráfico; lectura global & Duval (2006)\\
+Afirma que hay infinitas soluciones ``porque el coseno es periódico'' & Periodicidad usada sin considerar que $y = x$ no lo es & Montiel-Espinosa (2013)\\
+Acota la solución en $[-1, 1]$ por el rango del coseno & Razonamiento funcional sobre el coseno & Montiel-Espinosa (2013)\\
+Usa el teorema del valor intermedio o la monotonía de $\cos x - x$ & Argumentación formal de existencia y unicidad & Vandebrouck et al.\ (2021)\\
+Tantea con la calculadora en modo grados & Ángulo pensado solo en grados; coseno como razón y no como función de variable real & Winsløw (2016); Torres-Corrales y Montiel-Espinosa (2021)\\
+Itera $x_{n+1} = \cos x_n$ o aplica Newton (por sí mismo o por la IA) & Aproximación mediante sucesiones; noción de convergencia & Ghedamsi (2016)\\
+Da el valor de la IA sin poder justificarlo & Razonamiento imitativo; IA como artefacto y no como instrumento & Lithner (2004); Trouche (2004)\\
+Dice que la solución ``no existe'' porque no se puede escribir exactamente & El número real se identifica con su expresión simbólica & Ghedamsi (2016)\\
+Distingue entre el número y sus aproximaciones & Concepción del real como objeto & Ghedamsi (2016)\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Variables didácticas} (Ghedamsi, 2016): el tipo de número aproximado (con o sin expresión cerrada), el tipo de sucesión (explícita o recursiva) y la naturaleza del error pedido (``buena aproximación'' sin precisar o con una cota explícita, por ejemplo $10^{-3}$). En este guion se deja sin precisar, para observar qué entiende el estudiante por ``buena''.
+
+\bigskip
+\begin{tarea}{Tarea 2 --- ``Tres razonamientos sobre límites'' (tomada de Vandebrouck y Leidwanger, 2016)}
+Estos son razonamientos que escribieron estudiantes de primer año de universidad. ¿Qué opinas de cada uno?
+
+\medskip
+\textbf{Razonamiento 1.} \emph{``El límite de $\dfrac{\operatorname{sen} x}{x}$ cuando $x$ tiende a 0 es 0, porque en el numerador $\operatorname{sen} 0 = 0$, mientras que el denominador $x$ solo tiende a 0.''}
+
+\medskip
+\textbf{Razonamiento 2.} \emph{``El límite de $\dfrac{x^2 - 1}{x + 3}$ cuando $x$ tiende a $+\infty$ es $+\infty$, porque $x^2$ crece más rápido que $x$.''}
+
+\medskip
+\textbf{Razonamiento 3.} \emph{``El límite de $e^{x}\left(1 - \sqrt{x}\right)$ cuando $x$ tiende a $+\infty$ es $+\infty$, porque la exponencial domina.''}
+\end{tarea}
+
+\noindent\textbf{Origen.} Los tres razonamientos están reportados en el capítulo de INDRUM a partir del estudio de Vandebrouck y Leidwanger (2016) con estudiantes en la transición secundaria--universidad (Vandebrouck et al., 2021), analizados con la noción de deconstrucción con perspectivas puntual, local y global (Montoya Delgadillo, Páez Murillo, Vandebrouck y Vivier, 2018).
+
+\noindent\textbf{Análisis a priori.}
+\begin{itemize}
+  \item \textbf{Razonamiento 1: incorrecto.} Mezcla la perspectiva puntual (evalúa el numerador en 0) con la local (el denominador ``tiende''). El límite vale 1. Es el razonamiento trigonométrico central de la tarea.
+  \item \textbf{Razonamiento 2: correcto.} Es un argumento de dominancia válido, como el que usaría un experto.
+  \item \textbf{Razonamiento 3: incorrecto.} La exponencial domina, pero multiplica a un factor que se vuelve negativo; el límite es $-\infty$.
+\end{itemize}
+Mezclar razonamientos correctos e incorrectos evita que el estudiante adopte la estrategia de rechazarlos todos. Un estudiante que acepta el 1 y el 3 y rechaza el 2 muestra una validación basada en la forma del argumento y no en su contenido (Lithner, 2004).
+
+\bigskip
+\begin{tarea}{Tarea de reserva --- ``Una conjetura sobre límites'' (tomada de Lecorre, 2016)}
+¿Es verdadera o falsa la siguiente afirmación? Justifica.
+
+\emph{``Si el límite de $f$ en $+\infty$ es estrictamente menor que el límite de $g$ en $+\infty$, entonces para todo número real $x$ se cumple que $f(x) < g(x)$.''}
+\end{tarea}
+
+\noindent\textbf{Origen y uso.} Lecorre (2016) usa esta conjetura como primera pregunta para que los estudiantes sientan la necesidad de formalizar el límite (Vandebrouck et al., 2021). Se aplica solo si sobra tiempo. La afirmación es falsa; un contraejemplo trigonométrico es $f(x) = \dfrac{\cos x}{1 + x^2}$ y $g(x) = \tfrac12$: se tiene $\lim_{x\to+\infty} f = 0 < \tfrac12 = \lim_{x\to+\infty} g$, pero $f(0) = 1 > g(0)$. Evidencia: paso de lo global a lo local y búsqueda de contraejemplos.
+
+
+% =====================================================================
+\section{Rúbrica analítica de evidencias}\label{sec:rubrica}
+
+La rúbrica sirve para la devolución formativa y para la codificación inicial. Se diligencia con la transcripción y la hoja de trabajo, no de memoria.
+
+\begin{center}
+\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{2.3cm}LLLL@{}}
+\toprule
+\textbf{Dimensión} & \textbf{1. Inicial} & \textbf{2. En desarrollo} & \textbf{3. Logrado} & \textbf{4. Destacado}\\
+\midrule
+D1. Perspectiva del límite & Evalúa en el punto; concluye 0 o ``no existe'' & Reconoce $0/0$ como indeterminado pero no avanza & Estudia el comportamiento cerca de 0 con tabla o gráfica & Explica por qué la mirada local es la pertinente\\
+D2. Aproximación y error & Da un valor sin justificar o espera una solución exacta & Aproxima por tanteo, sin controlar el error & Usa un método (gráfico, bisección, iteración) y estima el error & Justifica existencia y unicidad y controla el error\\
+D3. Coseno como función & Coseno solo como razón de un triángulo; trabaja en grados & Lo usa como función pero sin atender a la unidad & Lo trata como función de variable real, en radianes & Usa sus propiedades (rango, monotonía, periodicidad) para argumentar\\
+D4. Registros & Permanece en un registro & Cambia de registro con ayuda (A3--A5) & Convierte entre dos registros de forma autónoma & Articula tres o más registros y los contrasta\\
+D5. Uso de la IA & Pide la respuesta y la copia & Pide explicaciones pero no verifica & Contrasta la respuesta con su trabajo & Formula consultas estratégicas y detecta errores\\
+D6. Argumentación & No justifica & Justifica con la autoridad (``así es'', ``la IA dijo'') & Justifica con un argumento propio parcial & Argumento completo y coherente\\
+\midrule
+Nivel de ayuda & \multicolumn{4}{l}{Máximo alcanzado: \quad A0 \quad A1 \quad A2 \quad A3 \quad A4 \quad A5}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Devolución formativa.} A partir de la rúbrica se redactan para el estudiante tres líneas: un logro concreto observado, un aspecto por fortalecer y una sugerencia de siguiente paso (por ejemplo, ``practica explicar el límite con el dibujo del círculo antes de consultar la IA'').
+
+% =====================================================================
+\section{Plan de análisis}
+\begin{enumerate}
+  \item \textbf{Transcripción} literal con marcas de pausas, gestos relevantes, momentos de consulta a la IA y nivel de ayuda usado.
+  \item \textbf{Codificación deductiva} con las dimensiones D1--D6 y los niveles de Poblete Ruiz et al.\ (2016).
+  \item \textbf{Codificación inductiva} abierta para categorías emergentes (por ejemplo, emociones frente al error, estrategias de consulta).
+  \item \textbf{Triangulación} entre transcripción, hoja de trabajo, historial de la IA y notas de campo.
+  \item \textbf{Codificación doble} de al menos el 20\,\% de las entrevistas por un segundo codificador, con discusión de desacuerdos.
+  \item \textbf{Verificación con participantes}: envío de la síntesis individual para comentarios (Lincoln y Guba, 1985).
+\end{enumerate}
+
+% =====================================================================
+\section{Pilotaje y validación del instrumento}\label{sec:pilotaje}
+\begin{enumerate}
+  \item \textbf{Juicio de expertos}: dos docentes de cálculo y un investigador cualitativo revisan pertinencia, claridad y suficiencia de cada pregunta frente a la matriz de alineación.
+  \item \textbf{Entrevista piloto} con uno o dos estudiantes que no formen parte de la muestra, para verificar duración, comprensión de las consignas y funcionamiento técnico.
+  \item \textbf{Ajuste}: se eliminan preguntas redundantes, se reformulan las que generen respuestas de sí/no y se calibra la escala de ayudas.
+  \item \textbf{Registro de cambios}: cada modificación se documenta con su justificación (rastro de auditoría).
+\end{enumerate}
+
+% =====================================================================
+\section{Consideraciones éticas}
+\begin{itemize}
+  \item Consentimiento informado firmado antes de iniciar (documento anexo), con autorizaciones separadas para audio, video, captura de la interacción con la IA y citas textuales.
+  \item Si el participante es menor de 18 años: consentimiento del representante legal y asentimiento del estudiante.
+  \item Participación voluntaria: negarse o retirarse no afecta notas, tutoría ni relación con la universidad.
+  \item Confidencialidad: códigos en lugar de nombres; datos guardados en almacenamiento cifrado; no se ingresan datos personales en plataformas de IA.
+  \item La tarea 2 presenta razonamientos de estudiantes tomados de una investigación publicada, algunos incorrectos; se informa de su origen y al final del bloque se explica cuáles son correctos y por qué.
+  \item Función formativa, no sumativa: el desempeño no se usa para calificar.
+  \item Devolución individual y acceso a los resultados generales del estudio.
+\end{itemize}
+
+% =====================================================================
+\appendix
+\section{Hoja de notas de campo}\label{sec:notas}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|p{4.5cm}|X|}
+\hline
+Código del participante & \\ \hline
+Fecha / hora inicio -- fin & \\ \hline
+Lugar & \\ \hline
+Herramienta de IA y versión & \\ \hline
+Autorizaciones (audio / video / capturas) & \\ \hline
+Preguntas $\star$ no cubiertas & \\ \hline
+Nivel máximo de ayuda (tarea 1 / tarea 2) & \\ \hline
+Número de consultas a la IA & \\ \hline
+Momentos críticos (minuto y descripción) & \\[1.5cm] \hline
+Lenguaje no verbal relevante & \\[1cm] \hline
+Incidentes técnicos o interrupciones & \\ \hline
+Reflexión del entrevistador (¿induje alguna respuesta?) & \\[1.5cm] \hline
+Ideas para la devolución formativa & \\[1.2cm] \hline
+\end{tabularx}
+\end{center}
+
+% =====================================================================
+\newpage
+\section*{Referencias}
+\addcontentsline{toc}{section}{Referencias}
+\begin{list}{}{\leftmargin=1.5em \itemindent=-1.5em \itemsep=3pt \parsep=0pt}\small
+\item Brinkmann, S., y Kvale, S. (2018). \emph{Doing interviews} (2.ª ed.). SAGE.
+\item Bridoux, S. (2016). Introduire la notion de convergence avec une ingénierie des années 1980: rêve ou réalité didactique pour l'enseignant? En \emph{INDRUM 2016 Proceedings} (pp. 53--62).
+\item Brousseau, G. (2002). \emph{Theory of didactical situations in mathematics}. Kluwer.
+\item Canogullari, A., y Radmehr, F. (2025). Task design principles in mathematics education: A literature review. \emph{International Journal of Mathematical Education in Science and Technology}, 1--33.
+\item Castillo-Montoya, M. (2016). Preparing for interview research: The interview protocol refinement framework. \emph{The Qualitative Report, 21}(5), 811--831.
+\item Chacón, A. M. A., Sánchez, A. M., y Quirós, C. M. (2007). Comprensión de las razones trigonométricas: niveles de comprensión, indicadores y tareas para su análisis. \emph{Actualidades Investigativas en Educación, 7}(2).
+\item Duval, R. (2006). A cognitive analysis of problems of comprehension in a learning of mathematics. \emph{Educational Studies in Mathematics, 61}(1), 103--131.
+\item Ericsson, K. A., y Simon, H. A. (1993). \emph{Protocol analysis: Verbal reports as data} (ed. rev.). MIT Press.
+\item Feudel, F. (2018). $C'(x) = C(x+1) - C(x)$? Students' connections between the derivative and its economic interpretation in the context of marginal cost. En \emph{INDRUM 2018 Proceedings} (pp. 95--104).
+\item Ghedamsi, I. (2016). Entrée des étudiants dans l'analyse formelle de début d'université: potentialité des méthodes numériques d'approximation. En \emph{INDRUM 2016 Proceedings} (pp. 63--72).
+\item Ginsburg, H. P. (1997). \emph{Entering the child's mind: The clinical interview in psychological research and practice}. Cambridge University Press.
+\item Goldin, G. A. (2000). A scientific perspective on structured, task-based interviews in mathematics education research. En A. E. Kelly y R. A. Lesh (Eds.), \emph{Handbook of research design in mathematics and science education} (pp. 517--545). Lawrence Erlbaum.
+\item Hamodi, C., López Pastor, V. M., y López Pastor, A. T. (2015). Medios, técnicas e instrumentos de evaluación formativa y compartida del aprendizaje en educación superior. \emph{Perfiles Educativos, 37}(147), 146--161. \url{https://doi.org/10.1016/j.pe.2015.10.004}
+\item Hamza, S., y O'Shea, A. (2016). Concept images of open sets in metric spaces. En \emph{INDRUM 2016 Proceedings} (pp. 113--122).
+\item Ibarra-Sáiz, M. S., González-Elorza, N., y Rodríguez Gómez, G. (2023). Aportaciones metodológicas para el uso de la entrevista semiestructurada en la investigación educativa a partir de un estudio de caso múltiple. \emph{Revista de Investigación Educativa}. \url{https://doi.org/10.6018/rie.546401}
+\item Iriarte, R. A. G., Guzmán, I., y Morales, F. G. (2025). Dificultades en el aprendizaje de ecuaciones trigonométricas en estudiantes de primer año de ingeniería: un estudio en la Universidad de Atacama, Chile. \emph{Revista Chilena de Educación Matemática, 17}(2), 40--51.
+\item Kallio, H., Pietilä, A.-M., Johnson, M., y Kangasniemi, M. (2016). Systematic methodological review: Developing a framework for a qualitative semi-structured interview guide. \emph{Journal of Advanced Nursing, 72}(12), 2954--2965.
+\item Kvale, S. (2011). \emph{Las entrevistas en investigación cualitativa}. Morata.
+\item Lecorre, T. (2016). Rationality and concept of limit. En \emph{INDRUM 2016 Proceedings} (pp. 83--92).
+\item Leung, A., y Bolite-Frant, J. (2015). Designing mathematics tasks: The role of tools. En A. Watson y M. Ohtani (Eds.), \emph{Task design in mathematics education: An ICMI study 22} (pp. 191--225). Springer.
+\item Lincoln, Y. S., y Guba, E. G. (1985). \emph{Naturalistic inquiry}. SAGE.
+\item Lithner, J. (2004). Mathematical reasoning in calculus textbook exercises. \emph{The Journal of Mathematical Behavior, 23}(4), 405--427.
+\item Lyle, J. (2003). Stimulated recall: A report on its use in naturalistic research. \emph{British Educational Research Journal, 29}(6), 861--878.
+\item Maher, C. A., y Sigley, R. (2014). Task-based interviews in mathematics education. En S. Lerman (Ed.), \emph{Encyclopedia of mathematics education}. Springer. \url{https://doi.org/10.1007/978-94-007-4978-8_147}
+\item Ministerio de Educación Nacional [MEN]. (2006). \emph{Estándares básicos de competencias en lenguaje, matemáticas, ciencias y ciudadanas}. MEN.
+\item Montiel-Espinosa, G. (2013). \emph{Desarrollo del pensamiento trigonométrico}. Comité Interamericano de Educación Matemática.
+\item Montoya Delgadillo, E., Páez Murillo, R., Vandebrouck, F., y Vivier, L. (2018). Deconstruction with localization perspective in the learning of analysis. \emph{International Journal of Research in Undergraduate Mathematics Education, 4}(1), 139--160.
+\item Páez Murillo, R. E., Montoya Delgadillo, E., y Vivier, L. (2016). Conceptions spontanées et perspectives de la notion de tangente pour des étudiants de début d'université. En \emph{INDRUM 2016 Proceedings} (pp. 103--112).
+\item Parra Sánchez, J. S., Torres Pardo, I. D., y Martínez De Merino, C. Y. (2023). Personalización de recursos para la enseñanza de matemáticas universitarias usando inteligencia artificial. \emph{Revista Interamericana de Investigación, Educación y Pedagogía, 16}(1), 319--340.
+\item Patton, M. Q. (2015). \emph{Qualitative research and evaluation methods} (4.ª ed.). SAGE.
+\item Pepin, B., Buchholtz, N., y Salinas-Hernández, U. (2025). Mathematics education in the era of ChatGPT: Investigating its meaning and use for school and university education. \emph{Digital Experiences in Mathematics Education, 11}(1), 1--8.
+\item Piaget, J. (1965/1975). \emph{El nacimiento de la inteligencia en el niño / La equilibración de las estructuras cognitivas}. Aguilar.
+\item Poblete Ruiz, M., Fernández Nogueira, D., Campo Carrasco, L., y Nöel López, M. (2016). La entrevista como herramienta para la evaluación de las competencias genéricas. \emph{Revista Complutense de Educación, 27}(2), 431--455.
+\item Radmehr, F. (2023). Toward a theoretical framework for task design in mathematics education. \emph{Journal on Mathematics Education, 14}(2), 189--204.
+\item Robert, A. (1982). L'acquisition de la notion de convergence des suites dans l'enseignement supérieur. \emph{Recherches en Didactique des Mathématiques, 3}(3), 307--341.
+\item Sandín Esteban, M. P. (2000). Criterios de validez en la investigación cualitativa: de la objetividad a la solidaridad. \emph{Revista de Investigación Educativa, 18}(1), 223--242.
+\item Sghaier, B., y Vandebrouck, F. (2018). Teaching and learning continuity with technologies. En \emph{INDRUM 2018 Proceedings} (pp. 74--83).
+\item Tall, D., y Vinner, S. (1981). Concept image and concept definition in mathematics with particular reference to limits and continuity. \emph{Educational Studies in Mathematics, 12}(2), 151--169.
+\item Torres-Corrales, D. C., y Montiel-Espinosa, G. (2021). Resignificación de la razón trigonométrica en estudiantes de primer año de ingeniería. \emph{Educación Matemática, 33}(3), 202--232.
+\item Trouche, L. (2004). Managing complexity of human/machine interactions in computerized learning environments. \emph{International Journal of Computers for Mathematical Learning, 9}(3), 281--307.
+\item Vandebrouck, F., Hanke, E., y Martínez-Planell, R. (2021). Task design in calculus and analysis. En V. Durand-Guerrier, R. Hochmuth, E. Nardi y C. Winsløw (Eds.), \emph{Research and development in university mathematics education} (pp. 104--124). Routledge.
+\item Vandebrouck, F., y Leidwanger, S. (2016). Students' visualization of functions from secondary to tertiary level. En \emph{INDRUM 2016 Proceedings} (pp. 153--162).
+\item Wardat, Y., Tashtoush, M. A., AlAli, R., y Jarrah, A. M. (2023). ChatGPT: A revolutionary tool for teaching and learning mathematics. \emph{Eurasia Journal of Mathematics, Science and Technology Education, 19}(7), em2286.
+\item Williams, S. R. (1991). Models of limit held by college calculus students. \emph{Journal for Research in Mathematics Education, 22}(3), 219--236.
+\item Winsløw, C. (2016). Angles, trigonometric functions, and university level analysis. En \emph{INDRUM 2016 Proceedings} (pp. 163--172).
+\end{list}
+
+\end{document}

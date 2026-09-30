@@ -1,0 +1,195 @@
+% =====================================================================
+%  CONSENTIMIENTO INFORMADO -- ESTUDIANTES (versión general)
+%  Cubre: tareas en tutoría, entrevista, uso de Gemini y registros.
+%  Compilar con: pdflatex consentimiento_informado_estudiantes.tex (dos veces)
+%  Edite el bloque "DATOS DEL ESTUDIO" antes de compilar.
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+\hypersetup{colorlinks=true,linkcolor=unalverde,urlcolor=unalverde}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=2pt,topsep=3pt}
+\setstretch{1.08}
+
+% ======================= DATOS DEL ESTUDIO ===========================
+\newcommand{\Titulo}{Diseño de tareas mediadas por inteligencia artificial generativa para la resolución de problemas de cálculo diferencial en estudiantes remitidos a tutoría personalizada en la Universidad Nacional de Colombia, sede Palmira}
+\newcommand{\Investigador}{Dairo Janover Peña Cárdenas}
+\newcommand{\CorreoInv}{dapenaca@unal.edu.co}
+\newcommand{\TelInv}{[teléfono]}
+\newcommand{\Directores}{Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salcedo}
+\newcommand{\CorreoDir}{[correo de la directora o del director]}
+\newcommand{\Programa}{Maestría en Enseñanza de las Ciencias Exactas y Naturales}
+\newcommand{\Comite}{[Comité de Ética de la Investigación --- UNAL Sede Palmira]}
+\newcommand{\CorreoComite}{[correo del comité]}
+\newcommand{\Conservacion}{cinco (5) años}
+% =====================================================================
+
+\newcommand{\linea}[1][6cm]{\rule{#1}{0.4pt}}
+\newcommand{\casilla}{$\square$\ }
+\newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Consentimiento informado --- estudiantes}
+\fancyhead[R]{\small UNAL -- Sede Palmira}
+\fancyfoot[L]{\small Código del participante: \linea[2.2cm]}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Universidad Nacional de Colombia -- Sede Palmira}\\[2pt]
+{\Programa}\\[10pt]
+{\color{unalverde}\rule{\linewidth}{1pt}}\\[4pt]
+{\LARGE\bfseries Consentimiento informado}\\[4pt]
+{\large para participar en un estudio de educación matemática}\\[4pt]
+{\color{unalverde}\rule{\linewidth}{1pt}}
+\end{center}
+
+\noindent Fecha: \linea[4cm]
+
+\begin{caja}{Datos del estudio}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{3.8cm}L@{}}
+Título & \Titulo\\
+Investigador & \Investigador, estudiante de la \Programa\ y tutor del programa de acompañamiento académico\\
+Directores & \Directores\\
+Institución & Universidad Nacional de Colombia, sede Palmira\\
+Tipo de estudio & Investigación cualitativa en educación matemática. Investigación \textbf{sin riesgo} (Resolución 8430 de 1993, art.~11); la clasificación final corresponde al comité de ética.\\
+\end{tabularx}
+\end{caja}
+
+\noindent Reciba un cordial saludo. Por medio de este documento le invitamos a participar en un estudio que hace parte de un trabajo final de maestría. Léalo con calma y haga todas las preguntas que necesite antes de decidir. Puede llevárselo y consultarlo con quien quiera.
+
+% =====================================================================
+\section*{1. ¿De qué se trata el estudio?}
+El estudio busca comprender cómo resuelven problemas de cálculo los estudiantes que asisten a la tutoría personalizada cuando trabajan primero por su cuenta y luego con el acompañamiento de una herramienta de inteligencia artificial (IA) generativa, Gemini. Los resultados servirán para diseñar mejores tareas y mejores tutorías para futuros estudiantes.
+
+\section*{2. ¿Por qué le invitamos?}
+Porque cursa Cálculo Diferencial o Matemáticas Básicas y asiste a las tutorías personalizadas del programa de acompañamiento académico de la sede.
+
+\section*{3. ¿Qué tendría que hacer?}
+\begin{itemize}
+  \item Resolver algunas tareas de cálculo durante las sesiones de tutoría, primero sin IA y luego con Gemini.
+  \item Si se le invita y usted acepta, participar en una entrevista individual de unos 45 minutos, en un horario acordado, en la que resuelve dos situaciones de cálculo diciendo en voz alta lo que piensa.
+  \item Gemini se usa en el computador y con la cuenta del investigador, solo en los momentos indicados de cada tarea. No necesita usar su cuenta personal ni escribir datos personales.
+\end{itemize}
+
+\section*{4. ¿Qué se registra?}
+Las hojas de trabajo, el historial de la conversación con Gemini durante las tareas, el audio de la entrevista y las notas del investigador. En la Sección~10 usted decide qué autoriza. Puede pedir que se detenga una grabación en cualquier momento.
+
+\section*{5. ¿Es obligatorio? ¿Afecta mis notas o la tutoría?}
+\textbf{No.} La participación es voluntaria. Si decide no participar, o si se retira después de aceptar, \textbf{no habrá ninguna consecuencia}: seguirá recibiendo la tutoría en las mismas condiciones, y no se afectarán sus calificaciones ni su relación con los docentes o con el programa de acompañamiento. Lo que haga en las tareas y en la entrevista \textbf{no se usa para calificarle}.
+
+El investigador es también su tutor. Por eso, su decisión de participar o no participar no se comunicará a docentes ni a otras dependencias, y la entrevista se hace en un momento distinto a la tutoría regular.
+
+\section*{6. ¿Puedo retirarme?}
+Sí, en cualquier momento y sin dar explicaciones. Puede saltarse preguntas, interrumpir la entrevista o pedir que se eliminen sus datos escribiendo a \CorreoInv. Después de que sus datos, ya anonimizados, se integren a los resultados de conjunto, no será posible separarlos, pero no se citará nada suyo de forma textual.
+
+\section*{7. Riesgos y beneficios}
+Los riesgos son mínimos: puede sentir algo de incomodidad al resolver problemas frente a otra persona. No hay respuestas que le perjudiquen, puede pedir pausas y, si lo necesita, se le orientará hacia los servicios de Bienestar Universitario de la sede. No recibirá pago ni beneficio académico, y participar no tiene costo. Si lo desea, recibirá una retroalimentación sobre su forma de resolver las tareas y un resumen de los resultados generales.
+
+\section*{8. Confidencialidad y tratamiento de datos}
+\begin{itemize}
+  \item En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, la información se trata de forma responsable, confidencial y segura, y se usa \textbf{exclusivamente} para los fines de este estudio y su difusión académica.
+  \item Se le asigna un código (por ejemplo, E07). Su nombre y su código solo se relacionan en una lista que guarda el investigador por separado y bajo clave.
+  \item En transcripciones, informes y publicaciones se eliminan su nombre, su carrera y cualquier dato que permita identificarle.
+  \item No se cargarán sus datos personales, grabaciones ni transcripciones identificables en plataformas de IA. Al terminar cada tarea, el historial de Gemini se exporta sin datos identificables y se borra de la cuenta.
+  \item Los datos se conservan durante \Conservacion\ después de terminar el estudio y luego se destruyen. Solo tienen acceso el investigador y sus directores.
+  \item Como titular de los datos, usted puede conocer, actualizar, rectificar y pedir la supresión de su información escribiendo a \CorreoInv.
+\end{itemize}
+
+% =====================================================================
+\section*{9. Contacto}
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{5.8cm}L@{}}
+\toprule
+\textbf{Rol} & \textbf{Nombre} & \textbf{Contacto}\\
+\midrule
+Investigador & \Investigador & \CorreoInv\ --- \TelInv\\
+Directores & \Directores & \CorreoDir\\
+Comité de ética & \Comite & \CorreoComite\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\noindent Si tiene dudas sobre sus derechos como participante, o una queja que prefiera no presentar al investigador, puede dirigirse a los directores o al comité de ética.
+
+% =====================================================================
+\newpage
+\section*{10. Autorización}
+
+\noindent Yo, \linea[7.5cm], identificado(a) con documento n.º \linea[4cm], estudiante de \linea[5.5cm], declaro que he leído (o me han leído) esta información, que he podido hacer preguntas y que fueron respondidas. Entiendo que mi participación es voluntaria, que no afecta mis notas ni la tutoría y que puedo retirarme en cualquier momento. \textbf{Acepto participar} en el estudio y autorizo el tratamiento de mis datos para los fines descritos.
+
+\medskip
+\noindent\textbf{Autorizaciones específicas} (marque \textbf{SÍ} o \textbf{NO} en cada una):
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{}Lcc@{}}
+\toprule
+\textbf{Autorizo que\ldots} & \textbf{SÍ} & \textbf{NO}\\
+\midrule
+se analicen mis \textbf{hojas de trabajo} de las tareas. & $\square$ & $\square$\\
+se capture y analice el \textbf{historial de mi conversación con Gemini} durante las tareas. & $\square$ & $\square$\\
+se grabe el \textbf{audio} de la entrevista, si participo en ella. & $\square$ & $\square$\\
+se usen, de forma anonimizada, los \textbf{registros de mis sesiones de tutoría} como información de contexto. & $\square$ & $\square$\\
+se usen \textbf{citas textuales anónimas} de lo que diga en publicaciones y presentaciones. & $\square$ & $\square$\\
+me contacten para \textbf{revisar la síntesis} de mi entrevista y enviarme la retroalimentación. & $\square$ & $\square$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent Correo de contacto (opcional): \linea[7cm]
+
+\vspace{0.6cm}
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\linea[7cm] & \linea[7cm]\\
+\textbf{Firma del estudiante} & \textbf{Firma del investigador}\\
+Nombre: \linea[5.3cm] & \Investigador\\
+Fecha: \linea[5.5cm] & Fecha: \linea[5.5cm]\\
+\end{tabularx}
+
+% =====================================================================
+\section*{11. Solo para estudiantes menores de 18 años}
+\noindent{\small Si el estudiante es mayor de edad, esta parte no se diligencia. Para menores de edad se requiere el consentimiento del representante legal y el asentimiento del estudiante (Resolución 8430 de 1993, arts.~24--26; Ley 1098 de 2006).}
+
+\medskip
+\noindent Yo, \linea[7cm], identificado(a) con documento n.º \linea[3.5cm], representante legal de \linea[6.5cm], he leído esta información y \textbf{autorizo} su participación en las condiciones descritas, incluidas las autorizaciones específicas marcadas por el estudiante. Sé que puedo retirar esta autorización en cualquier momento.
+
+\vspace{0.8cm}
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\linea[7cm] & \linea[7cm]\\
+Firma del representante legal & Teléfono o correo\\
+\end{tabularx}
+
+\medskip
+\noindent\textbf{Asentimiento del estudiante.} Me explicaron el estudio con palabras que entiendo y sé que puedo decir que no o parar cuando quiera. Aunque mi representante haya firmado, la decisión final es mía. \quad \casilla Sí quiero participar. \quad \casilla No quiero participar.
+
+\vspace{0.7cm}
+\noindent\linea[7cm]\\
+Firma del estudiante
+
+\end{document}

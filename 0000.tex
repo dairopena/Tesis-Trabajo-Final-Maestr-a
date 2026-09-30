@@ -99,11 +99,12 @@
 %Información de la tesis
 %Diligenciar aquí los datos para su carga automática donde se requiera en el documento
 %En el caso de tesis o trabajos finales, verificar que el título coincida con el aprobado por la Facultad
-\renewcommand{\thesisname}{Diseño de tareas matemáticas con IA generativa para el desarrollo del pensamiento trigonométrico en educación media}
-\renewcommand{\issuedate}{2025}
+%Título anterior: Diseño de tareas matemáticas con IA generativa para el desarrollo del pensamiento trigonométrico en educación media
+\renewcommand{\thesisname}{Diseño de tareas mediadas por inteligencia artificial generativa para la resolución de problemas de cálculo diferencial en estudiantes remitidos a tutoría personalizada en la Universidad Nacional de Colombia, sede Palmira}
+\renewcommand{\issuedate}{2026}
 \renewcommand{\directortitle}{Profesor Asociado}
 \renewcommand{\codirector}{Dra.~Marisol Santacruz Rodríguez \\
-Dr. Luis Octavio Gonzalez Salcedo}}
+Dr. Luis Octavio Gonzalez Salcedo}
 %\renewcommand{\codirectortitle}{Indicar si es Profesor Titular/Asociado}
 %\renewcommand{\academictitle}{Magíster (M, MSc) o Doctor (PhD) - Modalidad }
 \renewcommand{\resgroupone}{Grupo A (Sigla Grupo Investigación 01) }
@@ -116,8 +117,8 @@ Dr. Luis Octavio Gonzalez Salcedo}}
 
 %Palabras clave del documento - Tener presente los Theasurus https://www.thesaurus.com/
 %Disponible en 3 idiomas aunque se puede extender a francés o otro idioma
-\renewcommand{\palabrasclave}{inteligencia artificial generativa; pensamiento trigonométrico; tareas matemáticas; software educativo; educación media}
-\renewcommand{\keywords}{generative artificial intelligence; trigonometric thinking; mathematical tasks; educational software; secondary education}
+\renewcommand{\palabrasclave}{inteligencia artificial generativa; diseño de tareas; resolución de problemas; cálculo diferencial; tutoría universitaria; primer año universitario}
+\renewcommand{\keywords}{generative artificial intelligence; task design; problem solving; differential calculus; university tutoring; first-year university students}
 %\renewcommand{\schlusselworter}{}
 %\renewcommand{\palavraschave}{}
 
@@ -200,7 +201,7 @@ Dr. Luis Octavio Gonzalez Salcedo}}
 \usepackage{chemformula}
 \usepackage{chemfig}
 
-\usetikzlibrary{calc,arrows.meta,angles,quotes}% per right to e left to
+\usetikzlibrary{calc,arrows.meta,angles,quotes,babel}% babel: evita conflictos de TikZ con el español% per right to e left to
 \tikzset{
 myedge/.style={->, -{Latex[#1]}}
 }
@@ -264,6 +265,23 @@ myedge/.style={->, -{Latex[#1]}}
 \addbibresource{bibliografias/antecedentes/Nivel_1.bib}
 \addbibresource{bibliografias/antecedentes/Nivel_2.bib}
 \addbibresource{bibliografias/antecedentes/Nivel_3.bib}
+\addbibresource{bibliografias/avance_2026_II/fuentes_verificadas.bib}
+
+% ---------------------------------------------------------------------
+% Marcador de secciones SIN ACTUALIZAR (avance sep. 2026).
+% Uso: \begin{pendiente}{nota} \input{...} \end{pendiente}
+% Para quitar el marcador: borrar el entorno y dejar solo el \input.
+% ---------------------------------------------------------------------
+\definecolor{pendientetexto}{RGB}{120,120,120}
+\definecolor{pendientefondo}{RGB}{255,236,204}
+\definecolor{pendienteborde}{RGB}{214,120,0}
+\newcommand{\avisopendiente}[1]{%
+  \par\medskip\noindent
+  \fcolorbox{pendienteborde}{pendientefondo}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \small\sffamily\color{black}\textbf{SECCIÓN SIN ACTUALIZAR.} #1}}%
+  \par\medskip}
+\newenvironment{pendiente}[1]{\avisopendiente{#1}\color{pendientetexto}}{\par}
 
 
 %Inicio del documento, no olvide la etiqueta de cierre al final \end{document}
@@ -371,7 +389,7 @@ Directores de tesis:
 %\input{capitulos/01_preambulo/agradecimientos/00Agradecimientos}
 % Comentar las dos lineas de abajo con % en caso que no se requieran abreviaturas y resumen en el trabajo
 %\input{capitulos/01_preambulo/abreviaturas_simbolos/00Abreviaturas}
-%\input{capitulos/01_preambulo/resumen/00ResumenAbstract}
+\input{capitulos/01_preambulo/resumen/00ResumenAbstract}
 % Dejar esta parte así para que genere correctamente la página de la tabla de contenido
 \input{capitulos/01_preambulo/listas/figuras_y_tablas}
 
@@ -381,15 +399,19 @@ Directores de tesis:
 \setlength{\parskip}{\baselineskip}
 %Incluir secciones del documento de aqui en adelante
 %Use \include para incluir desde una página nueva e \input para incluir sin salto de página
-%\input{capitulos/02_introduccion/introduccion} % Anular esta linea con comentario de ser necesario
+\input{capitulos/02_introduccion/introduccion}
 \input{capitulos/03_planteamiento_problema/planteamiento/00HipotesisPlanteamiento}
+\begin{pendiente}{Esta sección corresponde a la versión anterior del proyecto (trigonometría en educación media) y se reescribirá con el nuevo enfoque: IA generativa en la matemática universitaria, dificultades en cálculo y en la transición al primer año, y tutorías para la permanencia. El texto en gris no ha sido modificado.}
 \input{capitulos/03_planteamiento_problema/antecedentes/antecedentes}
+\end{pendiente}
 \input{capitulos/03_planteamiento_problema/justificacion/justificacion}
 \input{capitulos/03_planteamiento_problema/objetivos/00Objetivos}
 
 \input{capitulos/04_marco_teorico/marco_teorico/marco_teorico.tex}
+\begin{pendiente}{Los marcos conceptual y referencial corresponden a la versión anterior del proyecto (pensamiento trigonométrico en educación media). Se reescribirán en torno a la resolución de problemas y el razonamiento en cálculo, el diseño de tareas, la IA generativa como instrumento, la inteligencia híbrida y la alfabetización en IA. El texto en gris no ha sido modificado. El marco contextual, al final del capítulo, sí está actualizado.}
 \input{capitulos/04_marco_teorico/marco_conceptual/marco_conceptual.tex}
 \input{capitulos/04_marco_teorico/marco_referencial/marco_referencial.tex}
+\end{pendiente}
 \input{capitulos/04_marco_teorico/marco_contextual/marco_contextual.tex}
 
 \input{capitulos/05_marco_metodologico/marco_metodologico.tex}
@@ -398,9 +420,9 @@ Directores de tesis:
 %Nota: Las conclusiones se agregarán cuando se complete la investigación
 
 %Inicio del apéndice o anexos
-%\begin{appendix}
-%\include{08Apendice01}%
-%\end{appendix}
+\begin{appendix}
+\input{capitulos/07_anexos/00_manual_usuario_ia}
+\end{appendix}
 
 %\nocite{*}
 % Imprimir bibliografía con biblatex/biber e incluir en TOC

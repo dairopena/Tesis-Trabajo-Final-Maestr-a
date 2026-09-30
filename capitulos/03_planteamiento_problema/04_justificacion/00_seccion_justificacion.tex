@@ -1,31 +1,39 @@
 \section{Justificación}
 
-Se configura una paradoja pedagógica. El currículo oficial (Lineamientos, Estándares y DBA) establece con claridad que la trigonometría debe vincularse con pensamiento variacional, modelación e interpretación de fenómenos \parencite{ministeriodeeducacionnacionalLineamientosCurriculares1998,ministeriodeeducacionnacionalEstandaresBasicos2006,ministeriodeeducacionnacionalDerechosBasicos2016}. En ese marco, no basta con calcular correctamente: se espera interpretación, argumentación y articulación entre formas de representación. Ese proceso debería iniciarse desde el álgebra en noveno y consolidarse en décimo y undécimo.
+¿Por qué vale la pena estudiar cómo razona un grupo pequeño de estudiantes con una herramienta de IA en una tutoría? Hay razones de cuatro tipos: institucionales, didácticas, sociales y de conocimiento. Se presentan en ese orden, aunque en la práctica se cruzan.
 
-¿Por qué, entonces, las evaluaciones nacionales e internacionales siguen mostrando las mismas brechas \parencite{ministeriodeeducacionnacionalmenInformeNacionalSaber2019, icfesProgramaParaEvaluacion2024}? Los datos de PISA entre 2006 y 2022 ilustran el problema con precisión. En el plano de los puntajes promedio (Figura~\ref{fig:pisa_promedio}), Colombia pasó de 370 a 383 puntos en matemáticas a lo largo de dieciséis años: un avance de 13 puntos mientras el promedio de la OCDE se mantenía sistemáticamente cerca de los 490 puntos. En 2022, la brecha entre Colombia y el promedio de la OCDE era de 89 puntos, más de ocho veces la ganancia acumulada por el país en toda la serie histórica.
+\subsection*{Una necesidad de la sede}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.88\textwidth]{imagenes/00Figuras/pisa_promedio_puntaje_2006_2022.png}
-  \caption{Promedio del puntaje en Matemáticas en PISA (2006--2022) para Colombia, Latinoamérica y la OCDE.
-  Tomado de \textcite{icfesProgramaParaEvaluacion2024}.}
-  \label{fig:pisa_promedio}
-\end{figure}
-
-Más revelador aún es el análisis por niveles de desempeño (Figura~\ref{fig:pisa_niveles}). En 2006, el 72\,\% de los estudiantes colombianos se ubicaba por debajo del nivel~2 —el umbral que la OCDE considera competencia matemática básica—. En 2022, esa cifra era del 71\,\%: dieciséis años de reformas curriculares, nuevos estándares y diversas iniciativas pedagógicas produjeron un desplazamiento de apenas un punto porcentual. En el extremo opuesto, menos del 1\,\% de los estudiantes colombianos alcanza los niveles 5 o~6 —los que corresponden a razonamiento matemático avanzado—, frente al 31\,\% que lo logra en los países de la OCDE. La distribución de desempeño de Colombia en 2022 es prácticamente idéntica a la de 2006.
+Los estudiantes que llegan a la sede Palmira se formaron en un sistema escolar con resultados bajos y estancados en matemáticas. En PISA, el 72\,\% de los estudiantes colombianos se ubicaba en 2006 por debajo del nivel~2, el umbral que la OCDE considera competencia matemática básica; en 2022 la cifra era del 71\,\% (Figura~\ref{fig:pisa_niveles}). Dieciséis años de reformas movieron la distribución apenas un punto. La universidad recibe, entonces, a muchos estudiantes que no llegan con las bases que el cálculo da por supuestas, y los registros de la tutoría lo confirman: el error más frecuente no es de cálculo sino de álgebra previa.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.88\textwidth]{imagenes/00Figuras/pisa_niveles_desempeno_2006_2022.png}
+  \includegraphics[width=0.85\textwidth]{imagenes/00Figuras/pisa_niveles_desempeno_2006_2022.png}
   \caption{Porcentaje de estudiantes en los niveles de desempeño de la prueba de Matemáticas en PISA (2006--2022). Colombia permanece con más del 70\,\% de estudiantes por debajo del nivel~2 a lo largo de toda la serie.
   Tomado de \textcite{icfesProgramaParaEvaluacion2024}.}
   \label{fig:pisa_niveles}
 \end{figure}
 
-Estos datos no implican que el currículo sea erróneo. Implican que el currículo ha prescrito un tipo de razonamiento matemático que las prácticas pedagógicas predominantes no han logrado producir. Una respuesta consistente en la literatura señala la distancia entre lo que el currículo prescribe y lo que efectivamente se desarrolla en el aula.
+La sede ya reconoce el problema y le dedica recursos: el programa GEA movilizó a 14 tutores y registró más de dos mil asistencias en las seis primeras semanas de 2026-2. Lo que el programa no tiene todavía es conocimiento sistemático sobre qué funciona en su componente más focalizado, la tutoría personalizada, ni criterios para integrar una herramienta que sus propios estudiantes ya usan y que el programa empezó a enseñar en un taller. Este trabajo produce ese conocimiento desde adentro del programa, con sus estudiantes y en sus condiciones reales. La política nacional de permanencia pide a las instituciones justamente eso: estrategias de acompañamiento diseñadas, evaluadas y ajustadas a su población \parencite{men2015permanencia}.
 
-Los estudios didácticos han documentado que, cuando predominan ejercicios cerrados ---con solución directa y predecible---, se reduce el espacio para la duda, la conjetura y la argumentación. En tales condiciones, el avance en pensamiento matemático profundo es limitado \parencite{fiallolealAcercaInvestigacionEducacion2015,delgadoEstrategiaDidacticaPara2023,zubietaTipificacionErroresDificultades2018}. Modificar esta situación exige rediseñar las tareas para que demanden exploración, comparación de decisiones y análisis del error como parte del aprendizaje.
+\subsection*{Un problema didáctico que la IA vuelve más urgente}
 
-Aquí la IA no se plantea como solución automática, sino como apoyo al diseño didáctico. Puede ofrecer retroalimentación oportuna y abrir rutas diferenciadas según las necesidades del estudiante. Sin embargo, su potencial depende de que la tarea conserve exigencia matemática. Cuando la IA solo automatiza prácticas repetitivas, el aporte pedagógico es mínimo \parencite{romeroalonsoRolInteligenciaArtificial2024,castillodelpezoUseArtificialIntelligence2024,parrasanchezPersonalizacionRecursosPara2023}.
+La dependencia de procedimientos imitados no es nueva en el cálculo universitario \parencite{lithner2004reasoning,lithner2008framework}. Lo nuevo es que ahora existe una herramienta capaz de entregar esos procedimientos, completos y bien explicados, en segundos. Para un estudiante que ya tiende a imitar, eso puede ser la diferencia entre aprender a resolver y aprender a pedir la solución. La evidencia experimental reciente muestra que el uso sin orientación mejora el desempeño mientras la herramienta está disponible y lo empeora cuando se retira \parencite{bastani2025guardrails}.
 
-De ahí que el estudio se oriente a comprender qué ocurre cuando se diseñan e implementan tareas de trigonometría con exigencia matemática y apoyo de IA, en un contexto escolar real. ¿Qué decisiones didácticas funcionan? ¿Dónde aparecen los bloqueos? ¿Cómo puede aportar la IA sin desplazar el protagonismo del razonamiento matemático del estudiante? Esas son las preguntas que interesan aquí.
+Prohibir la IA no es una respuesta realista: los estudiantes la usan fuera de la tutoría y la seguirán usando. Tampoco lo es dejarla sin diseño. Lo que queda es diseñar las tareas de modo que la IA acompañe el razonamiento en lugar de reemplazarlo, y estudiar si eso ocurre. Esa es la apuesta didáctica del trabajo, y se sostiene en una tradición de diseño de tareas que pone la exigencia, la articulación de representaciones y el error en el centro \parencite{leungDesigningMathematicsTasks2015,radmehrTheoreticalFrameworkTask2023,vandebrouck2021task}.
+
+\subsection*{Una cuestión de equidad}
+
+La IA generativa no beneficia a todos por igual. Quien sabe formular una pregunta, desconfiar de una respuesta y verificarla la convierte en un apoyo; quien solo sabe pedir el resultado la convierte en un atajo que no le deja aprendizaje. Esa diferencia no se distribuye al azar: tiende a favorecer a quienes ya llegan mejor preparados. La UNESCO ha insistido en que la integración de la IA en educación debe proteger la agencia de los estudiantes y desarrollar competencias para usarla de forma crítica \parencite{unesco2023guia,unesco2024competencias}.
+
+Los estudiantes remitidos a tutoría personalizada son, por definición, los que tienen más dificultades. Si la IA amplía las brechas, ellos son los primeros en quedar atrás; si se integra con un diseño cuidadoso, pueden ser los que más ganen. Trabajar con ellos, y no con los estudiantes que ya aprueban, es una decisión deliberada.
+
+\subsection*{Un aporte al conocimiento didáctico}
+
+La investigación sobre IA en educación matemática se ha concentrado en la robótica, en la educación básica y en medir la efectividad de las herramientas \parencite{mohamed2022slr}, con una conexión débil con la teoría pedagógica \parencite{zawacki2019systematic}. Sobre la IA generativa en el cálculo universitario, los trabajos disponibles en la región tienden a comparar grupos \parencite{mateo2024estrategia}. Hay mucho menos sobre lo que pasa dentro de la resolución: qué pregunta el estudiante, qué hace con la respuesta, cuándo la IA le ayuda a ver un error y cuándo se lo oculta.
+
+Este trabajo aporta en tres frentes. Ofrece un diseño de tareas con la IA integrada en momentos definidos, documentado y probado en condiciones reales. Ofrece una descripción fina, estudiante por estudiante, de cómo cambia el razonamiento entre trabajar sin IA y con ella, leída con categorías establecidas ---razonamiento imitativo y creativo, génesis instrumental, inteligencia híbrida--- \parencite{lithner2008framework,trouche2004managing,molenaar2022hybrid}. Y lo hace con una población poco estudiada: estudiantes universitarios latinoamericanos en riesgo académico, en una sede regional de una universidad pública.
+
+\subsection*{Viabilidad}
+
+El estudio es viable porque el investigador trabaja en el escenario donde se realiza. Como tutor del componente, tiene acceso sostenido a los estudiantes durante todo el semestre, conoce sus dificultades a partir de sus propios registros y cuenta con la infraestructura del programa: espacios, computadores y cuentas institucionales con acceso a Gemini, sin costo adicional. El tamaño del grupo ---19 estudiantes remitidos solo en las seis primeras semanas de 2026-2--- es adecuado para un experimento de enseñanza con análisis cualitativo detallado.

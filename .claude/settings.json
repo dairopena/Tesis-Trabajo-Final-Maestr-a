@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(latexmk -pdf -interaction=nonstopmode -halt-on-error 0000.tex)",
+      "Read(//tmp/**)",
+      "WebSearch",
+      "WebFetch(domain:help.openai.com)"
+    ]
+  }
+}
