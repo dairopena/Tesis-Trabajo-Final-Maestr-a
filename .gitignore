@@ -21,12 +21,13 @@ _minted*/
 # Archivos locales que NO deben publicarse (el repositorio es público)
 # ---------------------------------------------------------------------
 # Datos personales de estudiantes (matrices del programa GEA y del tutor)
-docs/*.xlsx
-docs/*.xls
-docs/*.csv
-# Documentos de terceros (nombres de personas externas al proyecto)
-docs/CONSENTIMIENTO INFORMADO PARA PROCESO*
+# y documentos de terceros: toda la carpeta es privada
+docs/04_datos_privados/
+docs/**/*.xlsx
+docs/**/*.xls
+docs/**/*.csv
+docs/**/CONSENTIMIENTO INFORMADO PARA PROCESO*
 # Material no publicado de la codirectora
-docs/IA en Educaci*Superior*
+docs/**/IA en Educaci*Superior*
 # Libros con derechos de autor
-docs/Mathematics Education in the Age of Artificial Intelligence.pdf
+docs/**/Mathematics Education in the Age of Artificial Intelligence.pdf
