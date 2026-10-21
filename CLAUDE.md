@@ -11,7 +11,7 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
 
 **Objetivo general:** Diseñar, implementar y analizar una secuencia de tareas mediada por IA generativa, orientada a la resolución de problemas de cálculo diferencial en esos estudiantes.
 
-- **OE1:** Diseñar la secuencia, con criterios didácticos que hagan visible el razonamiento del estudiante.
+- **OE1:** Seleccionar, de los talleres trabajados en clase, tareas de resolución de problemas de cálculo diferencial, con criterios didácticos (por definir) que hagan visible el razonamiento, y organizarlas en secuencia. El 19-oct-2026 el profesor señaló que el trabajo es una **selección** de tareas, no un diseño desde cero; el título y el objetivo general todavía dicen "diseño" (pendiente decidir).
 - **OE2:** Integrar Gemini, con un rol de acompañamiento, definiendo en qué momentos y con qué propósito interviene, en contraste con momentos sin IA.
 - **OE3:** Analizar estrategias, razonamientos y errores sin IA y con IA, y el tipo de apoyo que los estudiantes encuentran en la IA.
 
@@ -51,6 +51,13 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
 ## Estado (actualizar al avanzar)
 
 - **Hecho (30-sep-2026):** introducción, resumen, planteamiento, justificación, objetivos, marco contextual, metodología completa (ubicación, métodos, cronograma, presupuesto, ética), manual de Gemini, guía de entrevista v3 y consentimiento.
+- **Hecho (3-oct-2026):** herramientas de recolección y análisis instaladas (QualCoder 4.0, comando `transcribir` con Whisper local, OBS). Corpus en `../datos_investigacion/`, fuera del repo, con `LEEME.md` y libro de códigos REFI-QDA (`04_libro_codigos/libro_codigos_inicial.qdc`, 9 categorías y 32 códigos; revisar los marcados "(propuesto)").
+- **Hecho (19-oct-2026):** guía de entrevista v4 (`instrumentos/guia_entrevista_v4.tex`): preguntas en lenguaje del estudiante, tabla de cambios v3→v4, sección de registro y codificación; se quitaron las citas de Montiel-Espinosa de la tabla de conductas. Guía de campo corta (`instrumentos/guia_entrevista_campo.tex`, 4 páginas: preguntas, consignas, ayudas, notas de campo y tarjetas); la v4 queda como versión extendida para el anexo. Codificador propio en `../datos_investigacion/06_herramienta/` (comando `codificador`): grabación y transcripción con Whisper, precodificación con reglas + IA local (qwen2.5:3b en Ollama), todo sin conexión.
+- **Siguiente paso (desde 4-oct-2026):**
+  1. ~~Tabla de errores de la guía~~ (resuelto en la v4). Pendiente: decidir si la v4 reemplaza a la v3 en la metodología y en el anexo B.
+  2. Dairo: crear el proyecto en QualCoder e importar el libro de códigos.
+  3. Pilotaje con 1 o 2 estudiantes que no hagan parte del estudio: grabar, transcribir, revisar e importar.
+  4. Declarar en la metodología el uso de herramientas (QualCoder, Whisper local, codificador con IA local qwen2.5:3b) y de IA; la profesora lo permite si se declara. Ajustar el consentimiento solo si se van a pasar datos de estudiantes por IA externa.
 - **Pendiente:**
   - Antecedentes, marco conceptual y marco referencial.
   - Enunciados de las 4 tareas de la secuencia (`[POR DISEÑAR]`).

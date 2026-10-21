@@ -1,0 +1,165 @@
+% =====================================================================
+%  GUÍA DE CAMPO DE LA ENTREVISTA SEMIESTRUCTURADA (versión corta)
+%  Lo que el entrevistador tiene en la mano. La fundamentación, la matriz
+%  de alineación y el análisis a priori están en guia_entrevista_v4.tex.
+%  Compilar con: pdflatex guia_entrevista_campo.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amssymb}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+\definecolor{ambar}{RGB}{255,248,225}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=1pt,topsep=3pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{guion}{colback=white,colframe=unalverde!60,leftrule=4pt,boxrule=0.6pt,arc=0pt,fontupper=\itshape,left=6pt,top=3pt,bottom=3pt}
+\newtcolorbox{tarea}[1]{colback=ambar,colframe=orange!70!black,fonttitle=\bfseries,title={#1},arc=2pt}
+
+% Bloque de preguntas: \bloque{título}{minutos}
+\newcommand{\bloque}[2]{\par\medskip{\color{unalverde}\large\bfseries #1}\hfill{\small #2}\par\smallskip}
+% Pregunta: \p{número}{pregunta}{sondeo}
+\newcommand{\p}[3]{\noindent$\square$\;\textbf{P#1.}~#2\par
+  \if\relax\detokenize{#3}\relax\else\noindent\hspace*{1.6em}{\small\color{black!65}$\rightarrow$ #3}\par\fi\smallskip}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Guía de campo --- Entrevista semiestructurada basada en tareas}
+\fancyhead[R]{\small Código: \rule{1.6cm}{0.4pt}}
+\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\Large\bfseries Guía de campo de la entrevista\par}
+{\small Resolución de problemas de cálculo sin IA y con Gemini · 40--45 min · Versión corta de la guía v4\par}
+\medskip
+
+\begin{tcolorbox}[colback=grisclaro,colframe=unalverde,arc=2pt,title=\textbf{Antes de empezar},fonttitle=\small]
+\small
+$\square$ Consentimiento firmado \quad
+$\square$ Grabadora encendida \quad
+$\square$ OBS grabando la pantalla \quad
+$\square$ Gemini abierto en la cuenta del investigador, conversación nueva \quad
+$\square$ Tarjetas de las tareas \quad
+$\square$ Esferos azul y rojo
+\end{tcolorbox}
+
+\begin{guion}
+Gracias por aceptar. Voy a grabar el audio, como quedó en el consentimiento; puede pedirme que pare cuando quiera. Esto no es un examen y no afecta sus notas. Me interesa cómo piensa, no si llega a la respuesta. Va a trabajar dos ejercicios: primero solo, en papel, con el esfero azul; después con Gemini, como usted quiera. Mientras trabaja, trate de decir en voz alta lo que va pensando.
+\end{guion}
+
+\textbf{Reglas para el entrevistador.} No evaluar (``entiendo'', ``siga''). Retomar las palabras del estudiante en los sondeos. Usar ayudas solo tras dos minutos de bloqueo o si las pide, y anotar el nivel en la transcripción como \texttt{[A1]}, \texttt{[A2]}\ldots. Con Gemini abierto, no dar ayudas A3 ni A4.
+
+\smallskip
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}lL@{}}
+\textbf{A0} Silencio & Esperar 10 segundos.\\
+\textbf{A1} Explicitación & ¿Qué ha intentado hasta ahora?\\
+\textbf{A2} Reformulación & ¿Cómo diría con sus palabras lo que se pide?\\
+\textbf{A3} Heurística & ¿Le serviría una gráfica, una tabla o un dibujo?\\
+\textbf{A4} Contenido & Se da el paso y se pide que lo explique.\\
+\end{tabularx}
+\end{center}
+
+\bloque{0. Apertura}{3 min}
+\p{1}{Cuénteme cómo le ha ido en el curso de cálculo (o de matemáticas básicas) este semestre.}{¿Por qué lo dice? ¿Me da un ejemplo?}
+\p{2}{Cuando está estudiando solo y se queda atascado en un ejercicio, ¿qué hace?}{Si no menciona la IA: ¿y alguna aplicación o IA? ¿Cómo la usa?}
+
+\bloque{1. Tarea 1 sin IA: tres razonamientos \texttt{[M1]}}{10 min}
+{\small Entregar la tarjeta 1 y el esfero azul: ``Estos razonamientos los escribieron otros estudiantes. Escriba al lado de cada uno si está bien o mal, y por qué''.}\par\smallskip
+\p{3}{Lea el razonamiento 1. Si lo hubiera escrito un compañero suyo, ¿qué le diría?}{¿Por qué le diría eso?}
+\p{4}{Ahora lea el 2 y el 3. ¿Qué le diría a quien los escribió?}{¿Se parecen en algo al primero?}
+\p{5}{¿Cómo hizo para decidir si cada uno estaba bien o mal?}{¿Cómo se lo explicaría a alguien que no está seguro?}
+
+\bloque{2. Tarea 1 con Gemini \texttt{[M2]}}{8 min}
+\begin{guion}
+Ahora puede usar Gemini. Escríbale lo que quiera, como si estuviera estudiando por su cuenta. Antes de enviar cada mensaje, dígame qué le va a preguntar. Si cambia algo en su hoja, hágalo con el esfero rojo, sin borrar.
+\end{guion}
+\p{6}{Antes de enviarlo: ¿qué le va a preguntar a Gemini?}{¿Para qué se lo pregunta?}
+\p{7}{Lea lo que le respondió. ¿Qué piensa de eso?}{¿Coincide con lo que usted escribió en azul?}
+\p{8}{Mire su hoja. ¿Le cambiaría algo a lo que escribió en azul?}{¿Qué lo hizo cambiarlo, o dejarlo igual?}
+{\small Al cerrar: explicar cuáles razonamientos eran correctos (el 2) y por qué.}
+
+\bloque{3. Tarea 2: la ecuación $\cos x = x$}{12 min}
+{\small \texttt{[M1]} Tarjeta 2 y esfero azul, hasta 6 minutos. \texttt{[M2]} Conversación nueva en Gemini, esfero rojo, la misma consigna.}\par\smallskip
+\p{9}{\emph{(sin IA)} Con sus palabras, ¿qué le está pidiendo este ejercicio?}{¿Por dónde empezaría?}
+\p{10}{\emph{(sin IA)} Sin hacer cuentas todavía: ¿cree que hay algún número que cumpla esta igualdad?}{¿Qué le hace pensar eso? ¿Cuántos cree que hay?}
+\p{11}{\emph{(con Gemini)} Si ya tiene un valor, ¿cómo podría comprobar que sirve?}{¿Qué tan cerca le parece ``suficientemente cerca''?}
+
+\bloque{4. Comparación}{6 min}
+\p{12}{Hoy trabajó primero solo y después con Gemini. ¿Qué diferencia notó entre una forma y la otra?}{¿Me muestra en la hoja dónde lo notó?}
+\p{13}{Si un compañero le pregunta cómo resolvió esto, ¿qué parte le diría que hizo usted y qué parte hizo Gemini?}{}
+\p{14}{Si mañana le toca un ejercicio parecido, ¿cómo lo haría?}{¿Qué haría igual que hoy y qué cambiaría?}
+
+\bloque{5. Cierre}{2 min}
+\p{15}{¿Hay algo más que quiera contarme o preguntarme sobre lo de hoy?}{}
+\begin{guion}
+Muchas gracias. Su nombre no aparecerá en ningún documento. En unos días le comparto una síntesis para que me diga si refleja lo que quiso decir.
+\end{guion}
+
+\textbf{Imprescindibles si falta tiempo:} P1, P3, P5, P6, P7, P9, P12 y P13.
+
+% ---------------------------------------------------------------------
+\newpage
+\section*{Notas de campo \small(completar en los 30 minutos siguientes)}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{|p{5.2cm}|X|}
+\hline
+Código / asignatura / fecha / duración & \\ \hline
+Preguntas imprescindibles no cubiertas & \\ \hline
+Nivel máximo de ayuda (T1 / T2) & \\ \hline
+Número de consultas a Gemini (T1 / T2) & \\ \hline
+Momentos críticos (minuto y qué pasó) & \\[1.6cm] \hline
+¿Induje alguna respuesta? ¿Dónde? & \\[1cm] \hline
+Incidentes técnicos & \\ \hline
+\end{tabularx}
+
+\medskip
+\textbf{Después:} copiar la conversación de Gemini a \texttt{E\#\#\_ENT\_gemini.txt} (sin usar ``Compartir'') y borrarla de la cuenta · escanear la hoja a color · transcribir con el comando \texttt{codificador} en menos de 72 horas.
+
+% ---------------------------------------------------------------------
+\newpage
+\section*{Tarjetas para el estudiante \small(imprimir aparte)}
+
+\begin{tarea}{Tarea 1 --- Tres razonamientos sobre límites}
+Estos razonamientos los escribieron estudiantes de primer año de universidad. Escriba al lado de cada uno si le parece correcto o no, y por qué.
+
+\medskip
+\textbf{1.} \emph{``El límite de $\dfrac{\operatorname{sen} x}{x}$ cuando $x$ tiende a 0 es 0, porque en el numerador $\operatorname{sen} 0 = 0$, mientras que el denominador $x$ solo tiende a 0.''}
+
+\medskip
+\textbf{2.} \emph{``El límite de $\dfrac{x^2 - 1}{x + 3}$ cuando $x$ tiende a $+\infty$ es $+\infty$, porque $x^2$ crece más rápido que $x$.''}
+
+\medskip
+\textbf{3.} \emph{``El límite de $e^{x}\left(1 - \sqrt{x}\right)$ cuando $x$ tiende a $+\infty$ es $+\infty$, porque la exponencial domina.''}
+\vspace{5cm}
+\end{tarea}
+
+\begin{tarea}{Tarea 2 --- La ecuación $\cos x = x$}
+\begin{enumerate}[label=\alph*)]
+  \item ¿La ecuación $\cos x = x$ tiene solución? Si la tiene, ¿cuántas? Justifique su respuesta.
+  \item Encuentre un valor aproximado de la solución. Explique cómo sabe que su aproximación es buena.
+\end{enumerate}
+\vspace{5cm}
+\end{tarea}
+
+{\small Primero trabaje con esfero azul o negro. Cuando pueda usar Gemini, escriba lo que cambie o agregue con esfero rojo, sin borrar lo anterior.}
+
+\end{document}
