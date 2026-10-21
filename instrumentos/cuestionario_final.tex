@@ -1,0 +1,114 @@
+% =====================================================================
+%  CUESTIONARIO FINAL DE CONTEXTO (al terminar la secuencia)
+%  No mide aprendizaje: da contexto para interpretar lo observado.
+%  El bloque B repite los ítems 6-12 del cuestionario inicial.
+%  Compilar con: pdflatex cuestionario_final.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{pgffor}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}p{1.25cm}}
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\cas}{$\square$\,}
+\newcommand{\cabeza}[2]{\footnotesize\bfseries\shortstack{#1\\#2}}
+\newcommand{\bloque}[1]{\par\medskip{\color{unalverde}\large\bfseries #1}\par\smallskip}
+\newcommand{\linea}{\par\rule{\linewidth}{0.4pt}\par\vspace{4pt}}
+\newcommand{\lineas}[1]{\par\vspace{2pt}\foreach\i in {1,...,#1}{\linea}}
+\newcommand{\escala}{& \cas & \cas & \cas & \cas \\ \hline}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Cuestionario final --- Tutoría personalizada GEA}
+\fancyhead[R]{\small Código: \rule{1.6cm}{0.4pt} \quad Fecha: \rule{1.8cm}{0.4pt}}
+\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\Large\bfseries Cuestionario final\par}
+\medskip
+
+\begin{tcolorbox}[colback=grisclaro,colframe=unalverde,arc=2pt]
+\small
+Ya terminó las tareas de la tutoría. Este cuestionario no es un examen y no afecta sus notas. Use el mismo código del cuestionario inicial y no escriba su nombre. Nos interesa su opinión sincera, también si algo no le sirvió. Tiempo aproximado: 10 minutos.
+\end{tcolorbox}
+
+\bloque{A. Cuando resuelvo problemas de matemáticas}
+
+Marque qué tan de acuerdo está \emph{hoy} con cada frase.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{|L|C|C|C|C|}
+\hline
+ & \cabeza{Nada de}{acuerdo} & \cabeza{Poco de}{acuerdo} & \cabeza{De}{acuerdo} & \cabeza{Muy de}{acuerdo} \\ \hline
+1. Entiendo lo que se explica en clase. \escala
+2. Puedo resolver ejercicios parecidos a los que se hicieron en clase. \escala
+3. Puedo resolver un problema que no se parece a ninguno de los de clase. \escala
+4. Cuando resuelvo un ejercicio, puedo explicar por qué cada paso es válido. \escala
+5. Cuando me equivoco, puedo encontrar dónde estuvo el error. \escala
+6. Antes de dar una respuesta por buena, la compruebo de alguna manera. \escala
+7. Si no veo cómo empezar un problema, intento algo de todos modos. \escala
+\end{tabularx}
+\end{center}
+
+\bloque{B. Sobre las tareas y sus tres momentos}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{|L|C|C|C|C|}
+\hline
+ & \cabeza{Nada de}{acuerdo} & \cabeza{Poco de}{acuerdo} & \cabeza{De}{acuerdo} & \cabeza{Muy de}{acuerdo} \\ \hline
+8. Trabajar primero sin IA me sirvió para saber qué entendía y qué no. \escala
+9. Con Gemini encontré errores que yo solo no había visto. \escala
+10. Gemini me dio respuestas que copié sin entenderlas del todo. \escala
+11. Habría preferido que Gemini me diera la respuesta directamente. \escala
+12. Comparar lo azul con lo rojo me ayudó a decidir mi respuesta final. \escala
+13. Las tareas me obligaron a pensar más que los ejercicios de clase. \escala
+\end{tabularx}
+\end{center}
+
+\textbf{14.} ¿Cuál de las tareas le sirvió más y por qué?
+\lineas{2}
+
+\textbf{15.} ¿En qué momento le fue más útil Gemini? ¿Y en qué momento le estorbó o lo confundió?
+\lineas{3}
+
+\textbf{16.} Piense en una de las tareas. ¿Qué parte de la solución hizo usted y qué parte hizo Gemini?
+\lineas{3}
+
+\bloque{C. Lo que viene}
+
+\textbf{17.} La próxima vez que estudie solo y se quede atascado, ¿qué va a hacer?
+\lineas{2}
+
+\textbf{18.} ¿Va a seguir intentando primero por su cuenta antes de usar una IA? \quad \cas Sí \quad \cas A veces \quad \cas No \quad ¿Por qué?
+\lineas{2}
+
+\textbf{19.} ¿Qué le cambiaría a esta forma de trabajar en la tutoría?
+\lineas{2}
+
+\vspace{4pt}
+{\small\centering Gracias por participar.\par}
+
+\end{document}

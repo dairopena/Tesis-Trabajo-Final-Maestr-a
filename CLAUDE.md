@@ -53,6 +53,7 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
 - **Hecho (30-sep-2026):** introducción, resumen, planteamiento, justificación, objetivos, marco contextual, metodología completa (ubicación, métodos, cronograma, presupuesto, ética), manual de Gemini, guía de entrevista v3 y consentimiento.
 - **Hecho (3-oct-2026):** herramientas de recolección y análisis instaladas (QualCoder 4.0, comando `transcribir` con Whisper local, OBS). Corpus en `../datos_investigacion/`, fuera del repo, con `LEEME.md` y libro de códigos REFI-QDA (`04_libro_codigos/libro_codigos_inicial.qdc`, 9 categorías y 32 códigos; revisar los marcados "(propuesto)").
 - **Hecho (19-oct-2026):** guía de entrevista v4 (`instrumentos/guia_entrevista_v4.tex`): preguntas en lenguaje del estudiante, tabla de cambios v3→v4, sección de registro y codificación; se quitaron las citas de Montiel-Espinosa de la tabla de conductas. Guía de campo corta (`instrumentos/guia_entrevista_campo.tex`, 4 páginas: preguntas, consignas, ayudas, notas de campo y tarjetas); la v4 queda como versión extendida para el anexo. Codificador propio en `../datos_investigacion/06_herramienta/` (comando `codificador`): grabación y transcripción con Whisper, precodificación con reglas + IA local (qwen2.5:3b en Ollama), todo sin conexión.
+- **Hecho (21-oct-2026):** `instrumentos/secuencia_tareas.tex`: 6 criterios de selección (C1 demanda cognitiva, Smith y Stein 1998, Stein et al. 1996; C2 no imitativo, Lithner 2008; C3 errores de la tutoría; C4 dos registros, Duval; C5 sale de los talleres; C6 la IA no agota la tarea, Henningsen y Stein 1997, Bastani 2025), orden como trayectoria hipotética (Simon 1995) en la que cada tarea retira un apoyo, 4 tareas **prototipo** con análisis a priori y lista de cotejo. Distinción: se *seleccionan* los problemas y se *diseña* la tarea. También `protocolo_sesion.tex` (2 págs.), `cuestionario_inicial.tex` y `cuestionario_final.tex` (los ítems de confianza se repiten). Las 4 referencias nuevas están en `fuentes_verificadas.bib`. Todavía no se llevó nada de esto a la metodología.
 - **Siguiente paso (desde 4-oct-2026):**
   1. ~~Tabla de errores de la guía~~ (resuelto en la v4). Pendiente: decidir si la v4 reemplaza a la v3 en la metodología y en el anexo B.
   2. Dairo: crear el proyecto en QualCoder e importar el libro de códigos.
@@ -60,7 +61,8 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
   4. Declarar en la metodología el uso de herramientas (QualCoder, Whisper local, codificador con IA local qwen2.5:3b) y de IA; la profesora lo permite si se declara. Ajustar el consentimiento solo si se van a pasar datos de estudiantes por IA externa.
 - **Pendiente:**
   - Antecedentes, marco conceptual y marco referencial.
-  - Enunciados de las 4 tareas de la secuencia (`[POR DISEÑAR]`).
+  - Enunciados de las 4 tareas de la secuencia (`[POR DISEÑAR]`): ya hay prototipos; falta reemplazarlos por problemas de los talleres de clase (Dairo debe conseguirlos) y pilotar.
+  - Cruce entrevista–secuencia: la tarea 1 de la entrevista repite contenidos de T2 y T3 (sen x/x y racional al infinito). Decidir con los directores si se cambian esos razonamientos o si la entrevista se declara de transferencia.
   - Guía de entrevista como anexo B.
   - Marcadores `[CONFIRMAR]`: periodo de implementación, instancia de ética, referencia del Estatuto Estudiantil.
   - Tesis de César Delgado.

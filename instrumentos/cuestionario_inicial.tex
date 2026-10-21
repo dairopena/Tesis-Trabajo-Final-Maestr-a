@@ -1,0 +1,120 @@
+% =====================================================================
+%  CUESTIONARIO INICIAL DE CONTEXTO (antes de la secuencia)
+%  No mide aprendizaje: da contexto para interpretar lo observado.
+%  El bloque B se repite igual en el cuestionario final.
+%  Compilar con: pdflatex cuestionario_inicial.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}p{1.25cm}}
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\cas}{$\square$\,}
+\newcommand{\cabeza}[2]{\footnotesize\bfseries\shortstack{#1\\#2}}
+\newcommand{\bloque}[1]{\par\medskip{\color{unalverde}\large\bfseries #1}\par\smallskip}
+\newcommand{\linea}{\par\rule{\linewidth}{0.4pt}\par\vspace{4pt}}
+\newcommand{\lineas}[1]{\par\vspace{2pt}\foreach\i in {1,...,#1}{\linea}}
+\usepackage{pgffor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Cuestionario inicial --- Tutoría personalizada GEA}
+\fancyhead[R]{\small Código: \rule{1.6cm}{0.4pt} \quad Fecha: \rule{1.8cm}{0.4pt}}
+\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\Large\bfseries Cuestionario inicial\par}
+\medskip
+
+\begin{tcolorbox}[colback=grisclaro,colframe=unalverde,arc=2pt]
+\small
+Este cuestionario no es un examen y no afecta sus notas. No escriba su nombre: el tutor le asigna un código. Sus respuestas nos ayudan a entender cómo estudia y qué experiencia tiene con la inteligencia artificial. No hay respuestas correctas ni incorrectas. Tiempo aproximado: 10 minutos.
+\end{tcolorbox}
+
+\bloque{A. Sobre usted y el curso}
+
+\textbf{1.} Asignatura por la que asiste a la tutoría: \quad \cas Cálculo Diferencial \quad \cas Matemáticas Básicas
+
+\textbf{2.} ¿Cuántas veces ha inscrito esta asignatura, contando la actual? \quad \cas 1 \quad \cas 2 \quad \cas 3 o más
+
+\textbf{3.} ¿Cuántos semestres lleva en la universidad, contando el actual? \quad \cas 1 o 2 \quad \cas 3 o 4 \quad \cas 5 a 8 \quad \cas 9 o más
+
+\textbf{4.} ¿Quién le sugirió venir a la tutoría personalizada? \quad \cas El docente \quad \cas Otro tutor \quad \cas Acompañamiento académico o psicosocial \quad \cas Vine por mi cuenta \quad \cas Otro: \rule{2.5cm}{0.4pt}
+
+\textbf{5.} ¿Qué es lo que más se le dificulta del curso?
+\lineas{2}
+
+\bloque{B. Cuando resuelvo problemas de matemáticas}
+
+Marque qué tan de acuerdo está con cada frase.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{|L|C|C|C|C|}
+\hline
+ & \cabeza{Nada de}{acuerdo} & \cabeza{Poco de}{acuerdo} & \cabeza{De}{acuerdo} & \cabeza{Muy de}{acuerdo} \\ \hline
+6. Entiendo lo que se explica en clase. & \cas & \cas & \cas & \cas \\ \hline
+7. Puedo resolver ejercicios parecidos a los que se hicieron en clase. & \cas & \cas & \cas & \cas \\ \hline
+8. Puedo resolver un problema que no se parece a ninguno de los de clase. & \cas & \cas & \cas & \cas \\ \hline
+9. Cuando resuelvo un ejercicio, puedo explicar por qué cada paso es válido. & \cas & \cas & \cas & \cas \\ \hline
+10. Cuando me equivoco, puedo encontrar dónde estuvo el error. & \cas & \cas & \cas & \cas \\ \hline
+11. Antes de dar una respuesta por buena, la compruebo de alguna manera. & \cas & \cas & \cas & \cas \\ \hline
+12. Si no veo cómo empezar un problema, intento algo de todos modos. & \cas & \cas & \cas & \cas \\ \hline
+\end{tabularx}
+\end{center}
+
+\textbf{13.} Cuando está estudiando solo y se queda atascado en un ejercicio, ¿qué hace? (puede marcar varias)\\
+\cas Busco un video \quad \cas Le pregunto a un compañero \quad \cas Uso una IA (ChatGPT, Gemini u otra) \quad \cas Reviso mis apuntes o el libro \quad \cas Busco una aplicación que resuelva \quad \cas Lo dejo para después \quad \cas Otro: \rule{2.5cm}{0.4pt}
+
+\bloque{C. Sobre la inteligencia artificial}
+
+\textbf{14.} ¿Con qué frecuencia usa una IA para estudiar matemáticas? \quad \cas Nunca \quad \cas Algunas veces en el semestre \quad \cas Cada semana \quad \cas Casi todos los días
+
+\textbf{15.} Si la usa, ¿cuál? (puede marcar varias) \quad \cas ChatGPT \quad \cas Gemini \quad \cas Copilot \quad \cas Otra: \rule{2.5cm}{0.4pt}
+
+\textbf{16.} Si la usa, ¿para qué? (puede marcar varias)\\
+\cas Que me resuelva el ejercicio completo \quad \cas Que me explique un tema \quad \cas Revisar si mi solución está bien \quad \cas Que me dé una pista para empezar \quad \cas Que me ponga ejercicios para practicar \quad \cas Otro: \rule{2.5cm}{0.4pt}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{|L|C|C|C|C|}
+\hline
+ & \cabeza{Nada de}{acuerdo} & \cabeza{Poco de}{acuerdo} & \cabeza{De}{acuerdo} & \cabeza{Muy de}{acuerdo} \\ \hline
+17. Confío en que las respuestas de la IA en matemáticas son correctas. & \cas & \cas & \cas & \cas \\ \hline
+18. Cuando la IA me explica algo, lo entiendo. & \cas & \cas & \cas & \cas \\ \hline
+19. Cuando uso la IA, después puedo hacer el ejercicio sin ella. & \cas & \cas & \cas & \cas \\ \hline
+\end{tabularx}
+\end{center}
+
+\textbf{20.} ¿Asistió al taller de Gemini del programa GEA este semestre? \quad \cas Sí \quad \cas No
+
+\textbf{21.} ¿Conoce el modo \emph{aprendizaje guiado} de Gemini? \quad \cas Sí, lo he usado \quad \cas Lo conozco, pero no lo he usado \quad \cas No
+
+\textbf{22.} Cuente una vez en que una IA le ayudó a entender algo de matemáticas, o una vez en que lo confundió.
+\lineas{3}
+
+\vspace{4pt}
+{\small\centering Gracias por su tiempo.\par}
+
+\end{document}

@@ -1,0 +1,152 @@
+% =====================================================================
+%  PROTOCOLO DE SESIÓN DE LA SECUENCIA (hoja de campo del tutor)
+%  Una copia por sesión. Sirve para cualquiera de las cuatro tareas.
+%  Fundamentación de las tareas: secuencia_tareas.tex
+%  Compilar con: pdflatex protocolo_sesion.tex (dos veces)
+% =====================================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.5cm,top=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{url}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=1pt,topsep=3pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{guion}{colback=white,colframe=unalverde!60,leftrule=4pt,boxrule=0.6pt,arc=0pt,fontupper=\itshape,left=6pt,top=2pt,bottom=2pt,before skip=3pt,after skip=3pt}
+\newcommand{\momento}[2]{\par\smallskip{\color{unalverde}\large\bfseries #1}\hfill{\small #2}\par\vspace{2pt}}
+\newcommand{\cas}{$\square$\;}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Protocolo de sesión --- Secuencia de tareas con Gemini}
+\fancyhead[R]{\small Código: \rule{1.4cm}{0.4pt} \quad Tarea: T\rule{0.5cm}{0.4pt} \quad Fecha: \rule{1.8cm}{0.4pt}}
+\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\Large\bfseries Protocolo de sesión\par}
+{\small Una tarea por sesión · 55--60 min de trabajo · Tiempos provisionales, se ajustan en el pilotaje\par}
+\medskip
+
+\begin{tcolorbox}[colback=grisclaro,colframe=unalverde,arc=2pt,title=\textbf{Antes de que llegue el estudiante (5 min)},fonttitle=\small]
+\small
+\cas Consentimiento firmado (y autorización de audio: sí / no) \quad
+\cas Hoja de la tarea impresa \quad
+\cas Esferos azul o negro y rojo \quad
+\cas Grabadora lista \\
+\cas Gemini abierto en la cuenta institucional del investigador, \textbf{conversación nueva} \quad
+\cas Modo \textbf{aprendizaje guiado} activado \quad
+\cas Instrucción inicial pegada (abajo) \quad
+\cas GeoGebra disponible
+\end{tcolorbox}
+
+\textbf{Instrucción inicial para Gemini} (igual para todos; no lleva datos del estudiante):
+\begin{guion}
+Soy estudiante de un primer curso de cálculo en la universidad. Estoy resolviendo una tarea sobre límites y ya intenté resolverla por mi cuenta. Quiero entender, no que me des la respuesta: guíame con preguntas y pistas, y si cometo un error, ayúdame a encontrarlo en lugar de corregirlo directamente.
+\end{guion}
+
+\textbf{Problema de la tarea} (taller de origen y número): \rule{9cm}{0.4pt}
+
+\momento{Apertura}{2 min}
+\begin{guion}
+Hoy vamos a trabajar un ejercicio en tres partes. Primero solo, con el esfero azul. Después con Gemini, y lo que cambie lo escribe en rojo sin borrar lo azul. Al final decide cuál es su respuesta y por qué. Me interesa cómo piensa, no solo el resultado. Trate de decir en voz alta lo que va pensando.
+\end{guion}
+
+\momento{Momento 1 --- Sin IA, esfero azul o negro}{20 min}
+Entregar la hoja. El tutor \textbf{no explica}. Si hay bloqueo de dos minutos o el estudiante pide ayuda, usar la escala en orden y anotar el nivel en el registro:
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}lL@{}}
+\textbf{A0} Silencio & Esperar 10 segundos.\\
+\textbf{A1} Explicitación & ¿Qué ha intentado hasta ahora?\\
+\textbf{A2} Reformulación & ¿Cómo diría con sus palabras lo que se pide?\\
+\textbf{A3} Heurística & ¿Le serviría una gráfica, una tabla o un dibujo?\\
+\textbf{A4} Contenido & Se da el paso y se pide que lo explique.\\
+\end{tabularx}
+\end{center}
+Preguntas para sostener el razonamiento: ¿Por qué hizo ese paso? · ¿Cómo sabe que eso es cierto? · ¿Hay otra manera de verlo?
+
+\momento{Momento 2 --- Con Gemini, esfero rojo, sin borrar}{20 min}
+\begin{guion}
+Ahora puede usar Gemini. Antes de enviar cada mensaje, dígame qué le va a preguntar y para qué. Si cambia algo en la hoja, hágalo en rojo, sin borrar.
+\end{guion}
+\begin{itemize}
+  \item Propósito previsto de Gemini en esta tarea: \cas contrastar (T1) \quad \cas explicar (T2) \quad \cas verificar (T3, T4)
+  \item Si Gemini entrega la solución completa, no se interrumpe: se anota y se pregunta después ``¿qué hizo con esa respuesta?''.
+  \item Con Gemini abierto, el tutor no da ayudas A3 ni A4.
+\end{itemize}
+
+\momento{Momento 3 --- Validación}{10 min}
+\begin{itemize}
+  \item ¿Cuál es su respuesta final? Escríbala y explique por qué está seguro.
+  \item Compare lo azul con lo rojo: ¿qué cambió y qué lo hizo cambiar?
+  \item ¿Qué parte de la resolución hizo usted y qué parte hizo Gemini?
+\end{itemize}
+
+\momento{Cierre}{2 min}
+\begin{guion}
+Gracias. Lo que escribió no afecta su nota. La próxima vez seguimos con la siguiente tarea.
+\end{guion}
+
+\begin{tcolorbox}[colback=white,colframe=orange!70!black,arc=2pt,title=\textbf{Para que la tarea no pierda su exigencia},fonttitle=\small]
+\small
+Henningsen y Stein (1997): la demanda de una tarea se mantiene cuando hay presión sostenida por explicar, tiempo suficiente y andamiaje que no le quita la complejidad, y cae cuando alguien ``toma el control'' de las partes difíciles o cuando la atención pasa del significado a la respuesta correcta.\\[2pt]
+\textbf{En la sesión:} no resolver por el estudiante · no cortar el momento 1 antes de tiempo · preguntar ``por qué'' aunque la respuesta esté bien · tratar el error como punto de partida.
+\end{tcolorbox}
+
+% ---------------------------------------------------------------------
+\newpage
+\section*{Registro de la sesión \small(completar en los 30 minutos siguientes)}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{5.4cm}|X|}
+\hline
+Duración real de cada momento (M1 / M2 / M3) & \\ \hline
+Estrategia inicial (M1) & \\[0.8cm] \hline
+Representaciones usadas sin que se pidieran & \\ \hline
+Bloqueos (minuto y qué pasó) & \\[0.8cm] \hline
+Ayudas dadas (nivel y minuto) & \\ \hline
+Nivel máximo de ayuda & \cas A0 \quad \cas A1 \quad \cas A2 \quad \cas A3 \quad \cas A4 \\ \hline
+Número de mensajes a Gemini & \\ \hline
+Qué le preguntó a Gemini y para qué & \\[0.8cm] \hline
+Qué hizo con las respuestas & \cas Las integró \quad \cas Las contrastó \quad \cas Pidió aclaración \quad \cas Las ignoró \quad \cas Copió \\ \hline
+¿Gemini entregó la solución completa? & \cas No \quad \cas Sí (en qué mensaje): \\ \hline
+Cambios de azul a rojo & \\[0.8cm] \hline
+Respuesta final y justificación (M3) & \\[0.8cm] \hline
+Qué atribuye a sí mismo y qué a Gemini & \\[0.8cm] \hline
+Errores del análisis a priori que aparecieron & \\ \hline
+Errores no previstos & \\ \hline
+¿Induje alguna respuesta? ¿Dónde? & \\ \hline
+Incidentes técnicos & \\ \hline
+Ajuste para la tarea o el protocolo & \\[0.8cm] \hline
+\end{tabularx}
+
+\bigskip
+\textbf{Después de la sesión}
+\begin{itemize}
+  \item[\cas] Copiar la conversación de Gemini a \texttt{E\#\#\_T\#\_gemini.txt} (sin usar ``Compartir''), reemplazar cualquier dato identificable por el código y \textbf{borrarla de la cuenta}.
+  \item[\cas] Escanear la hoja \textbf{a color} como \texttt{E\#\#\_T\#\_hoja.pdf}.
+  \item[\cas] Guardar audio y archivos en \texttt{datos\_investigacion/} (fuera del repositorio).
+  \item[\cas] Transcribir con el comando \texttt{codificador} en menos de 72 horas.
+\end{itemize}
+
+\medskip
+{\footnotesize Henningsen, M., y Stein, M. K. (1997). Mathematical tasks and student cognition: Classroom-based factors that support and inhibit high-level mathematical thinking and reasoning. \emph{Journal for Research in Mathematics Education, 28}(5), 524--549. \url{https://doi.org/10.5951/jresematheduc.28.5.0524}}
+
+\end{document}

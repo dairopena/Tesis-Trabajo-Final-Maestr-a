@@ -1,0 +1,294 @@
+% =====================================================================
+%  SECUENCIA DE TAREAS: CRITERIOS DE SELECCIÓN, ORDEN Y ANÁLISIS A PRIORI
+%  Versión 1 (21-oct-2026). Los problemas son PROTOTIPOS: se reemplazan
+%  por problemas de los talleres de clase que cumplan el mismo descriptor.
+%  Compilar con: pdflatex secuencia_tareas.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+\definecolor{ambar}{RGB}{255,248,225}
+\hypersetup{colorlinks=true,linkcolor=unalverde,urlcolor=unalverde}
+
+\DeclareMathOperator{\seno}{sen}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=2pt,topsep=4pt}
+\setstretch{1.1}
+
+\newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+\newtcolorbox{tarea}[1]{colback=ambar,colframe=orange!70!black,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+\newtcolorbox{aviso}{colback=red!4,colframe=red!60!black,arc=2pt,breakable}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Secuencia de tareas --- criterios, orden y análisis a priori}
+\fancyhead[R]{\small Versión 1 · 21-oct-2026}
+\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\LARGE\bfseries Secuencia de tareas\par}
+\smallskip
+{\large Criterios de selección, orden de la secuencia y análisis a priori\par}
+\smallskip
+{\small Trabajo final de maestría · Tutoría personalizada GEA · UNAL sede Palmira\par}
+\medskip
+
+\begin{aviso}
+\textbf{Estado de este documento.} Los cuatro problemas que aparecen aquí son \textbf{prototipos}. Según la orientación del 19 de octubre de 2026, los problemas de la secuencia se toman de los talleres trabajados en las clases de Cálculo Diferencial y Matemáticas Básicas. Cada tarea trae un descriptor (\emph{qué buscar en los talleres}); el prototipo se reemplaza por el problema del taller que cumpla ese descriptor y pase la lista de cotejo de la sección~\ref{sec:cotejo}. Mientras tanto, los prototipos sirven para el pilotaje.
+\end{aviso}
+
+% =====================================================================
+\section{Problema y tarea: qué se selecciona y qué se diseña}
+
+Un ejercicio de un taller y una tarea de la secuencia no son lo mismo. El ejercicio es el enunciado matemático. La tarea es ese enunciado más las condiciones en que el estudiante lo trabaja: la consigna, lo que se le pide escribir, los momentos con y sin IA y el papel que cumple Gemini en cada uno. Smith y Stein (1998) lo plantean en esos términos: el docente selecciona tareas, pero también las crea o las modifica, y una misma situación matemática puede quedar en un nivel bajo o alto de demanda cognitiva según cómo se formule.
+
+De ahí la decisión de este trabajo:
+
+\begin{itemize}
+  \item \textbf{Se seleccionan} los problemas, entre los de los talleres de clase. Así la secuencia se apoya en lo que el estudiante ya trabajó, y no en contenidos ajenos a su curso.
+  \item \textbf{Se diseña} la tarea alrededor de cada problema: la consigna, los tres momentos (sin IA, con Gemini, validación) y el orden de la secuencia.
+\end{itemize}
+
+% =====================================================================
+\section{Criterios de selección}
+\label{sec:criterios}
+
+Un problema del taller entra a la secuencia solo si cumple los seis criterios. Los cuatro primeros miran el problema; los dos últimos miran lo que la tarea puede hacer con él.
+
+\begin{caja}{C1. Demanda cognitiva alta}
+El problema, con su consigna, debe ubicarse en uno de los dos niveles altos del análisis de tareas de Smith y Stein (1998): \emph{procedimientos con conexiones} (el procedimiento está, pero hay que entender por qué funciona) o \emph{hacer matemáticas} (no hay un camino sugerido). Quedan fuera los ejercicios de memorización y los de procedimientos sin conexiones, como ``calcule $\lim_{x\to 2}(3x+1)$''.
+
+\textbf{Por qué.} Stein et al. (1996) encontraron que las tareas de demanda alta son las que se asocian con un mayor desarrollo del razonamiento, siempre que esa demanda se mantenga durante la implementación.
+\end{caja}
+
+\begin{caja}{C2. No se resuelve solo imitando}
+El problema no debe poder resolverse únicamente recordando un procedimiento o copiando el de un ejemplo. Debe exigir lo que Lithner (2008) llama razonamiento creativo fundamentado matemáticamente: elegir un camino, sostenerlo con argumentos plausibles y anclarlo en propiedades matemáticas del objeto.
+
+\textbf{Por qué.} Los estudiantes que llegan a la tutoría tienden a resolver imitando el procedimiento modelado (Lithner, 2004). Una tarea que se resuelve imitando no deja ver si hay razonamiento detrás.
+\end{caja}
+
+\begin{caja}{C3. Toca un error frecuente de la tutoría}
+El contenido del problema debe tocar alguno de los errores registrados en la tutoría personalizada durante 2026-2 (álgebra previa al simplificar, indeterminación $0/0$, límites al infinito de funciones racionales, el límite $\lim_{x\to 0}\frac{\seno x}{x}$) o documentados en la investigación sobre el límite (Guarín y Parada, 2023; Job y Schneider, 2014).
+
+\textbf{Por qué.} El análisis a priori necesita errores esperados. Si el problema no toca ninguno, no hay con qué contrastar lo que pase en la sesión.
+\end{caja}
+
+\begin{caja}{C4. Pide al menos dos representaciones}
+La resolución o la justificación deben exigir al menos dos registros (algebraico, numérico, gráfico o verbal) y el paso entre ellos (Duval, 2006).
+
+\textbf{Por qué.} Según Duval (2006), la comprensión de un objeto matemático pasa por coordinar sus registros. Además, es justamente en el paso de un registro a otro donde se nota si el estudiante sigue un procedimiento o entiende lo que hace.
+\end{caja}
+
+\begin{caja}{C5. Sale de los talleres de clase}
+El problema debe estar en un taller trabajado en Cálculo Diferencial o Matemáticas Básicas, o ser una variante directa de uno de ellos.
+
+\textbf{Por qué.} Henningsen y Stein (1997) identificaron que la demanda alta se mantiene con más frecuencia cuando la tarea se apoya en el conocimiento previo del estudiante. Con problemas del curso, el estudiante reconoce el contenido y lo que se le exige de nuevo es la forma de pensarlo.
+\end{caja}
+
+\begin{caja}{C6. La IA no puede agotar la tarea}
+Debe quedar una parte de la tarea que solo el estudiante puede hacer: juzgar un razonamiento, decidir entre estrategias, explicar por qué dos representaciones coinciden o crear un ejemplo propio. Prueba práctica: pegar el problema en Gemini sin modo guiado; si la respuesta deja resuelto todo lo que la consigna pide, hay que reformular la consigna.
+
+\textbf{Por qué.} Henningsen y Stein (1997) muestran que la demanda cae cuando alguien ``toma el control'' de las partes difíciles de la tarea. Una IA sin restricciones puede hacer exactamente eso, y Bastani et al. (2025) encontraron que su uso sin salvaguardas perjudicó el aprendizaje en matemáticas. El criterio protege la tarea de ese efecto.
+\end{caja}
+
+% =====================================================================
+\section{Orden de la secuencia}
+
+El orden se plantea como una trayectoria hipotética de aprendizaje en el sentido de Simon (1995): una predicción, hecha por el docente, de cómo podría avanzar el aprendizaje con estas tareas, que se revisa con lo que muestran los estudiantes. No se sigue de forma rígida; se ajusta entre un ciclo y otro del experimento de enseñanza (Cobb et al., 2003).
+
+La hipótesis es que el estudiante pasa de \emph{juzgar razonamientos ajenos} a \emph{producir y defender los suyos}. Para eso, cada tarea retira un apoyo que la anterior ofrecía:
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{}p{1.1cm}p{3.3cm}LL@{}}
+\toprule
+\textbf{Tarea} & \textbf{Contenido} & \textbf{Apoyo que ofrece} & \textbf{Lo que ya no se le da} \\
+\midrule
+T1 & Indeterminación $0/0$ en un cociente de polinomios & El razonamiento ya está escrito; el estudiante solo lo juzga & --- \\
+T2 & Límite al infinito de una función racional & Las representaciones están indicadas; el estudiante las coordina & El razonamiento hecho \\
+T3 & $\lim_{x\to0}\frac{\seno x}{x}$ & Se sugieren representaciones posibles; el estudiante las produce & Cuáles representaciones usar \\
+T4 & Discontinuidad removible con radicales & Ninguno: el estudiante elige la estrategia y crea un ejemplo & El camino \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Los dos tipos de tarea de Vandebrouck et al. (2021) quedan en los extremos: T1 es una tarea de \emph{evaluar razonamientos ajenos} y T4 una de \emph{problema sin procedimiento a la vista}. T2 y T3 hacen el tránsito.
+
+El papel de Gemini también cambia. En T1 sirve para \emph{contrastar} el juicio propio; en T2, para pedir una \emph{explicación}; en T3 y T4, para \emph{verificar} lo que el estudiante ya sostuvo. Siempre entra después del momento sin IA y en modo de aprendizaje guiado (Google, 2025). La idea de fondo es la de co-acción de Moreno-Armella y Hegedus (2009): el estudiante actúa sobre la herramienta y la herramienta responde, pero la dirección del trabajo matemático sigue en manos del estudiante.
+
+% =====================================================================
+\section{Las cuatro tareas}
+
+En todas, el momento 1 se trabaja con esfero azul o negro, el momento 2 con esfero rojo y sin borrar, y el momento 3 es la validación escrita.
+
+% ---------------------------------------------------------------------
+\subsection*{Tarea 1 --- ¿Quién tiene razón?}
+
+\textbf{Qué buscar en los talleres:} un límite de un cociente de polinomios que dé $0/0$ al reemplazar y se resuelva factorizando. Se convierte en tarea escribiendo tres razonamientos sobre él: uno correcto y dos con errores frecuentes.
+
+\begin{tarea}{T1 --- Prototipo}
+Tres estudiantes calcularon $\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$.
+
+\textbf{A.} \emph{``Reemplazo $x=1$ y da $\frac{0}{0}$. Entonces el límite no existe.''}
+
+\textbf{B.} \emph{``Factorizo: $\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}=x+1$. Puedo cancelar porque $x$ se acerca a 1 pero no vale 1. El límite es 2.''}
+
+\textbf{C.} \emph{``Hice una tabla: con $x=0{,}9$ da $1{,}9$; con $x=0{,}99$ da $1{,}99$; con $x=0{,}999$ da $1{,}999$. El límite es $1{,}999$.''}
+
+\begin{enumerate}[label=\alph*)]
+  \item Escriba al lado de cada razonamiento si está bien o mal, y por qué.
+  \item Escríbale al autor del razonamiento que considere más equivocado un argumento que lo convenza.
+\end{enumerate}
+\end{tarea}
+
+\textbf{Momento 2 (Gemini, contrastar).} El estudiante le cuenta a Gemini su juicio sobre uno de los razonamientos y le pide que lo cuestione, no que le diga cuál es el correcto.
+
+\textbf{Análisis a priori.}
+\begin{itemize}
+  \item \emph{Correcto:} B. A confunde ``indeterminado'' con ``no existe''. C toma el último valor de la tabla como si fuera el límite.
+  \item \emph{Estrategias esperadas:} repetir el cálculo por su cuenta y comparar; juzgar por la forma (``B usó la fórmula''); juzgar por el resultado.
+  \item \emph{Errores esperados:} aceptar A, porque es lo que muchos hacen en clase; aceptar C, porque ``la tabla no miente'', lo que Job y Schneider (2014) describen como positivismo empírico, es decir, tomar la evidencia numérica como suficiente; aprobar B sin entender por qué se puede cancelar.
+  \item \emph{Qué observar:} con qué criterio valida el estudiante: un argumento, un cálculo, una gráfica o la autoridad de quien lo dice.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\subsection*{Tarea 2 --- Lo que dicen tres representaciones}
+
+\textbf{Qué buscar en los talleres:} un límite al infinito de un cociente de polinomios del mismo grado. Se convierte en tarea pidiendo que la tabla, el álgebra y la gráfica digan lo mismo, y agregando una afirmación equivocada que hay que discutir.
+
+\begin{tarea}{T2 --- Prototipo}
+Sea $f(x)=\dfrac{3x^2-x}{x^2+4}$.
+\begin{enumerate}[label=\alph*)]
+  \item Un compañero afirma: \emph{``Cuando $x$ crece, el numerador y el denominador crecen sin límite, así que $f(x)$ también crece sin límite''}. ¿Está de acuerdo? Escriba su respuesta antes de hacer cuentas.
+  \item Con la calculadora, complete: $f(10)$, $f(100)$, $f(1000)$.
+  \item Explique con el álgebra por qué la tabla se comporta así.
+  \item Dibuje cómo se ve la gráfica de $f$ para valores grandes de $x$.
+  \item ¿Las tres representaciones dicen lo mismo? ¿Cambiaría su respuesta del literal a)?
+\end{enumerate}
+\end{tarea}
+
+\textbf{Momento 2 (Gemini, explicar).} El estudiante pide a Gemini que le explique la parte que no pudo justificar (casi siempre el literal c) y luego la reescribe con sus palabras.
+
+\textbf{Análisis a priori.}
+\begin{itemize}
+  \item \emph{Respuesta:} el límite es 3. La tabla da aproximadamente $2{,}79$; $2{,}99$; $2{,}999$. Al dividir numerador y denominador entre $x^2$ queda $\frac{3-1/x}{1+4/x^2}$, que se acerca a $\frac{3}{1}$.
+  \item \emph{Estrategias esperadas:} aplicar la regla de ``los grados iguales'' sin justificarla; calcular la tabla y extrapolar; dividir entre $x^2$.
+  \item \emph{Errores esperados:} aceptar la afirmación del compañero (``infinito entre infinito es infinito'' o ``es 1''); errores de álgebra al dividir entre $x^2$; dibujar una gráfica que corta la asíntota y creer que eso es imposible.
+  \item \emph{Qué observar:} si el estudiante detecta y resuelve el conflicto entre su respuesta del literal a) y la tabla, o deja las dos sin relacionar.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\subsection*{Tarea 3 --- Radianes y grados}
+
+\textbf{Qué buscar en los talleres:} el límite $\lim_{x\to0}\frac{\seno x}{x}$ o uno que se reduzca a él. Se convierte en tarea pidiendo que el estudiante produzca sus propias representaciones y comparando radianes con grados.
+
+\begin{tarea}{T3 --- Prototipo}
+\begin{enumerate}[label=\alph*)]
+  \item ¿A qué valor se acerca $\dfrac{\seno x}{x}$ cuando $x$ se acerca a 0? Decídalo usando al menos dos de estas representaciones: una tabla hecha con la calculadora en radianes, una gráfica o el círculo unitario.
+  \item Repita la tabla con la calculadora en grados. ¿Qué cambia? ¿Por qué cree que pasa?
+  \item ¿La tabla basta para estar seguro del valor del límite? Justifique.
+\end{enumerate}
+\end{tarea}
+
+\textbf{Momento 2 (Gemini, verificar).} El estudiante presenta a Gemini su explicación de por qué cambia el valor en grados y le pide que le señale si hay algo incorrecto.
+
+\textbf{Análisis a priori.}
+\begin{itemize}
+  \item \emph{Respuesta:} en radianes, el cociente se acerca a 1. En grados se acerca a $\frac{\pi}{180}\approx0{,}0175$, porque $x$ grados equivalen a $\frac{\pi x}{180}$ radianes.
+  \item \emph{Estrategias esperadas:} la tabla numérica (la más frecuente); la gráfica en GeoGebra; el argumento del círculo unitario, poco probable sin ayuda.
+  \item \emph{Errores esperados:} ``como $\seno 0=0$, el límite es 0''; ``es $\frac{0}{0}$, no existe''; no notar que la calculadora está en grados; dar la tabla como prueba suficiente (Job y Schneider, 2014).
+  \item \emph{Qué observar:} si el estudiante conecta el resultado en grados con la conversión entre unidades (la trigonometría heredada del colegio) o lo atribuye a un error de la calculadora.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\subsection*{Tarea 4 --- Tapar el hueco}
+
+\textbf{Qué buscar en los talleres:} un límite con radicales que dé $0/0$ (se resuelve racionalizando) o un ejercicio de continuidad. Se convierte en tarea quitando la indicación de qué hacer y pidiendo que el estudiante cree un ejemplo propio.
+
+\begin{tarea}{T4 --- Prototipo}
+La función $f(x)=\dfrac{\sqrt{x+4}-2}{x}$ no está definida en $x=0$.
+\begin{enumerate}[label=\alph*)]
+  \item ¿Se puede asignar un valor a $f(0)$ para que la gráfica de $f$ no tenga un ``hueco'' en $x=0$? Si se puede, ¿qué valor? Justifique su respuesta.
+  \item Invente otra función que tampoco esté definida en $x=0$, pero cuyo hueco se tape con el valor 5. Explique cómo sabe que funciona.
+\end{enumerate}
+\end{tarea}
+
+\textbf{Momento 2 (Gemini, verificar).} Solo después de escribir su justificación, el estudiante le muestra a Gemini la función que inventó y le pide que la revise.
+
+\textbf{Análisis a priori.}
+\begin{itemize}
+  \item \emph{Respuesta:} sí; $f(0)=\frac14$, porque al racionalizar queda $\frac{1}{\sqrt{x+4}+2}$, que se acerca a $\frac14$. Para el literal b) sirve, por ejemplo, $\frac{x^2+5x}{x}$.
+  \item \emph{Estrategias esperadas:} racionalizar; hacer una tabla; graficar en GeoGebra; para el literal b), copiar la forma de la T1 o de la T4 y ajustar el número.
+  \item \emph{Errores esperados:} ``no se puede, porque no está definida''; errores al racionalizar; confundir el valor del límite con el valor de la función; en el literal b), proponer una función que sí está definida en 0.
+  \item \emph{Qué observar:} qué estrategia elige el estudiante sin indicación, si la justifica y si el literal b) muestra que entendió la relación entre límite y continuidad o solo copió una forma.
+\end{itemize}
+
+% =====================================================================
+\section{Lista de cotejo para cada problema candidato}
+\label{sec:cotejo}
+
+Llenar una fila por cada problema de los talleres que se considere. Solo entra a la secuencia el que tenga los seis criterios en ``sí''.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{|p{2.6cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|L|}
+\hline
+\textbf{Problema (taller y n.º)} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{Tarea y cambios en la consigna} \\
+\hline
+ & & & & & & & \\ \hline
+ & & & & & & & \\ \hline
+ & & & & & & & \\ \hline
+ & & & & & & & \\ \hline
+ & & & & & & & \\ \hline
+ & & & & & & & \\ \hline
+\end{tabularx}
+\end{center}
+
+\section{Pendientes}
+
+\begin{itemize}
+  \item Recoger los talleres de Cálculo Diferencial y Matemáticas Básicas de 2026-2 y aplicar la lista de cotejo.
+  \item \textbf{Cruce con la entrevista:} la tarea 1 de la entrevista (\emph{Tres razonamientos sobre límites}) incluye un razonamiento sobre $\lim_{x\to0}\frac{\seno x}{x}$ y otro sobre un límite al infinito de una función racional, los mismos contenidos de T3 y T2. Hay dos salidas: cambiar esos dos razonamientos de la entrevista, o declarar que la entrevista evalúa la transferencia a una tarea nueva sobre un contenido ya trabajado. Decidir con los directores.
+  \item Pilotar las cuatro tareas con uno o dos estudiantes que no participen en el estudio, y ajustar tiempos y consignas.
+\end{itemize}
+
+% =====================================================================
+\section*{Referencias}
+\begin{list}{}{\leftmargin=1.5em \itemindent=-1.5em \itemsep=3pt \parsep=0pt}\small
+\item Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., y Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. \emph{Proceedings of the National Academy of Sciences, 122}(26), e2422633122. \url{https://doi.org/10.1073/pnas.2422633122}
+\item Cobb, P., Confrey, J., diSessa, A., Lehrer, R., y Schauble, L. (2003). Design experiments in educational research. \emph{Educational Researcher, 32}(1), 9--13. \url{https://doi.org/10.3102/0013189X032001009}
+\item Duval, R. (2006). A cognitive analysis of problems of comprehension in a learning of mathematics. \emph{Educational Studies in Mathematics, 61}(1), 103--131.
+\item Google. (2025). \emph{Guided Learning in Gemini: From answers to understanding}. \url{https://blog.google/products-and-platforms/products/education/guided-learning/}
+\item Guarín Amorocho, S. A., y Parada Rico, S. E. (2023). Acciones y expresiones de la comprensión del límite de una función en un punto, por estudiantes de cálculo diferencial. \emph{Educación Matemática, 35}(1), 197--228.
+\item Henningsen, M., y Stein, M. K. (1997). Mathematical tasks and student cognition: Classroom-based factors that support and inhibit high-level mathematical thinking and reasoning. \emph{Journal for Research in Mathematics Education, 28}(5), 524--549. \url{https://doi.org/10.5951/jresematheduc.28.5.0524}
+\item Job, P., y Schneider, M. (2014). Empirical positivism, an epistemological obstacle in the learning of calculus. \emph{ZDM Mathematics Education, 46}(4), 635--646.
+\item Lithner, J. (2004). Mathematical reasoning in calculus textbook exercises. \emph{The Journal of Mathematical Behavior, 23}(4), 405--427.
+\item Lithner, J. (2008). A research framework for creative and imitative reasoning. \emph{Educational Studies in Mathematics, 67}(3), 255--276. \url{https://doi.org/10.1007/s10649-007-9104-2}
+\item Moreno-Armella, L., y Hegedus, S. J. (2009). Co-action with digital technologies. \emph{ZDM Mathematics Education, 41}(4), 505--519. \url{https://doi.org/10.1007/s11858-009-0200-x}
+\item Simon, M. A. (1995). Reconstructing mathematics pedagogy from a constructivist perspective. \emph{Journal for Research in Mathematics Education, 26}(2), 114--145. \url{https://doi.org/10.5951/jresematheduc.26.2.0114}
+\item Smith, M. S., y Stein, M. K. (1998). Selecting and creating mathematical tasks: From research to practice. \emph{Mathematics Teaching in the Middle School, 3}(5), 344--350. \url{https://doi.org/10.5951/MTMS.3.5.0344}
+\item Stein, M. K., Grover, B. W., y Henningsen, M. (1996). Building student capacity for mathematical thinking and reasoning: An analysis of mathematical tasks used in reform classrooms. \emph{American Educational Research Journal, 33}(2), 455--488. \url{https://doi.org/10.3102/00028312033002455}
+\item Vandebrouck, F., Hanke, E., y Martínez-Planell, R. (2021). Task design in calculus and analysis. En V. Durand-Guerrier, R. Hochmuth, E. Nardi y C. Winsløw (Eds.), \emph{Research and development in university mathematics education} (pp.~104--124). Routledge.
+\end{list}
+
+\end{document}
