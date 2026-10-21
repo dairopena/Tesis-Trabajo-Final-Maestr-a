@@ -63,7 +63,7 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
 - **Pendiente:**
   - Antecedentes, marco conceptual y marco referencial.
   - Secuencia v2 (21-oct-2026) con problemas de los talleres (`docs/05_talleres/`, fuera de git): T1 Pontón 24.6, T2 Pontón 30.7, T3 Mosquera 8d, T4 Pontón 24.16 (+ ej. 31). Falta: pilotar, pedir autorización a las profesoras para usar sus ejercicios, confirmar los datos del taller de Mosquera y pasar los enunciados a la metodología (hoy dice `[POR DISEÑAR]`).
-  - Consentimiento: no autoriza el audio de las sesiones (solo el de la entrevista) y no menciona los cuestionarios. Corregir antes de implementar.
+  - Consentimiento v2 (21-oct-2026): ya cubre el audio de las sesiones y los cuestionarios. Siguen vacíos en él: teléfono del investigador, correo de los directores y datos del comité de ética (`[CONFIRMAR]` de la instancia de ética).
   - Cruce entrevista–secuencia: la tarea 1 de la entrevista repite contenidos de T2 y T3. Recomendación dada: cambiar los razonamientos 1 y 2 por contenidos que no estén en la secuencia (propuestas con Pontón 24.17 y Mosquera 8h en la sección 6 de `secuencia_tareas`) y declarar como transferencia la forma de trabajar. Decide Marisol.
   - Guía de entrevista como anexo B.
   - Marcadores `[CONFIRMAR]`: periodo de implementación, instancia de ética, referencia del Estatuto Estudiantil.
