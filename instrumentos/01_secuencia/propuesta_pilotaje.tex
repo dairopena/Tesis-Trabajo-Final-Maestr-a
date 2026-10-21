@@ -1,0 +1,129 @@
+% =====================================================================
+%  PROPUESTA DE PILOTAJE (para presentar a la profesora Teresa Pontón)
+%  Resume qué se implementa, cómo se adaptaron sus ejercicios y qué se
+%  le pide. No incluye el análisis a priori (está en secuencia_tareas).
+%  Compilar con: pdflatex propuesta_pilotaje.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{242,242,242}
+\DeclareMathOperator{\seno}{sen}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=2pt,topsep=3pt}
+\setstretch{1.08}
+
+\newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Propuesta de pilotaje --- Secuencia de tareas con Gemini}
+\fancyhead[R]{\small UNAL -- Sede Palmira}
+\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\LARGE\bfseries Propuesta de pilotaje\par}
+\smallskip
+{\large Secuencia de tareas de cálculo diferencial con el acompañamiento de Gemini\par}
+\medskip
+
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{2.4cm}L@{}}
+Para & Prof. Teresa Pontón Ladino, Cálculo Diferencial \\
+De & Dairo Janover Peña Cárdenas, tutor del programa GEA y estudiante de la Maestría en Enseñanza de las Ciencias Exactas y Naturales \\
+Directores & Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salcedo \\
+Fecha & \rule{4cm}{0.4pt} \\
+\end{tabularx}
+
+% =====================================================================
+\section*{1. De qué se trata}
+
+Mi trabajo de grado estudia cómo resuelven problemas de cálculo los estudiantes remitidos a tutoría personalizada cuando trabajan primero solos y luego con Gemini, la IA generativa de la cuenta institucional. No busco medir notas. Me interesa ver qué cambia en sus estrategias, sus errores y sus justificaciones cuando la IA entra a acompañar el trabajo, y qué condiciones de la tarea evitan que la IA les resuelva el ejercicio.
+
+Para eso armé una secuencia de cuatro tareas con ejercicios de los talleres de clase. Tres vienen de su \emph{Taller Módulo 1} (ejercicios 24 y 30) y uno del taller de la profesora Mónica Mosquera (ejercicio 8). Antes de aplicarla con los estudiantes del estudio necesito probarla con uno o dos estudiantes que no participen en él. Por eso le presento la propuesta.
+
+% =====================================================================
+\section*{2. Cómo se adaptaron sus ejercicios}
+
+El problema matemático se conserva. Lo que cambia es lo que se le pide al estudiante: en lugar de ``halle el límite'', se le pide juzgar razonamientos, comparar representaciones o decidir sin que se le indique el camino.
+
+\begin{center}\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{3.3cm}LL@{}}
+\toprule
+\textbf{Ejercicio del taller} & \textbf{Qué se pide en la tarea} & \textbf{Qué se espera observar} \\
+\midrule
+\textbf{T1.} Ej.~24.6\newline $\displaystyle\lim_{x\to3}\frac{x^4-81}{x^2-x-6}$ & Juzgar cuatro razonamientos de otros estudiantes: ``$\frac00$, no existe''; una factorización con el error $(x^2-9)^2$; la correcta; y ``la calculadora da 21,54''. Precisar el dominio. & Con qué criterio valida el estudiante: un argumento, un cálculo o la autoridad de quien lo dice. Si detecta el error de álgebra previa. \\
+\midrule
+\textbf{T2.} Ej.~30.7\newline $\displaystyle\lim_{x\to\infty}\frac{4-x^3}{x^3-1}$ & Discutir la afirmación ``$x^3$ se cancela, el límite es 1''; comparar tabla, álgebra y gráfica; responder la pregunta ``¿asíntotas?'' del propio taller. & Si resuelve el conflicto entre su primera intuición y la tabla. Si encuentra la asíntota vertical. \\
+\midrule
+\textbf{T3.} Mosquera, ej.~8d\newline $\displaystyle\lim_{x\to0}\frac{\seno 3x+\seno 5x}{2x}$ & Decidir el límite con dos representaciones; comparar radianes y grados; juzgar el atajo ``$\seno 3x+\seno 5x=\seno 8x$'', que da el número correcto con un razonamiento inválido. & Si valida por el resultado o por los pasos. Si conecta el resultado en grados con la conversión de unidades. \\
+\midrule
+\textbf{T4.} Ej.~24.16 y 31\newline $\displaystyle f(x)=\frac{x+2}{\sqrt{x^2+5}-3}$ & Sin indicar el punto: encontrar dónde no está definida $f$ ($x=\pm2$), decidir en cuál se ``tapa el hueco'' y qué pasa en el otro, e inventar una función propia. & Qué estrategia elige sin indicación. Si distingue una discontinuidad removible de una asíntota vertical. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+El orden va de juzgar razonamientos ajenos a producir los propios: cada tarea retira un apoyo que la anterior daba. También sigue el orden de su taller: primero límites en un punto, luego al infinito, y al final una tarea que integra dominio, continuidad y límite, como pide su ejercicio 31.
+
+% =====================================================================
+\section*{3. Cómo es una sesión}
+
+Cada tarea se trabaja en una sesión individual de 55 a 60 minutos, en tres momentos:
+
+\begin{enumerate}
+  \item \textbf{Sin IA (unos 20 min).} El estudiante resuelve solo, con esfero azul, diciendo en voz alta lo que piensa. El tutor no explica; solo hace preguntas como ``¿qué ha intentado?'' o ``¿cómo sabe que eso es cierto?''.
+  \item \textbf{Con Gemini (unos 20 min).} El estudiante consulta Gemini en \emph{modo de aprendizaje guiado}, que responde con preguntas y pistas en lugar de dar la solución. Lo que cambie lo escribe con esfero rojo, sin borrar lo azul. Así la hoja muestra qué cambió después de usar la IA.
+  \item \textbf{Validación (unos 10 min).} El estudiante decide su respuesta final, la justifica y dice qué parte hizo él y qué parte hizo Gemini.
+\end{enumerate}
+
+Gemini se usa en el computador de la tutoría, con mi cuenta institucional; el estudiante no usa su cuenta ni escribe datos personales.
+
+% =====================================================================
+\section*{4. En qué consiste el pilotaje}
+
+\begin{caja}{Lo que se propone}
+\begin{itemize}
+  \item \textbf{Participantes:} uno o dos estudiantes de su curso, voluntarios. No deben hacer parte después del estudio; si alguno es remitido más adelante a tutoría personalizada, sus datos no se incluirían.
+  \item \textbf{Duración:} las cuatro tareas, en cuatro sesiones de una hora o en dos sesiones de dos horas, en el horario que acuerden.
+  \item \textbf{Qué se registra:} las hojas de trabajo, la conversación con Gemini y, si el estudiante lo autoriza, el audio. El estudiante firma el mismo consentimiento informado del estudio.
+  \item \textbf{Qué no se hace:} el pilotaje no afecta las notas y sus resultados no entran al análisis de la tesis.
+  \item \textbf{Qué se prueba:} si las consignas se entienden, si alcanza el tiempo, cómo responde Gemini en modo guiado, si la instrucción inicial funciona y si las hojas sirven para registrar los cambios.
+\end{itemize}
+\end{caja}
+
+% =====================================================================
+\section*{5. Lo que le pido}
+
+\begin{enumerate}
+  \item \textbf{Su opinión sobre las tareas:} si las consignas son adecuadas para sus estudiantes y si cambiaría algo.
+  \item \textbf{Saber si estos ejercicios ya se resolvieron en clase.} Si se resolvieron en el tablero, los estudiantes podrían recordar la respuesta, y conviene escoger otros del mismo taller.
+  \item \textbf{Su ayuda para invitar} a uno o dos estudiantes para el pilotaje.
+  \item \textbf{Su autorización para usar y citar sus ejercicios} en el trabajo de grado, con referencia a su taller.
+\end{enumerate}
+
+\vspace{0.5cm}
+\noindent Muchas gracias por su tiempo. Le llevo impresas las hojas de las cuatro tareas, tal como las recibirá el estudiante.
+
+\vspace{0.8cm}
+\noindent\rule{6.5cm}{0.4pt}\\
+Dairo Janover Peña Cárdenas\\
+dapenaca@unal.edu.co
+
+\end{document}

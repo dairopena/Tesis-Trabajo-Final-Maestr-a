@@ -1,0 +1,144 @@
+% =====================================================================
+%  HOJAS DE TRABAJO DEL ESTUDIANTE (las cuatro tareas de la secuencia)
+%  Solo enunciados y espacio para escribir: sin respuestas ni análisis.
+%  Dos páginas por tarea. Imprimir a una cara.
+%  Fundamentación y análisis a priori: secuencia_tareas.tex
+%  Compilar con: pdflatex hojas_estudiante.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.8cm,top=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+
+\definecolor{unalverde}{RGB}{0,98,65}
+\definecolor{grisclaro}{RGB}{245,245,245}
+\DeclareMathOperator{\seno}{sen}
+\setlist{itemsep=3pt,topsep=4pt}
+\setlength{\parindent}{0pt}
+
+\newtcolorbox{enunciado}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries\large,title={#1},arc=2pt}
+\newtcolorbox{validacion}{colback=white,colframe=unalverde,arc=2pt,title={\textbf{Momento 3 --- Mi respuesta final}},fonttitle=\small,height=9.2cm,valign=top}
+\newcommand{\instrucciones}{%
+  \begin{center}\small
+  \textbf{Momento 1:} trabaje solo, con esfero \textbf{azul o negro}. \quad
+  \textbf{Momento 2:} con Gemini, lo que cambie o agregue va en \textbf{\color{red!75!black}rojo}, sin borrar.
+  \end{center}}
+\newcommand{\espacio}{\par\vfill\centerline{\small\color{black!45}(espacio para su trabajo)}\vfill}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Tutoría personalizada --- Cálculo Diferencial}
+\fancyhead[R]{\small Código: \rule{1.6cm}{0.4pt} \quad Fecha: \rule{2cm}{0.4pt}}
+\fancyfoot[C]{\small\color{black!55}Esto no es un examen y no afecta sus notas. Nos interesa cómo piensa.}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% ---------------------------------------------------------------------
+\begin{enunciado}{Tarea 1 --- ¿Quién tiene razón?}
+Cuatro estudiantes calcularon $\displaystyle\lim_{x\to 3}\frac{x^4-81}{x^2-x-6}$.
+
+\smallskip
+\textbf{A.} \emph{``Reemplazo $x=3$: arriba da $81-81=0$ y abajo $9-3-6=0$. Da $\dfrac{0}{0}$, así que el límite no existe.''}
+
+\smallskip
+\textbf{B.} \emph{``Factorizo: $x^4-81=(x^2-9)^2$ y $x^2-x-6=(x-3)(x+2)$. Queda $\dfrac{(x-3)^2(x+3)^2}{(x-3)(x+2)}=\dfrac{(x-3)(x+3)^2}{x+2}$, y con $x=3$ el límite es 0.''}
+
+\smallskip
+\textbf{C.} \emph{``$x^4-81=(x^2-9)(x^2+9)=(x-3)(x+3)(x^2+9)$ y $x^2-x-6=(x-3)(x+2)$. Como $x$ se acerca a 3 pero no vale 3, cancelo $x-3$ y queda $\dfrac{(x+3)(x^2+9)}{x+2}$, que se acerca a $\dfrac{6\cdot18}{5}=\dfrac{108}{5}$.''}
+
+\smallskip
+\textbf{D.} \emph{``Con la calculadora: con $x=2{,}9$ da $20{,}96$ y con $x=2{,}99$ da $21{,}54$. El límite es $21{,}54$.''}
+
+\begin{enumerate}[label=\alph*)]
+  \item Escriba al lado de cada razonamiento si está bien o mal, y por qué.
+  \item ¿Cuál es el dominio de la función? ¿Por qué el razonamiento C puede cancelar $x-3$?
+  \item Escríbale al autor del razonamiento que considere más equivocado un argumento que lo convenza.
+\end{enumerate}
+\end{enunciado}
+\instrucciones
+\espacio
+\newpage
+\espacio
+\begin{validacion}
+\small
+Compare lo que escribió en azul con lo que escribió en rojo.\\
+\textbf{1.} ¿Cuál razonamiento es correcto? ¿Por qué está seguro?\\[2.6cm]
+\textbf{2.} ¿Qué parte hizo usted y qué parte le ayudó a hacer Gemini?
+\end{validacion}
+
+% ---------------------------------------------------------------------
+\newpage
+\begin{enunciado}{Tarea 2 --- Lo que dicen las representaciones}
+Sea $f(x)=\dfrac{4-x^3}{x^3-1}$.
+\begin{enumerate}[label=\alph*)]
+  \item Un compañero afirma: \emph{``Cuando $x$ crece, $x^3$ está arriba y abajo, así que se cancela y el límite es 1''}. ¿Está de acuerdo? Escriba su respuesta \textbf{antes} de hacer cuentas.
+  \item Con la calculadora, complete: \quad $f(10)=$ \rule{2cm}{0.4pt} \quad $f(100)=$ \rule{2cm}{0.4pt} \quad $f(1000)=$ \rule{2cm}{0.4pt}
+  \item Explique con el álgebra por qué la tabla se comporta así.
+  \item ¿La gráfica de $f$ tiene asíntotas? ¿En qué valor de $x$ no está definida $f$ y qué pasa con la gráfica cerca de ese valor? Haga un bosquejo.
+  \item ¿Las representaciones dicen lo mismo? ¿Cambiaría su respuesta del literal a)?
+\end{enumerate}
+\end{enunciado}
+\instrucciones
+\espacio
+\newpage
+\espacio
+\begin{validacion}
+\small
+Compare lo que escribió en azul con lo que escribió en rojo.\\
+\textbf{1.} ¿Cuál es el límite? ¿Por qué está seguro?\\[2.6cm]
+\textbf{2.} ¿Qué parte hizo usted y qué parte le ayudó a hacer Gemini?
+\end{validacion}
+
+% ---------------------------------------------------------------------
+\newpage
+\begin{enunciado}{Tarea 3 --- Radianes, grados y un atajo sospechoso}
+\begin{enumerate}[label=\alph*)]
+  \item ¿A qué valor se acerca $\dfrac{\seno 3x+\seno 5x}{2x}$ cuando $x$ se acerca a 0? Decídalo usando al menos dos de estas representaciones: una tabla con la calculadora en \textbf{radianes}, una gráfica o el límite $\displaystyle\lim_{u\to0}\frac{\seno u}{u}=1$.
+  \item Repita la tabla con la calculadora en \textbf{grados}. ¿Qué cambia? ¿Por qué cree que pasa?
+  \item Un compañero escribió: \emph{``$\seno 3x+\seno 5x=\seno 8x$, entonces el límite es $\frac{8}{2}=4$''}. ¿Su razonamiento es válido? ¿Por qué cree que llegó a ese número?
+  \item ¿La tabla basta para estar seguro del valor del límite? Justifique.
+\end{enumerate}
+\end{enunciado}
+\instrucciones
+\espacio
+\newpage
+\espacio
+\begin{validacion}
+\small
+Compare lo que escribió en azul con lo que escribió en rojo.\\
+\textbf{1.} ¿Cuál es el límite? ¿Es válido el razonamiento del compañero? ¿Por qué está seguro?\\[2.6cm]
+\textbf{2.} ¿Qué parte hizo usted y qué parte le ayudó a hacer Gemini?
+\end{validacion}
+
+% ---------------------------------------------------------------------
+\newpage
+\begin{enunciado}{Tarea 4 --- ¿Dónde se puede tapar el hueco?}
+Sea $f(x)=\dfrac{x+2}{\sqrt{x^2+5}-3}$.
+\begin{enumerate}[label=\alph*)]
+  \item ¿Para qué valores de $x$ no está definida $f$?
+  \item ¿En cuál de esos valores se puede ``tapar el hueco'' asignándole un valor a $f$, para que la gráfica no tenga interrupción? ¿Qué valor? ¿Qué pasa en el otro? Justifique sus respuestas.
+  \item Invente una función que no esté definida en $x=0$, pero cuyo hueco se tape con el valor 5. Explique cómo sabe que funciona.
+\end{enumerate}
+\end{enunciado}
+\instrucciones
+\espacio
+\newpage
+\espacio
+\begin{validacion}
+\small
+Compare lo que escribió en azul con lo que escribió en rojo.\\
+\textbf{1.} ¿Dónde se tapa el hueco y con qué valor? ¿Qué pasa en el otro punto? ¿Por qué está seguro?\\[2.6cm]
+\textbf{2.} ¿Qué parte hizo usted y qué parte le ayudó a hacer Gemini?
+\end{validacion}
+
+\end{document}

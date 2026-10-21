@@ -31,7 +31,7 @@ Cada uno es un documento independiente: se abre el `.tex` y se compila con pdfla
 
 | Carpeta | Qué hay | Cuándo se usa |
 |---|---|---|
-| `01_secuencia/` | `secuencia_tareas` (criterios, orden, 4 tareas y análisis a priori) y `protocolo_sesion` (hoja del tutor) | En cada sesión de la secuencia |
+| `01_secuencia/` | `secuencia_tareas` (criterios, orden, 4 tareas y análisis a priori; es para el investigador), `hojas_estudiante` (lo que se imprime para el estudiante), `protocolo_sesion` (hoja del tutor) y `propuesta_pilotaje` (para presentar a la profesora Teresa Pontón) | En cada sesión de la secuencia |
 | `02_entrevista/` | `guia_entrevista_campo` (la que se lleva en la mano), `guia_entrevista_v4` (versión extendida para el anexo) y `guia_entrevista_v3` | Al final, con la muestra intensiva |
 | `03_cuestionarios/` | `cuestionario_inicial` y `cuestionario_final` | Primera y última sesión |
 | `04_etica/` | `consentimiento_informado_estudiantes` | Antes de empezar |
