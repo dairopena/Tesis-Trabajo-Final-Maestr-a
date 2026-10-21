@@ -62,8 +62,9 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
   4. Declarar en la metodología el uso de herramientas (QualCoder, Whisper local, codificador con IA local qwen2.5:3b) y de IA; la profesora lo permite si se declara. Ajustar el consentimiento solo si se van a pasar datos de estudiantes por IA externa.
 - **Pendiente:**
   - Antecedentes, marco conceptual y marco referencial.
-  - Enunciados de las 4 tareas de la secuencia (`[POR DISEÑAR]`): ya hay prototipos; falta reemplazarlos por problemas de los talleres de clase (Dairo debe conseguirlos) y pilotar.
-  - Cruce entrevista–secuencia: la tarea 1 de la entrevista repite contenidos de T2 y T3 (sen x/x y racional al infinito). Decidir con los directores si se cambian esos razonamientos o si la entrevista se declara de transferencia.
+  - Secuencia v2 (21-oct-2026) con problemas de los talleres (`docs/05_talleres/`, fuera de git): T1 Pontón 24.6, T2 Pontón 30.7, T3 Mosquera 8d, T4 Pontón 24.16 (+ ej. 31). Falta: pilotar, pedir autorización a las profesoras para usar sus ejercicios, confirmar los datos del taller de Mosquera y pasar los enunciados a la metodología (hoy dice `[POR DISEÑAR]`).
+  - Consentimiento: no autoriza el audio de las sesiones (solo el de la entrevista) y no menciona los cuestionarios. Corregir antes de implementar.
+  - Cruce entrevista–secuencia: la tarea 1 de la entrevista repite contenidos de T2 y T3. Recomendación dada: cambiar los razonamientos 1 y 2 por contenidos que no estén en la secuencia (propuestas con Pontón 24.17 y Mosquera 8h en la sección 6 de `secuencia_tareas`) y declarar como transferencia la forma de trabajar. Decide Marisol.
   - Guía de entrevista como anexo B.
   - Marcadores `[CONFIRMAR]`: periodo de implementación, instancia de ética, referencia del Estatuto Estudiantil.
   - Tesis de César Delgado.

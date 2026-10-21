@@ -1,7 +1,8 @@
 % =====================================================================
 %  SECUENCIA DE TAREAS: CRITERIOS DE SELECCIÓN, ORDEN Y ANÁLISIS A PRIORI
-%  Versión 1 (21-oct-2026). Los problemas son PROTOTIPOS: se reemplazan
-%  por problemas de los talleres de clase que cumplan el mismo descriptor.
+%  Versión 2 (21-oct-2026). Problemas tomados de los talleres de clase de
+%  Teresa Pontón Ladino (ej. 24 y 30) y Mónica Mosquera (ej. 8).
+%  Los talleres originales están en docs/05_talleres/ (fuera de git).
 %  Compilar con: pdflatex secuencia_tareas.tex (dos veces)
 % =====================================================================
 \documentclass[11pt,letterpaper]{article}
@@ -30,17 +31,19 @@
 
 \DeclareMathOperator{\seno}{sen}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Y}{>{\centering\arraybackslash}p{0.42cm}}
 \setlist{itemsep=2pt,topsep=4pt}
 \setstretch{1.1}
 
 \newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
 \newtcolorbox{tarea}[1]{colback=ambar,colframe=orange!70!black,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
 \newtcolorbox{aviso}{colback=red!4,colframe=red!60!black,arc=2pt,breakable}
+\newtcolorbox{origen}{colback=white,colframe=unalverde!50,boxrule=0.5pt,leftrule=3pt,arc=0pt,breakable,fontupper=\small}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Secuencia de tareas --- criterios, orden y análisis a priori}
-\fancyhead[R]{\small Versión 1 · 21-oct-2026}
+\fancyhead[R]{\small Versión 2 · 21-oct-2026}
 \fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -54,13 +57,15 @@
 \medskip
 
 \begin{aviso}
-\textbf{Estado de este documento.} Los cuatro problemas que aparecen aquí son \textbf{prototipos}. Según la orientación del 19 de octubre de 2026, los problemas de la secuencia se toman de los talleres trabajados en las clases de Cálculo Diferencial y Matemáticas Básicas. Cada tarea trae un descriptor (\emph{qué buscar en los talleres}); el prototipo se reemplaza por el problema del taller que cumpla ese descriptor y pase la lista de cotejo de la sección~\ref{sec:cotejo}. Mientras tanto, los prototipos sirven para el pilotaje.
+\textbf{Estado de este documento.} Los cuatro problemas se tomaron de los talleres de Cálculo Diferencial de 2026-2 de las profesoras Teresa Pontón Ladino (ejercicios 24 y 30) y Mónica Mosquera (ejercicio 8). Cada tarea indica qué viene del taller y qué se agregó en el diseño. La sección~\ref{sec:cotejo} muestra todos los ejercicios considerados y por qué se eligieron o se descartaron. Falta el pilotaje.
 \end{aviso}
 
 % =====================================================================
 \section{Problema y tarea: qué se selecciona y qué se diseña}
 
 Un ejercicio de un taller y una tarea de la secuencia no son lo mismo. El ejercicio es el enunciado matemático. La tarea es ese enunciado más las condiciones en que el estudiante lo trabaja: la consigna, lo que se le pide escribir, los momentos con y sin IA y el papel que cumple Gemini en cada uno. Smith y Stein (1998) lo plantean en esos términos: el docente selecciona tareas, pero también las crea o las modifica, y una misma situación matemática puede quedar en un nivel bajo o alto de demanda cognitiva según cómo se formule.
+
+Los talleres revisados lo muestran. Sus consignas dicen ``Halle los siguientes límites mostrando todo el procedimiento''. Así formulados, los ejercicios piden ejecutar una técnica conocida, lo que Smith y Stein (1998) llaman \emph{procedimientos sin conexiones}. El problema matemático es bueno; la consigna lo deja en un nivel bajo. Por eso la secuencia conserva el problema y cambia lo que se pide hacer con él.
 
 De ahí la decisión de este trabajo:
 
@@ -120,17 +125,19 @@ La hipótesis es que el estudiante pasa de \emph{juzgar razonamientos ajenos} a 
 
 \begin{center}\small
 \renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{}p{1.1cm}p{3.3cm}LL@{}}
+\begin{tabularx}{\linewidth}{@{}p{1cm}p{3.6cm}LL@{}}
 \toprule
-\textbf{Tarea} & \textbf{Contenido} & \textbf{Apoyo que ofrece} & \textbf{Lo que ya no se le da} \\
+\textbf{Tarea} & \textbf{Problema del taller} & \textbf{Apoyo que ofrece} & \textbf{Lo que ya no se le da} \\
 \midrule
-T1 & Indeterminación $0/0$ en un cociente de polinomios & El razonamiento ya está escrito; el estudiante solo lo juzga & --- \\
-T2 & Límite al infinito de una función racional & Las representaciones están indicadas; el estudiante las coordina & El razonamiento hecho \\
-T3 & $\lim_{x\to0}\frac{\seno x}{x}$ & Se sugieren representaciones posibles; el estudiante las produce & Cuáles representaciones usar \\
-T4 & Discontinuidad removible con radicales & Ninguno: el estudiante elige la estrategia y crea un ejemplo & El camino \\
+T1 & $\lim_{x\to3}\frac{x^4-81}{x^2-x-6}$ (Pontón, ej. 24.6) & El razonamiento ya está escrito; el estudiante solo lo juzga & --- \\
+T2 & $\lim_{x\to\infty}\frac{4-x^3}{x^3-1}$ (Pontón, ej. 30.7) & Las representaciones están indicadas; el estudiante las coordina & El razonamiento hecho \\
+T3 & $\lim_{x\to0}\frac{\seno 3x+\seno 5x}{2x}$ (Mosquera, ej. 8d) & Se sugieren representaciones posibles; el estudiante las produce & Cuáles representaciones usar \\
+T4 & $\frac{x+2}{\sqrt{x^2+5}-3}$ en $x=\pm2$ (Pontón, ej. 24.16) & Ninguno: el estudiante decide, elige la estrategia y crea un ejemplo & El camino \\
 \bottomrule
 \end{tabularx}
 \end{center}
+
+El orden respeta también el del curso: el ejercicio 24 del taller (límites en un punto) va antes que el 30 (límites al infinito), y los límites trigonométricos vienen después. T4 vuelve al ejercicio 24, pero lo combina con lo que pide el ejercicio 31 del mismo taller (dominio, continuidad y existencia del límite), de modo que la última tarea integra lo anterior.
 
 Los dos tipos de tarea de Vandebrouck et al. (2021) quedan en los extremos: T1 es una tarea de \emph{evaluar razonamientos ajenos} y T4 una de \emph{problema sin procedimiento a la vista}. T2 y T3 hacen el tránsito.
 
@@ -144,19 +151,25 @@ En todas, el momento 1 se trabaja con esfero azul o negro, el momento 2 con esfe
 % ---------------------------------------------------------------------
 \subsection*{Tarea 1 --- ¿Quién tiene razón?}
 
-\textbf{Qué buscar en los talleres:} un límite de un cociente de polinomios que dé $0/0$ al reemplazar y se resuelva factorizando. Se convierte en tarea escribiendo tres razonamientos sobre él: uno correcto y dos con errores frecuentes.
+\begin{origen}
+\textbf{Del taller:} Pontón, ejercicio 24.6: $\lim_{x\to3}\frac{x^4-81}{x^2-x-6}$, con la indicación de especificar el dominio antes de hallar el límite.\\
+\textbf{Del diseño:} los cuatro razonamientos (uno correcto y tres con errores frecuentes), la consigna de juzgarlos y la pregunta por el dominio dentro del razonamiento.
+\end{origen}
 
-\begin{tarea}{T1 --- Prototipo}
-Tres estudiantes calcularon $\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$.
+\begin{tarea}{T1}
+Cuatro estudiantes calcularon $\displaystyle\lim_{x\to 3}\frac{x^4-81}{x^2-x-6}$.
 
-\textbf{A.} \emph{``Reemplazo $x=1$ y da $\frac{0}{0}$. Entonces el límite no existe.''}
+\textbf{A.} \emph{``Reemplazo $x=3$: arriba da $81-81=0$ y abajo $9-3-6=0$. Da $\frac{0}{0}$, así que el límite no existe.''}
 
-\textbf{B.} \emph{``Factorizo: $\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}=x+1$. Puedo cancelar porque $x$ se acerca a 1 pero no vale 1. El límite es 2.''}
+\textbf{B.} \emph{``Factorizo: $x^4-81=(x^2-9)^2$ y $x^2-x-6=(x-3)(x+2)$. Queda $\frac{(x-3)^2(x+3)^2}{(x-3)(x+2)}=\frac{(x-3)(x+3)^2}{x+2}$, y con $x=3$ el límite es 0.''}
 
-\textbf{C.} \emph{``Hice una tabla: con $x=0{,}9$ da $1{,}9$; con $x=0{,}99$ da $1{,}99$; con $x=0{,}999$ da $1{,}999$. El límite es $1{,}999$.''}
+\textbf{C.} \emph{``$x^4-81=(x^2-9)(x^2+9)=(x-3)(x+3)(x^2+9)$ y $x^2-x-6=(x-3)(x+2)$. Como $x$ se acerca a 3 pero no vale 3, cancelo $x-3$ y queda $\frac{(x+3)(x^2+9)}{x+2}$, que se acerca a $\frac{6\cdot18}{5}=\frac{108}{5}$.''}
+
+\textbf{D.} \emph{``Con la calculadora: con $x=2{,}9$ da $20{,}96$ y con $x=2{,}99$ da $21{,}54$. El límite es $21{,}54$.''}
 
 \begin{enumerate}[label=\alph*)]
   \item Escriba al lado de cada razonamiento si está bien o mal, y por qué.
+  \item ¿Cuál es el dominio de la función? ¿Por qué el razonamiento C puede cancelar $x-3$?
   \item Escríbale al autor del razonamiento que considere más equivocado un argumento que lo convenza.
 \end{enumerate}
 \end{tarea}
@@ -165,110 +178,134 @@ Tres estudiantes calcularon $\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$.
 
 \textbf{Análisis a priori.}
 \begin{itemize}
-  \item \emph{Correcto:} B. A confunde ``indeterminado'' con ``no existe''. C toma el último valor de la tabla como si fuera el límite.
-  \item \emph{Estrategias esperadas:} repetir el cálculo por su cuenta y comparar; juzgar por la forma (``B usó la fórmula''); juzgar por el resultado.
-  \item \emph{Errores esperados:} aceptar A, porque es lo que muchos hacen en clase; aceptar C, porque ``la tabla no miente'', lo que Job y Schneider (2014) describen como positivismo empírico, es decir, tomar la evidencia numérica como suficiente; aprobar B sin entender por qué se puede cancelar.
-  \item \emph{Qué observar:} con qué criterio valida el estudiante: un argumento, un cálculo, una gráfica o la autoridad de quien lo dice.
+  \item \emph{Correcto:} C; el límite es $\frac{108}{5}=21{,}6$. A confunde ``indeterminado'' con ``no existe''. B usa $(x^2-9)^2$, que es $x^4-18x^2+81$ y no $x^4-81$. D toma un valor de la tabla como si fuera el límite. Dominio: todos los reales excepto $x=3$ y $x=-2$.
+  \item \emph{Estrategias esperadas:} repetir la factorización y comparar; desarrollar $(x^2-9)^2$ para comprobar B; extender la tabla de D con $x=2{,}999$ o con valores mayores que 3; juzgar por la forma (``C hizo más pasos'').
+  \item \emph{Errores esperados:} aceptar A, porque es lo que muchos hacen en clase; aceptar B, porque el error está en el álgebra previa (uno de los más frecuentes en la tutoría); aceptar D, porque ``la calculadora no se equivoca'', lo que Job y Schneider (2014) describen como positivismo empírico; aprobar C sin poder explicar por qué se puede cancelar.
+  \item \emph{Qué observar:} con qué criterio valida el estudiante (un argumento, un cálculo, una gráfica o la autoridad de quien lo dice) y si detecta el error de B por su cuenta o solo con Gemini.
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\subsection*{Tarea 2 --- Lo que dicen tres representaciones}
+\subsection*{Tarea 2 --- Lo que dicen las representaciones}
 
-\textbf{Qué buscar en los talleres:} un límite al infinito de un cociente de polinomios del mismo grado. Se convierte en tarea pidiendo que la tabla, el álgebra y la gráfica digan lo mismo, y agregando una afirmación equivocada que hay que discutir.
+\begin{origen}
+\textbf{Del taller:} Pontón, ejercicio 30.7: $\lim_{x\to\infty}\frac{4-x^3}{x^3-1}$, en la sección ``Límites al infinito (¿asíntotas?)'', con la indicación de usar $\lim_{x\to\infty}\frac{1}{x^n}=0$.\\
+\textbf{Del diseño:} la afirmación del compañero, la tabla, la pregunta por las asíntotas y la comparación entre representaciones.
+\end{origen}
 
-\begin{tarea}{T2 --- Prototipo}
-Sea $f(x)=\dfrac{3x^2-x}{x^2+4}$.
+\begin{tarea}{T2}
+Sea $f(x)=\dfrac{4-x^3}{x^3-1}$.
 \begin{enumerate}[label=\alph*)]
-  \item Un compañero afirma: \emph{``Cuando $x$ crece, el numerador y el denominador crecen sin límite, así que $f(x)$ también crece sin límite''}. ¿Está de acuerdo? Escriba su respuesta antes de hacer cuentas.
+  \item Un compañero afirma: \emph{``Cuando $x$ crece, $x^3$ está arriba y abajo, así que se cancela y el límite es 1''}. ¿Está de acuerdo? Escriba su respuesta antes de hacer cuentas.
   \item Con la calculadora, complete: $f(10)$, $f(100)$, $f(1000)$.
   \item Explique con el álgebra por qué la tabla se comporta así.
-  \item Dibuje cómo se ve la gráfica de $f$ para valores grandes de $x$.
-  \item ¿Las tres representaciones dicen lo mismo? ¿Cambiaría su respuesta del literal a)?
+  \item El taller pregunta ``¿asíntotas?''. ¿La gráfica de $f$ tiene asíntotas? ¿En qué valor de $x$ no está definida $f$ y qué pasa con la gráfica cerca de ese valor? Haga un bosquejo.
+  \item ¿Las representaciones dicen lo mismo? ¿Cambiaría su respuesta del literal a)?
 \end{enumerate}
 \end{tarea}
 
-\textbf{Momento 2 (Gemini, explicar).} El estudiante pide a Gemini que le explique la parte que no pudo justificar (casi siempre el literal c) y luego la reescribe con sus palabras.
+\textbf{Momento 2 (Gemini, explicar).} El estudiante pide a Gemini que le explique la parte que no pudo justificar (casi siempre el literal c o el d) y luego la reescribe con sus palabras.
 
 \textbf{Análisis a priori.}
 \begin{itemize}
-  \item \emph{Respuesta:} el límite es 3. La tabla da aproximadamente $2{,}79$; $2{,}99$; $2{,}999$. Al dividir numerador y denominador entre $x^2$ queda $\frac{3-1/x}{1+4/x^2}$, que se acerca a $\frac{3}{1}$.
-  \item \emph{Estrategias esperadas:} aplicar la regla de ``los grados iguales'' sin justificarla; calcular la tabla y extrapolar; dividir entre $x^2$.
-  \item \emph{Errores esperados:} aceptar la afirmación del compañero (``infinito entre infinito es infinito'' o ``es 1''); errores de álgebra al dividir entre $x^2$; dibujar una gráfica que corta la asíntota y creer que eso es imposible.
-  \item \emph{Qué observar:} si el estudiante detecta y resuelve el conflicto entre su respuesta del literal a) y la tabla, o deja las dos sin relacionar.
+  \item \emph{Respuesta:} el límite es $-1$. La tabla da aproximadamente $-0{,}997$; $-0{,}999997$; $-0{,}999999997$. Al dividir entre $x^3$ queda $\frac{4/x^3-1}{1-1/x^3}\to\frac{-1}{1}$. Como $f(x)=-1+\frac{3}{x^3-1}$, la gráfica se acerca a $y=-1$ por encima cuando $x\to+\infty$. Asíntota vertical en $x=1$: $f\to+\infty$ por la derecha y $f\to-\infty$ por la izquierda.
+  \item \emph{Estrategias esperadas:} la regla de ``los grados iguales'' sin justificarla; la tabla; dividir entre $x^3$; graficar en GeoGebra.
+  \item \emph{Errores esperados:} aceptar la afirmación del compañero y responder 1 (se pierde el signo del coeficiente principal); ``infinito entre infinito''; leer $-0{,}999$ como $-0{,}9$ o como 1; no encontrar la asíntota vertical o creer que la gráfica no puede acercarse a la asíntota horizontal por encima.
+  \item \emph{Qué observar:} si el estudiante resuelve el conflicto entre su respuesta del literal a) y la tabla, o deja las dos sin relacionar.
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\subsection*{Tarea 3 --- Radianes y grados}
+\subsection*{Tarea 3 --- Radianes, grados y un atajo sospechoso}
 
-\textbf{Qué buscar en los talleres:} el límite $\lim_{x\to0}\frac{\seno x}{x}$ o uno que se reduzca a él. Se convierte en tarea pidiendo que el estudiante produzca sus propias representaciones y comparando radianes con grados.
+\begin{origen}
+\textbf{Del taller:} Mosquera, ejercicio 8d: $\lim_{x\to0}\frac{\seno 3x+\seno 5x}{2x}$. El ejercicio 7 del mismo taller trabaja identidades trigonométricas.\\
+\textbf{Del diseño:} la elección de representaciones, la comparación entre radianes y grados, el razonamiento del compañero y la pregunta por la tabla.
+\end{origen}
 
-\begin{tarea}{T3 --- Prototipo}
+\begin{tarea}{T3}
 \begin{enumerate}[label=\alph*)]
-  \item ¿A qué valor se acerca $\dfrac{\seno x}{x}$ cuando $x$ se acerca a 0? Decídalo usando al menos dos de estas representaciones: una tabla hecha con la calculadora en radianes, una gráfica o el círculo unitario.
+  \item ¿A qué valor se acerca $\dfrac{\seno 3x+\seno 5x}{2x}$ cuando $x$ se acerca a 0? Decídalo usando al menos dos de estas representaciones: una tabla con la calculadora en radianes, una gráfica o el límite $\lim_{u\to0}\frac{\seno u}{u}=1$.
   \item Repita la tabla con la calculadora en grados. ¿Qué cambia? ¿Por qué cree que pasa?
+  \item Un compañero escribió: \emph{``$\seno 3x+\seno 5x=\seno 8x$, entonces el límite es $\frac{8}{2}=4$''}. ¿Su razonamiento es válido? ¿Por qué cree que llegó a ese número?
   \item ¿La tabla basta para estar seguro del valor del límite? Justifique.
 \end{enumerate}
 \end{tarea}
 
-\textbf{Momento 2 (Gemini, verificar).} El estudiante presenta a Gemini su explicación de por qué cambia el valor en grados y le pide que le señale si hay algo incorrecto.
+\textbf{Momento 2 (Gemini, verificar).} El estudiante presenta a Gemini su explicación del literal b) o del c) y le pide que le señale si hay algo incorrecto.
 
 \textbf{Análisis a priori.}
 \begin{itemize}
-  \item \emph{Respuesta:} en radianes, el cociente se acerca a 1. En grados se acerca a $\frac{\pi}{180}\approx0{,}0175$, porque $x$ grados equivalen a $\frac{\pi x}{180}$ radianes.
-  \item \emph{Estrategias esperadas:} la tabla numérica (la más frecuente); la gráfica en GeoGebra; el argumento del círculo unitario, poco probable sin ayuda.
-  \item \emph{Errores esperados:} ``como $\seno 0=0$, el límite es 0''; ``es $\frac{0}{0}$, no existe''; no notar que la calculadora está en grados; dar la tabla como prueba suficiente (Job y Schneider, 2014).
-  \item \emph{Qué observar:} si el estudiante conecta el resultado en grados con la conversión entre unidades (la trigonometría heredada del colegio) o lo atribuye a un error de la calculadora.
+  \item \emph{Respuesta:} el límite es 4. En radianes la tabla da aproximadamente $3{,}875$ ($x=0{,}1$), $3{,}9987$ ($x=0{,}01$) y $3{,}99999$ ($x=0{,}001$). Con el límite fundamental: $\frac32\cdot\frac{\seno 3x}{3x}+\frac52\cdot\frac{\seno 5x}{5x}\to\frac32+\frac52=4$. En grados el cociente se acerca a $\frac{4\pi}{180}\approx0{,}0698$.
+  \item \emph{Sobre el literal c):} $\seno 3x+\seno 5x\neq\seno 8x$, porque el seno no es lineal; la identidad correcta es $\seno 3x+\seno 5x=2\seno 4x\cos x$ (ejercicio 7 del taller). El compañero llega a 4 por una coincidencia: cerca de 0, $\seno u\approx u$, y entonces ambas expresiones se comportan como $8x$. Es un caso de respuesta correcta con razonamiento inválido.
+  \item \emph{Estrategias esperadas:} la tabla numérica (la más frecuente); la gráfica en GeoGebra; separar la fracción y usar el límite fundamental; aplicar el límite fundamental sin ajustar el argumento (\,$\frac{\seno 3x}{x}\to1$\,).
+  \item \emph{Errores esperados:} $\frac{\seno 3x}{x}\to1$ en lugar de 3; ``como $\seno 0=0$, el límite es 0''; ``es $\frac00$, no existe''; aceptar el atajo del literal c) porque da el número correcto; no notar que la calculadora está en grados; dar la tabla como prueba suficiente (Job y Schneider, 2014).
+  \item \emph{Qué observar:} si el estudiante valida un razonamiento por su resultado o por sus pasos (literal c), y si conecta el resultado en grados con la conversión entre unidades, la trigonometría heredada del colegio.
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\subsection*{Tarea 4 --- Tapar el hueco}
+\subsection*{Tarea 4 --- ¿Dónde se puede tapar el hueco?}
 
-\textbf{Qué buscar en los talleres:} un límite con radicales que dé $0/0$ (se resuelve racionalizando) o un ejercicio de continuidad. Se convierte en tarea quitando la indicación de qué hacer y pidiendo que el estudiante cree un ejemplo propio.
+\begin{origen}
+\textbf{Del taller:} Pontón, ejercicio 24.16: $\lim_{x\to-2}\frac{x+2}{\sqrt{x^2+5}-3}$, con la indicación de especificar el dominio; y el ejercicio 31 del mismo taller (dominio, continuidad y existencia del límite).\\
+\textbf{Del diseño:} quitar el punto al que tiende $x$ (el estudiante debe encontrar los dos puntos críticos), la pregunta por la continuidad en cada uno y la creación de un ejemplo propio.
+\end{origen}
 
-\begin{tarea}{T4 --- Prototipo}
-La función $f(x)=\dfrac{\sqrt{x+4}-2}{x}$ no está definida en $x=0$.
+\begin{tarea}{T4}
+Sea $f(x)=\dfrac{x+2}{\sqrt{x^2+5}-3}$.
 \begin{enumerate}[label=\alph*)]
-  \item ¿Se puede asignar un valor a $f(0)$ para que la gráfica de $f$ no tenga un ``hueco'' en $x=0$? Si se puede, ¿qué valor? Justifique su respuesta.
-  \item Invente otra función que tampoco esté definida en $x=0$, pero cuyo hueco se tape con el valor 5. Explique cómo sabe que funciona.
+  \item ¿Para qué valores de $x$ no está definida $f$?
+  \item ¿En cuál de esos valores se puede ``tapar el hueco'' asignándole un valor a $f$, para que la gráfica no tenga interrupción? ¿Qué valor? ¿Qué pasa en el otro? Justifique sus respuestas.
+  \item Invente una función que no esté definida en $x=0$, pero cuyo hueco se tape con el valor 5. Explique cómo sabe que funciona.
 \end{enumerate}
 \end{tarea}
 
-\textbf{Momento 2 (Gemini, verificar).} Solo después de escribir su justificación, el estudiante le muestra a Gemini la función que inventó y le pide que la revise.
+\textbf{Momento 2 (Gemini, verificar).} Solo después de escribir su justificación, el estudiante le muestra a Gemini su análisis del literal b) o la función que inventó y le pide que los revise.
 
 \textbf{Análisis a priori.}
 \begin{itemize}
-  \item \emph{Respuesta:} sí; $f(0)=\frac14$, porque al racionalizar queda $\frac{1}{\sqrt{x+4}+2}$, que se acerca a $\frac14$. Para el literal b) sirve, por ejemplo, $\frac{x^2+5x}{x}$.
-  \item \emph{Estrategias esperadas:} racionalizar; hacer una tabla; graficar en GeoGebra; para el literal b), copiar la forma de la T1 o de la T4 y ajustar el número.
-  \item \emph{Errores esperados:} ``no se puede, porque no está definida''; errores al racionalizar; confundir el valor del límite con el valor de la función; en el literal b), proponer una función que sí está definida en 0.
-  \item \emph{Qué observar:} qué estrategia elige el estudiante sin indicación, si la justifica y si el literal b) muestra que entendió la relación entre límite y continuidad o solo copió una forma.
+  \item \emph{Respuesta:} $f$ no está definida en $x=2$ ni en $x=-2$, porque $\sqrt{x^2+5}=3$ cuando $x^2=4$. En $x=-2$ el hueco se tapa: al racionalizar queda $\frac{\sqrt{x^2+5}+3}{x-2}$, que se acerca a $\frac{6}{-4}=-\frac32$. En $x=2$ no se tapa: el numerador se acerca a 4 y el denominador a 0, así que $f\to-\infty$ por la izquierda y $f\to+\infty$ por la derecha (asíntota vertical). Para el literal c) sirve, por ejemplo, $\frac{x^2+5x}{x}$.
+  \item \emph{Estrategias esperadas:} igualar el denominador a cero y despejar; racionalizar; hacer una tabla cerca de cada punto; graficar en GeoGebra; para el literal c), copiar la forma de T1 o de T4 y ajustar el número.
+  \item \emph{Errores esperados:} encontrar solo uno de los dos puntos (olvidar la raíz negativa); ``no se puede, porque no está definida''; racionalizar en $x=2$, obtener $\frac{4}{0}$ y concluir ``no existe'' sin analizar los lados; errores al racionalizar; confundir el valor del límite con el valor de la función; en el literal c), proponer una función que sí está definida en 0.
+  \item \emph{Qué observar:} qué estrategia elige el estudiante sin indicación, si distingue los dos tipos de discontinuidad y si el literal c) muestra que entendió la relación entre límite y continuidad o solo copió una forma.
 \end{itemize}
 
 % =====================================================================
-\section{Lista de cotejo para cada problema candidato}
+\section{Ejercicios considerados y por qué se eligieron o no}
 \label{sec:cotejo}
 
-Llenar una fila por cada problema de los talleres que se considere. Solo entra a la secuencia el que tenga los seis criterios en ``sí''.
+``S'' significa que cumple el criterio y ``N'' que no. C1 se evalúa con la consigna rediseñada: con la consigna original (``halle el límite mostrando el procedimiento''), ningún ejercicio de los talleres cumple C1.
 
-\begin{center}\small
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{|p{2.6cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|p{0.45cm}|L|}
+\begin{center}\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{|p{2.5cm}|Y|Y|Y|Y|Y|Y|L|}
 \hline
-\textbf{Problema (taller y n.º)} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{Tarea y cambios en la consigna} \\
-\hline
- & & & & & & & \\ \hline
- & & & & & & & \\ \hline
- & & & & & & & \\ \hline
- & & & & & & & \\ \hline
- & & & & & & & \\ \hline
- & & & & & & & \\ \hline
+\textbf{Ejercicio} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{Decisión} \\ \hline
+Pontón 24.6 & S & S & S & S & S & S & \textbf{T1.} El error de B, $(x^2-9)^2$, es de álgebra previa, el más frecuente en la tutoría. \\ \hline
+Pontón 24.9 & S & N & S & S & S & S & Descartado: una sola factorización directa, pocos errores que juzgar. \\ \hline
+Pontón 30.7 & S & S & S & S & S & S & \textbf{T2.} El signo del coeficiente principal genera el error ``el límite es 1''; tiene asíntota vertical en $x=1$. \\ \hline
+Pontón 30.4 & S & S & S & S & S & S & Alternativa a T2 si 30.7 no funciona en el pilotaje (límite $-\frac25$). \\ \hline
+Pontón 30.14 & S & S & S & N & S & S & Descartado: las asíntotas verticales están en raíces irracionales, lo que desvía la tarea hacia el cálculo. \\ \hline
+Mosquera 8d & S & S & S & S & S & S & \textbf{T3.} Exige ajustar el límite fundamental y permite el ``atajo'' $\seno 8x$, de respuesta correcta y razonamiento inválido. \\ \hline
+Mosquera 8a & S & S & S & S & S & S & Alternativa a T3; mezcla además $\frac{1-\cos x}{x}$. \\ \hline
+Pontón 24.16 & S & S & S & S & S & S & \textbf{T4.} Sin el punto dado, tiene dos puntos críticos de naturaleza distinta (removible y asíntota vertical). \\ \hline
+Pontón 24.20 & S & S & S & S & S & S & Alternativa más exigente a T4 (doble racionalización). \\ \hline
+Pontón 24.17 & S & S & S & S & S & S & No va en la secuencia: no es $\frac00$ sino $\frac30$. Se propone para la entrevista (sección~\ref{sec:pendientes}). \\ \hline
+Mosquera 8h & S & S & N & S & S & S & No va en la secuencia: con $x\to0$ no hay indeterminación ($\frac{\seno 1}{3}$). Posible errata del taller ($x\to1$). Se propone para la entrevista. \\ \hline
+Mosquera 7 & N & N & N & N & S & N & No es un ejercicio de límites. Sirve de apoyo para el literal c) de T3. \\ \hline
+Pontón 31 & --- & --- & --- & --- & S & --- & No se usa como tarea; sus exigencias (dominio, continuidad, límite) se integran en T4. \\ \hline
 \end{tabularx}
 \end{center}
 
 \section{Pendientes}
+\label{sec:pendientes}
 
 \begin{itemize}
-  \item Recoger los talleres de Cálculo Diferencial y Matemáticas Básicas de 2026-2 y aplicar la lista de cotejo.
-  \item \textbf{Cruce con la entrevista:} la tarea 1 de la entrevista (\emph{Tres razonamientos sobre límites}) incluye un razonamiento sobre $\lim_{x\to0}\frac{\seno x}{x}$ y otro sobre un límite al infinito de una función racional, los mismos contenidos de T3 y T2. Hay dos salidas: cambiar esos dos razonamientos de la entrevista, o declarar que la entrevista evalúa la transferencia a una tarea nueva sobre un contenido ya trabajado. Decidir con los directores.
+  \item \textbf{Autorización de las profesoras.} Los ejercicios vienen de material de clase no publicado. Antes de incluirlos en la tesis, pedir autorización a las profesoras Pontón y Mosquera y citarlas.
+  \item \textbf{Cruce con la entrevista.} La tarea 1 de la entrevista (\emph{Tres razonamientos sobre límites}) incluye un razonamiento sobre $\lim_{x\to0}\frac{\seno x}{x}$ (contenido de T3) y otro sobre un límite racional al infinito (contenido de T2). Propuesta para decidir con los directores: reemplazarlos por razonamientos sobre contenidos que la secuencia no trabaja, por ejemplo:
+  \begin{itemize}
+    \item un límite que no es $\frac00$ (Pontón 24.17): \emph{``Reemplazo $x=1$ en $\frac{6x^2-x-2}{x^2+x-2}$ y da $\frac30$; como no es $\frac00$, el límite es 0''} (el límite cuando $x\to1^-$ es $-\infty$);
+    \item un límite que no requiere técnica (Mosquera 8h): \emph{``Factorizo $x^2+2x-3=(x-1)(x+3)$ y uso $\frac{\seno u}{u}\to1$: $\lim_{x\to0}\frac{\seno(x-1)}{x^2+2x-3}=\frac14$''} (con $x\to0$ basta reemplazar: $\frac{\seno 1}{3}\approx0{,}28$).
+  \end{itemize}
+  Los dos detectan el razonamiento imitativo, es decir, aplicar una técnica sin mirar si hace falta. Como vienen de los talleres, conviene confirmar que no se trabajaron en clase con los participantes.
   \item Pilotar las cuatro tareas con uno o dos estudiantes que no participen en el estudio, y ajustar tiempos y consignas.
 \end{itemize}
 
@@ -285,6 +322,8 @@ Llenar una fila por cada problema de los talleres que se considere. Solo entra a
 \item Lithner, J. (2004). Mathematical reasoning in calculus textbook exercises. \emph{The Journal of Mathematical Behavior, 23}(4), 405--427.
 \item Lithner, J. (2008). A research framework for creative and imitative reasoning. \emph{Educational Studies in Mathematics, 67}(3), 255--276. \url{https://doi.org/10.1007/s10649-007-9104-2}
 \item Moreno-Armella, L., y Hegedus, S. J. (2009). Co-action with digital technologies. \emph{ZDM Mathematics Education, 41}(4), 505--519. \url{https://doi.org/10.1007/s11858-009-0200-x}
+\item Mosquera, M. (2026). \emph{Taller de Cálculo Diferencial} [Material de clase no publicado, ejercicios 7 y 8]. Universidad Nacional de Colombia, sede Palmira. \textbf{[CONFIRMAR: nombre completo, título del taller y semestre]}
+\item Pontón Ladino, T. (2026). \emph{Taller Módulo 1. Cálculo Diferencial 2026\_02} [Material de clase no publicado, ejercicios 24, 30 y 31]. Universidad Nacional de Colombia, sede Palmira.
 \item Simon, M. A. (1995). Reconstructing mathematics pedagogy from a constructivist perspective. \emph{Journal for Research in Mathematics Education, 26}(2), 114--145. \url{https://doi.org/10.5951/jresematheduc.26.2.0114}
 \item Smith, M. S., y Stein, M. K. (1998). Selecting and creating mathematical tasks: From research to practice. \emph{Mathematics Teaching in the Middle School, 3}(5), 344--350. \url{https://doi.org/10.5951/MTMS.3.5.0344}
 \item Stein, M. K., Grover, B. W., y Henningsen, M. (1996). Building student capacity for mathematical thinking and reasoning: An analysis of mathematical tasks used in reform classrooms. \emph{American Educational Research Journal, 33}(2), 455--488. \url{https://doi.org/10.3102/00028312033002455}
