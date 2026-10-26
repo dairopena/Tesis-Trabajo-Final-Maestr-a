@@ -1,0 +1,320 @@
+% =====================================================================
+%  GUÍA DE ENTREVISTA BASADA EN TAREAS (instrumento principal)
+%  Versión 5 (25-oct-2026). Reemplaza la guía v3, la v4, la guía de campo
+%  y el protocolo de sesión, que quedan en archivo/instrumentos_anteriores/.
+%  Las tareas T1 a T4 y su análisis a priori están en
+%  instrumentos/01_secuencia/secuencia_tareas.tex.
+%  Compilar con: pdflatex guia_entrevista_tareas.tex (dos veces)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2cm,headsep=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\DeclareMathOperator{\seno}{sen}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlist{itemsep=2pt,topsep=3pt}
+\setstretch{1.0}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+% Lo que el investigador lee en voz alta
+\newenvironment{guion}{\begin{quote}\itshape}{\end{quote}}
+% Pregunta: \p{código}{pregunta}{sondeo}
+\newcommand{\p}[3]{\textbf{#1.}~#2%
+  \if\relax\detokenize{#3}\relax\else\\\hspace*{1.4em}{\small Sondeo: #3}\fi\par}
+\newcommand{\cas}{$\square$}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Guía de entrevista basada en tareas}
+\fancyhead[R]{\small Código del estudiante: \rule{1.8cm}{0.4pt}}
+\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+{\Large\bfseries Guía de entrevista basada en tareas\par}
+\smallskip
+{\small Resolución de problemas de cálculo diferencial sin IA y con Gemini · Tutoría personalizada GEA, UNAL sede Palmira · Versión 5, 25 de octubre de 2026\par}
+
+% =====================================================================
+\section*{1. Qué es esta entrevista}
+
+Una hoja de respuestas muestra lo que el estudiante escribió, pero no por qué lo escribió. En la tarea 3, por ejemplo, un razonamiento inválido llega al número correcto, y en el papel los dos se ven igual. Por eso el instrumento principal de este trabajo es una entrevista: el estudiante resuelve una tarea pensando en voz alta y el investigador le hace preguntas.
+
+Goldin (2000) llama a este formato \emph{entrevista basada en tareas}. Las tareas se preparan de antemano, las preguntas siguen un guion y las ayudas van de la menos a la más directiva. El guion es fijo en lo esencial, pero los sondeos retoman lo que el estudiante va diciendo. De ahí lo de semiestructurada. Lo que interesa es el proceso, no si la respuesta es correcta.
+
+Las cuatro tareas de la secuencia (T1 a T4) son las tareas de la entrevista. Se reparten en tres encuentros, y en cada tarea se trabaja en tres momentos: sin IA, con Gemini y validación. El orden no es negociable. Si no hay registro de lo que el estudiante hace solo, no hay manera de saber qué aportó Gemini.
+
+Estudios recientes con IA generativa combinan los mismos registros. Urhan et al.\ (2026) pidieron a dos universitarios razonar sobre concavidad y recta tangente primero solos y después con ChatGPT. Noster et al.\ (2024) analizaron la conversación con ChatGPT junto con una entrevista posterior a las tareas. Zhuang (2025) siguió durante un semestre a dos estudiantes de cálculo con sus tareas escritas, cuestionarios e historiales de chat. Cada encuentro de esta entrevista deja cuatro registros:
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}Lp{3.4cm}@{}}
+\toprule
+\textbf{Registro} & \textbf{Qué muestra} & \textbf{Archivo} \\
+\midrule
+Hoja del estudiante & Lo que hizo sin IA (azul o negro), lo que cambió con Gemini (rojo) y su respuesta final & \texttt{E\#\#\_T\#\_hoja.pdf} \\
+Conversación con Gemini & Qué pregunta el estudiante, qué responde la IA y qué hace él con la respuesta & \texttt{E\#\#\_T\#\_gemini.txt} \\
+Audio y transcripción & El razonamiento en voz alta y las respuestas a las preguntas & \texttt{E\#\#\_T\#\_audio} \\
+Notas de campo & Lo que el audio no recoge: bloqueos, gestos, ayudas dadas, dudas del investigador & Sección 7 de esta guía \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Los momentos 2 y 3 dan la evidencia para OE2: cómo funciona Gemini en su rol de acompañamiento dentro de la tarea. La comparación entre lo azul y lo rojo, junto con lo que el estudiante dice, da la evidencia para OE3: estrategias, razonamientos y errores sin IA y con IA. El encuentro de cierre recoge el tipo de apoyo que el estudiante reconoce en Gemini.
+
+Los cuestionarios inicial y final no se analizan con estadística. Se leen caso por caso: describen a cada estudiante y dan material para la entrevista de cierre, donde se le pregunta por lo que cambió entre sus respuestas.
+
+GeoGebra está disponible en los tres momentos, también en el primero, porque no es una IA: grafica lo que el estudiante le indica y no razona por él. Moreno-Armella et al.\ (2008) llaman a estas representaciones \emph{ejecutables}, porque responden a la acción de quien las usa, y Moreno-Armella y Hegedus (2009) describen esa relación como \emph{co-acción}. Con GeoGebra en la mesa, el análisis puede distinguir tres situaciones: el estudiante con papel y lápiz, con una herramienta que ejecuta y con una IA que conversa. Lo que se registra es si lo usó, en qué momento y para qué.
+
+% =====================================================================
+\section*{2. Los tres encuentros}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{2cm}Lp{2.4cm}@{}}
+\toprule
+\textbf{Encuentro} & \textbf{Qué se hace} & \textbf{Duración} \\
+\midrule
+1 & Consentimiento informado, cuestionario inicial y T1 & 75 min \\
+2 & T2, una pausa de 10 minutos y T3 & 110 min \\
+3 & T4, una pausa de 10 minutos, entrevista de cierre (sección 6) y cuestionario final & 100 min \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Cada tarea toma entre 50 y 60 minutos y la entrevista de cierre, unos 35. Los tiempos son provisionales; el pilotaje los ajusta. Si en el encuentro 2 o en el 3 el estudiante se ve cansado después de la primera parte, es mejor dejar lo que falta para otro día que forzarlo: el cansancio se nota en los datos.
+
+Entre un encuentro y el siguiente conviene dejar al menos dos días para transcribir y leer las notas. Se llena una hoja de notas de campo (sección 7) por cada tarea y otra para la entrevista de cierre.
+
+% =====================================================================
+\section*{3. Antes de cada encuentro}
+
+\begin{itemize}[label=\cas]
+  \item Encuentro 1: consentimiento firmado y autorización de audio (sí o no).
+  \item Hoja de la tarea impresa, esferos azul o negro y rojo, calculadora.
+  \item Grabadora probada.
+  \item Gemini abierto en la cuenta institucional del investigador, en una conversación nueva. Para las tareas T1 a T4, con el modo \emph{aprendizaje guiado} activado y la instrucción inicial pegada. Para la entrevista de cierre, otra conversación nueva, sin modo guiado y sin instrucción inicial.
+  \item GeoGebra abierto en el computador, en una ventana distinta a la de Gemini.
+  \item Esta guía, con el código del estudiante escrito en el encabezado.
+\end{itemize}
+
+\textbf{Instrucción inicial para Gemini} (tareas T1 a T4; es igual para todos y no lleva datos del estudiante):
+\begin{guion}
+Soy estudiante de un primer curso de cálculo en la universidad. Estoy resolviendo una tarea sobre límites y ya intenté resolverla por mi cuenta. Quiero entender, no que me des la respuesta: guíame con preguntas y pistas, y si cometo un error, ayúdame a encontrarlo en lugar de corregirlo directamente.
+\end{guion}
+
+% =====================================================================
+\section*{4. Guion de cada tarea (T1 a T4)}
+
+\subsection*{Apertura (2 min)}
+\begin{guion}
+Hoy vamos a trabajar un ejercicio en tres partes. Primero solo, con el esfero azul. Después con Gemini, y lo que cambie lo escribe en rojo, sin borrar lo azul. Al final decide cuál es su respuesta y por qué. Voy a grabar el audio, como quedó en el consentimiento; puede pedirme que pare cuando quiera. Esto no es un examen y no afecta sus notas. Me interesa cómo piensa, no solo el resultado, así que trate de decir en voz alta lo que va pensando.
+\end{guion}
+
+\subsection*{Momento 1. Sin IA, esfero azul o negro (20 min)}
+
+El investigador no explica ni evalúa. Responde con ``entiendo'' o ``siga'' y, en los sondeos, usa las palabras del propio estudiante. Si hay un bloqueo de dos minutos, o si el estudiante pide ayuda, usa la escala en orden y anota el nivel:
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}L@{}}
+\toprule
+A0. Silencio & Esperar diez segundos. \\
+A1. Explicitación & ¿Qué ha intentado hasta ahora? \\
+A2. Reformulación & ¿Cómo diría con sus palabras lo que se pide? \\
+A3. Heurística & ¿Le serviría una gráfica, una tabla o un dibujo? \\
+A4. Contenido & Se da el paso y se pide al estudiante que lo explique. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+El investigador no sugiere GeoGebra antes de la ayuda A3. Si el estudiante lo abre por su cuenta, se le pregunta qué espera ver y, después, qué vio.
+
+Henningsen y Stein (1997) mostraron que una tarea pierde su exigencia cuando alguien toma el control de las partes difíciles o cuando la atención se va a la respuesta correcta. En la práctica: no resolver por el estudiante, no cortar este momento antes de tiempo y preguntar ``por qué'' también cuando la respuesta está bien.
+
+\p{P1}{¿Por dónde empezó? ¿Por qué por ahí?}{}
+\p{P2}{¿Cómo sabe que ese paso es válido?}{¿Hay otra manera de verlo?}
+\p{P3}{(Si se detiene.) ¿Qué es lo que no le deja seguir?}{}
+
+\subsection*{Momento 2. Con Gemini, esfero rojo, sin borrar (20 min)}
+\begin{guion}
+Ahora puede usar Gemini. Antes de enviar cada mensaje, dígame qué le va a preguntar y para qué. Si cambia algo en la hoja, hágalo en rojo, sin borrar lo azul.
+\end{guion}
+
+\p{P4}{Antes de enviarlo: ¿qué le va a preguntar a Gemini, y para qué?}{}
+\p{P5}{Lea lo que le respondió. ¿Qué piensa de eso?}{¿Coincide con lo que usted escribió en azul?}
+\p{P6}{¿Le cambiaría algo a su hoja?}{¿Qué lo hizo cambiarlo, o dejarlo igual?}
+
+Si Gemini entrega la solución completa, no se interrumpe. Se anota en qué mensaje ocurrió y, al final del momento, se pregunta: ``¿qué hizo con esa respuesta?''. Mientras Gemini está abierto, el investigador no da ayudas A3 ni A4.
+
+\subsection*{Momento 3. Validación (10 min)}
+\p{P7}{¿Cuál es su respuesta final? ¿Por qué está seguro?}{}
+\p{P8}{Compare lo azul con lo rojo. ¿Qué cambió y qué lo hizo cambiar?}{Muéstreme en la hoja dónde.}
+\p{P9}{Si un compañero le pregunta cómo resolvió esto, ¿qué parte le diría que hizo usted y qué parte hizo Gemini?}{}
+
+\subsection*{Cierre (2 min)}
+\begin{guion}
+Gracias. Lo que escribió no afecta su nota. (Si sigue otra tarea en el mismo encuentro:) Descansemos diez minutos y seguimos con la siguiente.
+\end{guion}
+
+\textbf{Si falta tiempo}, no se omiten P1, P4, P5, P7 ni P9, ni la primera pregunta propia de la tarea.
+
+% =====================================================================
+\section*{5. Preguntas propias de cada tarea}
+
+Estas preguntas se intercalan en el momento 1 o en el 3, cuando el estudiante llega al punto que mencionan. El análisis a priori completo (respuesta, estrategias y errores esperados) está en \texttt{secuencia\_tareas.pdf}.
+
+\subsection*{T1. ¿Quién tiene razón? \normalfont\small(Gemini para contrastar)}
+\p{T1.1}{¿Cómo decidió si cada razonamiento estaba bien o mal?}{¿Lo comprobó, o le pareció?}
+\p{T1.2}{El estudiante A dice que, como da $\frac00$, el límite no existe. ¿Qué le diría?}{}
+\p{T1.3}{El estudiante D usó la calculadora. ¿Eso basta para saber el límite?}{¿Qué otro valor probaría?}
+\textit{Qué observar:} con qué criterio valida (un argumento, un cálculo o la autoridad de quien lo dice) y si encuentra el error de B por su cuenta o solo con Gemini.
+
+\subsection*{T2. Lo que dicen las representaciones \normalfont\small(Gemini para explicar)}
+\p{T2.1}{En el literal a) respondió antes de hacer cuentas. ¿Qué le hizo pensar eso?}{}
+\p{T2.2}{¿La tabla dice lo mismo que su primera respuesta? ¿Con cuál se queda?}{¿Por qué?}
+\p{T2.3}{¿En qué valor no está definida la función? ¿Qué pasa con la gráfica cerca de ahí?}{}
+\textit{Qué observar:} si resuelve el conflicto entre el literal a) y la tabla, o deja las dos respuestas sin relacionar; si encuentra la asíntota vertical.
+
+\subsection*{T3. Radianes, grados y un atajo sospechoso \normalfont\small(Gemini para verificar)}
+\p{T3.1}{¿Por qué cree que la tabla cambia cuando la calculadora está en grados?}{}
+\p{T3.2}{El compañero también llegó a 4. ¿Entonces su razonamiento está bien?}{¿Qué tendría que pasar para que estuviera bien?}
+\p{T3.3}{¿La tabla le basta para estar seguro del límite?}{}
+\textit{Qué observar:} si valida un razonamiento por su resultado o por sus pasos, y si relaciona el resultado en grados con la conversión de unidades.
+
+\subsection*{T4. ¿Dónde se puede tapar el hueco? \normalfont\small(Gemini para verificar)}
+\p{T4.1}{¿Cómo buscó los valores donde $f$ no está definida? ¿Puede haber otros?}{}
+\p{T4.2}{¿Qué diferencia hay entre lo que pasa en $x=-2$ y lo que pasa en $x=2$?}{}
+\p{T4.3}{¿Cómo sabe que la función que inventó cumple lo que se pide?}{}
+\textit{Qué observar:} qué estrategia elige sin que se le indique, si distingue la discontinuidad removible de la asíntota vertical y si en el literal c) entendió la relación entre límite y continuidad o copió una forma.
+
+% =====================================================================
+\section*{6. Entrevista de cierre (encuentro 3, después de T4)}
+
+En las tareas T1 a T4 el uso de Gemini está guiado: modo de aprendizaje guiado, instrucción inicial y un propósito para cada tarea. En la entrevista de cierre la IA queda libre y el estudiante la usa como lo haría estudiando solo. No se le dice cómo preguntarle. Si se le dijera, se observaría el diseño del investigador y no la manera en que el estudiante se apropia de la herramienta (Trouche, 2004). La tarea trabaja contenidos que la secuencia no trató; así se puede ver si la forma de trabajar se sostiene con un problema nuevo, sin confundir eso con recordar una respuesta.
+
+Antes del encuentro 3, revisar las hojas de T1 a T3 y el cuestionario inicial del estudiante, y anotar en C3 lo que marcó.
+
+\subsection*{Bloque A. Mirada sobre el proceso (10 min)}
+Con las cuatro hojas sobre la mesa.
+
+\p{C1}{Mire sus cuatro hojas. ¿En cuál le sirvió más Gemini y en cuál menos?}{¿Por qué en esa?}
+\p{C2}{¿Hubo algún momento en que Gemini le dijo algo y usted no le creyó?}{¿Qué hizo entonces?}
+\p{C3}{En el primer cuestionario usted marcó \rule{2.4cm}{0.4pt} en la frase ``Confío en que las respuestas de la IA en matemáticas son correctas''. ¿Sigue pensando lo mismo?}{¿Qué pasó en estas semanas para que eso cambie, o no?}
+
+\subsection*{Bloque B. Una tarea nueva, con Gemini libre (20 min)}
+Entregar la tarjeta de cierre (última página) y el esfero azul. El estudiante trabaja solo unos ocho minutos.
+\begin{guion}
+Ahora puede usar Gemini como quiera, como si estuviera estudiando por su cuenta. Si cambia algo en la hoja, hágalo en rojo.
+\end{guion}
+\p{C4}{¿Qué le va a preguntar a Gemini?}{¿Por qué así?}
+\p{C5}{¿Qué hace con lo que le respondió?}{}
+\p{C6}{¿Usó Gemini igual que en las tareas anteriores?}{¿Qué hizo distinto, y por qué?}
+
+\subsection*{Bloque C. Cierre (5 min)}
+\p{C7}{Si mañana tiene que resolver un ejercicio de cálculo y tiene Gemini a la mano, ¿cómo lo usaría?}{¿Qué no le pediría?}
+\p{C8}{¿Hay algo más que quiera contarme o preguntarme?}{}
+\begin{guion}
+Muchas gracias. Su nombre no aparecerá en ningún documento. En unos días le comparto un resumen de lo que entendí de estos encuentros, para que me diga si refleja lo que quiso decir.
+\end{guion}
+Después se aplica el cuestionario final.
+
+% =====================================================================
+\newpage
+\section*{7. Notas de campo \normalfont\small(completar en los 30 minutos siguientes)}
+
+Encuentro: \rule{1cm}{0.4pt} \quad Tarea: \rule{1.2cm}{0.4pt} \quad Fecha: \rule{2.4cm}{0.4pt} \quad Duración total: \rule{1.6cm}{0.4pt}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{}p{5.6cm}X@{}}
+\toprule
+Duración de cada momento (M1 / M2 / M3) & \\ \midrule
+Estrategia inicial & \\[0.35cm] \midrule
+Representaciones que usó sin que se le pidieran & \\ \midrule
+GeoGebra: momento y para qué & \cas{} No lo usó \enspace M1 \rule{1.6cm}{0.4pt} \enspace M2 \rule{1.6cm}{0.4pt} \enspace M3 \rule{1.6cm}{0.4pt} \\ \midrule
+Bloqueos (minuto y qué pasó) & \\[0.35cm] \midrule
+Ayudas dadas (nivel y minuto) & \\ \midrule
+Mensajes enviados a Gemini (número) & \\ \midrule
+Qué hizo con las respuestas & \cas{} las integró \enspace \cas{} las contrastó \enspace \cas{} pidió aclaración \enspace \cas{} las ignoró \enspace \cas{} copió \\ \midrule
+¿Gemini entregó la solución completa? & \cas{} No \enspace \cas{} Sí, en el mensaje \rule{1cm}{0.4pt} \\ \midrule
+Cambios de azul a rojo & \\[0.35cm] \midrule
+Errores previstos que aparecieron & \\ \midrule
+Errores no previstos & \\ \midrule
+Preguntas que no alcancé a hacer & \\ \midrule
+¿Induje alguna respuesta? ¿Dónde? & \\ \midrule
+Incidentes técnicos & \\ \midrule
+Lo que me sorprendió o no entendí & \\[0.5cm] \midrule
+Ajuste para el siguiente encuentro & \\[0.35cm] \bottomrule
+\end{tabularx}
+
+\subsection*{Después del encuentro}
+\begin{itemize}[label=\cas]
+  \item Copiar la conversación de Gemini a \texttt{E\#\#\_T\#\_gemini.txt} sin usar ``Compartir'', reemplazar cualquier dato identificable por el código y borrar la conversación de la cuenta.
+  \item Escanear la hoja a color como \texttt{E\#\#\_T\#\_hoja.pdf}.
+  \item Guardar audio y archivos en \texttt{datos\_investigacion/}, fuera del repositorio.
+  \item Transcribir con el comando \texttt{codificador} en menos de 72 horas.
+\end{itemize}
+
+% =====================================================================
+\section*{Referencias}
+\small
+\setlength{\parindent}{-1.2em}\setlength{\leftskip}{1.2em}
+
+Goldin, G. A. (2000). A scientific perspective on structured, task-based interviews in mathematics education research. En A. E. Kelly y R. A. Lesh (Eds.), \emph{Handbook of research design in mathematics and science education} (pp.~517--545). Lawrence Erlbaum.
+
+Henningsen, M., y Stein, M. K. (1997). Mathematical tasks and student cognition: Classroom-based factors that support and inhibit high-level mathematical thinking and reasoning. \emph{Journal for Research in Mathematics Education, 28}(5), 524--549. \url{https://doi.org/10.5951/jresematheduc.28.5.0524}
+
+Moreno-Armella, L., y Hegedus, S. J. (2009). Co-action with digital technologies. \emph{ZDM Mathematics Education, 41}(4), 505--519. \url{https://doi.org/10.1007/s11858-009-0200-x}
+
+Moreno-Armella, L., Hegedus, S. J., y Kaput, J. J. (2008). From static to dynamic mathematics: Historical and representational perspectives. \emph{Educational Studies in Mathematics, 68}(2), 99--111. \url{https://doi.org/10.1007/s10649-008-9116-6}
+
+Noster, N., Gerber, S., y Siller, H.-S. (2024). Pre-service teachers' approaches in solving mathematics tasks with ChatGPT. \emph{Digital Experiences in Mathematics Education, 10}(3), 543--567. \url{https://doi.org/10.1007/s40751-024-00155-8}
+
+Trouche, L. (2004). Managing the complexity of human/machine interactions in computerized learning environments: Guiding students' command process through instrumental orchestrations. \emph{International Journal of Computers for Mathematical Learning, 9}(3), 281--307.
+
+Urhan, S., Gençaslan, O., y Dost, Ş. (2026). Is ChatGPT a rational assistant for university students during mathematical reasoning? \emph{Science \& Education}. Publicación anticipada en línea. \url{https://doi.org/10.1007/s11191-026-00725-9}
+
+Zhuang, Y. (2025). Lessons from using ChatGPT in calculus: Insights from two contrasting cases. \emph{Journal of Formative Design in Learning, 9}(1), 25--35. \url{https://doi.org/10.1007/s41686-025-00098-2}
+
+\setlength{\leftskip}{0pt}\setlength{\parindent}{0pt}
+\normalsize
+
+% =====================================================================
+\newpage
+\thispagestyle{empty}
+\section*{Tarjeta de cierre \normalfont\small(imprimir aparte)}
+
+\textit{Pendiente: estos dos razonamientos reemplazan la tarea 1 de la guía v4, que repetía contenidos de T2 y T3. La decisión final es de la codirectora.}
+
+\bigskip
+Estos razonamientos los escribieron estudiantes de primer semestre. Escriba al lado de cada uno si le parece correcto o no, y por qué.
+
+\bigskip
+\textbf{1.} \emph{``Para calcular $\displaystyle\lim_{x\to1}\frac{6x^2-x-2}{x^2+x-2}$ reemplazo $x=1$: arriba da 3 y abajo da 0. Como no es $\frac00$, el límite es 0.''}
+
+\vspace{5.5cm}
+
+\textbf{2.} \emph{``Para calcular $\displaystyle\lim_{x\to0}\frac{\seno(x-1)}{x^2+2x-3}$ factorizo $x^2+2x-3=(x-1)(x+3)$ y uso que $\dfrac{\seno u}{u}\to1$. Entonces el límite es $\dfrac14$.''}
+
+\vspace{5.5cm}
+
+{\small Primero trabaje con esfero azul o negro. Cuando pueda usar Gemini, escriba con esfero rojo lo que cambie o agregue, sin borrar lo anterior.}
+
+\bigskip
+{\footnotesize\textit{Para el investigador.} 1: Pontón, ejercicio 24.17. El límite no existe: el denominador es $(x-1)(x+2)$, así que la función tiende a $-\infty$ por la izquierda de 1 y a $+\infty$ por la derecha. 2: Mosquera, ejercicio 8h. Con $x\to0$ no hay indeterminación; basta reemplazar y se obtiene $\frac{\seno 1}{3}\approx0{,}28$. El $\frac14$ correspondería a $x\to1$. Los dos detectan el razonamiento imitativo: aplicar una técnica sin mirar si hace falta.}
+
+\end{document}

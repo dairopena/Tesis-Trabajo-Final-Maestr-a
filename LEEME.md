@@ -31,9 +31,9 @@ Cada uno es un documento independiente: se abre el `.tex` y se compila con pdfla
 
 | Carpeta | Qué hay | Cuándo se usa |
 |---|---|---|
-| `01_secuencia/` | `secuencia_tareas` (criterios, orden, 4 tareas y análisis a priori; es para el investigador), `hojas_estudiante` (lo que se imprime para el estudiante), `protocolo_sesion` (hoja del tutor) y `propuesta_pilotaje` (para presentar a la profesora Teresa Pontón) | En cada sesión de la secuencia |
-| `02_entrevista/` | `guia_entrevista_campo` (la que se lleva en la mano), `guia_entrevista_v4` (versión extendida para el anexo) y `guia_entrevista_v3` | Al final, con la muestra intensiva |
-| `03_cuestionarios/` | `cuestionario_inicial` y `cuestionario_final` | Primera y última sesión |
+| `01_secuencia/` | `secuencia_tareas` (criterios, orden, 4 tareas y análisis a priori; documento de diseño, no se lleva a la sesión), `hojas_estudiante` (lo que se imprime para el estudiante) y `propuesta_pilotaje` (para la profesora Teresa Pontón) | Diseño; las hojas, en los encuentros 1 a 4 |
+| `02_entrevista/` | `guia_entrevista_tareas`: **instrumento principal**. Entrevista basada en tareas (Goldin, 2000) aplicada en los tres encuentros: guion, preguntas por tarea, encuentro de cierre, notas de campo y tarjeta de cierre. Reemplaza las guías v3, v4 y de campo y el protocolo de sesión (en `archivo/instrumentos_anteriores/`) | En cada encuentro |
+| `03_cuestionarios/` | `cuestionario_inicial` y `cuestionario_final` (se leen caso por caso, no con estadística) | Encuentros 1 y 3 |
 | `04_etica/` | `consentimiento_informado_estudiantes` | Antes de empezar |
 
 ## Documentos de consulta (`docs/`)

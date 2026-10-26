@@ -25,8 +25,8 @@
 \setlist{itemsep=3pt,topsep=4pt}
 \setlength{\parindent}{0pt}
 
-\newtcolorbox{enunciado}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries\large,title={#1},arc=2pt}
-\newtcolorbox{validacion}{colback=white,colframe=unalverde,arc=2pt,title={\textbf{Momento 3 --- Mi respuesta final}},fonttitle=\small,height=9.2cm,valign=top}
+\newenvironment{enunciado}[1]{\par\noindent{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{8pt}}{\par\vspace{6pt}\hrule\par}
+\newenvironment{validacion}{\par\noindent\hrule\vspace{6pt}\noindent\textbf{Momento 3. Mi respuesta final}\par\vspace{4pt}}{\par\vspace{4cm}}
 \newcommand{\instrucciones}{%
   \begin{center}\small
   \textbf{Momento 1:} trabaje solo, con esfero \textbf{azul o negro}. \quad
