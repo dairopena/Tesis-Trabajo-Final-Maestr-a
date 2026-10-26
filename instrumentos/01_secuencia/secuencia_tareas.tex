@@ -1,5 +1,7 @@
 % =====================================================================
 %  SECUENCIA DE TAREAS: CRITERIOS DE SELECCIÓN, ORDEN Y ANÁLISIS A PRIORI
+%  Versión 3 (25-oct-2026): ajustada a la guía de entrevista basada en tareas
+%  (instrumentos/02_entrevista/guia_entrevista_tareas.tex) y sin recuadros.
 %  Versión 2 (21-oct-2026). Problemas tomados de los talleres de clase de
 %  Teresa Pontón Ladino (ej. 24 y 30) y Mónica Mosquera (ej. 8).
 %  Los talleres originales están en docs/05_talleres/ (fuera de git).
@@ -17,7 +19,6 @@
 \usepackage{booktabs,tabularx,array}
 \usepackage{enumitem}
 \usepackage[table]{xcolor}
-\usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{setspace}
@@ -31,19 +32,18 @@
 
 \DeclareMathOperator{\seno}{sen}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{Y}{>{\centering\arraybackslash}p{0.42cm}}
+\newcolumntype{Y}{>{\centering\arraybackslash}p{0.5cm}}
 \setlist{itemsep=2pt,topsep=4pt}
 \setstretch{1.1}
 
-\newtcolorbox{caja}[1]{colback=grisclaro,colframe=unalverde,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
-\newtcolorbox{tarea}[1]{colback=ambar,colframe=orange!70!black,fonttitle=\bfseries,title={#1},breakable,arc=2pt}
-\newtcolorbox{aviso}{colback=red!4,colframe=red!60!black,arc=2pt,breakable}
-\newtcolorbox{origen}{colback=white,colframe=unalverde!50,boxrule=0.5pt,leftrule=3pt,arc=0pt,breakable,fontupper=\small}
+\newenvironment{caja}[1]{\par\medskip\noindent\textbf{#1}\par\smallskip\noindent\ignorespaces}{\par\medskip}
+\newenvironment{tarea}[1]{\par\medskip\noindent\textbf{Enunciado de #1}\begin{quote}}{\end{quote}}
+\newenvironment{origen}{\par\small\noindent\ignorespaces}{\par\normalsize}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Secuencia de tareas --- criterios, orden y análisis a priori}
-\fancyhead[R]{\small Versión 2 · 21-oct-2026}
+\fancyhead[R]{\small Versión 3 · 25-oct-2026}
 \fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -56,9 +56,9 @@
 {\small Trabajo final de maestría · Tutoría personalizada GEA · UNAL sede Palmira\par}
 \medskip
 
-\begin{aviso}
-\textbf{Estado de este documento.} Los cuatro problemas se tomaron de los talleres de Cálculo Diferencial de 2026-2 de las profesoras Teresa Pontón Ladino (ejercicios 24 y 30) y Mónica Mosquera (ejercicio 8). Cada tarea indica qué viene del taller y qué se agregó en el diseño. La sección~\ref{sec:cotejo} muestra todos los ejercicios considerados y por qué se eligieron o se descartaron. Falta el pilotaje.
-\end{aviso}
+\noindent\textbf{Estado de este documento.} Los cuatro problemas se tomaron de los talleres de Cálculo Diferencial de 2026-2 de las profesoras Teresa Pontón Ladino (ejercicios 24 y 30) y Mónica Mosquera (ejercicio 8). Cada tarea indica qué viene del taller y qué se agregó en el diseño. La sección~\ref{sec:cotejo} muestra todos los ejercicios considerados y por qué se eligieron o se descartaron. Falta el pilotaje.
+
+\noindent\textbf{Para qué sirve.} Es el documento de diseño: responde al primer objetivo específico (qué tareas y por qué) y sirve de referencia para el análisis, porque el análisis a priori dice qué se espera observar en cada tarea. No se lleva a los encuentros. Las tareas se aplican como entrevistas basadas en tareas (Goldin, 2000), en tres encuentros, con la guía \texttt{guia\_entrevista\_tareas}.
 
 % =====================================================================
 \section{Problema y tarea: qué se selecciona y qué se diseña}
@@ -95,7 +95,7 @@ El problema no debe poder resolverse únicamente recordando un procedimiento o c
 \begin{caja}{C3. Toca un error frecuente de la tutoría}
 El contenido del problema debe tocar alguno de los errores registrados en la tutoría personalizada durante 2026-2 (álgebra previa al simplificar, indeterminación $0/0$, límites al infinito de funciones racionales, el límite $\lim_{x\to 0}\frac{\seno x}{x}$) o documentados en la investigación sobre el límite (Guarín y Parada, 2023; Job y Schneider, 2014).
 
-\textbf{Por qué.} El análisis a priori necesita errores esperados. Si el problema no toca ninguno, no hay con qué contrastar lo que pase en la sesión.
+\textbf{Por qué.} El análisis a priori necesita errores esperados. Si el problema no toca ninguno, no hay con qué contrastar lo que pase en la entrevista.
 \end{caja}
 
 \begin{caja}{C4. Pide al menos dos representaciones}
@@ -119,7 +119,7 @@ Debe quedar una parte de la tarea que solo el estudiante puede hacer: juzgar un 
 % =====================================================================
 \section{Orden de la secuencia}
 
-El orden se plantea como una trayectoria hipotética de aprendizaje en el sentido de Simon (1995): una predicción, hecha por el docente, de cómo podría avanzar el aprendizaje con estas tareas, que se revisa con lo que muestran los estudiantes. No se sigue de forma rígida; se ajusta entre un ciclo y otro del experimento de enseñanza (Cobb et al., 2003).
+El orden se plantea como una trayectoria hipotética de aprendizaje en el sentido de Simon (1995): una predicción, hecha por el docente, de cómo podría avanzar el aprendizaje con estas tareas, que se revisa con lo que muestran los estudiantes. No se sigue de forma rígida; se revisa entre un ciclo y otro del experimento de enseñanza (Cobb et al., 2003). Aquí el primer ciclo es el pilotaje: los ajustes que salgan de él se hacen antes del estudio. Durante el estudio los ajustes se anotan y se discuten en el análisis, para que los cuatro estudiantes trabajen las mismas tareas.
 
 La hipótesis es que el estudiante pasa de \emph{juzgar razonamientos ajenos} a \emph{producir y defender los suyos}. Para eso, cada tarea retira un apoyo que la anterior ofrecía:
 
@@ -141,7 +141,9 @@ El orden respeta también el del curso: el ejercicio 24 del taller (límites en 
 
 Los dos tipos de tarea de Vandebrouck et al. (2021) quedan en los extremos: T1 es una tarea de \emph{evaluar razonamientos ajenos} y T4 una de \emph{problema sin procedimiento a la vista}. T2 y T3 hacen el tránsito.
 
-El papel de Gemini también cambia. En T1 sirve para \emph{contrastar} el juicio propio; en T2, para pedir una \emph{explicación}; en T3 y T4, para \emph{verificar} lo que el estudiante ya sostuvo. Siempre entra después del momento sin IA y en modo de aprendizaje guiado (Google, 2025). La idea de fondo es la de co-acción de Moreno-Armella y Hegedus (2009): el estudiante actúa sobre la herramienta y la herramienta responde, pero la dirección del trabajo matemático sigue en manos del estudiante.
+El papel de Gemini también cambia. En T1 sirve para \emph{contrastar} el juicio propio; en T2, para pedir una \emph{explicación}; en T3 y T4, para \emph{verificar} lo que el estudiante ya sostuvo. Siempre entra después del momento sin IA y en modo de aprendizaje guiado (Google, 2025), con un rol de acompañamiento: la dirección del trabajo matemático sigue en manos del estudiante.
+
+GeoGebra cumple otro papel. Está disponible en los tres momentos, también en el primero, porque no es una IA: grafica lo que el estudiante le indica y no razona por él. Es una representación ejecutable en el sentido de Moreno-Armella et al.\ (2008), y la relación que el estudiante establece con ella es la que Moreno-Armella y Hegedus (2009) llaman co-acción: el estudiante actúa, la herramienta responde y el estudiante interpreta. Así el análisis puede distinguir el trabajo con papel y lápiz, con una herramienta que ejecuta y con una IA que conversa.
 
 % =====================================================================
 \section{Las cuatro tareas}
@@ -288,8 +290,8 @@ Mosquera 8d & S & S & S & S & S & S & \textbf{T3.} Exige ajustar el límite fund
 Mosquera 8a & S & S & S & S & S & S & Alternativa a T3; mezcla además $\frac{1-\cos x}{x}$. \\ \hline
 Pontón 24.16 & S & S & S & S & S & S & \textbf{T4.} Sin el punto dado, tiene dos puntos críticos de naturaleza distinta (removible y asíntota vertical). \\ \hline
 Pontón 24.20 & S & S & S & S & S & S & Alternativa más exigente a T4 (doble racionalización). \\ \hline
-Pontón 24.17 & S & S & S & S & S & S & No va en la secuencia: no es $\frac00$ sino $\frac30$. Se propone para la entrevista (sección~\ref{sec:pendientes}). \\ \hline
-Mosquera 8h & S & S & N & S & S & S & No va en la secuencia: con $x\to0$ no hay indeterminación ($\frac{\seno 1}{3}$). Posible errata del taller ($x\to1$). Se propone para la entrevista. \\ \hline
+Pontón 24.17 & S & S & S & S & S & S & No va en la secuencia: no es $\frac00$ sino $\frac30$. Va en la tarjeta de la entrevista de cierre (sección~\ref{sec:pendientes}). \\ \hline
+Mosquera 8h & S & S & N & S & S & S & No va en la secuencia: con $x\to0$ no hay indeterminación ($\frac{\seno 1}{3}$). Posible errata del taller ($x\to1$). Va en la tarjeta de la entrevista de cierre. \\ \hline
 Mosquera 7 & N & N & N & N & S & N & No es un ejercicio de límites. Sirve de apoyo para el literal c) de T3. \\ \hline
 Pontón 31 & --- & --- & --- & --- & S & --- & No se usa como tarea; sus exigencias (dominio, continuidad, límite) se integran en T4. \\ \hline
 \end{tabularx}
@@ -300,13 +302,13 @@ Pontón 31 & --- & --- & --- & --- & S & --- & No se usa como tarea; sus exigenc
 
 \begin{itemize}
   \item \textbf{Autorización de las profesoras.} Los ejercicios vienen de material de clase no publicado. Antes de incluirlos en la tesis, pedir autorización a las profesoras Pontón y Mosquera y citarlas.
-  \item \textbf{Cruce con la entrevista.} La tarea 1 de la entrevista (\emph{Tres razonamientos sobre límites}) incluye un razonamiento sobre $\lim_{x\to0}\frac{\seno x}{x}$ (contenido de T3) y otro sobre un límite racional al infinito (contenido de T2). Propuesta para decidir con los directores: reemplazarlos por razonamientos sobre contenidos que la secuencia no trabaja, por ejemplo:
+  \item \textbf{Tarea de la entrevista de cierre.} La tarea 1 de la guía de entrevista anterior (v4) repetía contenidos de T2 y T3. La guía actual la reemplaza por dos razonamientos sobre contenidos que la secuencia no trabaja, para observar si la forma de trabajar se sostiene con un problema nuevo. Falta la aprobación de la codirectora:
   \begin{itemize}
     \item un límite que no es $\frac00$ (Pontón 24.17): \emph{``Reemplazo $x=1$ en $\frac{6x^2-x-2}{x^2+x-2}$ y da $\frac30$; como no es $\frac00$, el límite es 0''} (el límite cuando $x\to1^-$ es $-\infty$);
     \item un límite que no requiere técnica (Mosquera 8h): \emph{``Factorizo $x^2+2x-3=(x-1)(x+3)$ y uso $\frac{\seno u}{u}\to1$: $\lim_{x\to0}\frac{\seno(x-1)}{x^2+2x-3}=\frac14$''} (con $x\to0$ basta reemplazar: $\frac{\seno 1}{3}\approx0{,}28$).
   \end{itemize}
   Los dos detectan el razonamiento imitativo, es decir, aplicar una técnica sin mirar si hace falta. Como vienen de los talleres, conviene confirmar que no se trabajaron en clase con los participantes.
-  \item Pilotar las cuatro tareas con uno o dos estudiantes que no participen en el estudio, y ajustar tiempos y consignas.
+  \item \textbf{Pilotaje.} Aplicar las cuatro tareas, en tres encuentros, con uno o dos estudiantes de la profesora Pontón que no participen después en el estudio, y ajustar tiempos y consignas antes del estudio.
 \end{itemize}
 
 % =====================================================================
@@ -315,6 +317,7 @@ Pontón 31 & --- & --- & --- & --- & S & --- & No se usa como tarea; sus exigenc
 \item Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., y Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. \emph{Proceedings of the National Academy of Sciences, 122}(26), e2422633122. \url{https://doi.org/10.1073/pnas.2422633122}
 \item Cobb, P., Confrey, J., diSessa, A., Lehrer, R., y Schauble, L. (2003). Design experiments in educational research. \emph{Educational Researcher, 32}(1), 9--13. \url{https://doi.org/10.3102/0013189X032001009}
 \item Duval, R. (2006). A cognitive analysis of problems of comprehension in a learning of mathematics. \emph{Educational Studies in Mathematics, 61}(1), 103--131.
+\item Goldin, G. A. (2000). A scientific perspective on structured, task-based interviews in mathematics education research. En A. E. Kelly y R. A. Lesh (Eds.), \emph{Handbook of research design in mathematics and science education} (pp.~517--545). Lawrence Erlbaum.
 \item Google. (2025). \emph{Guided Learning in Gemini: From answers to understanding}. \url{https://blog.google/products-and-platforms/products/education/guided-learning/}
 \item Guarín Amorocho, S. A., y Parada Rico, S. E. (2023). Acciones y expresiones de la comprensión del límite de una función en un punto, por estudiantes de cálculo diferencial. \emph{Educación Matemática, 35}(1), 197--228.
 \item Henningsen, M., y Stein, M. K. (1997). Mathematical tasks and student cognition: Classroom-based factors that support and inhibit high-level mathematical thinking and reasoning. \emph{Journal for Research in Mathematics Education, 28}(5), 524--549. \url{https://doi.org/10.5951/jresematheduc.28.5.0524}
@@ -322,6 +325,7 @@ Pontón 31 & --- & --- & --- & --- & S & --- & No se usa como tarea; sus exigenc
 \item Lithner, J. (2004). Mathematical reasoning in calculus textbook exercises. \emph{The Journal of Mathematical Behavior, 23}(4), 405--427.
 \item Lithner, J. (2008). A research framework for creative and imitative reasoning. \emph{Educational Studies in Mathematics, 67}(3), 255--276. \url{https://doi.org/10.1007/s10649-007-9104-2}
 \item Moreno-Armella, L., y Hegedus, S. J. (2009). Co-action with digital technologies. \emph{ZDM Mathematics Education, 41}(4), 505--519. \url{https://doi.org/10.1007/s11858-009-0200-x}
+\item Moreno-Armella, L., Hegedus, S. J., y Kaput, J. J. (2008). From static to dynamic mathematics: Historical and representational perspectives. \emph{Educational Studies in Mathematics, 68}(2), 99--111. \url{https://doi.org/10.1007/s10649-008-9116-6}
 \item Mosquera, M. (2026). \emph{Taller de Cálculo Diferencial} [Material de clase no publicado, ejercicios 7 y 8]. Universidad Nacional de Colombia, sede Palmira. \textbf{[CONFIRMAR: nombre completo, título del taller y semestre]}
 \item Pontón Ladino, T. (2026). \emph{Taller Módulo 1. Cálculo Diferencial 2026\_02} [Material de clase no publicado, ejercicios 24, 30 y 31]. Universidad Nacional de Colombia, sede Palmira.
 \item Simon, M. A. (1995). Reconstructing mathematics pedagogy from a constructivist perspective. \emph{Journal for Research in Mathematics Education, 26}(2), 114--145. \url{https://doi.org/10.5951/jresematheduc.26.2.0114}
