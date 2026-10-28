@@ -5,22 +5,23 @@
     "*.bib": "bibtex"
   },
 
-  // Excluir archivos de compilación de la búsqueda
+  // Ocultar del explorador los auxiliares de compilación (en build/ y en
+  // cualquier subcarpeta, p. ej. instrumentos/). Los PDF siguen visibles.
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/build/*.aux": true,
-    "**/build/*.bbl": true,
-    "**/build/*.bcf": true,
-    "**/build/*.blg": true,
-    "**/build/*.log": true,
-    "**/build/*.out": true,
-    "**/build/*.run.xml": true,
-    "**/build/*.fls": true,
-    "**/build/*.fdb_latexmk": true,
-    "**/build/*.toc": true,
-    "**/build/*.lof": true,
-    "**/build/*.lot": true
+    "**/*.{aux,bbl,bcf,blg,log,out,run.xml,fls,fdb_latexmk,toc,lof,lot,xdv,synctex.gz,nav,snm,vrb}": true,
+    "**/_minted*": true
+  },
+
+  // Que la búsqueda (Ctrl+Shift+F) y el vigilante de archivos ignoren build/
+  "search.exclude": {
+    "**/build": true,
+    "archivo": true,
+    "docs": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true
   },
 
   // Configuración del explorador de archivos
@@ -29,56 +30,72 @@
   // Guardar automáticamente
   "files.autoSave": "onFocusChange",
 
-  // Configuración de LaTeX Workshop (si está instalado)
+  // LaTeX Workshop: latexmk con .latexmkrc (XeLaTeX + Biber solo cuando hace falta)
   "latex-workshop.latex.outDir": "./build",
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.build.forceRecipeUsage": true,
   "latex-workshop.latex.recipe.default": "first",
   "latex-workshop.latex.recipes": [
     {
-      "name": "XeLaTeX + Biber + XeLaTeX x2 (Tesis UNAL)",
+      "name": "latexmk (XeLaTeX + Biber cuando hace falta)",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "XeLaTeX + Biber + XeLaTeX x2 (completa)",
       "tools": ["xelatex", "biber", "xelatex", "xelatex"]
     },
     {
-      "name": "latexmk (XeLaTeX + Biber automático)",
-      "tools": ["latexmk"]
+      "name": "pdflatex (instrumentos)",
+      "tools": ["pdflatex"]
     }
   ],
   "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-f",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
     {
       "name": "xelatex",
       "command": "xelatex",
       "args": [
         "-interaction=nonstopmode",
-        "-shell-escape",
         "-synctex=1",
-        "-output-directory=build",
+        "-file-line-error",
+        "-output-directory=%OUTDIR%",
         "%DOC%"
       ]
     },
     {
       "name": "biber",
       "command": "biber",
-      "args": ["build/%DOCFILE%"],
-      "env": {}
+      "args": ["%OUTDIR%/%DOCFILE%"]
     },
     {
-      "name": "latexmk",
-      "command": "latexmk",
+      "name": "pdflatex",
+      "command": "pdflatex",
       "args": [
-        "-xelatex",
         "-interaction=nonstopmode",
-        "-shell-escape",
-        "-output-directory=build",
-        "-file-line-error",
         "-synctex=1",
+        "-file-line-error",
+        "-output-directory=%OUTDIR%",
         "%DOC%"
       ]
     }
   ],
-  "latex-workshop.view.pdf.viewer": "tab",
+  // No borrar los auxiliares después de compilar: ya están en build/ y
+  // conservarlos permite que latexmk recompile solo lo que cambió.
+  "latex-workshop.latex.autoClean.run": "never",
   "latex-workshop.latex.clean.subfolder.enabled": true,
-  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.view.pdf.viewer": "tab",
 
   // Configuración de SyncTeX para saltar entre PDF y código
   "latex-workshop.synctex.afterBuild.enabled": true,

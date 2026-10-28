@@ -40,7 +40,7 @@ Directores: Dra. Marisol Santacruz Rodríguez y Dr. Luis Octavio González Salce
 
 ## Estructura y compilación
 
-- **Documento principal:** `0000.tex`. Se compila con **XeLaTeX + biber**. Dairo compila él mismo en VS Code con Ctrl+Shift+B; no compilar en la carpeta del proyecto (las pruebas se hacen en un directorio temporal).
+- **Documento principal:** `0000.tex`. Se compila con **XeLaTeX + biber**. Dairo compila él mismo en VS Code con Ctrl+Shift+B (`compilar.sh`, que usa latexmk con `.latexmkrc` desde el 28-oct-2026; `./compilar.sh limpio` compila desde cero); no compilar en la carpeta del proyecto (las pruebas se hacen en un directorio temporal).
 - **Capítulo 1:** `capitulos/03_planteamiento_problema/`. Contexto en `01_contexto_problema/`, pregunta en `02_pregunta_problema/`, justificación en `04_justificacion/` y objetivos en `objetivos/00Objetivos.tex`.
 - **Capítulo 2:** `capitulos/04_marco_teorico/`. Marco contextual actualizado; conceptual y referencial pendientes.
 - **Capítulo 3:** `capitulos/05_marco_metodologico/`.

@@ -1,25 +1,23 @@
-# Configuración de latexmk para el proyecto de tesis
-# Este archivo asegura que latexmk (usado por LaTeX Workshop) 
-# compile correctamente con XeLaTeX y Biber
+# Configuración de latexmk para la tesis (XeLaTeX + Biber).
+# La usan Ctrl+Shift+B (compilar.sh) y LaTeX Workshop.
+# Todo lo que genera la compilación queda en build/.
 
-# Usar XeLaTeX como motor principal
-$pdf_mode = 5;  # 5 = XeLaTeX
+# Motor: XeLaTeX
+$pdf_mode = 5;
+$xelatex = 'xelatex -interaction=nonstopmode -file-line-error -synctex=1 %O %S';
 
-# Comando XeLaTeX con opciones necesarias
-$xelatex = 'xelatex -interaction=nonstopmode -shell-escape -output-directory=build %O %S';
+# Bibliografía con Biber (latexmk lo corre solo cuando cambian las citas o los .bib)
+$bibtex_use = 2;
 
-# Usar Biber para bibliografía
-$biber = 'biber --output-directory=build %O %S';
-
-# Directorio de salida
+# Carpeta de salida
 $out_dir = 'build';
+$aux_dir = 'build';
 
-# Asegurar que se ejecuten suficientes pasadas
+# Máximo de pasadas
 $max_repeat = 5;
 
-# Archivos a limpiar
-@generated_exts = qw(aux bbl bcf blg fdb_latexmk fls log out run.xml synctex.gz toc lof lot);
+# Seguir aunque haya errores de LaTeX (como hacía compilar.sh)
+$force_mode = 1;
 
-# Archivos adicionales de minted (syntax highlighting)
-push @generated_exts, 'pyg';
-push @generated_exts, '_minted*';
+# Archivos extra que borra "latexmk -c"
+push @generated_exts, qw(bbl run.xml synctex.gz xdv lof lot);
